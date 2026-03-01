@@ -341,6 +341,81 @@ strong {
     margin-bottom: 0;
 }
 
+/* Actors Grid */
+.actors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.actor-card {
+    background-color: var(--clr-bg-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--clr-purple-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.actor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(128, 90, 213, 0.15);
+}
+
+.actor-card.worker {
+    border-top-color: #3182CE;
+}
+
+.actor-card.firm {
+    border-top-color: var(--clr-accent);
+}
+
+.actor-card.gov {
+    border-top-color: var(--clr-purple-primary);
+}
+
+.actor-card .actor-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.actor-card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--clr-text-main);
+}
+
+.actor-card .actor-goal {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--clr-purple-border);
+}
+
+.actor-card.worker .actor-goal {
+    color: #2B6CB0;
+}
+
+.actor-card.firm .actor-goal {
+    color: #C53030;
+}
+
+.actor-card.gov .actor-goal {
+    color: #6B46C1;
+}
+
+.actor-card p {
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 8px;
