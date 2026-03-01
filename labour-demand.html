@@ -29,7 +29,7 @@
                 <span class="icon">▼</span>
             </button>
             <div class="accordion-content active" style="max-height: 500px;">
-                <a href="index.html">Introduction, Labour markets, Labour econ</a>
+                <a href="index.html">Introduction, Labour Market Status</a>
                 <a href="labour-demand.html" class="active">Model of labour demand, Elasticities</a>
                 <a href="labour-supply.html">Model of labour supply, Frictions</a>
             </div>
@@ -62,14 +62,195 @@
     <main class="main-content">
         <!-- HEADER -->
         <header class="page-header">
-            <h1>Model of labour demand, Demand elasticities</h1>
+            <h1>Model of Labour Demand & Demand Elasticities</h1>
         </header>
 
         <!-- CONTENT AREA -->
         <div class="content-scroll">
             <section class="lesson-section">
-                <h2>📈 Model of Labour Demand</h2>
-                <p><em>Contenu à venir...</em></p>
+
+                <h2>🏭 I. The Conceptual Framework of Labour Demand</h2>
+                <p>La demande de travail est une <strong>demande dérivée</strong> (<em>derived demand</em>). Cela
+                    signifie que les entreprises ne demandent pas de travail pour le plaisir d'embaucher, mais
+                    uniquement parce qu'il y a une demande des consommateurs pour le produit final ou le service que ces
+                    travailleurs permettent de produire.</p>
+
+                <!-- Concept Card: Explanation -->
+                <div class="concept-card explanation">
+                    <h4>🔍 Deep Dive : The Derived Nature of Labour</h4>
+                    <p>Cette distinction conceptuelle est fondamentale. Si la demande pour les iPhones s'effondre
+                        demain, la demande d'Apple pour des développeurs iOS ou des ouvriers d'usine s'effondrera
+                        instantanément, <strong>peu importe à quel point ces travailleurs sont peu coûteux ou
+                            qualifiés</strong>.<br><br>
+                        La fonction de production lie les <em>inputs</em> (Capital $K$ et Labour $L$) à
+                        l'<em>output</em> ($Q$). Les entreprises ne font que maximiser leur fonction de profit $\Pi(L,
+                        K)$ sous contrainte de cette technologie.</p>
+                </div>
+
+
+                <h2>⏱️ II. The Short-Run Model of Labour Demand</h2>
+                <p>En économie classique, le <strong>court terme (Short-Run)</strong> est défini comme la période où
+                    l'un des facteurs de production est <em>fixe</em>. Généralement, le Capital ($K$) est fixe (on ne
+                    peut pas construire une nouvelle usine du jour au lendemain), et seul le Travail ($L$) est variable.
+                </p>
+
+                <h3>Les Rendements Marginaux Décroissants</h3>
+
+                <div class="concept-card definition">
+                    <h4>Law of Diminishing Marginal Returns</h4>
+                    <p>À mesure qu'une entreprise ajoute des unités de travail (à capital fixe), le <strong>Produit
+                            Marginal du Travail ($MP_L$)</strong> finira obligatoirement par décroître.<br>
+                        <em>Intuition :</em> Si tu as un seul four (Capital) et 10 boulangers (Travail), les boulangers
+                        vont se gêner. Le 10ème boulanger n'ajoute presque rien à la production totale par rapport au
+                        2ème.
+                    </p>
+                </div>
+
+                <h3>La Règle de Maximisation des Profits (Short-Run)</h3>
+                <p>Dans un marché parfaitement concurrentiel (pour le produit ET le travail), l'entreprise continue
+                    d'embaucher jusqu'au point exact où le revenu généré par le dernier travailleur est égal au coût de
+                    son embauche (son salaire $W$).</p>
+
+                <!-- Math Block -->
+                <div class="math-block">
+                    \[ \text{P} \times MP_L = W \]
+                    <hr style="border:0; border-top:1px dashed var(--clr-purple-border); margin: 15px 0;">
+                    \[ VMP_L = W \]
+                    <br>
+                    <small>Où $VMP_L$ est la <strong>Value of Marginal Product of Labour</strong> (la valeur monétaire
+                        produite par le dernier employé).</small>
+                </div>
+
+                <!-- Concept Card: Warning -->
+                <div class="concept-card warning">
+                    <h4>⚠️ The Downward Sloping Curve</h4>
+                    <p>Parce que le produit marginal ($MP_L$) est décroissant (loi des rendements marginaux), la courbe
+                        de $VMP_L$ est décroissante. <strong>La courbe de demande de travail à court terme EST
+                            EXACTEMENT la portion décroissante de la courbe de $VMP_L$</strong> sous le salaire moyen.
+                    </p>
+                </div>
+
+
+                <h2>🏗️ III. The Long-Run Model of Labour Demand</h2>
+                <p>À <strong>long terme (Long-Run)</strong>, tous les facteurs de production sont variables.
+                    L'entreprise peut choisir d'ajuster simultanément le nombre de travailleurs ($L$)
+                    <strong>ET</strong> la taille de son usine/machines ($K$).</p>
+
+                <div class="actors-grid">
+                    <div class="actor-card firm">
+                        <div class="actor-icon">🔄</div>
+                        <h4>The Substitution Effect</h4>
+                        <div class="actor-goal">Capital vs Labour</div>
+                        <p>Si le salaire ($W$) augmente, l'entreprise va être incitée à <strong>remplacer</strong> les
+                            travailleurs coûteux par des machines (Capital) le long de la même courbe isoquante.</p>
+                    </div>
+
+                    <div class="actor-card gov"> <!-- Utilizing gov color to differentiate -->
+                        <div class="actor-icon">📉</div>
+                        <h4>The Scale Effect</h4>
+                        <div class="actor-goal">Cost Impact</div>
+                        <p>Si le salaire augmente, le coût marginal de production global augmente. L'entreprise produit
+                            moins de $Q$ au total, et donc, demande globalement <strong>moins des deux inputs</strong>
+                            (Capital et Labour).</p>
+                    </div>
+                </div>
+
+                <div class="concept-card explanation">
+                    <h4>🔍 Deep Dive : Isoquants & Isocosts</h4>
+                    <p>Le choix optimal à long terme se trouve au point de tangence entre l'<strong>Isoquante</strong>
+                        (qui représente toutes les combinaisons de L et K produisant le même Output Q) et la droite
+                        d'<strong>Isocoût</strong> (qui représente le budget total $C = wL + rK$).<br><br>
+                        Condition d'optimalité à long terme : La pente de l'isoquante (Le Taux Marginal de Substitution
+                        Technique - $MRTS$) doit égaler le ratio des prix des inputs :<br>
+                        <strong>$MRTS = \frac{MP_L}{MP_K} = \frac{w}{r}$</strong>
+                    </p>
+                </div>
+
+
+                <h2>🔗 IV. Elasticities of Labour Demand</h2>
+                <p>L'élasticité-prix de la demande de travail mesure la <em>sensibilité</em> de la quantité de travail
+                    demandée face à un changement du salaire (W).</p>
+
+                <!-- Math Block -->
+                <div class="math-block">
+                    \[ \eta_L = \frac{\% \Delta L}{\% \Delta W} \]
+                    <br>
+                    <small>L'élasticité est toujours négative (loi de la demande), mais on parle souvent de sa valeur
+                        absolue. Si $|\eta_L| > 1$, la demande est <strong>élastique</strong> (très réactive).</small>
+                </div>
+
+                <h3>Les 4 Lois de Hicks-Marshall (Marshall's Rules of Derived Demand)</h3>
+                <p>Ces lois expliquent <strong>pourquoi</strong> et <strong>quand</strong> la demande de travail sera
+                    plus ou moins élastique (plate ou pentue). La demande pour une catégorie spécifique de travail sera
+                    <strong>PLUS ÉLASTIQUE</strong> si :</p>
+
+                <!-- Custom Aesthetic List for Hicks-Marshall -->
+                <div style="display: flex; flex-direction: column; gap: 15px; margin: 25px 0;">
+
+                    <div
+                        style="background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid var(--clr-purple-primary); display: flex; align-items:flex-start; gap: 15px;">
+                        <span style="font-size: 1.5rem;">📱</span>
+                        <div>
+                            <h5 style="margin: 0 0 5px 0; font-size: 1.1rem; color: var(--clr-purple-primary);">1. The
+                                Elasticity of Product Demand is High</h5>
+                            <p style="margin: 0; font-size: 0.95rem;">(Consumer Demand Effect). Si les consommateurs
+                                sont très sensibles au prix du produit final, une hausse de salaire augmentera le prix
+                                du produit, détruisant massivement les ventes et donc les emplois (Scale effect massif).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid #3182CE; display: flex; align-items:flex-start; gap: 15px;">
+                        <span style="font-size: 1.5rem;">🤖</span>
+                        <div>
+                            <h5 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #2B6CB0;">2. Other Factors of
+                                Production can be Easily Substituted</h5>
+                            <p style="margin: 0; font-size: 0.95rem;">(Substitution Effect). S'il est facile, d'un point
+                                de vue technologique, d'automatiser un emploi ou d'utiliser du capital, les entreprises
+                                licencieront très vite à la moindre hausse de salaire.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid var(--clr-accent); display: flex; align-items:flex-start; gap: 15px;">
+                        <span style="font-size: 1.5rem;">📉</span>
+                        <div>
+                            <h5 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #C53030;">3. The Supply of Other
+                                Factors is Highly Elastic</h5>
+                            <p style="margin: 0; font-size: 0.95rem;">Si tu veux remplacer des travailleurs par des
+                                machines, mais que le prix des machines explose dès que tu en achètes, ça te freine. Si
+                                les machines peuvent être fournies à prix constant (offre élastique), l'entreprise
+                                substitue facilement.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid #2F855A; display: flex; align-items:flex-start; gap: 15px;">
+                        <span style="font-size: 1.5rem;">🍰</span>
+                        <div>
+                            <h5 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #22543D;">4. "The Importance of
+                                Being Unimportant"</h5>
+                            <p style="margin: 0; font-size: 0.95rem;">(Share of Total Costs). Si le coût de cette
+                                catégorie de travailleur représente une <strong>part énorme</strong> du coût total de
+                                l'entreprise, une hausse de salaire aura un impact dévastateur sur les coûts globaux.
+                                Plus la part est grande, plus la demande est élastique.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post-It Rose -->
+                <div class="post-it rose">
+                    <h4>💡 Exam Tip : Substitutes vs Complements</h4>
+                    <p>Faites très attention au <strong>Cross-Elasticity of Demand</strong> ! <br>
+                        Si le prix du Capital ($r$) baisse :<br>
+                        - L'effet de **substitution** te dit de virer des travailleurs (Gross Substitutes).<br>
+                        - L'effet d'**échelle** (Scale effect) te dit d'embaucher plus de monde car produire coûte moins
+                        cher (Gross Complements).<br>
+                        <strong>Lequel domine ? C'est LA question classique d'examen.</strong>
+                    </p>
+                </div>
+
             </section>
         </div>
     </main>
