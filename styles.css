@@ -1,0 +1,360 @@
+:root {
+    --clr-bg-main: #FAFAFA;
+    --clr-bg-card: #FFFFFF;
+    --clr-bg-sidebar: #2A1B38;
+    /* Violet très sombre */
+    --clr-sidebar-hover: #4A3060;
+    --clr-sidebar-border: #3E2750;
+    --clr-text-main: #2D3748;
+    --clr-text-muted: #718096;
+    --clr-purple-primary: #805AD5;
+    /* Violet principal vif */
+    --clr-purple-light: #FAF5FF;
+    /* Fond violet très clair */
+    --clr-purple-border: #D6BCFA;
+    --clr-accent: #D53F8C;
+    /* Rose/Magenta pour trancher */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    background-color: var(--clr-bg-sidebar);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--clr-sidebar-border);
+    flex-shrink: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.sidebar-header {
+    padding: 2rem 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid var(--clr-sidebar-border);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--clr-sidebar-border);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.accordion-header:hover {
+    background-color: var(--clr-sidebar-hover);
+    padding-left: 1.8rem;
+}
+
+.accordion-header .icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.accordion-content a {
+    display: block;
+    padding: 0.85rem 1.5rem 0.85rem 2.5rem;
+    color: #D6BCFA;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.accordion-content a:hover,
+.accordion-content a.active {
+    background-color: var(--clr-sidebar-hover);
+    color: white;
+    border-left: 3px solid var(--clr-accent);
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--clr-bg-main);
+    position: relative;
+}
+
+.page-header {
+    padding: 2.5rem 4rem;
+    background-color: var(--clr-bg-card);
+    border-bottom: 1px solid var(--clr-purple-border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    z-index: 5;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: var(--clr-purple-primary);
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.content-scroll {
+    flex-grow: 1;
+    padding: 2rem 4rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.lesson-section {
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+}
+
+/* TYPOGRAPHY */
+h2 {
+    color: var(--clr-purple-primary);
+    font-size: 1.75rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--clr-purple-light);
+    padding-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    color: var(--clr-text-main);
+    font-size: 1.35rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.7;
+    color: var(--clr-text-main);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+strong {
+    color: var(--clr-purple-primary);
+    font-weight: 700;
+}
+
+/* COMPONENTS */
+
+/* 1. Maths Blocks */
+.math-block {
+    background-color: var(--clr-bg-card);
+    border: 2px dashed var(--clr-purple-primary);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    text-align: center;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: var(--clr-text-main);
+    box-shadow: 0 4px 15px rgba(128, 90, 213, 0.1);
+    font-size: 1.1rem;
+    position: relative;
+}
+
+/* 2. Code Blocks (Dark Mode) */
+.code-block {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    overflow-x: auto;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5), 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.code-block::before {
+    content: "TERMINAL";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0.2rem 0.8rem;
+    font-size: 0.7rem;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+/* 3. Concept Cards */
+.concept-card {
+    background-color: var(--clr-bg-card);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.concept-card p:last-child {
+    margin-bottom: 0;
+}
+
+.concept-card.definition {
+    border-left: 4px solid #3182CE;
+    background-color: #EBF8FF;
+}
+
+.concept-card.explanation {
+    border-left: 4px solid var(--clr-purple-primary);
+    background-color: var(--clr-purple-light);
+}
+
+.concept-card.warning {
+    border-left: 4px solid #E53E3E;
+    background-color: #FFF5F5;
+}
+
+.concept-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.concept-card.definition h4 {
+    color: #2B6CB0;
+}
+
+.concept-card.explanation h4 {
+    color: #6B46C1;
+}
+
+.concept-card.warning h4 {
+    color: #C53030;
+}
+
+/* 4. Post-it / Tips */
+.post-it {
+    background-color: #E9D8FD;
+    /* Violet pastel */
+    padding: 1.5rem 2rem;
+    margin: 3rem auto;
+    width: 85%;
+    max-width: 450px;
+    transform: rotate(-1deg);
+    box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 2px 2px 15px 2px;
+    color: var(--clr-text-main);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.post-it:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.post-it::after {
+    /* Tape effect */
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transform: translateX(-50%) rotate(-2deg);
+}
+
+.post-it.rose {
+    background-color: #FED7E2;
+    /* Pink pastel */
+    transform: rotate(1.5deg);
+}
+
+.post-it.rose::after {
+    transform: translateX(-50%) rotate(2deg);
+}
+
+.post-it h4 {
+    margin-top: 0;
+    color: var(--clr-accent);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.post-it p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--clr-bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-purple-border);
+}
