@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labour Economics - Labour Supply</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
+        rel="stylesheet">
+    <!-- MathJax for LaTeX support -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            🎓 Labour Economics
+        </div>
+
+        <!-- Accordion 1 -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 1. Labour Supply and Demand</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content active" style="max-height: 500px;">
+                <a href="index.html">Introduction, Labour markets, Labour econ</a>
+                <a href="labour-demand.html">Model of labour demand, Elasticities</a>
+                <a href="labour-supply.html" class="active">Model of labour supply, Frictions</a>
+            </div>
+        </div>
+
+        <!-- Accordion 2 -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 2. Wage Differentials</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="#"><em>[À venir]</em></a>
+            </div>
+        </div>
+
+        <!-- Accordion 3 -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 3. Institutional Environment</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="#"><em>[À venir]</em></a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="page-header">
+            <h1>Model of labour supply, Labour market frictions</h1>
+        </header>
+
+        <!-- CONTENT AREA -->
+        <div class="content-scroll">
+            <section class="lesson-section">
+                <h2>📉 Model of Labour Supply</h2>
+                <p><em>Contenu à venir...</em></p>
+            </section>
+        </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.icon');
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = "rotate(-180deg)";
+            }
+        }
+    </script>
+</body>
+
+</html>

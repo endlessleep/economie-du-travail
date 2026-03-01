@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiche de Révision - Purple Mood</title>
+    <title>Labour Economics - Introduction</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
@@ -19,30 +19,43 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            🎓 Mes Fiches
+            🎓 Labour Economics
         </div>
 
         <!-- Accordion 1 -->
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>1. Introduction</span>
+                <span>📂 1. Labour Supply and Demand</span>
                 <span class="icon">▼</span>
             </button>
             <div class="accordion-content active" style="max-height: 500px;">
-                <a href="#" class="active">1.1 Intuition Fondamentale</a>
-                <a href="#">1.2 Mathématiques Base</a>
+                <a href="index.html" class="active">Introduction, Labour markets, Labour econ</a>
+                <a href="labour-demand.html">Model of labour demand, Elasticities</a>
+                <a href="labour-supply.html">Model of labour supply, Frictions</a>
             </div>
         </div>
 
         <!-- Accordion 2 -->
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>2. Modèles Avancés</span>
+                <span>📂 2. Wage Differentials</span>
                 <span class="icon">▼</span>
             </button>
             <div class="accordion-content">
-                <a href="#">2.1 Modèle Black-Scholes</a>
-                <a href="#">2.2 Arbres Binomiaux</a>
+                <!-- Vierge pour l'instant -->
+                <a href="#"><em>[À venir]</em></a>
+            </div>
+        </div>
+
+        <!-- Accordion 3 -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 3. Institutional Environment</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <!-- Vierge pour l'instant -->
+                <a href="#"><em>[À venir]</em></a>
             </div>
         </div>
     </aside>
@@ -51,101 +64,74 @@
     <main class="main-content">
         <!-- HEADER -->
         <header class="page-header">
-            <h1>1.1 Intuition Fondamentale & Mathématiques</h1>
+            <h1>Introduction, Labour Markets, Labour Economics</h1>
         </header>
 
         <!-- CONTENT AREA -->
         <div class="content-scroll">
 
             <section class="lesson-section">
-                <h2>🧠 Intuition Derrière le Modèle</h2>
-                <p>Avant de plonger dans des mathématiques complexes, il est essentiel de comprendre
-                    <strong>l'intuition</strong> et la logique du modèle. Le but est d'estimer et de simuler la
-                    trajectoire d'un actif financier sur le long terme tout en prenant en compte l'incertitude et la
-                    valeur temporelle de l'argent.</p>
-
-                <!-- Concept Card: Definition -->
-                <div class="concept-card definition">
-                    <h4>Définition : Actif Sous-Jacent</h4>
-                    <p>Un actif sous-jacent est un instrument financier (comme une action, une obligation ou une devise)
-                        sur lequel porte un produit dérivé (comme une option). Le prix final ou le gain du dérivé dérive
-                        entièrement de la valeur de ce sous-jacent.</p>
-                </div>
-
-                <h2>⚙️ Modélisation Mathématique (Processus de diffusion)</h2>
-                <p>Pour décrire comment le prix varie dans le temps, nous utilisons généralement une Équation
-                    Différentielle Stochastique (EDS) qui combine une tendance prévisible et un choc aléatoire.</p>
+                <h2>🧠 Introduction à l'Économie du Travail</h2>
+                <p>Bienvenue dans le cours d'Économie du Travail (Labour Economics). L'un des prérequis philosophiques
+                    et économiques fondamentaux de ce cours est la compréhension du fait que <strong>le travail n'est
+                        pas une "marchandise" comme les autres</strong>.</p>
 
                 <!-- Concept Card: Explanation -->
                 <div class="concept-card explanation">
-                    <h4>Hypothèse de base : Mouvement Brownien Géométrique (GBM)</h4>
-                    <p>Nous faisons l'hypothèse très forte que le <strong>rendement</strong> de l'actif suit une
-                        distribution normale, ce qui implique que son <strong>prix</strong> suit une distribution
-                        log-normale. Cette subtilité est cruciale car elle garantit que le prix restera toujours
-                        strictement positif (une action ne peut pas valoir -10€).</p>
+                    <h4>Le Travail : Une Marchandise Spéciale</h4>
+                    <p>Contrairement aux biens physiques (comme les pommes ou le pétrole), le travail humain possède des
+                        caractéristiques uniques qui rendent son marché fondamentalement différent des marchés standards
+                        étudiés en microéconomie classique :</p>
+                    <ul>
+                        <li><strong>Indivisibilité :</strong> L'effort ne peut pas être séparé de la personne qui le
+                            fournit.</li>
+                        <li><strong>Contrats Incomplets :</strong> Un contrat de travail ne peut jamais spécifier
+                            parfaitement l'effort que va fournir le travailleur pour chaque tâche.</li>
+                        <li><strong>Institutions et Régulations :</strong> Le marché du travail est fortement encadré
+                            par des lois (salaire minimum, droit du travail, syndicats).</li>
+                    </ul>
                 </div>
+
+                <h2>📊 Le Marché du Travail</h2>
+                <p>Le marché du travail est le lieu de rencontre entre l'offre de travail (provenant des individus, les
+                    travailleurs) et la demande de travail (provenant des entreprises).</p>
+
+                <!-- Placeholder Image wrapped in a Concept Card per instructions -->
+                <div class="concept-card">
+                    <h4>Graphique: Équilibre Basique du Marché du Travail</h4>
+                    <img src="images/placeholder.png" alt="Graphique de l'offre et de la demande de travail"
+                        style="max-width: 100%; border-radius: 8px; margin-top: 10px;">
+                    <p style="text-align: center; color: var(--clr-text-muted); font-size: 0.9em; margin-top: 10px;">
+                        <em>(Le graphique illustrant l'équilibre sera inséré ici)</em>
+                    </p>
+                </div>
+
+                <h2>⚙️ Outils Mathématiques</h2>
+                <p>Pour modéliser ce comportement, nous utilisons souvent des fonctions de production de type
+                    Cobb-Douglas ou plus générales, notées \( F(K,L) \), ainsi que des fonctions d'utilité \( U(C, L)
+                    \), où \( C \) est la consommation et \( L \) le loisir (ou le travail).</p>
 
                 <!-- Math Block -->
                 <div class="math-block">
-                    \[ dS_t = \mu S_t dt + \sigma S_t dW_t \]
+                    \[ Y = F(K, L) \]
                     <br>
-                    <small>Où \( \mu \) est la dérive / taux de rendement espéré, \( \sigma \) est la volatilité, et \(
-                        dW_t \) est l'incrément brownien.</small>
+                    <small>Où \( Y \) est l'output (la production), \( K \) le capital et \( L \) le travail.</small>
                 </div>
-
-                <h2>💻 Implémentation en Python (Simulation de Monte-Carlo)</h2>
-                <p>En informatique, il n'y a pas de variables continues. Pour simuler ce modèle dans la "vraie vie",
-                    nous devons utiliser la solution exacte de l'EDS, discrétisée en petits sauts de temps \(\Delta t\).
-                </p>
-
-                <!-- Code Block -->
-                <div class="code-block">
-                    <pre><code>import numpy as np
-import matplotlib.pyplot as plt
-
-# 1. Paramètres initiaux
-S0 = 100.0      # Prix initial de l'action ($)
-mu = 0.05       # Taux de croissance attendu (5%)
-sigma = 0.2     # Volatilité annuelle (20%)
-T = 1.0         # Horizon de temps (1 an)
-dt = 1/252      # Pas de temps (jours de trading)
-
-# 2. Simulation des trajectoires
-N = int(T / dt)
-t = np.linspace(0, T, N)
-
-# Génération d'un bruit blanc Gaussien (Chocs)
-W = np.random.standard_normal(size=N) 
-W = np.cumsum(W) * np.sqrt(dt)
-
-# Solution exacte du Mouvement Brownien Géométrique
-S = S0 * np.exp((mu - 0.5 * sigma**2) * t + sigma * W)</code></pre>
-                </div>
-
-                <!-- Concept Card: Warning -->
-                <div class="concept-card warning">
-                    <h4>⚠️ Erreur Fréquente (Ajustement d'Itô)</h4>
-                    <p>Dans la formule exponentielle du code ci-dessus, il ne faut surtout pas oublier de soustraire \(
-                        \frac{1}{2}\sigma^2 \) à \( \mu \). C'est ce qu'on appelle "l'ajustement convexe d'Itô". Les
-                        étudiants oublient très souvent ce terme à l'examen !</p>
-                </div>
-
-                <h2>🚀 Conseils pour briller à l'examen</h2>
 
                 <!-- Post-It Purple -->
                 <div class="post-it">
-                    <h4>💡 Exam Tip : Calcul des Probabilités</h4>
-                    <p>Si la question demande <em>"Quelle est la probabilité que \( S_T > K \) ?"</em>, ne vous lancez
-                        pas dans des intégrales impossibles de loi log-normale ! Appliquez le log naturel de chaque côté
-                        pour retomber sur une loi normale centrée réduite classique : \( \mathcal{N}(0, 1) \).</p>
+                    <h4>💡 Exam Tip : Objectif de l'Agent</h4>
+                    <p>Rappelez-vous toujours que l'objectif principal du travailleur est de <strong>maximiser son
+                            utilité</strong> sous contrainte budgétaire, tandis que l'objectif de l'entreprise est de
+                        <strong>maximiser son profit</strong>. Ce sont ces deux forces qui déterminent l'équilibre !</p>
                 </div>
 
-                <!-- Post-It Rose (Excel) -->
-                <div class="post-it rose">
-                    <h4>📊 Pro Tip Excel / VBA</h4>
-                    <p>Pour calculer la valeur exacte de "N(d1)" ou "N(d2)" dans le tableur Excel (très utilisé en salle
-                        de marché), utilisez toujours la fonction intégrée
-                        <code>=LOI.NORMALE.STANDARD.N(d1; VRAI)</code>.</p>
+                <!-- Concept Card: Definition -->
+                <div class="concept-card definition">
+                    <h4>Définition : Labour Economics</h4>
+                    <p>L'économie du travail est l'étude du fonctionnement et de la dynamique des marchés pour le
+                        travail salarié. Elle cherche à comprendre la relation entre les travailleurs, les employeurs,
+                        et les institutions.</p>
                 </div>
 
             </section>
@@ -158,19 +144,10 @@ S = S0 * np.exp((mu - 0.5 * sigma**2) * t + sigma * W)</code></pre>
             const content = button.nextElementSibling;
             const icon = button.querySelector('.icon');
 
-            // Si l'élément est déjà ouvert
             if (content.style.maxHeight && content.style.maxHeight !== '0px') {
                 content.style.maxHeight = '0px';
                 icon.style.transform = "rotate(0deg)";
             } else {
-                // Fermer tous les autres (optionnel, selon l'UX voulue)
-                /*
-                document.querySelectorAll('.accordion-content').forEach(el => {
-                    el.style.maxHeight = '0px';
-                    el.previousElementSibling.querySelector('.icon').style.transform = "rotate(0deg)";
-                });
-                */
-                // Ouvrir l'élément cliqué
                 content.style.maxHeight = content.scrollHeight + 'px';
                 icon.style.transform = "rotate(-180deg)";
             }
