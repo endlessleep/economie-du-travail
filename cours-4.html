@@ -27,6 +27,9 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
+            </button>
         </div>
 
         <div class="accordion-item">
@@ -46,7 +49,11 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
         <!-- HEADER -->
-        <header class="page-header">
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
             <h1>Labour Market Frictions</h1>
         </header>
 
@@ -70,21 +77,19 @@
 
                 <div class="actors-grid" style="grid-template-columns: 1fr; margin-top: 1rem; margin-bottom: 2rem;">
                     <div class="actor-card worker" style="border-top-color: #3182CE;">
-                        <h4 style="color:#2B6CB0; margin-bottom: 15px;">Les Coûts de Recherche (Job Search Costs)</h4>
-                        <p>Trouver le "bon" emploi prend du temps. Ce simple fait a des conséquences économiques
-                            majeures :</p>
+                        <h4 style="color:#2B6CB0; margin-bottom: 15px;">Job Search Costs</h4>
+                        <p>Finding the "right" job takes time. This simple fact has major economic consequences:</p>
                         <ul style="margin-top: 10px;">
-                            <li><strong>Le Chômage frictionnel :</strong> Ces coûts de recherche expliquent pourquoi le
-                                chômage existe <em>même</em> lorsque des emplois sont disponibles. Les travailleurs
-                                prennent du temps pour scanner le marché et trouver la bonne offre.</li>
-                            <li><strong>L'Ancienneté et l'Expérience :</strong> Plus une personne passe de temps sur le
-                                marché du travail, plus elle a de chances de tomber sur un "bon" emploi rémunérateur (ou
-                                de quitter un "mauvais" emploi). Ainsi, <em>les salaires tendent à augmenter
-                                    spontanément avec l'expérience globale et l'ancienneté (job tenure)</em>.</li>
-                            <li><strong>Inertie Salariale :</strong> Les travailleurs qui sont satisfaits (High Wage) ne
-                                vont pas dépenser de l'énergie à chercher ailleurs. Ceux qui restent longtemps chez un
-                                emloyeur ont donc par défaut tendance à avoir des salaires plus élevés, justifiant leur
-                                sédentarité.</li>
+                            <li><strong>Frictional Unemployment:</strong> These search costs explain why unemployment
+                                exists <em>even</em> when jobs are available. Workers take time to scan the market and
+                                find the right offer.</li>
+                            <li><strong>Seniority and Experience:</strong> The more time a person spends in the labor
+                                market, the more likely they are to land a "good" paying job (or to leave a "bad" one).
+                                Thus, <em>wages naturally tend to increase with overall experience and job tenure</em>.
+                            </li>
+                            <li><strong>Wage Inertia:</strong> Satisfied workers (High Wage) will not spend energy
+                                looking elsewhere. Those who stay with an employer for a long time thus naturally tend
+                                to have higher wages, justifying their sedentary behavior.</li>
                         </ul>
                     </div>
                 </div>
@@ -98,7 +103,7 @@
                         style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--clr-purple-border);">
                 </div>
 
-                <h3>2. Le Pouvoir de Monopsone (Monopsony Power)</h3>
+                <h3>2. Monopsony Power</h3>
                 <div class="concept-card warning" style="margin-bottom: 2rem;">
                     <h4>What is a Monopsony?</h4>
                     <p>A <strong>Monopsony</strong> is the exact opposite of a Monopoly: it occurs when there is only a
@@ -326,6 +331,32 @@
 
     <!-- SCRIPTS -->
     <script>
+        // Check for saved sidebar state
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            sidebar.classList.toggle('collapsed');
+
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('.icon');

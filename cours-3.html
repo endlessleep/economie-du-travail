@@ -27,6 +27,9 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
+            </button>
         </div>
 
         <div class="accordion-item">
@@ -46,7 +49,11 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
         <!-- HEADER -->
-        <header class="page-header">
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
             <h1>The Microeconomics of Labour Demand</h1>
         </header>
 
@@ -61,22 +68,20 @@
                 <h3>1. The Decision Rule: Marginal Analysis</h3>
 
                 <div class="concept-card explanation" style="margin-bottom: 2rem;">
-                    <h4>La Demande Dérivée et l'Analyse Marginale</h4>
-                    <p>La demande de travail est une <strong>demande dérivée (Derived Demand)</strong>. Cela signifie
-                        qu'une entreprise n'embauche pas des travailleurs pour le simple plaisir d'embaucher, mais
-                        uniquement parce qu'il y a une demande pour le produit final que ces travailleurs vont
-                        fabriquer.</p>
-                    <p>Pour savoir combien de travailleurs embaucher, l'entreprise (qui cherche toujours à
-                        <strong>maximiser son profit</strong>) utilise <strong>l'analyse marginale</strong>. L'idée
-                        centrale est de comparer ce que rapporte un travailleur supplémentaire (Total Revenue - TR) par
-                        rapport à ce qu'il coûte (Total Cost - TC).
+                    <h4>Derived Demand and Marginal Analysis</h4>
+                    <p>Labour demand is a <strong>Derived Demand</strong>. This means that a firm does not hire workers
+                        for the simple pleasure of hiring, but only because there is demand for the final product that
+                        these workers will manufacture.</p>
+                    <p>To know how many workers to hire, the firm (which always seeks to <strong>maximize its
+                            profit</strong>) uses <strong>marginal analysis</strong>. The central idea is to compare
+                        what an additional worker brings in (Total Revenue - $TR$) against what they cost (Total Cost -
+                        $TC$).
                     </p>
                     <ul style="margin-top: 15px;">
-                        <li><strong>Marginal Revenue Product ($MRP_L$) :</strong> C'est le revenu supplémentaire direct
-                            apporté par l'embauche d'un travailleur de plus. Il se calcule en multipliant la
-                            productivité marginale ($MP_L$) par le revenu marginal généré ($MR$). Dans un marché
-                            parfaitement concurrentiel, le revenu marginal est simplement le prix du produit ($P$). Donc
-                            $MRP_L = MP_L \times P$.</li>
+                        <li><strong>Marginal Revenue Product ($MRP_L$):</strong> This is the direct additional revenue
+                            brought by hiring one more worker. It is calculated by multiplying the marginal productivity
+                            ($MP_L$) by the marginal revenue generated ($MR$). In a perfectly competitive market, the
+                            marginal revenue is simply the product price ($P$). Therefore $MRP_L = MP_L \times P$.</li>
                         <li><strong>Marginal Cost of Labour ($MC_L$):</strong> This is the additional cost associated
                             with hiring that exact same worker. In a competitive labor market, the firm is a "wage
                             taker", meaning this marginal cost is strictly equal to the wage ($W$).</li>
@@ -437,6 +442,32 @@
 
     <!-- SCRIPTS -->
     <script>
+        // Check for saved sidebar state
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            sidebar.classList.toggle('collapsed');
+
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('.icon');

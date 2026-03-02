@@ -27,6 +27,9 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
+            </button>
         </div>
 
         <div class="accordion-item">
@@ -46,7 +49,11 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
         <!-- HEADER -->
-        <header class="page-header">
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
             <h1>Labour Market Dynamics & Equilibrium</h1>
         </header>
 
@@ -54,30 +61,26 @@
         <div class="content-scroll">
             <section class="lesson-section">
 
-                <h2>🏭 I. Labour Demand Theory (\( L^d \))</h2>
                 <h2>🏭 I. Labour Demand Theory ($L^d$)</h2>
                 <div class="concept-card explanation" style="margin-bottom: 2rem;">
-                    <p>La demande de travail des entreprises est une <strong>demande dérivée (derived demand)</strong>.
-                        Cela signifie qu'aucune entreprise n'embauche pour le plaisir d'embaucher. Le niveau d'emploi
-                        dépend <em>entièrement</em> de la demande des consommateurs pour le produit final fabriqué par
-                        l'entreprise.</p>
+                    <p>Firms' demand for labor is a <strong>derived demand</strong>. This means that no firm hires for
+                        the sake of hiring. The level of employment depends <em>entirely</em> on consumer demand for the
+                        final product manufactured by the firm.</p>
                 </div>
 
-                <h3>1. The Slope of the Demand Curve (Pourquoi la courbe descend ?)</h3>
-                <p>La courbe de demande de travail ($L^d$) est décroissante (downward sloping) par rapport au salaire.
-                    Si le salaire ($W$) augmente, l'emploi ($L$) baisse. Selon la théorie néoclassique, cette relation
-                    stricte s'explique par la combinaison obligée de deux effets fondamentaux :</p>
+                <h3>1. The Slope of the Demand Curve</h3>
+                <p>The labor demand curve ($L^d$) is downward sloping with respect to the wage. If the wage ($W$)
+                    increases, employment ($L$) decreases. According to neoclassical theory, this strict relationship is
+                    explained by the obligatory combination of two fundamental effects:</p>
 
                 <div class="actors-grid" style="grid-template-columns: 1fr; margin-top: 15px; gap: 15px;">
                     <div class="actor-card firm" style="border-top-color: #3182CE;">
-                        <h4 style="color:#2B6CB0; margin-bottom: 10px;">L'Effet de Substitution (Substitution Effect)
-                        </h4>
+                        <h4 style="color:#2B6CB0; margin-bottom: 10px;">The Substitution Effect</h4>
                         <p>($\uparrow W \rightarrow \downarrow L, \uparrow K$)</p>
-                        <p>Lorsque le travail humain devient soudainement plus cher (hausse des salaires), la firme,
-                            agissant rationnellement, va modifier sa méthode de production : elle substitue ce travail
-                            désormais onéreux par d'autres ressources de production devenues <em>relativement</em> moins
-                            chères. Typiquement, elle remplace les travailleurs par du Capital ($K$), comme des
-                            machines, des caisses automatiques ou de l'Intelligence Artificielle.</p>
+                        <p>When human labor suddenly becomes more expensive (wage increase), the rational firm will
+                            change its production method: it substitutes this now expensive labor with other production
+                            resources that have become <em>relatively</em> cheaper. Typically, it replaces workers with
+                            Capital ($K$), such as machines, self-checkout kiosks, or Artificial Intelligence.</p>
                     </div>
 
                     <div class="actor-card gov" style="border-top-color: #C53030;">
@@ -212,7 +215,8 @@
                     <p><strong>At the Market Level:</strong> This is the pure confrontation of upward-sloping total
                         supply and downward-sloping total demand. Their dictatorial intersection determines the
                         <strong>Going Wage</strong>, a "Market-clearing wage" ($W^*$) with zero unemployment, where no
-                        labor shortage exists.</p>
+                        labor shortage exists.
+                    </p>
                     <p><strong>At the Firm Level (The Wage Taker):</strong>
                         Faced with this massive ocean of a market, a single firm is just a drop of water. It has
                         absolutely <em>no power</em> to influence or lower wages (otherwise, nobody comes to work for
@@ -372,6 +376,32 @@
 
     <!-- SCRIPTS -->
     <script>
+        // Check for saved sidebar state
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            sidebar.classList.toggle('collapsed');
+
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('.icon');

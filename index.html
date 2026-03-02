@@ -27,6 +27,9 @@
     <aside class="sidebar">
         <div class="sidebar-header">
             🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
+            </button>
         </div>
 
         <div class="accordion-item">
@@ -46,7 +49,11 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
         <!-- HEADER -->
-        <header class="page-header">
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
             <h1>1. Introduction & Labour Market Status</h1>
         </header>
 
@@ -87,7 +94,8 @@
                         health and safety, right to strike, etc.) unlike the sale of a chair.</li>
                     <li><strong>Non-Pecuniary Properties:</strong> The contract does not stop at the wage. It includes
                         <em>the nature of the work, the level of responsibilities, and the physical and social work
-                            environment</em>. Humans care about their conditions.</li>
+                            environment</em>. Humans care about their conditions.
+                    </li>
                     <li><strong>Information Asymmetry:</strong> When hiring, the employer does not know the true
                         productivity of a candidate, and the candidate does not know the true wage or long-term
                         conditions over the employment spell.</li>
@@ -256,6 +264,32 @@
 
     <!-- SCRIPTS -->
     <script>
+        // Check for saved sidebar state
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            sidebar.classList.toggle('collapsed');
+
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('.icon');
