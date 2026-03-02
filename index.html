@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
         rel="stylesheet">
     <!-- MathJax for LaTeX support -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -29,9 +36,9 @@
                 <span class="icon">▼</span>
             </button>
             <div class="accordion-content active" style="max-height: 500px;">
-                <a href="index.html" class="active">Introduction, Labour Market Status</a>
-                <a href="labour-demand.html">Model of labour demand, Elasticities</a>
-                <a href="labour-supply.html">Model of labour supply, Frictions</a>
+                <a href="index.html" class="active">1. Intro & Labour Market Status</a>
+                <a href="labour-supply.html">2. Dynamics & Equilibrium</a>
+                <a href="labour-demand.html">3. The Microeconomics of Demand</a>
             </div>
         </div>
 

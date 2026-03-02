@@ -4,12 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labour Economics - Labour Demand</title>
+    <title>Labour Economics - Dynamics & Equilibrium</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
         rel="stylesheet">
     <!-- MathJax for LaTeX support -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -29,9 +36,9 @@
                 <span class="icon">▼</span>
             </button>
             <div class="accordion-content active" style="max-height: 500px;">
-                <a href="index.html">Introduction, Labour Market Status</a>
-                <a href="labour-demand.html" class="active">Model of labour demand, Elasticities</a>
-                <a href="labour-supply.html">Labour Market Dynamics & Equilibrium</a>
+                <a href="index.html">1. Intro & Labour Market Status</a>
+                <a href="labour-supply.html">2. Dynamics & Equilibrium</a>
+                <a href="labour-demand.html" class="active">3. The Microeconomics of Demand</a>
             </div>
         </div>
 
@@ -62,239 +69,233 @@
     <main class="main-content">
         <!-- HEADER -->
         <header class="page-header">
-            <h1>The Microeconomics of Labour Demand</h1>
+            <h1>Labour Market Dynamics & Equilibrium</h1>
         </header>
 
         <!-- CONTENT AREA -->
         <div class="content-scroll">
             <section class="lesson-section">
 
-                <h2>⏱️ I. Short-Run Labour Demand (SRLD)</h2>
-                <p>In the <strong>short run</strong>, capital ($K$) is fixed. The firm can only vary the amount of
-                    labour ($L$) it employs to adjust its production.</p>
+                <h2>🏭 I. Labour Demand Theory (\( L^d \))</h2>
+                <p>Labour demand is a <strong>derived demand</strong>—it depends entirely on the demand for the product
+                    the labour produces.</p>
 
-                <h3>1. The Decision Rule: Marginal Analysis</h3>
+                <h3>1. The Slope of the Demand Curve</h3>
+                <p>The curve is downward sloping due to two critical effects:</p>
+                <ul>
+                    <li><strong>Substitution Effect:</strong> When wages rise, firms replace expensive labour with other
+                        resources (like machines/AI).</li>
+                    <li><strong>Scale Effect:</strong>
+                        <ol style="margin-top: 5px;">
+                            <li>Wage \( \uparrow \) \( \rightarrow \) Production Costs \( \uparrow \).</li>
+                            <li>Product Price \( \uparrow \) \( \rightarrow \) Quantity demanded by consumers \(
+                                \downarrow \).</li>
+                            <li>Firms scale down production \( \rightarrow \) Use of <strong>all inputs</strong>
+                                (including labour) \( \downarrow \).</li>
+                        </ol>
+                    </li>
+                </ul>
 
-                <div class="concept-card explanation">
-                    <h4>The Golden Rule of Hiring</h4>
-                    <p>A firm maximizes profit by comparing the <strong>cost</strong> of an additional worker to the
-                        <strong>revenue</strong> that specific worker generates. It's a pure cost-benefit analysis at
-                        the margin.</p>
-                    <ul style="margin-top: 10px;">
-                        <li><strong>Marginal Revenue Product ($MRP_L$):</strong> The additional revenue from hiring one
-                            more worker ($MRP_L = MP_L \times MR$).</li>
-                        <li><strong>Marginal Cost of Labour ($MC_L$):</strong> The additional cost of hiring one more
-                            worker. In a perfect competitive market, $MC_L = \text{Wage } (W)$.</li>
-                    </ul>
-                </div>
-
-                <h3>2. Profit Maximization Conditions</h3>
-                <p>The firm will rationally continue hiring as long as $MRP_L > MC_L$. <strong>Profit is maximized
-                        exactly when the two equalize.</strong></p>
-
-                <!-- Math Block -->
-                <div class="math-block">
-                    \[ MRP_L = MC_L \]
-                    <hr style="border:0; border-top:1px dashed var(--clr-purple-border); margin: 15px 0;">
-                    <small>In a competitive product market where Marginal Revenue equals Price ($MR = P$):</small>
-                    <br><br>
-                    \[ P \times MP_L = W \implies MP_L = \frac{W}{P} \]
-                </div>
-
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem;">
-                    <div class="concept-card" style="flex: 1; min-width: 300px;">
-                        <img src="images/marginal_cost_structure.png" alt="Marginal Cost Structure"
-                            style="max-width: 100%; height: auto; border-radius: 8px;">
-                    </div>
-                    <div class="concept-card" style="flex: 1; min-width: 300px;">
-                        <img src="images/mrp_market_competition.png" alt="MRP in Competitive Market"
-                            style="max-width: 100%; height: auto; border-radius: 8px;">
-                    </div>
-                </div>
-
-                <h3>3. The Marginal Product Curve</h3>
-                <div class="concept-card definition">
-                    <h4>The Law of Diminishing Returns</h4>
-                    <p>Due to the Law of Diminishing Returns, the $MP_L$ eventually declines because each additional
-                        worker has less fixed capital (machines/space) to work with. <strong>The firm always hires on
-                            the downward-sloping segment of the $MP_L$ curve.</strong></p>
-                </div>
-
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem;">
-                    <div class="concept-card" style="flex: 1; min-width: 300px;">
-                        <img src="images/marginal_product_curve.png" alt="Marginal Product Curve"
-                            style="max-width: 100%; height: auto; border-radius: 8px;">
-                    </div>
-                    <div class="concept-card" style="flex: 1; min-width: 300px;">
-                        <img src="images/sr_labour_demand_competitive.png" alt="Short Run Labour Demand"
-                            style="max-width: 100%; height: auto; border-radius: 8px;">
-                    </div>
-                </div>
-
-
-                <h2>🏗️ II. Long-Run Labour Demand (LRLD)</h2>
-                <p>In the <strong>long run</strong>, both Labour ($L$) and Capital ($K$) are variable. Firms choose the
-                    optimal mix of inputs based on their relative prices.</p>
-
-                <h3>1. Cost Minimization</h3>
-                <p>To maximize profits, the firm adjusts $L$ and $K$ so that the marginal cost of producing an extra
-                    unit of output is exactly the same across all inputs (the "Bang for your Buck" rule):</p>
-
-                <div class="math-block">
-                    \[ \frac{MP_L}{W} = \frac{MP_K}{C} \]
-                    <br>
-                    <small>Where $C$ is the rental cost of capital (or interest rate $r$).</small>
-                </div>
-
-                <h3>2. Responses to a Wage Hike ($\uparrow W$)</h3>
-
-                <div class="actors-grid">
-                    <div class="actor-card firm">
-                        <div class="actor-icon">🔄</div>
-                        <h4>Substitution Effect</h4>
-                        <p>Firms substitute relatively expensive labour for cheaper capital (e.g., buying self-checkout
-                            machines instead of cashiers).</p>
-                    </div>
-
-                    <div class="actor-card gov">
-                        <div class="actor-icon">📉</div>
-                        <h4>Scale Effect</h4>
-                        <p>Total production costs rise $\rightarrow$ Product price rises $\rightarrow$ Consumer demand
-                            falls $\rightarrow$ Firm shrinks and reduces use of <strong>all</strong> inputs.</p>
-                    </div>
-                </div>
-
-                <div class="concept-card" style="margin-top: 1rem;">
+                <!-- Concept Card with Image -->
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Graph: The Downward Sloping
+                        Demand Curve</h4>
                     <div style="text-align: center;">
-                        <img src="images/lr_demand_substitution_scale.png" alt="Long Run Demand Effects"
+                        <img src="images/demand_curve.png" alt="Labour Demand Curve"
+                            style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--clr-purple-border);">
+                    </div>
+                </div>
+
+                <h3>2. Shifts in Labour Demand</h3>
+                <p>A change in wage causes a <em>movement along</em> the curve. A <strong>shift</strong> of the entire
+                    curve is caused by external shocks:</p>
+                <ul>
+                    <li><strong>Product Demand:</strong> If the final product becomes popular, \( L^d \) shifts right.
+                    </li>
+                    <li><strong>Price of Other Resources:</strong> Changes in the cost of capital/machinery.</li>
+                    <li><strong>Technology:</strong> Shifts depending on whether tech complements or replaces workers.
+                    </li>
+                </ul>
+
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Graph: Shifts in Labour Demand
+                    </h4>
+                    <div style="text-align: center;">
+                        <img src="images/shifts_demand.png" alt="Shifts in Demand"
+                            style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--clr-purple-border);">
+                    </div>
+                </div>
+
+                <h3>3. Industry vs. Market Demand</h3>
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
+                    <div class="actor-card firm">
+                        <div class="actor-icon">🏭</div>
+                        <h4>Industry Demand</h4>
+                        <p>The sum of \( L^d \) curves for all firms producing the <strong>same output</strong> (e.g.,
+                            all car manufacturers).</p>
+                    </div>
+                    <div class="actor-card gov">
+                        <div class="actor-icon">🌐</div>
+                        <h4>Market Demand</h4>
+                        <p>The sum of \( L^d \) from <strong>all industries</strong> that hire that specific type of
+                            labour (e.g., all companies needing an accountant).</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Graph: Long-Run vs. Short-Run
+                        Demand</h4>
+                    <div style="text-align: center;">
+                        <img src="images/long_run_vs_short_run_demand.png" alt="Long Run vs Short Run Demand"
                             style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--clr-purple-border);">
                     </div>
                 </div>
 
 
-                <h2>🔗 III. Labour Demand Elasticities</h2>
-                <p>Elasticity measures how mathematically <strong>sensitive</strong> employment is to wage changes.</p>
+                <h2>📈 II. Market Labour Supply (\( L^s \))</h2>
+                <p>The market supply curve is upward sloping. As wages rise in a specific market:</p>
+                <ul>
+                    <li><strong>Intensive margin:</strong> Current workers choose to work more hours.</li>
+                    <li><strong>Extensive margin (Mobility):</strong> Workers from other markets switch to this one.
+                    </li>
+                    <li><strong>Participation:</strong> Inactive individuals (not in the labour force) choose to enter
+                        the market.</li>
+                </ul>
 
-                <h3>1. Own-Wage Elasticity ($\eta$)</h3>
-                <div class="math-block">
-                    \[ \eta = \frac{\% \Delta \text{ Employment}}{\% \Delta \text{ Wage}} \]
-                </div>
-
-                <div class="concept-card definition">
-                    <h4>Elastic vs. Inelastic Payroll Impact</h4>
-                    <p><strong>$|\eta| > 1$ (Elastic):</strong> Total payroll ($W \times L$) <strong>falls</strong> if
-                        wages rise. (The massive loss in jobs outweighs the higher wage for survivors).</p>
-                    <p><strong>$|\eta| < 1$ (Inelastic):</strong> Total payroll <strong>rises</strong> if wages rise.
-                                (Few jobs are lost, so the higher wages dominate the total payroll).</p>
-                </div>
-
-                <div class="concept-card" style="margin-top: 1rem;">
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Graph: The Upward Sloping Supply
+                        Curve</h4>
                     <div style="text-align: center;">
-                        <img src="images/labour_demand_elasticity_comparison.png" alt="Elasticity Comparison"
-                            style="max-width: 100%; height: auto; border-radius: 8px;">
+                        <img src="images/market_supply.png" alt="Market Supply Curve"
+                            style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--clr-purple-border);">
                     </div>
                 </div>
 
-                <h3>2. The Hicks-Marshall Laws of Derived Demand</h3>
-                <p>Labour demand is <strong>more elastic</strong> (firms will fire more readily when wages rise) when:
+                <h3>Shifts in Supply</h3>
+                <p>The entire Supply curve can shift left or right due to:</p>
+                <ul>
+                    <li><strong>Alternative Opportunities:</strong> Changes in wages in other competing markets.</li>
+                    <li><strong>Preferences:</strong> Changes in worker tastes (e.g., strong preference for remote
+                        work).</li>
+                    <li><strong>Demography:</strong> Aging populations or major migration flows.</li>
+                </ul>
+
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Graph: Shifts in Labour Supply
+                    </h4>
+                    <div style="text-align: center;">
+                        <img src="images/shifts_supply.png" alt="Shifts in Supply"
+                            style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--clr-purple-border);">
+                    </div>
+                </div>
+
+
+                <h2>⚖️ III. Equilibrium & Firm Behavior</h2>
+
+                <h3>1. Market vs. Individual Firm</h3>
+                <p>The <strong>Market</strong> determines the equilibrium wage at the intersection of aggregate \( L^s
+                    \) and \( L^d \).<br>
+                    For an <strong>Individual Firm</strong> in a perfectly competitive market, labour supply is
+                    perfectly elastic (horizontal). The firm is too small to influence the market price; it is a
+                    <strong>"wage taker"</strong>.
                 </p>
 
-                <div style="display: flex; flex-direction: column; gap: 15px; margin: 25px 0;">
-                    <div
-                        style="background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid var(--clr-purple-primary); display: flex; align-items:flex-start; gap: 15px;">
-                        <span style="font-size: 1.5rem;">📱</span>
-                        <div>
-                            <h5 style="margin: 0 0 5px 0; font-size: 1.1rem; color: var(--clr-purple-primary);">1.
-                                Product Demand is Highly Elastic</h5>
-                            <p style="margin: 0; font-size: 0.95rem;"><strong>(Scale Effect)</strong> If consumers
-                                easily boycott expensive products, any wage-driven price hike destroys sales and jobs
-                                massively.</p>
-                        </div>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div class="concept-card" style="flex: 1; min-width: 300px;">
+                        <h4 style="color: var(--clr-purple-primary); text-align: center;">Market Equilibrium</h4>
+                        <img src="images/equilibrium.png" alt="Market Equilibrium"
+                            style="max-width: 100%; height: auto; border-radius: 8px;">
                     </div>
-                    <div
-                        style="background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid #3182CE; display: flex; align-items:flex-start; gap: 15px;">
-                        <span style="font-size: 1.5rem;">🤖</span>
-                        <div>
-                            <h5 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #2B6CB0;">2. Other Factors Are
-                                Easily Substituted</h5>
-                            <p style="margin: 0; font-size: 0.95rem;"><strong>(Substitution Effect)</strong> If tech/AI
-                                exists to do the job, the firm switches instantly.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid var(--clr-accent); display: flex; align-items:flex-start; gap: 15px;">
-                        <span style="font-size: 1.5rem;">📉</span>
-                        <div>
-                            <h5 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #C53030;">3. Supply of Other Factors
-                                is Highly Elastic</h5>
-                            <p style="margin: 0; font-size: 0.95rem;">If buying machines doesn't artificially inflate
-                                the price of machines, firms will substitute smoothly.</p>
-                        </div>
-                    </div>
-                    <div
-                        style="background: white; border-radius: 8px; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 5px solid #2F855A; display: flex; align-items:flex-start; gap: 15px;">
-                        <span style="font-size: 1.5rem;">🍰</span>
-                        <div>
-                            <h5 style="margin: 0 0 5px 0; font-size: 1.1rem; color: #22543D;">4. Labour is a Large Share
-                                of Total Costs</h5>
-                            <p style="margin: 0; font-size: 0.95rem;">If wages are 80% of your expenses, a small wage
-                                hike is devastating. If they are 2%, you don't care.</p>
-                        </div>
+                    <div class="concept-card"
+                        style="flex: 1; min-width: 300px; border-left: 4px solid var(--clr-accent);">
+                        <h4 style="color: var(--clr-accent); text-align: center;">Firm as a Wage Taker</h4>
+                        <img src="images/firm_supply.png" alt="Firm Supply"
+                            style="max-width: 100%; height: auto; border-radius: 8px;">
                     </div>
                 </div>
 
-                <div class="concept-card" style="margin-top: 1rem;">
-                    <h4 style="color: var(--clr-purple-primary); text-align: center;">Hicks-Marshall Analysis Focus</h4>
-                    <div style="text-align: center;">
-                        <img src="images/hicks_marshall_3rd_law.png" alt="Hicks Marshall 3rd Law"
+                <h3>2. Shifts in Equilibrium (Comparative Statics)</h3>
+                <p>When the market is shocked, both wages (\( W \)) and employment (\( L \)) adjust to find the new
+                    crossing point:</p>
+
+                <div class="math-block"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: left; padding: 2rem;">
+                    <div><span style="color:#3182CE; font-weight:bold;">Demand Increase:</span> \( W \uparrow \), \( L
+                        \uparrow \)</div>
+                    <div><span style="color:#E53E3E; font-weight:bold;">Demand Decrease:</span> \( W \downarrow \), \( L
+                        \downarrow \)</div>
+                    <hr style="grid-column: 1 / -1; width: 100%; border-top: 1px dashed var(--clr-purple-primary);">
+                    <div><span style="color:#2F855A; font-weight:bold;">Supply Increase:</span> \( W \downarrow \), \( L
+                        \uparrow \)</div>
+                    <div><span style="color:#D69E2E; font-weight:bold;">Supply Decrease:</span> \( W \uparrow \), \( L
+                        \downarrow \)</div>
+                </div>
+
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem;">
+                    <div class="concept-card" style="flex: 1; min-width: 300px;">
+                        <img src="images/shifts_equilibrium_1.png" alt="Shift in Equilibrium 1"
+                            style="max-width: 100%; height: auto; border-radius: 8px;">
+                    </div>
+                    <div class="concept-card" style="flex: 1; min-width: 300px;">
+                        <img src="images/shifts_equilibrium_2.png" alt="Shift in Equilibrium 2"
                             style="max-width: 100%; height: auto; border-radius: 8px;">
                     </div>
                 </div>
 
 
-                <h2>🇪🇺 IV. Empirical Examples: EU Context</h2>
+                <h2>🇪🇺 IV. The "EU Reality": Disequilibrium & Institutions</h2>
+                <p>The Neoclassical Model assumes perfect flexibility. However, in Europe, <strong>non-market
+                        forces</strong> (laws, unions, regulations) often hold wages above the market-clearing level,
+                    potentially causing persistent, structural unemployment.</p>
 
-                <h3>1. The Payroll Tax Wedge</h3>
-                <div class="concept-card warning">
-                    <h4>The Tax Wedge Distortion</h4>
-                    <p>Taxes create a massive difference between what the firm actually pays (Gross Cost) and what the
-                        worker receives in their pocket (Net Wage). This "wedge" destroys mutually beneficial trades,
-                        reducing total employment in the EU compared to less-taxed regions.</p>
+                <h3>Where the Textbook Model Struggles</h3>
+
+                <div class="concept-card explanation">
+                    <h4>1. Wage Rigidity (Collective Bargaining)</h4>
+                    <p>Due to <strong>Collective Bargaining Agreements</strong> with strong unions, wages do not drop
+                        easily even when demand falls. Because wages are "sticky downwards," the market cannot clear via
+                        price.<br>
+                        <strong>Result:</strong> Instead of lower wages for everyone, the market adjusts rapidly through
+                        lower employment (layoffs) or fewer vacancies.
+                    </p>
                 </div>
 
-                <div class="concept-card" style="margin-top: 1rem;">
+                <div class="concept-card explanation">
+                    <h4>2. Adjustment Costs (EPL)</h4>
+                    <p>High hiring and firing costs, driven by strict <strong>Employment Protection Legislation
+                            (EPL)</strong>, mean firms are terrified to hire on permanent contracts. When a shock hits,
+                        they respond by freezing hiring or using extreme flexibility via temporary contracts rather than
+                        adjusting wages.</p>
+                </div>
+
+                <div class="concept-card explanation">
+                    <h4>3. Skill Mismatch</h4>
+                    <p>The simple model assumes all labour is homogeneous. In reality, firms often have high vacancies
+                        but <strong>cannot hire</strong> because the unemployed lack the specific required skills
+                        (Essentially, there are multiple disconnected \( L^d \) and \( L^s \) curves for different
+                        skills).</p>
+                </div>
+
+                <div class="concept-card warning" style="margin-top: 2rem;">
+                    <h4 style="color: #C53030; margin-bottom: 1rem;">Graph: Impact of Collective Bargaining</h4>
                     <div style="text-align: center;">
-                        <img src="images/payroll_tax_impact.png" alt="Payroll Tax Impact"
-                            style="max-width: 100%; height: auto; border-radius: 8px;">
-                    </div>
-                </div>
-
-                <h3>2. Automation Threshold: Germany vs. Czechia</h3>
-
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
-                    <div class="actor-card worker" style="border-top-color: #2F855A;"> <!-- Green for Germany -->
-                        <div class="actor-icon">🇩🇪</div>
-                        <h4>Germany (€46/hr)</h4>
-                        <div class="actor-goal" style="color:#2F855A;">High Incentive to Automate</div>
-                        <p>Wage is safely <strong>above</strong> the automation cost (€30/hr). The Substitution Effect
-                            dominates. The long-run labour demand is highly elastic because machines are cheaper.</p>
-                    </div>
-
-                    <div class="actor-card firm" style="border-top-color: #D69E2E;"> <!-- Orange for Czechia -->
-                        <div class="actor-icon">🇨🇿</div>
-                        <h4>Czechia (€18.5/hr)</h4>
-                        <div class="actor-goal" style="color:#B7791F;">Lower Incentive to Automate</div>
-                        <p>Wage is <strong>below</strong> the automation cost. Firms stick with human labour because the
-                            fixed costs of robots aren't justified yet.</p>
+                        <img src="images/collective_bargaining_agreement.png" alt="Collective Bargaining Agreement"
+                            style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid #FC8181;">
+                        <p style="font-size: 0.9rem; color: #E53E3E; margin-top: 10px;"><em>Notice how holding the wage
+                                above equilibrium \( W^* \) creates a direct gap between \( L^s \) and \( L^d \)
+                                (Unemployment).</em></p>
                     </div>
                 </div>
 
                 <!-- Post-It Exam Tip -->
-                <div class="post-it rose">
-                    <h4>💡 Exam Tip : High Wages & Elasticity</h4>
-                    <p><strong>Conclusion:</strong> High-wage countries naturally have <em>more elastic</em> long-run
-                        labour demand. Any further wage hike in Germany immediately triggers automation, whereas a
-                        similar hike in Czechia might not cross the "automation threshold" yet.</p>
+                <div class="post-it">
+                    <h4>💡 Exam Tip : Flexible vs Rigid</h4>
+                    <p>When comparing the US and European labour markets: <br>
+                        - The US absorbs shocks mainly through <strong>wage flexibility</strong> (wages drop, but people
+                        keep working).<br>
+                        - The EU absorbs shocks mainly through <strong>employment flexibility / unemployment</strong>
+                        (wages stay high due to rigidity, but people lose their jobs).<br>
+                        Keep this distinction clear in your essays!</p>
                 </div>
 
             </section>
