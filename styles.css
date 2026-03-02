@@ -151,6 +151,17 @@ body {
     margin: 0 auto 4rem auto;
 }
 
+.lesson-section img {
+    max-width: 65%;
+    /* Make images smaller */
+    max-height: 400px;
+    /* Prevent them from being too tall */
+    object-fit: contain;
+    display: block;
+    margin: 1rem auto;
+    /* Center the images */
+}
+
 /* TYPOGRAPHY */
 h2 {
     color: var(--clr-purple-primary);
