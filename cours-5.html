@@ -311,6 +311,63 @@
                     </p>
                 </div>
 
+                <!-- RESERVATION WAGE -->
+                <h2>📉 Reservation Wage</h2>
+                <div class="concept-card explanation">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">The Minimum Price for Labour</h4>
+                    <div style="text-align: center;">
+                        <img src="images/reservation_wage_corner_solution.png" alt="Reservation Wage" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
+                    </div>
+
+                    <p><strong>Visual Interpretation:</strong></p>
+                    <ul>
+                        <li>The <strong>reservation wage</strong> ($w^r$) is represented by the <strong>slope</strong> of the indifference curve at the point where the individual is not working ($L = T, H = 0$).</li>
+                        <li>This slope (the orange line in the graph) represents the value placed on the very first hour of lost leisure time.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>Analytical Interpretation</h4>
+                    <p>Formal definition of the reservation wage:</p>
+                    <div class="math-block">
+                        \[ w^r = MRS_{L,Y} \quad \text{at the point where } L = T \]
+                    </div>
+                    <p>Or expressed via marginal utilities:</p>
+                    <div class="math-block">
+                        \[ w^r = \frac{MU_L}{MU_Y} \Big|_{L=T} \]
+                    </div>
+                    <p><strong>Economic Meaning:</strong> It is the <strong>absolute minimum wage</strong> that would make an individual willing to sacrifice even one hour of leisure to enter the market. If the offered market wage is below this level, the individual will not work.</p>
+                </div>
+
+                <!-- WAGE COMPARISONS -->
+                <div class="actors-grid">
+                    <!-- CASE: W > Wr -->
+                    <div class="actor-card worker">
+                        <h4 style="color: #2B6CB0; margin-bottom: 1.5rem;">Real Wage > Reservation Wage</h4>
+                        <img src="images/reservation_wage_vs_real_wage_labor_entry.png" alt="Labor Entry Decision" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px; margin-bottom: 1rem;">
+                        
+                        <p><strong>Condition:</strong> $\frac{w}{p} > w^r$</p>
+                        <p>The budget constraint (green) is <strong>steeper</strong> than the reservation wage slope (orange).</p>
+                        <p><strong>Result:</strong> The individual can reach a higher utility curve by working. They participate in the labour force ($H > 0$).</p>
+                        <p style="background: #EBF8FF; padding: 10px; border-radius: 6px; font-weight: 600; text-align: center; margin-top: 10px; border: 1px solid #BEE3F8;">
+                            ✅ Labour Market Entry
+                        </p>
+                    </div>
+
+                    <!-- CASE: W < Wr -->
+                    <div class="actor-card firm">
+                        <h4 style="color: #C53030; margin-bottom: 1.5rem;">Real Wage < Reservation Wage</h4>
+                        <img src="images/reservation_wage_higher_than_market_wage.png" alt="Non-Participation Decision" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px; margin-bottom: 1rem;">
+                        
+                        <p><strong>Condition:</strong> $\frac{w}{p} < w^r$</p>
+                        <p>The budget constraint (green) is <strong>flatter</strong> than the reservation wage slope (orange).</p>
+                        <p><strong>Result:</strong> The market wage is too low to compensate for the loss of leisure. The individual stays at the corner solution ($H = 0$).</p>
+                        <p style="background: #FFF5F5; padding: 10px; border-radius: 6px; font-weight: 600; text-align: center; margin-top: 10px; border: 1px solid #FED7E2;">
+                            ❌ Remains Out of Labour Force
+                        </p>
+                    </div>
+                </div>
+
             </section>
         </div>
     </main>
