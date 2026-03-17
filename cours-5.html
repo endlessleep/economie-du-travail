@@ -219,6 +219,82 @@
                     <strong>Exam Tip:</strong> The technical term for this slope is the <strong>Marginal Rate of Substitution (MRS)</strong>. It tells us the rate at which an individual is willing to swap income for leisure.
                 </div>
 
+                <!-- CONSTRAINED MAXIMIZATION -->
+                <h2>🚧 The Constraints: Living in a Limited World</h2>
+                <div class="concept-card explanation">
+                    <p>In a perfect world, we would have infinite money and infinite free time. However, our choices are restricted by two unavoidable realities: we only have 24 hours in a day, and we can only buy goods if we have earned the money to pay for them. In economics, we call these the <strong>Time Constraint</strong> and the <strong>Goods Constraint</strong>.</p>
+                </div>
+
+                <div class="actors-grid">
+                    <!-- Time Constraint -->
+                    <div class="actor-card worker">
+                        <div class="actor-icon">⏰</div>
+                        <h4 style="color: #2B6CB0;">1. The Time Constraint</h4>
+                        <p>Time is the ultimate scarce resource. Life is a collection of hours that must be divided between working ($H$) and enjoying leisure ($L$).</p>
+                        <div style="text-align: center; margin: 1.5rem 0;">
+                            <img src="images/time_allocation_leisure_work_constraint.png" alt="Time Allocation" style="width: 80%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <p style="text-align: center; font-weight: 700; font-size: 1.2rem;">$H + L = T$</p>
+                        <ul style="margin-top: 10px;">
+                            <li><strong>$T$ (Total Time):</strong> Usually set to 16 hours (24h minus 8h for maintenance like sleep and eating).</li>
+                            <li><strong>Arbitrage:</strong> If you want more leisure, you <em>must</em> work less. There is no middle ground.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Goods Constraint -->
+                    <div class="actor-card firm">
+                        <div class="actor-icon">🛒</div>
+                        <h4 style="color: #2D3748;">2. The Goods Constraint</h4>
+                        <p>To consume goods and services ($Y$), you need income. Unless you have non-labour income, your only source of funds is your labor.</p>
+                        <p style="text-align: center; font-weight: 700; font-size: 1.2rem; margin: 1.5rem 0;">$wH = pY$</p>
+                        <ul>
+                            <li><strong>$w$:</strong> The nominal wage (dollars per hour).</li>
+                            <li><strong>$p$:</strong> The price index of goods.</li>
+                            <li><strong>$Y$:</strong> Your real income (what you can actually buy).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- DERIVING THE BUDGET CONSTRAINT -->
+                <h2>📉 Deriving the Budget Constraint</h2>
+                <div class="concept-card explanation">
+                    <p>By merging these two constraints, we can see the direct link between our time and our consumption. If we replace $H$ (work) by $(T - L)$ in the goods constraint, we get the master equation of the labour supply model.</p>
+                </div>
+
+                <div class="math-block">
+                    <p>Starting from: $pY = w(T - L)$</p>
+                    <p>Distribute the wage: $pY = wT - wL$</p>
+                    <p style="font-weight: 700; font-size: 1.2rem; margin-top: 10px; color: var(--clr-blue-primary);">Final Budget Equation: $Y = -\left(\frac{w}{p}\right)L + \left(\frac{wT}{p}\right)$</p>
+                </div>
+
+                <div class="concept-card">
+                    <h4>The Concept of Full Income ($wT$)</h4>
+                    <p>The term <strong>$wT$</strong> represents your <strong>Full Income</strong>. This is your maximum earnings potential—the amount of money you would have if you spent 100% of your time working and 0% resting.</p>
+                    <p><strong>The Insight:</strong> Your full income is spent on two things: explicit costs (buying goods, $pY$) and implicit costs (the "price" of the leisure you chose to take, $wL$).</p>
+                </div>
+
+                <!-- ANALYZING THE GRAPH -->
+                <h2>📊 Analyzing the Budget Line</h2>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="images/budget_constraint_leisure_income_slope_wp.png" alt="Budget Constraint Slope" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p>The budget line tells the story of your possibilities:</p>
+                            <ul>
+                                <li><strong>Vertical Intercept ($wT/p$):</strong> The "all work, no play" point. Your highest possible real income.</li>
+                                <li><strong>Horizontal Intercept ($T$):</strong> The "all play, no work" point. You have all the time in the world but zero income ($Y=0$).</li>
+                                <li><strong>The Slope ($-\frac{w}{p}$):</strong> This is the <strong>Real Wage</strong>. It represents the cost of an extra hour of leisure. Every time you move 1 step to the right (more leisure), you drop down by $w/p$ steps in income.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-box warning">
+                    <strong>Check your logic:</strong> If the wage ($w$) increases, the budget line becomes <strong>steeper</strong>. The vertical intercept goes up (you can earn more), but the horizontal intercept $T$ stays fixed (you still only have 24 hours!).
+                </div>
+
             </section>
         </div>
     </main>
