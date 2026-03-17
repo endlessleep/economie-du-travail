@@ -92,26 +92,24 @@
 
                 <!-- SOURCES OF SKILLS -->
                 <h3>The Three Sources of Skills</h3>
-                <div class="actors-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-                    <div class="actor-card worker">
-                        <div class="actor-icon">🧬</div>
-                        <h4>1. Inherited Traits</h4>
-                        <p>Intelligence, talent, and motivation developed within the family before and during schooling.</p>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                    <div class="actor-card worker" style="padding: 1.5rem; border-left: 4px solid #4a5568;">
+                        <h4 style="margin-bottom: 0.5rem;"><span style="font-size: 1.5rem; margin-right: 0.5rem;">🧬</span> 1. Inherited Personal Characteristics</h4>
+                        <p>Before a student ever set foot in a classroom, they possess a "raw baggage" of intelligence, natural talent, and motivation. These traits are heavily influenced by the family environment—both genetically and through early childhood stimulation. This source of skill is crucial because it often determines the *efficiency* of future learning; naturally gifted or highly motivated students often gain more "human capital" from the same year of schooling than others.</p>
                     </div>
-                    <div class="actor-card worker">
-                        <div class="actor-icon">📚</div>
-                        <h4>2. Formal Education</h4>
-                        <p>Acquiring knowledge, technical skills, and analytical abilities through schools and universities.</p>
+                    <div class="actor-card worker" style="padding: 1.5rem; border-left: 4px solid var(--clr-blue-primary);">
+                        <h4 style="margin-bottom: 0.5rem;"><span style="font-size: 1.5rem; margin-right: 0.5rem;">📚</span> 2. Skills Acquired via Formal Education</h4>
+                        <p>This is the visible part of the iceberg. Schools and universities provide structured environments to acquire technical knowledge (like coding or accounting), analytical frameworks, and social skills. In the Human Capital model, this process is seen as a direct transformation: the student "buys" schooling to increase their future marginal productivity, which the market will then reward with a higher wage.</p>
                     </div>
-                    <div class="actor-card worker">
-                        <div class="actor-icon">💼</div>
-                        <h4>3. Work Experience</h4>
-                        <p>Skills acquired through "learning by doing" and informal training on the job.</p>
+                    <div class="actor-card worker" style="padding: 1.5rem; border-left: 4px solid #38a169;">
+                        <h4 style="margin-bottom: 0.5rem;"><span style="font-size: 1.5rem; margin-right: 0.5rem;">💼</span> 3. Skills Acquired via Experience (On-the-Job)</h4>
+                        <p>Learning doesn't stop at graduation. Most professional skills are acquired through "learning by doing"—the informal process of mastering tasks through repetition and exposure to real-world problems. This accumulates into a distinct type of human capital that is often highly valued by employers, as it proves the worker can translate theoretical knowledge into practical results.</p>
                     </div>
                 </div>
 
                 <div class="post-it" style="margin-top: 2rem;">
-                    <strong>Identification Problem:</strong> Do high wages come from education, or do highly intelligent people simply study more <em>and</em> earn more anyway? (Correlation vs. Causality).
+                    <strong>🎓 Professor's Note: The Identification Problem</strong>
+                    <p style="margin-top: 0.5rem; font-size: 0.95rem;">If we observe that university graduates earn 50% more than high schoolers, can we conclude that university *caused* the increase? Not necessarily. Highly talented people (Source 1) might be more likely to go to university *and* more likely to earn high wages anyway. If we ignore this "Ability Bias," we overstate the true return to education. Economists use twins or natural experiments to try and isolate the "pure" effect of schooling.</p>
                 </div>
 
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
@@ -294,23 +292,21 @@
                             </div>
                         </div>
                         <div>
-                            <div class="actor-card firm" style="background: white; border: 1px solid #edf2f7; box-shadow: none;">
-                                <h4 style="color: var(--clr-blue-primary); border-bottom: 2px solid var(--clr-blue-bg); padding-bottom: 0.5rem; margin-bottom: 1rem;">🧠 Theoretical Setting</h4>
+                                <h4 style="color: var(--clr-blue-primary); border-bottom: 2px solid var(--clr-blue-bg); padding-bottom: 0.5rem; margin-bottom: 1rem;">🧠 The Logic of Signaling</h4>
                                 <ul style="list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem;">
+                                    <li style="margin-bottom: 1.5rem; display: flex; gap: 0.8rem;">
                                         <span style="color: var(--clr-blue-primary);">⚡</span>
-                                        <span><strong>Asymmetric Info:</strong> Firms cannot observe true productivity directly.</span>
+                                        <span><strong>Asymmetric Information:</strong> A employer looking at a pile of CVs is like a blind person choosing fruit. They can't "see" your true productivity. They need a credible proxy—a signal—that you are indeed a "sweet" (high-productivity) worker.</span>
                                     </li>
-                                    <li style="margin-bottom: 1rem; display: flex; gap: 0.8rem;">
+                                    <li style="margin-bottom: 1.5rem; display: flex; gap: 0.8rem;">
                                         <span style="color: var(--clr-blue-primary);">⚡</span>
-                                        <span><span><strong>Credible Signals:</strong> Years of education ($e$) must be observable and verifiable.</span></span>
+                                        <span><strong>Visibility & Cost:</strong> For a degree to be a signal, it must be expensive enough that low-productivity workers won't "fake it." Crucially, this cost is not just tuition; it is the <strong>Psychic Cost</strong> of effort, stress, and time.</span>
                                     </li>
                                     <li style="margin-bottom: 0; display: flex; gap: 0.8rem;">
                                         <span style="color: var(--clr-blue-primary);">⚡</span>
-                                        <span><strong>The Cost Condition:</strong> Signaling works <em>only if</em> high-ability types find it proportionally cheaper to learn.</span>
+                                        <span><strong>The Cost Differential:</strong> The model only works if it is *harder* (more costly) for a low-ability person to graduate than for a high-ability person. If everyone could pass easily, the degree would lose all its value as a signal.</span>
                                     </li>
                                 </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -341,14 +337,14 @@
 
                 <!-- EMPIRICAL TESTS -->
                 <h3>2. How to test HC vs. S&S?</h3>
-                <div class="actors-grid" style="grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
-                    <div class="actor-card worker">
-                        <div style="font-weight: 700; color: var(--clr-blue-primary);">🚀 Self-Employed</div>
-                        <p>They don't need to signal to an employer. If S&S holds, they should have lower education levels than employees for the same income.</p>
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                    <div class="actor-card worker" style="padding: 1.5rem;">
+                        <h4 style="color: var(--clr-blue-primary); margin-bottom: 0.8rem;">🚀 The Self-Employed Test</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">A plumber who works for himself doesn't need to impress a boss with a fancy diploma. He only cares about his <em>actual</em> skills (Source 3) because that's what makes him money. If Signaling were the only reason people studied, we would expect self-employed people to have much less education than employees with the same income. In reality, they often have similar levels, which suggests that Human Capital (actual skill gain) is still a major factor.</p>
                     </div>
-                    <div class="actor-card worker">
-                        <div style="font-weight: 700; color: var(--clr-blue-primary);">🎓 Sheepskin Effect</div>
-                        <p>Do you get a wage jump for the <em>year</em> you graduate vs. the year before? (S&S: Huge jump; HC: Smooth increase).</p>
+                    <div class="actor-card worker" style="padding: 1.5rem;">
+                        <h4 style="color: var(--clr-blue-primary); margin-bottom: 0.8rem;">🎓 The "Sheepskin" Effect</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">Why is the 4th year of university "worth" more than the 3rd? If education only increased skills (HC), the wage jump should be smooth. However, we see a massive "spike" in wages the moment you get the diploma (the sheepskin). This suggests the diploma is a <strong>credentialing signal</strong>—a finish line that proves to employers you have the "grit" and persistence to finish what you started.</p>
                     </div>
                 </div>
 
@@ -417,14 +413,12 @@
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                         <div style="background: rgba(43, 108, 176, 0.03); padding: 2rem; border-radius: 15px; border-bottom: 5px solid var(--clr-blue-primary);">
-                             <div style="font-size: 1.5rem; margin-bottom: 1rem;">🔵</div>
-                             <h4 style="color: var(--clr-blue-primary); margin-bottom: 1rem;">General Training</h4>
-                             <p style="font-size: 0.95rem; line-height: 1.6; color: #4a5568;">Skills transferable across firms (e.g. MS Office). <br><strong>Who pays?</strong> The <strong>Worker</strong>. <br>Firms won't fund it because they can't capture the future $W_2$ premium alone.</p>
+                             <h4 style="color: var(--clr-blue-primary); margin-bottom: 1rem;">🔵 Case 1: General Training</h4>
+                             <p style="font-size: 0.95rem; line-height: 1.6; color: #4a5568;">Imagine learning Excel or English. These skills are "General" because you can take them to *any* other firm. If your current firm paid for this training, you could immediately quit and get a higher wage elsewhere. This is the <strong>Hold-up Problem</strong>: firms refuse to pay for general training because they can't "capture" the return. Thus, it is the <strong>worker</strong> who pays, usually through a lower wage during the training period.</p>
                         </div>
                         <div style="background: rgba(229, 62, 62, 0.03); padding: 2rem; border-radius: 15px; border-bottom: 5px solid #e53e3e;">
-                             <div style="font-size: 1.5rem; margin-bottom: 1rem;">🔴</div>
-                             <h4 style="color: #c53030; margin-bottom: 1rem;">Specific Training</h4>
-                             <p style="font-size: 0.95rem; line-height: 1.6; color: #4a5568;">Firm-specific workflows or proprietary software. <br><strong>Who pays?</strong> <strong>Shared Costs</strong>. <br>Both parties benefit from long-term employment to recoup the investment.</p>
+                             <h4 style="color: #c53030; margin-bottom: 1rem;">🔴 Case 2: Specific Training</h4>
+                             <p style="font-size: 0.95rem; line-height: 1.6; color: #4a5568;">This involves learning the proprietary software or unique "way of doing things" of your specific firm. Because these skills are useless elsewhere, the workers won't pay for it alone, and the firm won't pay for it alone (fear of you leaving). The solution? <strong>Shared investment</strong>. Costs and benefits are split to create a "mutual bond": the firm pays a bit more than $W_1$ and you stay to reap the rewards, making it a win-win.</p>
                         </div>
                     </div>
                 </div>
@@ -459,7 +453,8 @@
                 </div>
 
                 <div class="post-it" style="background: var(--clr-blue-bg); border-color: var(--clr-blue-border); margin-top: 2rem;">
-                    <strong>Conclusion:</strong> If there are positive <strong>Externalities</strong> (benefits to others), the social rate of return exceeds the private rate, justifying public subsidies for higher education.
+                    <strong>🏛️ Why does the State pay for your degree?</strong>
+                    <p style="margin-top: 0.5rem; font-size: 0.95rem;">If education only benefited the individual, there would be no reason for public subsidies. However, education creates <strong>Externalities</strong> (Social Benefits): an educated workforce is more likely to innovate, respect the law, engage in democracy, and share knowledge with colleagues (Spillovers). Since these benefits go to *society* and not just the *graduate*, the State pays part of the costs to ensure we don't "under-invest" in our future potential.</p>
                 </div>
 
             </section>
