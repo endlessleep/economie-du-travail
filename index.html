@@ -36,10 +36,10 @@
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
                 <span>📂 1. Labour Supply & Demand</span>
-                <span class="icon" style="transform: rotate(-180deg);">▼</span>
+                <span class="icon">▼</span>
             </button>
-            <div class="accordion-content active" style="max-height: 500px;">
-                <a href="index.html" class="active">1. Intro & Market Status</a>
+            <div class="accordion-content">
+                <a href="index.html">1. Intro & Market Status</a>
                 <a href="cours-2.html">2. Dynamics & Equilibrium</a>
                 <a href="cours-3.html">3. Microeconomics of Demand</a>
                 <a href="cours-4.html">4. Labour Market Frictions</a>
@@ -55,7 +55,7 @@
             </button>
             <div class="accordion-content">
                 <a href="cours-6.html">6. Compensating Differentials</a>
-                <a href="cours-7.html">7. Education</a>
+                <a href="cours-7.html">7. Education & Training</a>
             </div>
         </div>
 
@@ -289,23 +289,36 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Check for saved sidebar state
         document.addEventListener('DOMContentLoaded', () => {
             const sidebar = document.querySelector('.sidebar');
             const pageToggleBtn = document.getElementById('page-toggle-btn');
-
+            
+            // 1. Manage Sidebar Collapse State
             if (localStorage.getItem('sidebarCollapsed') === 'true') {
                 sidebar.classList.add('collapsed');
                 if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+
+            // 2. Set Active Link and Open Appropriate Accordion
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            const activeLink = document.querySelector(`.sidebar a[href="${currentPath}"]`);
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+                const content = activeLink.closest('.accordion-content');
+                if (content) {
+                    content.classList.add('active');
+                    content.style.maxHeight = '500px';
+                    const icon = content.previousElementSibling.querySelector('.icon');
+                    if (icon) icon.style.transform = "rotate(-180deg)";
+                }
             }
         });
 
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             const pageToggleBtn = document.getElementById('page-toggle-btn');
-
             sidebar.classList.toggle('collapsed');
-
             if (sidebar.classList.contains('collapsed')) {
                 localStorage.setItem('sidebarCollapsed', 'true');
                 if (pageToggleBtn) pageToggleBtn.style.display = 'block';
@@ -318,7 +331,6 @@
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('.icon');
-
             if (content.style.maxHeight && content.style.maxHeight !== '0px') {
                 content.style.maxHeight = '0px';
                 icon.style.transform = "rotate(0deg)";

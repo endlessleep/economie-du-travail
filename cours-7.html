@@ -50,11 +50,11 @@
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
                 <span>📂 2. Wage Differentials</span>
-                <span class="icon" style="transform: rotate(-180deg);">▼</span>
+                <span class="icon">▼</span>
             </button>
-            <div class="accordion-content active" style="max-height: 500px;">
+            <div class="accordion-content">
                 <a href="cours-6.html">6. Compensating Differentials</a>
-                <a href="cours-7.html" class="active">7. Education & Training</a>
+                <a href="cours-7.html">7. Education & Training</a>
             </div>
         </div>
 
@@ -189,68 +189,212 @@
                 </div>
 
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
-
-                <!-- CASE STUDY: CZECH REPUBLIC -->
                 <h2 id="czech-case">🇨🇿 Case Study: The 3-year Bachelor's Degree</h2>
-                <p>Let's apply the model to real data from the Czech Republic (2024 values):</p>
+                <p>Let's apply the Human Capital model to real-world data from the Czech Republic (2024 estimates) to determine if a 3-year degree is a rational financial choice.</p>
 
-                <div class="concept-card explanation">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <div>
-                            <h4>📊 The Data (Net/Year)</h4>
-                            <ul>
-                                <li><strong>High School Wage:</strong> 446k CZK</li>
-                                <li><strong>Bachelor Wage:</strong> 532k CZK</li>
-                                <li><strong>Earnings Premium (C):</strong> +86k CZK</li>
-                            </ul>
+                <!-- DATA CARDS -->
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <!-- Earnings Card -->
+                    <div class="actor-card worker" style="background: rgba(43, 108, 176, 0.05); padding: 2rem; border-left: 5px solid var(--clr-blue-primary);">
+                        <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--clr-blue-primary); font-weight: 700; margin-bottom: 1rem;">📊 Income Baseline</div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem;">
+                            <span>High School Wage (Net)</span>
+                            <span style="font-weight: 700;">446,000 CZK</span>
                         </div>
-                        <div>
-                            <h4>💸 The Costs</h4>
-                            <ul>
-                                <li><strong>Forgone Earnings (A):</strong> 446k CZK / year</li>
-                                <li><strong>Direct Costs (B):</strong> 50k CZK / year</li>
-                                <li><strong>Total Cost/Year:</strong> 496k CZK</li>
-                            </ul>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                            <span>Bachelor Wage (Net)</span>
+                            <span style="font-weight: 700;">532,000 CZK</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                            <span style="font-weight: 600;">Annual Premium:</span>
+                            <span style="background: var(--clr-green-bg); color: #2F855A; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 1.1rem;">+86,000 CZK</span>
+                        </div>
+                    </div>
+
+                    <!-- Costs Card -->
+                    <div class="actor-card firm" style="background: rgba(229, 62, 62, 0.05); padding: 2rem; border-left: 5px solid #E53E3E;">
+                        <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #C53030; font-weight: 700; margin-bottom: 1rem;">💸 Investment Costs</div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem;">
+                            <span>Forgone Earnings (A)</span>
+                            <span style="font-weight: 700;">446,000 CZK</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                            <span>Direct Costs (B)</span>
+                            <span style="font-weight: 700;">50,000 CZK</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                            <span style="font-weight: 600;">Total Yearly Cost:</span>
+                            <span style="color: #C53030; font-weight: 800; font-size: 1.1rem;">496,000 CZK</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-                    <div class="actor-card worker">
-                        <h4>Step 1: Present Value Calculation</h4>
-                        <p>Assuming a 1% real interest rate and a 47-year career:</p>
-                        <ul>
-                            <li><strong>PV of Costs (3 years):</strong> ~1,473,316 CZK</li>
-                            <li><strong>PV of Benefits (44 years):</strong> ~2,989,088 CZK</li>
-                        </ul>
-                        <div class="post-it" style="background: var(--clr-green-bg); border-color: var(--clr-green-border); color: #2d3748;">
-                            <strong>Result:</strong> Benefits > Costs. The degree is a <strong>profitable</strong> investment.
-                        </div>
+                <!-- COMPARISON TABLE -->
+                <div class="concept-card" style="margin-top: 2rem; padding: 0; overflow: hidden; border: 1px solid var(--clr-blue-border);">
+                    <div style="background: var(--clr-blue-primary); color: white; padding: 1rem 2rem; font-weight: 700; font-size: 1.1rem;">
+                        ⚖️ Present Value Analysis (Career Projection)
                     </div>
-                    <div class="actor-card firm">
-                        <h4>Step 2: Internal Rate of Return</h4>
-                        <p>Solving for the discount rate that balances the equation:</p>
-                        <div class="math-block" style="text-align: center; background: rgba(0,0,0,0.05);">
-                            \[ \text{IRR} = 4.8\% \]
-                        </div>
-                        <p>Since <strong>4.8% > 1%</strong> (market rate), the bachelor's degree is highly attractive compared to other savings.</p>
+                    <table style="width: 100%; border-collapse: collapse; background: white;">
+                        <thead>
+                            <tr style="background: #f7fafc; border-bottom: 2px solid #edf2f7;">
+                                <th style="padding: 1.2rem; text-align: left; color: #4a5568;">Metric</th>
+                                <th style="padding: 1.2rem; text-align: right; color: #4a5568;">Investment Phase (3y)</th>
+                                <th style="padding: 1.2rem; text-align: right; color: #4a5568;">Return Phase (44y)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #edf2f7;">
+                                <td style="padding: 1.2rem; font-weight: 600;">Total Nominal Flow</td>
+                                <td style="padding: 1.2rem; text-align: right; color: #C53030; font-weight: 700;">-1,488,000 CZK</td>
+                                <td style="padding: 1.2rem; text-align: right; color: #2F855A; font-weight: 700;">+3,784,000 CZK</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #edf2f7; background: #fffaf0;">
+                                <td style="padding: 1.2rem; font-weight: 600;">Present Value (r=1%)</td>
+                                <td style="padding: 1.2rem; text-align: right; border-right: 1px solid #edf2f7;">1,473,316 CZK</td>
+                                <td style="padding: 1.2rem; text-align: right;">2,989,088 CZK</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- FINAL RESULT BADGE -->
+                <div style="display: flex; flex-direction: column; align-items: center; margin-top: 3rem; gap: 1rem;">
+                    <div style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white; padding: 1.5rem 3rem; border-radius: 50px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); text-align: center;">
+                        <span style="display: block; font-size: 0.9rem; text-transform: uppercase; font-weight: 700; opacity: 0.9; margin-bottom: 5px;">Investment Verdict</span>
+                        <span style="font-size: 1.8rem; font-weight: 800;">Profitable ✅</span>
+                    </div>
+                    
+                    <div class="math-block" style="width: 100%; max-width: 400px; text-align: center; border: 2px solid var(--clr-green-border);">
+                        <strong>Internal Rate of Return (IRR)</strong>
+                        <div style="font-size: 2.2rem; font-weight: 900; color: #2F855A; margin: 10px 0;">4.8%</div>
+                        <p style="font-size: 0.9rem; color: #4A5568; margin: 0;">Significantly higher than standard market interest rates (1%).</p>
+                    </div>
+                </div>
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
 
-                <!-- ABILITY BIAS -->
-                <h2 id="ability-bias">🧠 The Challenge: Ability Bias & Selection</h2>
+                <!-- ABILITY BIAS & SIGNALING -->
+                <h2 id="ability-bias">🧠 Human Capital vs. Signaling</h2>
                 <div class="concept-card explanation">
-                    <p>Does education <em>cause</em> higher wages, or is it just a filter? People with higher innate ability (intelligence, discipline) are more likely to stay in school <strong>and</strong> more likely to earn more anyway.</p>
+                    <p>Does education <em>cause</em> higher wages (Human Capital), or is it just a filter (Signaling)? If we ignore innate ability, we attribute all wage gains to schooling—this is <strong>Ability Bias</strong>.</p>
+                </div>
+
+                <!-- SPENCE MODEL -->
+                <h3>1. The Signaling & Screening Model (Spence, 1973)</h3>
+                <p>In this framework, education serves as a signal to help employers distinguish between high-productivity and low-productivity workers under <strong>uncertainty</strong>.</p>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1.2fr; gap: 2rem; align-items: start;">
+                    <div>
+                        <img src="signaling_wage_threshold_education.png" alt="Signaling Wage Threshold" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        <p style="font-size: 0.9rem; margin-top: 1rem; color: #4A5568;"><strong>The Wage Schedule:</strong> Employers set a threshold $e^*$. If you have the degree ($e \geq e^*$), you earn a high wage ($W=2$); otherwise, you earn $W=1$.</p>
+                    </div>
+                    <div class="actor-card firm">
+                        <h4>🔑 Core Mechanism</h4>
+                        <ul>
+                            <li><strong>Problem:</strong> Firms can't see true productivity.</li>
+                            <li><strong>Signal:</strong> Education (years of schooling) is used as a proxy.</li>
+                            <li><strong>Cost condition:</strong> For a signal to be effective, it must be <strong>cheaper</strong> for high-ability people to acquire than for low-ability people.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-card" style="margin-top: 2rem;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1.2; min-width: 350px;">
+                            <img src="signaling_equilibrium_costs_pve.png" alt="Signaling Equilibrium" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h4>📍 The Separating Equilibrium</h4>
+                            <p>Education perfectly separates the two types if:</p>
+                            <ul>
+                                <li><strong>Low-Ability ($C$):</strong> The cost of $e^*$ is higher than the wage gain ($W_2 - W_1$). They choose 0 education (Point A).</li>
+                                <li><strong>High-Ability ($C/2$):</strong> The cost of $e^*$ is lower than the wage gain. They choose $e^*$ (Point D).</li>
+                            </ul>
+                            <div class="post-it" style="background: var(--clr-blue-bg); border-color: var(--clr-blue-border);">
+                                <strong>Social Return:</strong> In extreme signaling models, social return is near zero because education reveals but doesn't create productivity.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMPIRICAL TESTS -->
+                <h3>2. How to test HC vs. S&S?</h3>
+                <div class="actors-grid" style="grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div class="actor-card worker">
+                        <div style="font-weight: 700; color: var(--clr-blue-primary);">🚀 Self-Employed</div>
+                        <p>They don't need to signal to an employer. If S&S holds, they should have lower education levels than employees for the same income.</p>
+                    </div>
+                    <div class="actor-card worker">
+                        <div style="font-weight: 700; color: var(--clr-blue-primary);">🎓 Sheepskin Effect</div>
+                        <p>Do you get a wage jump for the <em>year</em> you graduate vs. the year before? (S&S: Huge jump; HC: Smooth increase).</p>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- MINCER EARNINGS FUNCTION -->
+                <h2 id="mincer-section">📉 The Mincer Earnings Function</h2>
+                <div class="concept-card explanation">
+                    <p>The standard empirical tool to measure the return to education and experience. It uses a semi-log specification to linearize the relationship.</p>
+                </div>
+
+                <div class="math-block" style="font-size: 1.3rem; padding: 2rem;">
+                    \[ \ln W_i = \alpha + \beta_1 S_i + \beta_2 E_i + \beta_3 E_i^2 + \varepsilon_i \]
                 </div>
 
                 <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
                     <div class="actor-card worker">
-                        <h4>1. Overestimation Risk</h4>
-                        <p>If we ignore innate ability, we attribute all wage gains to schooling. This is <strong>Ability Bias</strong>. Studies of twins suggest that up to <strong>1/3</strong> of the returns to education might actually be due to family background and innate ability.</p>
+                        <h4>🔑 Key components</h4>
+                        <ul>
+                            <li><strong>$\ln W$:</strong> Log wages (approx. normal distribution).</li>
+                            <li><strong>$\beta_1$:</strong> The <strong>Return to Education</strong> (e.g., +8% per year).</li>
+                            <li><strong>$E, E^2$:</strong> Captured the <strong>Concave</strong> lifetime profile (diminishing returns to experience).</li>
+                        </ul>
                     </div>
                     <div class="actor-card firm">
-                        <h4>2. Signaling (Screening) Theory</h4>
-                        <p>An alternative to Human Capital: Education doesn't increase productivity; it just <strong>signals</strong> it to employers. The degree is a "badge" showing that the worker was capable of finishing a difficult program.</p>
+                        <h4>📊 Numerical Interpretation</h4>
+                        <p>If $\ln W = \alpha + 0.0264E - 0.0005E^2$:</p>
+                        <ul>
+                            <li>Wages increase for the first 26 years.</li>
+                            <li>The peak occurs when $\frac{\partial \ln W}{\partial E} = 0$.</li>
+                            <li>Interpretation: $100 \cdot (e^{\beta} - 1)\%$ increase.</li>
+                        </ul>
                     </div>
+                </div>
+
+                <div class="post-it" style="margin-top: 1.5rem; background: #fffaf0; border-color: #ed8936;">
+                    <strong>Experience Proxy:</strong> When actual experience isn't available, we use <strong>Potential Experience</strong>: $E = Age - S - 6$.
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- JOB TRAINING -->
+                <h2 id="training-section">💼 Job Training & Human Capital</h2>
+                <div class="concept-card explanation">
+                    <p>Training is the continuation of human capital investment after formal schooling. It can be <strong>Formal</strong> (programs), <strong>Informal</strong> (learning by doing), or <strong>Social</strong> (mentoring).</p>
+                </div>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+                    <div style="flex: 1;">
+                        <img src="training_wage_productivity_general_specific.png" alt="Training Wage and Productivity Profiles" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                    </div>
+                    <div>
+                        <h4>💸 Who pays for training?</h4>
+                        <p>The answer depends on whether the skills are <strong>transferable</strong> to other firms.</p>
+                        
+                        <div class="actor-card worker" style="margin-top: 1rem;">
+                            <div style="font-weight: 700; color: var(--clr-blue-primary);">🔵 Case 1: General Training</div>
+                            <p>Skills useful in many firms (e.g., Excel, English). The <strong>worker pays</strong> via lower wages ($W_0$) during training, as the firm cannot "lock in" the productivity gain ($W_2$).</p>
+                        </div>
+
+                        <div class="actor-card firm" style="margin-top: 1rem;">
+                            <div style="font-weight: 700; color: #C53030;">🔴 Case 2: Specific Training</div>
+                            <p>Skills useful only in the current firm. Costs and benefits are <strong>shared</strong>. Employers pay higher than $W_1$ to reduce turnover and protect their investment.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-it" style="margin-top: 2rem;">
+                    <strong>Observation:</strong> Training attendance typically <strong>declines with age</strong> because older workers have a shorter time horizon to recoup the investment costs.
                 </div>
 
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
@@ -288,13 +432,29 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Same scripts as other pages for consistency
         document.addEventListener('DOMContentLoaded', () => {
             const sidebar = document.querySelector('.sidebar');
             const pageToggleBtn = document.getElementById('page-toggle-btn');
-            if (sidebar && localStorage.getItem('sidebarCollapsed') === 'true') {
+            
+            // 1. Manage Sidebar Collapse State
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
                 sidebar.classList.add('collapsed');
                 if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+
+            // 2. Set Active Link and Open Appropriate Accordion
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            const activeLink = document.querySelector(`.sidebar a[href="${currentPath}"]`);
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+                const content = activeLink.closest('.accordion-content');
+                if (content) {
+                    content.classList.add('active');
+                    content.style.maxHeight = '500px';
+                    const icon = content.previousElementSibling.querySelector('.icon');
+                    if (icon) icon.style.transform = "rotate(-180deg)";
+                }
             }
         });
 
