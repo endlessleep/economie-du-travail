@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labour Economics - Education and Training</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX support -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
+            </button>
+        </div>
+
+        <!-- Part 1: Labour Supply and Demand -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 1. Labour Supply & Demand</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="index.html">1. Intro & Market Status</a>
+                <a href="cours-2.html">2. Dynamics & Equilibrium</a>
+                <a href="cours-3.html">3. Microeconomics of Demand</a>
+                <a href="cours-4.html">4. Labour Market Frictions</a>
+                <a href="cours-5.html">5. Labour Supply Model</a>
+            </div>
+        </div>
+
+        <!-- Part 2: Wage Differentials -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 2. Wage Differentials</span>
+                <span class="icon" style="transform: rotate(-180deg);">▼</span>
+            </button>
+            <div class="accordion-content active" style="max-height: 500px;">
+                <a href="cours-6.html">6. Compensating Differentials</a>
+                <a href="cours-7.html" class="active">7. Education & Training</a>
+            </div>
+        </div>
+
+        <!-- Part 3: Institutional Environment -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 3. Institutions & Policy</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="#">(To be continued...)</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
+            <h1>7. Education and Training</h1>
+        </header>
+
+        <!-- CONTENT AREA -->
+        <div class="content-scroll">
+            <section class="lesson-section" id="section-container">
+
+                <h2>🎓 Is a university education a good investment?</h2>
+                <div class="concept-card explanation">
+                    <p>The decision to attend university is fundamentally an <strong>investment decision</strong>. Individuals sacrifice current consumption and earnings (costs) in exchange for higher productivity and wages in the future (returns).</p>
+                </div>
+
+                <!-- SOURCES OF SKILLS -->
+                <h3>The Three Sources of Skills</h3>
+                <div class="actors-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+                    <div class="actor-card worker">
+                        <div class="actor-icon">🧬</div>
+                        <h4>1. Inherited Traits</h4>
+                        <p>Intelligence, talent, and motivation developed within the family before and during schooling.</p>
+                    </div>
+                    <div class="actor-card worker">
+                        <div class="actor-icon">📚</div>
+                        <h4>2. Formal Education</h4>
+                        <p>Acquiring knowledge, technical skills, and analytical abilities through schools and universities.</p>
+                    </div>
+                    <div class="actor-card worker">
+                        <div class="actor-icon">💼</div>
+                        <h4>3. Work Experience</h4>
+                        <p>Skills acquired through "learning by doing" and informal training on the job.</p>
+                    </div>
+                </div>
+
+                <div class="post-it" style="margin-top: 2rem;">
+                    <strong>Identification Problem:</strong> Do high wages come from education, or do highly intelligent people simply study more <em>and</em> earn more anyway? (Correlation vs. Causality).
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- ECONOMICS OF SCHOOLING -->
+                <h2 id="schooling-econ">📈 The Economics of Schooling: Costs vs. Returns</h2>
+                <div class="concept-card explanation">
+                    <p>Education is a long-term investment. To decide whether to enroll, we must compare the immediate costs with the discounted flow of future benefits.</p>
+                </div>
+
+                <!-- LIFETIME EARNINGS -->
+                <h3>1. Lifetime Earnings Profiles</h3>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="education_investment_lifecycle_earnings.png" alt="Lifetime Earnings Lifecycle" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p><strong>Observations:</strong></p>
+                            <ul>
+                                <li><strong>Level:</strong> Higher education levels lead to higher lifetime earnings.</li>
+                                <li><strong>Slope:</strong> Earnings profiles are <strong>steeper</strong> for highly educated workers (faster wage growth).</li>
+                                <li><strong>Peak:</strong> Tertiary-educated workers reach their peak income later (approx. 50-54 years old).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COST DECOMPOSITION -->
+                <h3>2. The Basic Investment Model</h3>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="education_costs_benefits_lifecycle_simple.png" alt="Education Costs and Benefits" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p><strong>Cost Decomposition:</strong></p>
+                            <ul>
+                                <li><strong style="color: #E53E3E;">Area A: Forgone Earnings.</strong> The opportunity cost of not working during the study period.</li>
+                                <li><strong style="color: #E53E3E;">Area B: Direct Costs.</strong> Tuition, books, and accommodation.</li>
+                                <li><strong style="color: #38A169;">Area C: Earnings Premium.</strong> The net benefit (extra wage) gained after graduation.</li>
+                            </ul>
+                            <div class="post-it" style="margin-top: 1rem;">
+                                <strong>Decision Rule:</strong> Go to university if the total gain ($C$) exceeds the total cost ($A + B$).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- INVESTMENT MODELS -->
+                <h2 id="investment-models">⚖️ Investment Decision Models</h2>
+                <div class="concept-card explanation">
+                    <p>Since the costs occur now and the benefits occur over a lifetime, we must use <strong>Present Value (PV)</strong> to compare them accurately. A Euro today is worth more than a Euro in 10 years.</p>
+                </div>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="actor-card worker">
+                        <h4>1. The Present-Value Method</h4>
+                        <p>We choose a discount rate ($r$) and calculate if the current value of future benefits exceeds the costs:</p>
+                        <div class="math-block">
+                            \[ PV_{Benefits} = \sum_{t=1}^{T} \frac{B_t}{(1+r)^t} \]
+                        </div>
+                        <p><strong>Rule:</strong> If $PV_{Benefits} > Cost$, the investment is profitable.</p>
+                    </div>
+                    <div class="actor-card firm">
+                        <h4>2. Internal Rate of Return (IRR)</h4>
+                        <p>The IRR is the specific interest rate ($r^*$) that makes the costs and benefits equal:</p>
+                        <div class="math-block">
+                            \[ \sum \frac{Costs}{(1+r^*)^t} = \sum \frac{Benefits}{(1+r^*)^t} \]
+                        </div>
+                        <p><strong>Rule:</strong> Invest if the $IRR$ is higher than the market interest rate.</p>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- CASE STUDY: CZECH REPUBLIC -->
+                <h2 id="czech-case">🇨🇿 Case Study: The 3-year Bachelor's Degree</h2>
+                <p>Let's apply the model to real data from the Czech Republic (2024 values):</p>
+
+                <div class="concept-card explanation">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <h4>📊 The Data (Net/Year)</h4>
+                            <ul>
+                                <li><strong>High School Wage:</strong> 446k CZK</li>
+                                <li><strong>Bachelor Wage:</strong> 532k CZK</li>
+                                <li><strong>Earnings Premium (C):</strong> +86k CZK</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>💸 The Costs</h4>
+                            <ul>
+                                <li><strong>Forgone Earnings (A):</strong> 446k CZK / year</li>
+                                <li><strong>Direct Costs (B):</strong> 50k CZK / year</li>
+                                <li><strong>Total Cost/Year:</strong> 496k CZK</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                    <div class="actor-card worker">
+                        <h4>Step 1: Present Value Calculation</h4>
+                        <p>Assuming a 1% real interest rate and a 47-year career:</p>
+                        <ul>
+                            <li><strong>PV of Costs (3 years):</strong> ~1,473,316 CZK</li>
+                            <li><strong>PV of Benefits (44 years):</strong> ~2,989,088 CZK</li>
+                        </ul>
+                        <div class="post-it" style="background: var(--clr-green-bg); border-color: var(--clr-green-border); color: #2d3748;">
+                            <strong>Result:</strong> Benefits > Costs. The degree is a <strong>profitable</strong> investment.
+                        </div>
+                    </div>
+                    <div class="actor-card firm">
+                        <h4>Step 2: Internal Rate of Return</h4>
+                        <p>Solving for the discount rate that balances the equation:</p>
+                        <div class="math-block" style="text-align: center; background: rgba(0,0,0,0.05);">
+                            \[ \text{IRR} = 4.8\% \]
+                        </div>
+                        <p>Since <strong>4.8% > 1%</strong> (market rate), the bachelor's degree is highly attractive compared to other savings.</p>
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- ABILITY BIAS -->
+                <h2 id="ability-bias">🧠 The Challenge: Ability Bias & Selection</h2>
+                <div class="concept-card explanation">
+                    <p>Does education <em>cause</em> higher wages, or is it just a filter? People with higher innate ability (intelligence, discipline) are more likely to stay in school <strong>and</strong> more likely to earn more anyway.</p>
+                </div>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="actor-card worker">
+                        <h4>1. Overestimation Risk</h4>
+                        <p>If we ignore innate ability, we attribute all wage gains to schooling. This is <strong>Ability Bias</strong>. Studies of twins suggest that up to <strong>1/3</strong> of the returns to education might actually be due to family background and innate ability.</p>
+                    </div>
+                    <div class="actor-card firm">
+                        <h4>2. Signaling (Screening) Theory</h4>
+                        <p>An alternative to Human Capital: Education doesn't increase productivity; it just <strong>signals</strong> it to employers. The degree is a "badge" showing that the worker was capable of finishing a difficult program.</p>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- SOCIAL RATE OF RETURN -->
+                <h2 id="social-return">⚖️ Social Rate of Return to Education</h2>
+                <div class="concept-card explanation">
+                    <p>Governments must decide how many university places to fund. They look at <strong>Social Returns</strong>, which differ from private returns.</p>
+                </div>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="actor-card gov">
+                        <h4>Social Costs</h4>
+                        <ul>
+                            <li><strong>Public Funding:</strong> Staff salaries, infrastructure, running expenses.</li>
+                            <li><strong>Production Loss:</strong> The output society loses while the student is studying.</li>
+                        </ul>
+                    </div>
+                    <div class="actor-card gov">
+                        <h4>Social Benefits</h4>
+                        <ul>
+                            <li><strong>Productivity Spillovers:</strong> Educated workers help their colleagues become more productive.</li>
+                            <li><strong>Innovation Diffusion:</strong> An educated workforce adopts new technologies faster.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="post-it" style="background: var(--clr-blue-bg); border-color: var(--clr-blue-border); margin-top: 2rem;">
+                    <strong>Conclusion:</strong> If there are positive <strong>Externalities</strong> (benefits to others), the social rate of return exceeds the private rate, justifying public subsidies for higher education.
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Same scripts as other pages for consistency
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+            if (sidebar && localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+            sidebar.classList.toggle('collapsed');
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.icon');
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = "rotate(-180deg)";
+            }
+        }
+    </script>
+</body>
+
+</html>
