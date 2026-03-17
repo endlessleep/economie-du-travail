@@ -7,7 +7,7 @@
     <title>Labour Economics - Labour Supply Model</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Outfit&display=swap"
         rel="stylesheet">
     <!-- MathJax for LaTeX support -->
     <script>
@@ -32,18 +32,45 @@
             </button>
         </div>
 
+        <!-- Part 1: Labour Supply and Demand -->
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>📂 Leçons</span>
+                <span>📂 1. Labour Supply & Demand</span>
                 <span class="icon" style="transform: rotate(-180deg);">▼</span>
             </button>
             <div class="accordion-content active" style="max-height: 500px;">
-                <a href="index.html">1. Intro & Labour Market Status</a>
+                <a href="index.html">1. Intro & Market Status</a>
                 <a href="cours-2.html">2. Dynamics & Equilibrium</a>
-                <a href="cours-3.html">3. The Microeconomics of Labour Demand</a>
+                <a href="cours-3.html">3. Microeconomics of Demand</a>
                 <a href="cours-4.html">4. Labour Market Frictions</a>
                 <a href="cours-5.html" class="active">5. Labour Supply Model</a>
-                <a href="cours-6.html">6. Compensating Wage Differentials</a>
+            </div>
+        </div>
+
+        <!-- Part 2: Wage Differentials -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 2. Wage Differentials</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="cours-6.html">6. Compensating Differentials</a>
+                <a href="cours-7.html">7. Education</a>
+                <a href="cours-8.html">8. Discrimination</a>
+            </div>
+        </div>
+
+        <!-- Part 3: Institutional Environment -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 3. Institutions & Policy</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="cours-9.html">9. Employment & Unemployment</a>
+                <a href="cours-10.html">10. Minimum Wage</a>
+                <a href="cours-11.html">11. ALMP</a>
+                <a href="cours-12.html">12. Trade Unions</a>
             </div>
         </div>
     </aside>
@@ -284,8 +311,8 @@
                         <div style="flex: 1; min-width: 300px;">
                             <p>The budget line tells the story of your possibilities:</p>
                             <ul>
-                                <li><strong>Vertical Intercept ($wT/p$):</strong> The "all work, no play" point. Your highest possible real income.</li>
-                                <li><strong>Horizontal Intercept ($T$):</strong> The "all play, no work" point. You have all the time in the world but zero income ($Y=0$).</li>
+                                <li><strong>Vertical Outfitcept ($wT/p$):</strong> The "all work, no play" point. Your highest possible real income.</li>
+                                <li><strong>Horizontal Outfitcept ($T$):</strong> The "all play, no work" point. You have all the time in the world but zero income ($Y=0$).</li>
                                 <li><strong>The Slope ($-\frac{w}{p}$):</strong> This is the <strong>Real Wage</strong>. It represents the cost of an extra hour of leisure. Every time you move 1 step to the right (more leisure), you drop down by $w/p$ steps in income.</li>
                             </ul>
                         </div>
@@ -308,7 +335,7 @@
                             <img src="6-optimal.png" alt="Optimal Solution" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <h4 style="color: var(--clr-blue-primary);">The Interior Solution (Point of Tangency)</h4>
+                            <h4 style="color: var(--clr-blue-primary);">The Outfitior Solution (Point of Tangency)</h4>
                             <p>Optimization happens exactly at the point where the Budget Line is <strong>tangent</strong> to the highest possible Indifference Curve ($U_2$ in the graph).</p>
                             <ul>
                                 <li><strong>$L^*$:</strong> Optimal hours of leisure.</li>
@@ -426,7 +453,7 @@
                     <p>Think of any money that flows into your pocket regardless of your job status:</p>
                     <div class="actors-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 10px;">
                         <div class="actor-card worker" style="padding: 10px; border-top: none; border-bottom: 2px solid var(--clr-blue-primary);">
-                            <p>📈 <strong>Financial:</strong> Interest, Dividends, Profits.</p>
+                            <p>📈 <strong>Financial:</strong> Outfitest, Dividends, Profits.</p>
                         </div>
                         <div class="actor-card firm" style="padding: 10px; border-top: none; border-bottom: 2px solid var(--clr-accent);">
                             <p>🏠 <strong>Property:</strong> Rent from real estate.</p>
@@ -457,7 +484,7 @@
                             <h4 style="color: var(--clr-blue-primary);">Visualizing the Shift</h4>
                             <p>When nonlabour income increases ($A_1 > A_0 > 0$), the budget constraint moves vertically upward. Crucial observations:</p>
                             <ul>
-                                <li><strong>Intercepts on Y-axis:</strong> They jump from $\frac{wT}{p}$ to $\frac{wT + A_0}{p}$ and then $\frac{wT + A_1}{p}$. You can consume more at every level.</li>
+                                <li><strong>Outfitcepts on Y-axis:</strong> They jump from $\frac{wT}{p}$ to $\frac{wT + A_0}{p}$ and then $\frac{wT + A_1}{p}$. You can consume more at every level.</li>
                                 <li><strong>Parallelism:</strong> The slope <strong>does not change</strong> ($slope = -w/p$). This is because the nominal wage and prices are constant. The relative cost of leisure stays the same.</li>
                                 <li><strong>The Pivot Point ($T$):</strong> If you choose zero work ($H=0$), your income is no longer zero; it is exactly your nonlabour income ($Y = A/p$). The line still ends at $T$ hours of leisure, but at a "spike" above the horizontal axis.</li>
                             </ul>
@@ -582,7 +609,7 @@
                             <li><strong>Change:</strong> Leisure $8 \to 5$ | Work $8 \to 11$.</li>
                             <li><strong>Utility:</strong> Moving to a higher utility curve ($U_1 \to U_2$).</li>
                         </ul>
-                        <p><strong>Interpretation:</strong> Leisure is more expensive, so the individual substitutes leisure for work. Here, <strong>$SE > IE$</strong>, so work increases ($H \uparrow$).</p>
+                        <p><strong>Outfitpretation:</strong> Leisure is more expensive, so the individual substitutes leisure for work. Here, <strong>$SE > IE$</strong>, so work increases ($H \uparrow$).</p>
                     </div>
 
                     <!-- Case B: IE Dominates (17-income.png) -->
@@ -596,7 +623,7 @@
                         <ul>
                             <li><strong>Change:</strong> Leisure $8 \to 10$ | Work $8 \to 6$.</li>
                         </ul>
-                        <p><strong>Interpretation:</strong> The wage increase raises real income. As leisure is a normal good, the individual consumes more of it. Here, <strong>$IE > SE$</strong>, so work decreases ($H \downarrow$).</p>
+                        <p><strong>Outfitpretation:</strong> The wage increase raises real income. As leisure is a normal good, the individual consumes more of it. Here, <strong>$IE > SE$</strong>, so work decreases ($H \downarrow$).</p>
                     </div>
                 </div>
 
@@ -682,7 +709,7 @@
                                 <li><strong>Decreasing Segment:</strong> Slope $= -w/p$. This part begins once labor income exceeds the welfare threshold.</li>
                             </ul>
                             <div class="alert-box warning">
-                                <strong>Economic Interpretation:</strong> In the horizontal segment, the <strong>marginal wage equals zero</strong>. Every dollar earned reduces benefits by exactly one dollar, creating a "welfare trap" where working more does not increase total income.
+                                <strong>Economic Outfitpretation:</strong> In the horizontal segment, the <strong>marginal wage equals zero</strong>. Every dollar earned reduces benefits by exactly one dollar, creating a "welfare trap" where working more does not increase total income.
                             </div>
                         </div>
                     </div>
