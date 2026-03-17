@@ -454,11 +454,11 @@
                         </div>
                         <div style="flex: 1; min-width: 300px;">
                             <h4 style="color: var(--clr-blue-primary);">Visualizing the Shift</h4>
-                            <p>When nonlabour income increases ($A_1 > A_0$):</p>
+                            <p>When nonlabour income increases ($A_1 > A_0 > 0$), the budget constraint moves vertically upward. Crucial observations:</p>
                             <ul>
-                                <li><strong>Vertical Intercept:</strong> It jumps upward. You can afford more goods at every level of leisure.</li>
-                                <li><strong>The Slope ($w/p$):</strong> It stays <strong>identical</strong>. Because the wage didn't change, the "price" of an hour of leisure remains the same. The lines are strictly parallel.</li>
-                                <li><strong>The End Point ($T$):</strong> The constraint still terminates at $T$ hours, but now at a higher income level ($A/p$).</li>
+                                <li><strong>Intercepts on Y-axis:</strong> They jump from $\frac{wT}{p}$ to $\frac{wT + A_0}{p}$ and then $\frac{wT + A_1}{p}$. You can consume more at every level.</li>
+                                <li><strong>Parallelism:</strong> The slope <strong>does not change</strong> ($slope = -w/p$). This is because the nominal wage and prices are constant. The relative cost of leisure stays the same.</li>
+                                <li><strong>The Pivot Point ($T$):</strong> If you choose zero work ($H=0$), your income is no longer zero; it is exactly your nonlabour income ($Y = A/p$). The line still ends at $T$ hours of leisure, but at a "spike" above the horizontal axis.</li>
                             </ul>
                         </div>
                     </div>
@@ -467,7 +467,7 @@
                 <!-- PURE INCOME EFFECT -->
                 <h2>🛋️ The Pure Income Effect</h2>
                 <div class="concept-card explanation">
-                    <p>What happens to your choice when you get richer without the wage changing? This is the cleanest experiment to observe the <strong>Income Effect</strong> in its pure state, separated from any substitution logic.</p>
+                    <p>What happens to your choice when you get richer without the wage changing? This is a "clean" experiment to observe how income alone dictates behavior, with no relative price changes to cloud the result.</p>
                 </div>
 
                 <div class="concept-card">
@@ -476,13 +476,17 @@
                             <img src="images/non_labor_income_effect_leisure_choice.png" alt="Pure Income Effect" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <p>If we assume that <strong>Leisure is a Normal Good</strong> (meaning you want more of it when you are richer), then an increase in nonlabour income $A$ leads to:</p>
-                            <ol>
-                                <li><strong>Leisure Increases ($L \uparrow$):</strong> You move to the right on the horizontal axis.</li>
-                                <li><strong>Work Hours Decrease ($H \downarrow$):</strong> Since $H = T - L$, every extra hour of rest is an hour taken away from work.</li>
-                            </ol>
+                            <p>Under the standard assumption that <strong>Leisure is a Normal Good</strong>, any increase in nonlabour income results in higher consumption of free time:</p>
+                            <p style="text-align: center; font-weight: 700; font-size: 1.1rem; color: var(--clr-blue-primary);">
+                                $\frac{\partial L}{\partial A} > 0$
+                            </p>
+                            <p>As we move from $U_0 \to U_1 \to U_2$:</p>
+                            <ul>
+                                <li><strong>Leisure hours rise:</strong> $L_0 < L_1 < L_2$</li>
+                                <li><strong>Work hours fall:</strong> $H_0 > H_1 > H_2$</li>
+                            </ul>
                             <div class="post-it" style="background-color: #EBF8FF; border-color: #90CDF4;">
-                                <strong>Conclusion:</strong> A rise in nonlabour income always makes people work <strong>less</strong> (assuming leisure is normal). This is the "Pure Income Effect" as relative prices (the wage) haven't moved.
+                                <strong>Formal Definition:</strong> The Pure Income Effect is the change in hours worked that results <em>solely</em> from a change in real income, while keeping the relative price of leisure (the wage) strictly constant.
                             </div>
                         </div>
                     </div>
