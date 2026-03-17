@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labour Economics - Compensating Wage Differentials</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
+        rel="stylesheet">
+    <!-- MathJax for LaTeX support -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
+            </button>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 Leçons</span>
+                <span class="icon" style="transform: rotate(-180deg);">▼</span>
+            </button>
+            <div class="accordion-content active" style="max-height: 500px;">
+                <a href="index.html">1. Intro & Labour Market Status</a>
+                <a href="cours-2.html">2. Dynamics & Equilibrium</a>
+                <a href="cours-3.html">3. The Microeconomics of Labour Demand</a>
+                <a href="cours-4.html">4. Labour Market Frictions</a>
+                <a href="cours-5.html">5. Labour Supply Model</a>
+                <a href="cours-6.html" class="active">6. Compensating Wage Differentials</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
+            <h1>6. Compensating Wage Differentials</h1>
+        </header>
+
+        <!-- CONTENT AREA -->
+        <div class="content-scroll">
+            <section class="lesson-section" id="section-container">
+
+                <h2>🤔 Which job workers choose? Why are some jobs paid more?</h2>
+                <div class="concept-card explanation">
+                    <p>In previous lessons, we often assumed workers and jobs were somewhat "homogeneous." In reality, the labour market is highly diverse. Understanding <strong>Compensating Wage Differentials</strong> (or Equalizing Differences) helps explain why two workers with identical skills might earn very different wages purely based on their job's characteristics.</p>
+                </div>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <!-- WORKERS -->
+                    <div class="actor-card worker">
+                        <div class="actor-icon">👤</div>
+                        <h4>1. Workers: Skills & Preferences</h4>
+                        <p>Workers are <strong>heterogeneous</strong>. They don’t value jobs the same way because of:</p>
+                        <ul>
+                            <li><strong>Skills (Human Capital):</strong> Differences in education and experience affect productivity and wages.</li>
+                            <li><strong>Preferences (Non-monetary):</strong> Workers prioritize different things like flexible hours, remote work, or job stability.</li>
+                        </ul>
+                        <div class="alert-box note" style="margin-top: 1rem;">
+                            <strong>Key Idea:</strong> A job is not just about the wage, but about <strong>Utility</strong>: $U = \text{Wage} + \text{Job Conditions}$.
+                        </div>
+                    </div>
+
+                    <!-- EMPLOYERS -->
+                    <div class="actor-card firm">
+                        <div class="actor-icon">🏭</div>
+                        <h4>2. Employers: Requirements & Environment</h4>
+                        <p>Jobs are also <strong>heterogeneous</strong> on the supply side:</p>
+                        <ul>
+                            <li><strong>Requirements:</strong> Scarcity of specific skills (e.g., medical degrees) limits supply and keeps wages high.</li>
+                            <li><strong>Working Conditions:</strong> Jobs differ in risk, physical effort, or unpleasant environments (e.g., night shifts, noise).</li>
+                        </ul>
+                        <div class="alert-box note" style="margin-top: 1rem;">
+                            <strong>Key Idea:</strong> Firms must compensate workers for "bad" conditions: $\text{Wage} = \text{Base Pay} + \text{Compensation}$.
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- UTILITY MAXIMIZATION -->
+                <h2 id="utility-max">🧠 Workers’ Utility Maximization</h2>
+                <div class="concept-card explanation">
+                    <p>Workers maximize <strong>utility</strong>, not just their nominal wage. This means they are willing to trade off money for better working conditions.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h4>The Pure Mechanism</h4>
+                    <p>To isolate this effect, let's assume <strong>homogeneous workers</strong> (same skills) but <strong>heterogeneous jobs</strong>.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                        <div class="actor-card worker" style="background: rgba(43, 108, 176, 0.05); border: 1px solid var(--clr-blue-border);">
+                            <strong>Firm 1: Safe & Clean</strong>
+                            <p>Initial Wage: 150 CZK/h</p>
+                            <p>Result: High Utility ($U_1$)</p>
+                        </div>
+                        <div class="actor-card worker" style="background: rgba(229, 62, 62, 0.05); border: 1px solid #E53E3E;">
+                            <strong>Firm 2: Dangerous & Dirty</strong>
+                            <p>Initial Wage: 150 CZK/h</p>
+                            <p>Result: Low Utility ($U_2$)</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem;">At the same wage, everyone picks Firm 1. This creates a <strong>labour shortage</strong> for Firm 2, forcing them to raise wages to attract workers.</p>
+                    <div class="post-it" style="margin-top: 1rem;">
+                        <strong>Definition:</strong> A <strong>compensating wage differential</strong> is the extra wage paid to workers to compensate for undesirable job characteristics.
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- THEORY OF EQUALIZING DIFFERENCES -->
+                <h2 id="theory-equalizing">⚖️ Theory of Equalizing Differences</h2>
+                <div class="concept-card explanation">
+                    <p>The <strong>Theory of Compensating Wage Differentials</strong> (Equalizing Differences) predicts that wage differences across jobs reflect compensation for undesirable job characteristics.</p>
+                </div>
+
+                <div class="concept-card">
+                    <h4>Core Assumptions</h4>
+                    <p>For these differentials to emerge clearly, the model relies on 4 specific conditions:</p>
+                    <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="actor-card worker" style="padding: 1rem;">
+                            <strong>1. Homogeneous Workers</strong>
+                            <p>Workers have the same skills and productivity. Wage differences come <em>only</em> from job traits ("All else equal").</p>
+                        </div>
+                        <div class="actor-card worker" style="padding: 1rem;">
+                            <strong>2. Utility Maximization</strong>
+                            <p>Workers choose jobs based on total utility ($U = f(W, \text{characteristics})$), not just income.</p>
+                        </div>
+                        <div class="actor-card worker" style="padding: 1rem;">
+                            <strong>3. Perfect Information</strong>
+                            <p>Workers are fully aware of risks (e.g., probability of injury) and working conditions.</p>
+                        </div>
+                        <div class="actor-card worker" style="padding: 1rem;">
+                            <strong>4. Worker Mobility</strong>
+                            <p>Workers have multiple job offers and can move freely between firms to find their optimal trade-off.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- ECONOMICS OF RISK -->
+                <h2 id="risk-economics">🛡️ The Economics of Risk</h2>
+                <div class="concept-card explanation">
+                    <p>Risk of injury or death is the most common example of a "bad" job characteristic. We analyze this using <strong>Indifference Curves</strong> for workers and <strong>Isoprofit Curves</strong> for firms.</p>
+                </div>
+
+                <!-- WORKER PERSPECTIVE -->
+                <h3>1. The Worker's Perspective</h3>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="indifference_curves_wage_risk.png" alt="Indifference curves for Wage vs Risk" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p><strong>Visual Analysis:</strong></p>
+                            <ul>
+                                <li><strong>Upward Sloping:</strong> Because Risk is a "bad," if it increases, the wage <em>must</em> increase to keep utility constant.</li>
+                                <li><strong>Convex:</strong> As risk becomes very high, workers demand progressively larger wage increases to accept one more unit of risk.</li>
+                                <li><strong>Direction of Utility:</strong> Utility increases as we move <strong>Up</strong> (Higher Wage) and <strong>Left</strong> (Lower Risk).</li>
+                            </ul>
+                            <div class="alert-box note">
+                                <strong>Comparison:</strong> Point K ($U_2$) is preferred over Point J ($U_1$) because the higher wage more than compensates for the added risk.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SORTING -->
+                <h3>2. Sorting Based on Preferences</h3>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="risk_aversion_compensating_wage.png" alt="Risk aversion and sorting" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p>Not all workers view risk the same way. The market "sorts" them based on their <strong>Risk Aversion</strong>:</p>
+                            <ul>
+                                <li><strong>Person A (High Aversion):</strong> Steep curve. They need a massive wage hike for small risks. They typically settle in safe jobs.</li>
+                                <li><strong>Person B (Moderate Aversion):</strong> Flatter curve. They accept risk for a smaller premium and usually choose dangerous jobs.</li>
+                            </ul>
+                            <div class="post-it">
+                                <strong>Key Insight:</strong> Dangerous jobs pay more specifically <em>for those willing</em> to take the risk, not necessarily for everyone.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- EMPLOYER PERSPECTIVE -->
+                <h2 id="employer-isoprofit">🏭 The Employer's Perspective</h2>
+                <div class="concept-card explanation">
+                    <p>Firms also face a trade-off. Reducing risk (improving safety) is expensive. To stay competitive and maintain profits, a firm that spends more on safety must spend less on wages.</p>
+                </div>
+
+                <!-- ISOPROFIT CURVES -->
+                <h3>1. Isoprofit Curves</h3>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="isoprofit_curves_wage_risk.png" alt="Employer Isoprofit Curves" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p><strong>Visual Analysis:</strong> An isoprofit curve shows all combinations of Wage and Risk that yield the same profit level.</p>
+                            <ul>
+                                <li><strong>Upward Sloping:</strong> If a firm moves to a safer environment (Left), it incurs costs and must lower wages to keep profits at zero (Competition).</li>
+                                <li><strong>Concave:</strong> Reflects "diminishing returns" to safety. The first safety measures are cheap, but making a job 100% safe is exponentially expensive.</li>
+                            </ul>
+                            <div class="alert-box note">
+                                <strong>Equilibrium:</strong> Firms operate at <strong>Zero Profit</strong> in perfect competition. The market equilibrium occurs where a worker's Indifference Curve is tangent to a firm's Isoprofit Curve.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- EMPIRICAL REALITY -->
+                <h2 id="empirical-reality">🧪 Empirical Evidence & Limitations</h2>
+                <div class="concept-card explanation">
+                    <p>Does the theory hold up in the real world? While logically sound, testing Compensating Wage Differentials is notoriously difficult for economists.</p>
+                </div>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <!-- DIFFICULTIES -->
+                    <div class="actor-card gov" style="border-left: 4px solid #B06C2B;">
+                        <h4>Research Challenges</h4>
+                        <ul>
+                            <li><strong>OMITTED VARIABLE BIAS:</strong> High-risk jobs might also require high skills. If we don't control for skills, we might attribute a high wage to risk when it's actually due to education.</li>
+                            <li><strong>Subjectivity:</strong> "Stress" or "Unpleasantness" are hard to measure compared to "Risk of Death."</li>
+                        </ul>
+                    </div>
+                    <!-- LIMITATIONS -->
+                    <div class="actor-card gov" style="border-left: 4px solid #718096;">
+                        <h4>Market Frictions</h4>
+                        <p>The theory assumes perfect markets, but often:</p>
+                        <ul>
+                            <li><strong>Imperfect Information:</strong> Workers might not know how dangerous a job truly is.</li>
+                            <li><strong>Limited Mobility:</strong> Workers might be stuck in bad jobs due to poverty or geography.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="post-it" style="margin-top: 2rem; text-align: center;">
+                    <strong>Final Synthesis:</strong> Wages reflect more than just productivity. They encapsulate the <strong>entire job package</strong>. Firms that offer "nasty" jobs must pay a premium to attract workers voluntarily, ensuring that total utility is equalized across the market.
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Check for saved sidebar state
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            if (sidebar && localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            sidebar.classList.toggle('collapsed');
+
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.icon');
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = "rotate(-180deg)";
+            }
+        }
+    </script>
+</body>
+
+</html>
