@@ -209,62 +209,116 @@
 
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
 
-                <!-- EMPLOYER PERSPECTIVE -->
-                <h2 id="employer-isoprofit">🏭 The Employer's Perspective</h2>
+                <!-- FIRM HETEROGENEITY -->
+                <h2 id="firm-heterogeneity">💼 Firm Heterogeneity: The Cost of Safety</h2>
                 <div class="concept-card explanation">
-                    <p>Firms also face a trade-off. Reducing risk (improving safety) is expensive. To stay competitive and maintain profits, a firm that spends more on safety must spend less on wages.</p>
+                    <p>Just as workers have different preferences, firms have different cost structures. Not all firms can reduce risk at the same price.</p>
                 </div>
 
-                <!-- ISOPROFIT CURVES -->
-                <h3>1. Isoprofit Curves</h3>
-                <div class="concept-card">
-                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
-                        <div style="flex: 1; min-width: 350px;">
-                            <img src="isoprofit_curves_wage_risk.png" alt="Employer Isoprofit Curves" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="actor-card firm" style="background: rgba(49, 130, 206, 0.05);">
+                        <h4>Firm X: Low Safety Costs</h4>
+                        <p>Uses modern technology or has an inherently safer environment. The <strong>Isoprofit curve is flatter</strong>.</p>
+                        <div class="alert-box note">
+                            <strong>Result:</strong> Small wage sacrifice for safety.
                         </div>
-                        <div style="flex: 1; min-width: 300px;">
-                            <p><strong>Visual Analysis:</strong> An isoprofit curve shows all combinations of Wage and Risk that yield the same profit level.</p>
-                            <ul>
-                                <li><strong>Upward Sloping:</strong> If a firm moves to a safer environment (Left), it incurs costs and must lower wages to keep profits at zero (Competition).</li>
-                                <li><strong>Concave:</strong> Reflects "diminishing returns" to safety. The first safety measures are cheap, but making a job 100% safe is exponentially expensive.</li>
-                            </ul>
-                            <div class="alert-box note">
-                                <strong>Equilibrium:</strong> Firms operate at <strong>Zero Profit</strong> in perfect competition. The market equilibrium occurs where a worker's Indifference Curve is tangent to a firm's Isoprofit Curve.
-                            </div>
+                    </div>
+                    <div class="actor-card firm" style="background: rgba(229, 62, 62, 0.05); border-color: #E53E3E;">
+                        <h4>Firm Y: High Safety Costs</h4>
+                        <p>Older facilities or difficult environments (e.g., underground mining). The <strong>Isoprofit curve is steeper</strong>.</p>
+                        <div class="alert-box warning">
+                            <strong>Result:</strong> Large wage sacrifice for safety.
                         </div>
                     </div>
                 </div>
 
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
 
-                <!-- EMPIRICAL REALITY -->
-                <h2 id="empirical-reality">🧪 Empirical Evidence & Limitations</h2>
+                <!-- MATCHING -->
+                <h2 id="matching">🤝 The Matching of Workers & Firms</h2>
                 <div class="concept-card explanation">
-                    <p>Does the theory hold up in the real world? While logically sound, testing Compensating Wage Differentials is notoriously difficult for economists.</p>
+                    <p>The labour market efficiently pairs workers with firms. Risk-averse workers "buy" safety from firms that can provide it cheaply.</p>
                 </div>
 
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
-                    <!-- DIFFICULTIES -->
-                    <div class="actor-card gov" style="border-left: 4px solid #B06C2B;">
-                        <h4>Research Challenges</h4>
-                        <ul>
-                            <li><strong>OMITTED VARIABLE BIAS:</strong> High-risk jobs might also require high skills. If we don't control for skills, we might attribute a high wage to risk when it's actually due to education.</li>
-                            <li><strong>Subjectivity:</strong> "Stress" or "Unpleasantness" are hard to measure compared to "Risk of Death."</li>
-                        </ul>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="matching_workers_firms_wage_risk.png" alt="Matching Workers and Firms" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p><strong>The Matches:</strong></p>
+                            <ul>
+                                <li><strong>(Worker A + Firm X):</strong> High risk aversion + Low safety costs. Results in a **Safe Job** with a lower wage.</li>
+                                <li><strong>(Worker B + Firm Y):</strong> Low risk aversion + High safety costs. Results in a **Risky Job** with a higher wage.</li>
+                            </ul>
+                            <div class="post-it">
+                                <strong>Economic Efficiency:</strong> Sorting ensures that those who value safety most get it from firms that find it easiest to provide.
+                            </div>
+                        </div>
                     </div>
-                    <!-- LIMITATIONS -->
-                    <div class="actor-card gov" style="border-left: 4px solid #718096;">
-                        <h4>Market Frictions</h4>
-                        <p>The theory assumes perfect markets, but often:</p>
-                        <ul>
-                            <li><strong>Imperfect Information:</strong> Workers might not know how dangerous a job truly is.</li>
-                            <li><strong>Limited Mobility:</strong> Workers might be stuck in bad jobs due to poverty or geography.</li>
-                        </ul>
+                </div>
+
+                <!-- OFFER CURVE -->
+                <h3>The Hedonic Wage Function (Offer Curve)</h3>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="hedonic_wage_equilibrium_offer_curve.png" alt="Hedonic Wage Offer Curve" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p><strong>The Offer Curve:</strong> By connecting all equilibrium points (L, M, N, O, P) from multiple worker-firm matches, we create the market's "Price List" for risk.</p>
+                            <ul>
+                                <li><strong>Upward Sloping:</strong> More risk always implies a higher market wage.</li>
+                                <li><strong>Market Map:</strong> It summarizes all voluntary wage-risk trade-offs available in the economy.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
+                <!-- NORMATIVE ANALYSIS -->
+                <h2 id="normative-regulation">⚖️ Normative Analysis: Safety Regulation</h2>
+                <div class="concept-card explanation">
+                    <p>Should the government mandate safety levels? This depends on whether the market's assumptions (perfect info, mobility) actually hold.</p>
+                </div>
+
+                <!-- PERFECT INFO REG -->
+                <h3>1. Regulation with Perfect Information</h3>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="regulation_safety_wage_risk_effects.png" alt="Safety Regulation Effects" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p>If the government sets a <strong>Maximum Legal Risk ($R_{AX}$)</strong>:</p>
+                            <ul>
+                                <li><strong>Winner (Worker A):</strong> Already at a safe job, so they are unaffected.</li>
+                                <li><strong>Loser (Worker B):</strong> They lose their preferred risky/high-wage job and are forced to a safer job with lower utility ($B_1 < B_0$).</li>
+                                <li><strong>Firm Impact:</strong> High-cost firms (Firm Y) may be forced to close down.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMPERFECT INFO REG -->
+                <h3>2. Regulation with Imperfect Information</h3>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="imperfect_information_regulation_wage_risk.png" alt="Imperfect Information Regulation" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p>When workers <strong>underestimate</strong> risk (Point J vs Point K), they are on a lower actual utility curve than they think.</p>
+                            <div class="alert-box note">
+                                <strong>Justification:</strong> A well-calibrated regulation (Point C) can move workers to a higher utility than their current "misled" situation by correcting the info gap.
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="post-it" style="margin-top: 2rem; text-align: center;">
-                    <strong>Final Synthesis:</strong> Wages reflect more than just productivity. They encapsulate the <strong>entire job package</strong>. Firms that offer "nasty" jobs must pay a premium to attract workers voluntarily, ensuring that total utility is equalized across the market.
+                    <strong>Conclusion:</strong> Safety regulation is a double-edged sword. It protects the vulnerable and misinformed, but it can reduce the utility of those who knowingly prefer high-risk, high-reward employment.
                 </div>
 
             </section>
