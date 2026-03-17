@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labour Economics - Labour Supply Model</title>
-    <link rel="stylesheet" href="styles-blue.css">
+    <link rel="stylesheet" href="styles.css">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
         rel="stylesheet">
-    <!-- MathJax -->
+    <!-- MathJax for LaTeX support -->
     <script>
         MathJax = {
             tex: {
@@ -19,9 +19,6 @@
     </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <style>
-        h1, h2 { font-family: 'Outfit', sans-serif; }
-    </style>
 </head>
 
 <body>
@@ -29,7 +26,7 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            💎 Labour Economics
+            🎓 Labour Economics
             <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
                 &times;
             </button>
@@ -37,13 +34,13 @@
 
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>📂 Lessons Menu</span>
-                <span class="icon">▼</span>
+                <span>📂 Leçons</span>
+                <span class="icon" style="transform: rotate(-180deg);">▼</span>
             </button>
             <div class="accordion-content active" style="max-height: 500px;">
                 <a href="index.html">1. Intro & Labour Market Status</a>
                 <a href="cours-2.html">2. Dynamics & Equilibrium</a>
-                <a href="cours-3.html">3. Microeconomics of Labour Demand</a>
+                <a href="cours-3.html">3. The Microeconomics of Labour Demand</a>
                 <a href="cours-4.html">4. Labour Market Frictions</a>
                 <a href="cours-5.html" class="active">5. Labour Supply Model</a>
             </div>
@@ -52,30 +49,52 @@
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
+        <!-- HEADER -->
         <header class="page-header" style="display: flex; align-items: center;">
             <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
                 style="display: none;">
                 &#9776;
             </button>
-            <h1>Labour Supply: Neoclassical Model</h1>
+            <h1>5. Labour Supply Model</h1>
         </header>
 
+        <!-- CONTENT AREA -->
         <div class="content-scroll">
-            <section class="lesson-section" id="incremental-content">
-                <!-- Content will be added here step by step -->
+            <section class="lesson-section" id="section-container">
+                <!-- We will add content here step by step -->
                 <p style="text-align: center; color: var(--clr-text-muted); margin-top: 5rem;">
-                    Ready to build section by section...
+                    Ready for Section 1...
                 </p>
             </section>
         </div>
     </main>
 
+    <!-- SCRIPTS -->
     <script>
+        // Check for saved sidebar state
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+        });
+
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             const pageToggleBtn = document.getElementById('page-toggle-btn');
+
             sidebar.classList.toggle('collapsed');
-            pageToggleBtn.style.display = sidebar.classList.contains('collapsed') ? 'block' : 'none';
+
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
         }
 
         function toggleAccordion(button) {
@@ -83,10 +102,10 @@
             const icon = button.querySelector('.icon');
             if (content.style.maxHeight && content.style.maxHeight !== '0px') {
                 content.style.maxHeight = '0px';
-                icon.textContent = "▼";
+                icon.style.transform = "rotate(0deg)";
             } else {
                 content.style.maxHeight = content.scrollHeight + 'px';
-                icon.textContent = "▲";
+                icon.style.transform = "rotate(-180deg)";
             }
         }
     </script>
