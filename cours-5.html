@@ -199,16 +199,20 @@
                     </ol>
                 </div>
 
-                <h3>1. The Time Constraint</h3>
+                <h3>The Time Constraint</h3>
                 <div class="concept-card">
                     <p>Total time available ($T$) is split between hours of work ($H$) and leisure ($L$):</p>
                     <div class="math-block">
                         \[ H + L = T \]
                     </div>
-                    <p>Typically, if we exclude maintenance time (sleep, etc.), $T$ is approximately 16 hours per day.</p>
+                    
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <img src="images/time_allocation_leisure_work_constraint.png" alt="Time Allocation Constraint" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
+                        <p style="font-size: 0.9rem; color: var(--clr-text-muted); margin-top: 5px;">Time is a finite resource ($T$) divided between $L$ and $H$.</p>
+                    </div>
                 </div>
 
-                <h3>2. The Goods Constraint</h3>
+                <h3>The Goods Constraint</h3>
                 <div class="concept-card">
                     <p>Your spending on real income ($pY$) must be equal to your earnings ($wH$):</p>
                     <div class="math-block">
@@ -217,7 +221,7 @@
                     <p>Where $w$ is the wage rate, $H$ is hours worked, $p$ is the price index, and $Y$ is real income.</p>
                 </div>
 
-                <h3>3. The Budget Constraint (Algebraic Derivation)</h3>
+                <h3>The Budget Constraint (Algebraic Derivation)</h3>
                 <div class="concept-card explanation">
                     <p>If we combine the two constraints by substituting $H = T - L$ into $pY = wH$:</p>
                     <div class="math-block">
@@ -237,11 +241,20 @@
 
                 <div class="concept-card warning">
                     <h4>The Final Budget Line Equation</h4>
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <img src="images/budget_constraint_leisure_income_slope_wp.png" alt="Budget Constraint Slope" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
+                    </div>
+                    
                     <p>The relationship between real income ($Y$) and leisure ($L$) defines the budget constraint:</p>
                     <div class="math-block">
                         \[ Y = -\left(\frac{w}{p}\right)L + \left(\frac{w}{p}\right)T \]
                     </div>
-                    <p>This linear equation shows that the slope of the budget constraint is negative the real wage ($-\frac{w}{p}$), representing the market rate at which you can trade leisure for income.</p>
+                    <p><strong>Visual Interpretation:</strong></p>
+                    <ul>
+                        <li><strong>Vertical Intercept:</strong> $\frac{wT}{p}$ (Full income if $L=0$).</li>
+                        <li><strong>Horizontal Intercept:</strong> $T$ (Max leisure if $H=0$).</li>
+                        <li><strong>Slope:</strong> $-\frac{w}{p}$ (The cost of an extra hour of leisure is the real wage lost).</li>
+                    </ul>
                 </div>
 
                 <!-- OPTIMAL WORK/LEISURE MIX -->
