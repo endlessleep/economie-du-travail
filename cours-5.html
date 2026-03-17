@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labour Economics - Basic Neoclassical Model of Labour Supply</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Labour Economics - Neoclassical Model of Labour Supply</title>
+    <link rel="stylesheet" href="styles-blue.css">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;700;800&display=swap"
         rel="stylesheet">
-    <!-- MathJax for LaTeX support -->
+    <!-- MathJax -->
     <script>
         MathJax = {
             tex: {
@@ -19,6 +19,9 @@
     </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        h1, h2 { font-family: 'Outfit', sans-serif; }
+    </style>
 </head>
 
 <body>
@@ -26,7 +29,7 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            🎓 Labour Economics
+            💎 Labour Economics
             <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
                 &times;
             </button>
@@ -34,344 +37,288 @@
 
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>📂 Lessons</span>
-                <span class="icon" style="transform: rotate(-180deg);">▼</span>
+                <span>📂 Lessons Menu</span>
+                <span class="icon">▼</span>
             </button>
             <div class="accordion-content active" style="max-height: 500px;">
                 <a href="index.html">1. Intro & Labour Market Status</a>
                 <a href="cours-2.html">2. Dynamics & Equilibrium</a>
-                <a href="cours-3.html">3. The Microeconomics of Labour Demand</a>
+                <a href="cours-3.html">3. Microeconomics of Labour Demand</a>
                 <a href="cours-4.html">4. Labour Market Frictions</a>
-                <a href="cours-5.html" class="active">5. Labour Supply Model</a>
+                <a href="cours-5.html" class="active">5. Labour Supply Model (Blue)</a>
             </div>
         </div>
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-        <!-- HEADER -->
         <header class="page-header" style="display: flex; align-items: center;">
             <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
                 style="display: none;">
                 &#9776;
             </button>
-            <h1>Labour Supply: The Basic Neoclassical Model</h1>
+            <h1>Neoclassical Model of Labour Supply</h1>
         </header>
 
-        <!-- CONTENT AREA -->
         <div class="content-scroll">
             <section class="lesson-section">
 
-                <!-- I. BASIC MODEL & ASSUMPTIONS -->
-                <h2>⏳ I. Basic Neoclassical Model of Labour Supply</h2>
-                <div class="concept-card explanation" style="margin-bottom: 2rem;">
-                    <p>The neoclassical model of labor supply analyzes how individuals decide to allocate their fixed amount of time between <strong>work (labor)</strong> and <strong>non-work (leisure)</strong>.</p>
-                    
-                    <h4>1. Fundamental Assumptions</h4>
-                    <ul>
-                        <li><strong>The Labour-Leisure Trade-off:</strong> There are only two possible uses of time: labour and leisure.</li>
-                        <li><strong>Utility Maximization:</strong> Each individual selects the combination of hours of work and leisure that maximizes his or her level of satisfaction (utility).</li>
-                    </ul>
-
-                    <h4 style="margin-top: 1.5rem;">2. Demand for Leisure</h4>
-                    <p>Leisure is treated as a <strong>normal good</strong>. Its demand depends on:</p>
-                    <ul>
-                        <li><strong>Preferences:</strong> Personal tastes and subjective value of time.</li>
-                        <li><strong>Wealth/Income:</strong> Higher income generally leads to more hours of leisure ($\uparrow Y \implies \uparrow L$).</li>
-                        <li><strong>Opportunity Costs:</strong> The cost of leisure is the wage rate ($W$) given up.</li>
-                    </ul>
-                </div>
-
-                <div class="concept-card" style="text-align: center; margin-bottom: 2rem;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Initial Labour-Leisure Choice</h4>
-                    <img src="images/initial_labor_leisure_choice.png" alt="Initial Labor Leisure Choice" style="max-width: 60%; height: auto; border-radius: 8px;">
-                    <p style="font-size: 0.9rem; margin-top: 10px; font-style: italic;">The starting point of the individual's time allocation decision.</p>
-                </div>
-
-                <!-- II. PREFERENCES & CONSTRAINTS -->
-                <h2>🧠 II. Preferences and Utility</h2>
-                
-                <h3>1. Indifference Curves ($U = U(Y, L)$)</h3>
+                <!-- I. FOUNDATIONS -->
+                <h2>⏱️ I. The Basic Neoclassical Model</h2>
                 <div class="concept-card explanation">
-                    <p>An indifference curve represents all combinations of <strong>Real Income ($Y$)</strong> and <strong>Leisure ($L$)</strong> that give the same level of satisfaction.</p>
+                    <h4>Core Assumptions</h4>
+                    <p>In the Neoclassical framework, individuals are rational decision-makers who face a fundamental trade-off between <strong>Labour</strong> (earning money for consumption) and <strong>Leisure</strong> (non-market time).</p>
                     <ul>
-                        <li><strong>Downward Sloping:</strong> Reflects the trade-off between income and leisure.</li>
-                        <li><strong>Convex to the origin:</strong> As leisure increases, the individual is willing to give up less income for an additional hour of leisure (Diminishing Marginal Rate of Substitution).</li>
-                        <li><strong>Higher curves = Higher utility.</strong></li>
+                        <li><strong>Fixed Total Time ($T$):</strong> Usually set to 16 hours/day (excluding sleep). Any time not spent working is defined as leisure.</li>
+                        <li><strong>Utility Maximization:</strong> Individuals derive satisfaction from both consuming goods ($C$) and enjoying leisure ($L$). They maximize $U = f(C, L)$.</li>
                     </ul>
                 </div>
 
-                <div class="concept-card" style="text-align: center; margin-bottom: 2rem;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Comparison of Leisure Preferences</h4>
-                    <img src="images/leisure_preference_indifference_curves_comparison.png" alt="Leisure Preference Comparison" style="max-width: 80%; height: auto; border-radius: 8px;">
-                    <p style="font-size: 0.9rem; margin-top: 10px; font-style: italic;">Steep curves indicate a high value on leisure (requires more income to give it up), while flatter curves indicate a lower relative value.</p>
+                <div style="text-align: center;">
+                    <img src="images/initial_labor_leisure_choice.png" alt="Initial choice graph">
+                    <p style="font-style: italic; color: var(--clr-text-muted);">Figure 1: The starting allocation of time.</p>
                 </div>
 
-                <h3>2. The Constraints</h3>
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
-                    <div class="actor-card worker">
-                        <h4>Time Constraint</h4>
-                        <p>Total time available ($T$) is split between Hours of work ($H$) and Leisure ($L$).</p>
-                        <div class="math-block">\[ H + L = T \]</div>
+                <h3>1. Demand for Leisure</h3>
+                <p>Leisure is modeled as a <strong>normal good</strong>. This means several things:</p>
+                <ul>
+                    <li><strong>Preferences:</strong> Some value time more than others (subjective weight in utility).</li>
+                    <li><strong>Wealth Effect:</strong> If an individual becomes wealthier (higher non-labour income), they will naturally want to "buy" more leisure and work less.</li>
+                    <li><strong>Opportunity Cost:</strong> The price of an hour of leisure is the <strong>wage rate ($W$)</strong> you could have earned.</li>
+                </ul>
+
+                <!-- II. PREFERENCES -->
+                <h2>🧠 II. Preferences and Utility Curves</h2>
+                <div class="concept-card">
+                    <h4>Indifference Curves</h4>
+                    <p>An Indifference Curve ($IC$) shows all combinations of Income and Leisure that provide the same utility. Its slope is the <strong>Marginal Rate of Substitution (MRS)</strong>.</p>
+                    <div class="math-block">
+                        \[ MRS_{L,Y} = \frac{MU_L}{MU_Y} \]
                     </div>
-                    <div class="actor-card firm">
-                        <h4>Goods/Budget Constraint</h4>
-                        <p>Consumption ($pY$) equals labour income ($wH$) plus any non-labour income ($V$).</p>
-                        <div class="math-block">\[ pY = wH + V \]</div>
-                    </div>
+                    <p>The MRS tells us how much income an individual is willing to give up to gain one extra hour of leisure while staying equally happy.</p>
                 </div>
 
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem;">
-                    <div class="concept-card" style="flex: 1; min-width: 300px; text-align: center;">
-                        <h4 style="color: var(--clr-purple-primary);">Time Allocation Graph</h4>
-                        <img src="images/time_allocation_leisure_work_constraint.png" alt="Time Allocation" style="max-width: 100%; height: auto;">
-                    </div>
-                    <div class="concept-card" style="flex: 1; min-width: 300px; text-align: center;">
-                        <h4 style="color: var(--clr-purple-primary);">Budget Constraint Slope</h4>
-                        <img src="images/budget_constraint_leisure_income_slope_wp.png" alt="Budget Constraint Slope" style="max-width: 100%; height: auto;">
-                        <p style="font-size: 0.8rem; margin-top: 5px;">The slope of the budget line is $-w/p$ (the real wage).</p>
-                    </div>
+                <div style="text-align: center;">
+                    <img src="images/leisure_preference_indifference_curves_comparison.png" alt="Preferences comparison">
+                    <p style="font-style: italic; color: var(--clr-text-muted);">Figure 2: Steep curves indicate a 'Leisure Lover', flat curves indicate a 'Workaholic'.</p>
                 </div>
 
-                <h3>3. Optimization: The Hours of Work Decision</h3>
-                <div class="concept-card explanation">
-                    <p>The individual reaches the <strong>optimal choice</strong> where the indifference curve is <strong>tangent</strong> to the budget line ($\text{MRS}_{L,Y} = w$).</p>
-                    <div style="text-align: center;">
-                        <img src="images/leisure_labor_utility_maximization.png" alt="Utility Maximization" style="max-width: 60%; height: auto; border-radius: 8px;">
-                    </div>
-                </div>
-
-                <!-- III. WAGE CHANGES -->
-                <h2>⚖️ III. Substitution and Income Effects</h2>
-                <div class="concept-card" style="text-align: center; margin-bottom: 2rem;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Observed Change in Hours</h4>
-                    <img src="images/income_and_substitution_effects_observed_change.png" alt="Income and Substitution Effects Observed Change" style="max-width: 60%; height: auto;">
-                    <p style="margin-top: 10px;">The total change in hours worked when the wage increases is the sum of two effects.</p>
-                </div>
-
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
-                    <!-- Substitution Effect -->
-                    <div class="actor-card worker" style="border-top-color: var(--clr-purple-primary);">
-                        <h4 style="color: var(--clr-purple-primary);">1. Substitution Effect (SE)</h4>
-                        <p>$\uparrow W \implies$ Leisure is more expensive $\implies \downarrow L$ and $\uparrow H$.</p>
-                        <img src="images/substitution_effect_leisure_labor.png" alt="Substitution Effect" style="max-width: 100%; margin-top: 10px;">
-                    </div>
-
-                    <!-- Income Effect -->
-                    <div class="actor-card firm" style="border-top-color: var(--clr-accent);">
-                        <h4 style="color: var(--clr-accent);">2. Income Effect (IE)</h4>
-                        <p>$\uparrow W \implies$ Higher real income $\implies \uparrow L$ and $\downarrow H$ (because leisure is normal).</p>
-                        <img src="images/income_effect_leisure_labor.png" alt="Income Effect" style="max-width: 100%; margin-top: 10px;">
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem;">
-                    <div class="concept-card" style="flex: 1; min-width: 300px; text-align: center;">
-                        <h4 style="color: var(--clr-purple-primary);">Net Effect: More Work</h4>
-                        <img src="images/net_effect_wage_increase_more_work.png" alt="Wage Increase More Work" style="max-width: 100%; height: auto;">
-                        <p style="font-size: 0.8rem; margin-top: 5px;">Strong SE ($SE > IE$).</p>
-                    </div>
-                    <div class="concept-card" style="flex: 1; min-width: 300px; text-align: center;">
-                        <h4 style="color: var(--clr-purple-primary);">Net Effect: More Leisure</h4>
-                        <img src="images/net_effect_wage_increase_more_leisure.png" alt="Wage Increase More Leisure" style="max-width: 100%; height: auto;">
-                        <p style="font-size: 0.8rem; margin-top: 5px;">Strong IE ($IE > SE$).</p>
-                    </div>
-                </div>
-
-                <!-- IV. BACKWARD BENDING CURVE -->
-                <h2>📈 IV. The Backward-Bending Labour Supply Curve</h2>
-                <div class="concept-card" style="text-align: center; margin-bottom: 2rem;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">The Individual Supply Curve</h4>
-                    <img src="images/backward_bending_labor_supply_curve.png" alt="Backward Bending Labor Supply Curve" style="max-width: 55%; height: auto;">
-                    <div style="text-align: left; margin-top: 1.5rem; padding: 0 1rem;">
-                        <p>Specifically, we track the tradeoff points as wages rise:</p>
-                        <img src="images/income_leisure_tradeoff_labor_supply_points.png" alt="Income Leisure Tradeoff" style="max-width: 100%; margin-top: 10px;">
-                    </div>
-                </div>
-
-                <!-- V. PARTICIPATION & RESERVATION WAGE -->
-                <h2>🏃 V. Participation Decision & Reservation Wage</h2>
+                <!-- III. CONSTRAINTS -->
+                <h2>📉 III. Budget Constraints & Optimization</h2>
+                <p>The individual is limited by their <strong>Total Time</strong> and their <strong>Total Income</strong>.</p>
                 
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
-                    <div class="actor-card worker">
-                        <h4 style="color: #C53030;">Corner Solutions</h4>
-                        <p>Occurs when the individual reaches maximum utility by not working at all ($H=0$).</p>
-                        <img src="images/corner_solution_leisure_all_time.png" alt="Corner Solution" style="max-width: 100%; margin-top: 10px;">
+                <div class="actors-grid">
+                    <div class="actor-card">
+                        <h4>Algebraic Constraint</h4>
+                        <p>If $V$ is non-labour income:</p>
+                        <div class="math-block">
+                            \[ C = W(T - L) + V \]
+                        </div>
+                        <p>Or refined as:</p>
+                        <div class="math-block">
+                            \[ C = W \cdot H + V \]
+                        </div>
                     </div>
+                </div>
 
-                    <div class="actor-card firm">
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div class="concept-card" style="flex: 1; text-align: center;">
+                        <img src="images/time_allocation_leisure_work_constraint.png" alt="Time constraint">
+                        <p>Allocation of T across H and L.</p>
+                    </div>
+                    <div class="concept-card" style="flex: 1; text-align: center;">
+                        <img src="images/budget_constraint_leisure_income_slope_wp.png" alt="Budget slope">
+                        <p>Slope = $-W$ (the real wage).</p>
+                    </div>
+                </div>
+
+                <div class="concept-card explanation">
+                    <h4>The Tangency Point</h4>
+                    <p>Maximum satisfaction occurs where the budget line is tangent to the highest possible IC. At this point:</p>
+                    <div class="math-block">
+                        \[ MRS_{L,Y} = W \]
+                    </div>
+                </div>
+                <img src="images/leisure_labor_utility_maximization.png" alt="Optimization graph" style="max-width: 40% !important;">
+
+                <!-- IV. WAGE DYNAMICS -->
+                <h2>⚖️ IV. Substitution and Income Effects</h2>
+                <p>When the wage ($W$) increases, the budget line becomes steeper. This creates two conflicting forces.</p>
+
+                <div class="actors-grid">
+                    <!-- SE -->
+                    <div class="actor-card" style="border-top-color: var(--clr-blue-primary);">
+                        <h4>1. Substitution Effect (SE)</h4>
+                        <p>Work is now more rewarding. Leisure is more expensive. The individual swaps leisure for work.</p>
+                        <img src="images/substitution_effect_leisure_labor.png" alt="SE Graph" style="max-width: 100% !important;">
+                        <p><strong>Result:</strong> $H \uparrow$ (Work more).</p>
+                    </div>
+                    <!-- IE -->
+                    <div class="actor-card" style="border-top-color: var(--clr-accent);">
+                        <h4>2. Income Effect (IE)</h4>
+                        <p>You are richer for the same hours. You want to enjoy life more. You buy more leisure.</p>
+                        <img src="images/income_effect_leisure_labor.png" alt="IE Graph" style="max-width: 100% !important;">
+                        <p><strong>Result:</strong> $H \downarrow$ (Work less).</p>
+                    </div>
+                </div>
+
+                <div class="concept-card warning">
+                    <h4>The Observed Change</h4>
+                    <p>Total Effect = SE + IE. We only see the net result on the market.</p>
+                    <img src="images/income_and_substitution_effects_observed_change.png" alt="Observed change">
+                </div>
+
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div class="concept-card" style="flex: 1; text-align: center;">
+                        <img src="images/net_effect_wage_increase_more_work.png" alt="More work case">
+                        <p>If $SE > IE$, hours increase.</p>
+                    </div>
+                    <div class="concept-card" style="flex: 1; text-align: center;">
+                        <img src="images/net_effect_wage_increase_more_leisure.png" alt="More leisure case">
+                        <p>If $IE > SE$, hours decrease.</p>
+                    </div>
+                </div>
+
+                <!-- V. BACKWARD BENDING -->
+                <h2>📈 V. The Backward-Bending Supply Curve</h2>
+                <div class="concept-card explanation">
+                    <p>Empirical evidence suggests that at low wages, the SE dominates (people want to work more for a raise). At very high wages, the IE takes over (people prefer time off over more money).</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="images/backward_bending_labor_supply_curve.png" alt="Backward bending">
+                    <img src="images/income_leisure_tradeoff_labor_supply_points.png" alt="Tradeoff points">
+                </div>
+
+                <!-- VI. PARTICIPATION -->
+                <h2>🏃 VI. The Decision to Work (Participation)</h2>
+                <p>Not everyone works. This is explained by the <strong>Reservation Wage ($W_R$)</strong>.</p>
+                
+                <div class="actors-grid">
+                    <div class="actor-card">
                         <h4>Reservation Wage ($W_R$)</h4>
-                        <p>The minimum wage needed to tempt someone to work. If $W_{market} < W_R$, they won't participate.</p>
-                        <img src="images/reservation_wage_corner_solution.png" alt="Reservation Wage" style="max-width: 100%; margin-top: 10px;">
+                        <p>The value of the "first hour" of work. If the market wage ($W_M$) is lower than $W_R$, the person stays home.</p>
+                        <div class="math-block">\[ \text{Work if } W_M > W_R \]</div>
+                    </div>
+                    <div class="actor-card">
+                        <h4>Corner Solutions</h4>
+                        <p>When the best utility is found at $H=0$ (zero work).</p>
+                        <img src="images/corner_solution_leisure_all_time.png" alt="Corner solution" style="max-width: 70% !important;">
                     </div>
                 </div>
 
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem;">
-                    <div class="concept-card" style="flex: 1; min-width: 300px; text-align: center;">
-                        <h4 style="color: var(--clr-purple-primary);">Market Entry decision</h4>
-                        <img src="images/reservation_wage_vs_real_wage_labor_entry.png" alt="Labor Entry" style="max-width: 100%; height: auto;">
-                    </div>
-                    <div class="concept-card" style="flex: 1; min-width: 300px; text-align: center;">
-                        <h4 style="color: var(--clr-purple-primary);">Wages below Reservation</h4>
-                        <img src="images/reservation_wage_higher_than_market_wage.png" alt="Reservation Wage Higher" style="max-width: 100%; height: auto;">
-                    </div>
+                <div style="display: flex; gap: 10px; justify-content: center;">
+                    <img src="images/reservation_wage_corner_solution.png" alt="Res wage 1">
+                    <img src="images/reservation_wage_vs_real_wage_labor_entry.png" alt="Res wage 2">
+                    <img src="images/reservation_wage_higher_than_market_wage.png" alt="Res wage 3">
                 </div>
 
-                <!-- VI. NONLABOUR INCOME -->
-                <h2>💰 VI. Impact of Non-Labour Income</h2>
-                <div class="concept-card explanation">
-                    <p>Non-labour income ($V$) shifts the budget line vertically without changing its slope.</p>
-                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 1rem;">
-                        <img src="images/non_labor_income_shift_budget_constraint.png" alt="Non-labor income shift" style="width: 48%;">
-                        <img src="images/non_labor_income_effect_leisure_choice.png" alt="Non-labor income effect" style="width: 48%;">
+                <!-- VII. NON LABOUR INCOME -->
+                <h2>💰 VII. Non-Labour Income ($V$)</h2>
+                <div class="concept-card">
+                    <p>An increase in lottery winnings or inheritance shifts the budget constraint <strong>upwards</strong> without changing the slope.</p>
+                    <div style="display: flex; gap: 10px;">
+                        <img src="images/non_labor_income_shift_budget_constraint.png" alt="Nonlabour shift">
+                        <img src="images/non_labor_income_effect_leisure_choice.png" alt="Nonlabour effect">
                     </div>
-                    <p style="margin-top: 10px;"><strong>Theoretical Result:</strong> Since leisure is a normal good, an increase in $V$ leads to a pure Income Effect $\implies \uparrow L$ and $\downarrow H$.</p>
+                    <p><strong>Result:</strong> Since leisure is normal, work hours $H$ will <strong>always decrease</strong>. There is no Substitution Effect here because the wage hasn't changed.</p>
                 </div>
 
-                <!-- VII. POLICY IMPACTS -->
-                <h2>⚖️ VII. Income Replacement & Welfare Programs</h2>
-                <p>Public policies significantly alter the shape of the budget constraint and work incentives.</p>
-
-                <div class="concept-card warning" style="margin-bottom: 2rem;">
-                    <h4>1. Basic Welfare Program ($Y_t$)</h4>
-                    <p>Guarantees a minimum income but reduces benefits \$1 for \$1 for every dollar earned. This creates a <strong>Marginal Wage of zero</strong>.</p>
-                    <div style="text-align: center; margin-top: 1rem;">
-                        <img src="images/welfare_budget_constraint.png" alt="Welfare Budget Constraint" style="max-width: 60%;">
-                    </div>
+                <!-- VIII. POLICY IMPACTS -->
+                <h2>⚖️ VIII. Welfare Programs & Incentives</h2>
+                <div class="concept-card warning">
+                    <h4>The Welfare Trapezoid</h4>
+                    <p>Traditional welfare guarantees an income $Y_t$. For every dollar earned, benefits are reduced by one dollar. This makes the <strong>Effective Wage = 0</strong>.</p>
+                    <img src="images/welfare_budget_constraint.png" alt="Welfare trap">
                 </div>
 
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
-                    <div class="actor-card worker">
-                        <h4>Impact on Supply</h4>
-                        <p>Reduces work hours for most recipients and can lead to labour market exit.</p>
-                        <img src="images/welfare_labor_supply_reduction.png" alt="Labor Supply Reduction" style="max-width: 100%; margin-top:10px;">
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div class="concept-card" style="flex: 1; text-align: center;">
+                        <img src="images/welfare_labor_supply_reduction.png" alt="Reduction">
+                        <p>Work hours drop drastically.</p>
                     </div>
-                    <div class="actor-card firm">
-                        <h4>Exit Decision</h4>
-                        <p>At current wages, the utility from the welfare benefit is higher than from working.</p>
-                        <img src="images/welfare_labor_supply_exit.png" alt="Labor Supply Exit" style="max-width: 100%; margin-top:10px;">
+                    <div class="concept-card" style="flex: 1; text-align: center;">
+                        <img src="images/welfare_labor_supply_exit.png" alt="Exit">
+                        <p>Many exit the labor force entirely.</p>
                     </div>
                 </div>
+                <img src="images/welfare_effect_on_labor_supply.png" alt="Policy effect summary">
 
-                <div class="concept-card explanation" style="text-align: center; margin-bottom: 2rem;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Summary: General Welfare Effect</h4>
-                    <img src="images/welfare_effect_on_labor_supply.png" alt="Welfare Effect" style="max-width: 50%; height: auto;">
-                </div>
-
-                <h3>2. Policy Variants: Workfare & UBI</h3>
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
-                    <div class="actor-card worker" style="border-top-color: #2F855A;">
+                <h3>Better Alternatives?</h3>
+                <div class="actors-grid">
+                    <div class="actor-card">
                         <h4>Workfare</h4>
-                        <p>Requires recipients to work a certain number of hours to receive benefits.</p>
-                        <img src="images/workfare_budget_constraint.png" alt="Workfare Budget Constraint" style="max-width: 100%; margin-top: 10px;">
+                        <p>Mandatory work hours to get benefits. Changes the constraint by removing the $H=0$ utility point.</p>
+                        <img src="images/workfare_budget_constraint.png" alt="Workfare">
                     </div>
-                    <div class="actor-card firm" style="border-top-color: #3182CE;">
+                    <div class="actor-card">
                         <h4>Unconditional Basic Income (UBI)</h4>
-                        <p>A fixed payment given to everyone, regardless of their work status.</p>
-                        <img src="images/unconditional_basic_income_effect.png" alt="UBI Effect" style="max-width: 100%; margin-top: 10px;">
+                        <p>Pure non-labour shift. No "marginal tax" on work, but reservation wage rises. Individuals might quit if UBI is high enough.</p>
+                        <img src="images/unconditional_basic_income_effect.png" alt="UBI">
                     </div>
                 </div>
+                <img src="images/basic_income_labor_supply_cases.png" alt="UBI scenarios">
 
-                <div class="concept-card" style="text-align: center; margin-bottom: 2rem;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Case Analysis: Basic Income Scenarios</h4>
-                    <img src="images/basic_income_labor_supply_cases.png" alt="Basic Income Cases" style="max-width: 80%; height: auto;">
+                <h3>Other Insurances</h3>
+                <div style="display: flex; gap: 10px;">
+                    <img src="images/unemployment_compensation_full_replacement.png" alt="Unempl">
+                    <img src="images/disability_insurance_effect.png" alt="Disab">
                 </div>
 
-                <h3>3. Other Social Insurance</h3>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 2rem;">
-                    <div class="concept-card" style="flex: 1; min-width: 300px; text-align: center;">
-                        <h4 style="color: var(--clr-purple-primary);">Unemployment Compensation</h4>
-                        <img src="images/unemployment_compensation_full_replacement.png" alt="Unemployment Compensation" style="max-width: 100%; height: auto;">
-                    </div>
-                    <div class="concept-card" style="flex: 1; min-width: 300px; text-align: center;">
-                        <h4 style="color: var(--clr-purple-primary);">Disability Insurance</h4>
-                        <img src="images/disability_insurance_effect.png" alt="Disability Insurance" style="max-width: 100%; height: auto;">
-                    </div>
-                </div>
-
-                <!-- VIII. HOUSEHOLD PRODUCTION -->
-                <h2>🏠 VIII. Household Production Model</h2>
+                <!-- IX. HOUSEHOLD PRODUCTION -->
+                <h2>🏠 IX. Household Production Model</h2>
                 <div class="concept-card explanation">
-                    <p>Time is really split between: Market Work, Household Production (non-market), and Leisure.</p>
-                    <div style="text-align: center; margin-top: 1rem;">
-                        <img src="images/household_production_time_allocation.png" alt="Household Production Allocation" style="max-width: 60%;">
-                    </div>
+                    <p>Families make decisions together. Time is split 3 ways: Market Work, Household Production (cooking/cleaning), and Leisure.</p>
+                    <img src="images/household_production_time_allocation.png" alt="3-way split">
+                </div>
+                <p><strong>Comparative Advantage:</strong> The person with the highest market wage specializes in the market. The person better at home tasks specializes at home. This creates gender division of labour patterns.</p>
+                <div style="display: flex; gap: 10px;">
+                    <img src="images/welfare_household_production_choice.png" alt="Home choice">
+                    <img src="images/welfare_budget_constraint_household_production.png" alt="Welfare home">
+                    <img src="images/welfare_income_and_substitution_effect.png" alt="SE IE Welfare Home">
                 </div>
 
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
-                    <div class="actor-card worker">
-                        <h4 style="color: var(--clr-purple-primary);">Choice with Household Production</h4>
-                        <img src="images/welfare_household_production_choice.png" alt="Household Production Choice" style="max-width: 100%; margin-top: 10px;">
-                    </div>
-                    <div class="actor-card firm">
-                        <h4 style="color: var(--clr-purple-primary);">Welfare with Household Alt.</h4>
-                        <img src="images/welfare_budget_constraint_household_production.png" alt="Welfare Household Constraint" style="max-width: 100%; margin-top: 10px;">
-                    </div>
-                </div>
-
-                <div class="concept-card" style="text-align: center; margin-bottom: 2rem;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1rem;">Detailed SE/IE for Welfare Recipients</h4>
-                    <img src="images/welfare_income_and_substitution_effect.png" alt="Welfare SE IE" style="max-width: 50%; height: auto;">
-                </div>
-
-                <!-- IX. LIFECYCLE MODEL -->
-                <h2>🔄 IX. The Lifecycle Model</h2>
-                <p>Labor supply is not static; it changes as wages and circumstances evolve through life.</p>
-
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 2rem;">
-                    <div class="actor-card worker">
+                <!-- X. LIFECYCLE -->
+                <h2>🔄 X. Lifecycle and Worker Effects</h2>
+                <div class="actors-grid">
+                    <div class="actor-card">
                         <h4>Lifecycle Wage Profile</h4>
-                        <p>Human capital investment usually creates a "hump-shaped" wage path.</p>
-                        <img src="images/lifecycle_wage_profile.png" alt="Lifecycle Wage Profile" style="max-width: 100%; margin-top: 10px;">
+                        <p>Wages rise with experience then fall. Supply follows this: we work most in our prime years.</p>
+                        <img src="images/lifecycle_wage_profile.png" alt="Wage profile">
                     </div>
-                    <div class="actor-card firm">
-                        <h4>Life/Home Time Allocation</h4>
-                        <p>Tradeoff between market and non-market specialization over time.</p>
-                        <img src="images/lifecycle_market_vs_household_time.png" alt="Lifecycle Market vs Household" style="max-width: 100%; margin-top: 10px;">
+                    <div class="actor-card">
+                        <h4>Market vs Home Time</h4>
+                        <p>Specialization shifts as productivity in different sectors changes over a lifetime.</p>
+                        <img src="images/lifecycle_market_vs_household_time.png" alt="Time lifecycle">
                     </div>
                 </div>
 
-                <!-- POST-IT EXAM TIP -->
-                <div class="post-it" style="margin-top: 3rem;">
-                    <h4>💡 Exam Strategy Summary</h4>
+                <div class="concept-card explanation">
+                    <h4>Added vs. Discouraged Worker Effects</h4>
                     <ul>
-                        <li><strong>Substitution Effect:</strong> Always moves hours in the same direction as the wage.</li>
-                        <li><strong>Income Effect:</strong> Moves hours in the opposite direction.</li>
-                        <li><strong>Reservation Wage:</strong> If the market wage is below it, optimal work $H=0$.</li>
-                        <li><strong>Welfare Trapezoids:</strong> Pay close attention to the kinks in the budget line caused by benefit phase-outs!</li>
+                        <li><strong>Added Worker:</strong> One spouse loses a job $\implies$ The other enters the market to save the family income (Pure IE).</li>
+                        <li><strong>Discouraged Worker:</strong> Jobs are so hard to find $\implies$ Probability of success is zero $\implies$ You quit looking (vicious cycle).</li>
                     </ul>
+                </div>
+
+                <!-- FINAL EXAM TIP -->
+                <div class="post-it">
+                    <h4>🎓 Final Revision Tip</h4>
+                    <p>Always identify the type of shock first. 
+                    - Wage change? (SE + IE)
+                    - Non-labour shift? (Pure IE)
+                    - Policy change? Look at the 'Kink' in the budget line!</p>
                 </div>
 
             </section>
         </div>
     </main>
 
-    <!-- SCRIPTS -->
     <script>
-        // Check for saved sidebar state
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebar = document.querySelector('.sidebar');
-            const pageToggleBtn = document.getElementById('page-toggle-btn');
-
-            if (localStorage.getItem('sidebarCollapsed') === 'true') {
-                sidebar.classList.add('collapsed');
-                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
-            }
-        });
-
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             const pageToggleBtn = document.getElementById('page-toggle-btn');
-
             sidebar.classList.toggle('collapsed');
-
-            if (sidebar.classList.contains('collapsed')) {
-                localStorage.setItem('sidebarCollapsed', 'true');
-                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
-            } else {
-                localStorage.setItem('sidebarCollapsed', 'false');
-                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
-            }
+            pageToggleBtn.style.display = sidebar.classList.contains('collapsed') ? 'block' : 'none';
         }
 
         function toggleAccordion(button) {
@@ -379,10 +326,10 @@
             const icon = button.querySelector('.icon');
             if (content.style.maxHeight && content.style.maxHeight !== '0px') {
                 content.style.maxHeight = '0px';
-                icon.style.transform = "rotate(0deg)";
+                icon.textContent = "▼";
             } else {
                 content.style.maxHeight = content.scrollHeight + 'px';
-                icon.style.transform = "rotate(-180deg)";
+                icon.textContent = "▲";
             }
         }
     </script>
