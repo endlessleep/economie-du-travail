@@ -1,70 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours 5: Labour Supply Model - Economie du Travail</title>
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- MathJax for Formulas -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/mathjax.js"></script>
+    <title>Labour Economics - Labour Supply Model</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Specific overrides if needed */
-        .lesson-section {
-            padding: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-    </style>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
+        rel="stylesheet">
+    <!-- MathJax for LaTeX support -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
+
     <!-- SIDEBAR -->
-    <nav class="sidebar" id="sidebar">
+    <aside class="sidebar">
         <div class="sidebar-header">
-            <h2 class="logo">ECO<span>TRAVAIL</span></h2>
-            <button class="toggle-btn" onclick="toggleSidebar()" id="toggle-btn">
-                <span class="icon">➔</span>
+            🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
             </button>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Dashboard</a></li>
-            <li class="has-submenu">
-                <button class="submenu-btn" onclick="toggleAccordion(button)">
-                    <span>Cours</span>
-                    <span class="icon">▼</span>
-                </button>
-                <ul class="submenu-content" style="max-height: 500px;">
-                    <li><a href="cours-2.html">2. Labour Demand</a></li>
-                    <li><a href="cours-3.html">3. Equilibrium</a></li>
-                    <li><a href="cours-4.html">4. Human Capital</a></li>
-                    <li><a href="cours-5.html" class="active">5. Labour Supply</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 Leçons</span>
+                <span class="icon" style="transform: rotate(-180deg);">▼</span>
+            </button>
+            <div class="accordion-content active" style="max-height: 500px;">
+                <a href="index.html">1. Intro & Labour Market Status</a>
+                <a href="cours-2.html">2. Dynamics & Equilibrium</a>
+                <a href="cours-3.html">3. The Microeconomics of Labour Demand</a>
+                <a href="cours-4.html">4. Labour Market Frictions</a>
+                <a href="cours-5.html" class="active">5. Labour Supply Model</a>
+            </div>
+        </div>
+    </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-        <header class="top-bar">
+        <!-- HEADER -->
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
             <h1>5. Labour Supply Model</h1>
-            <div class="user-profile">
-                <span>Marie Nguyen</span>
-            </div>
         </header>
 
-        <div class="content-wrapper">
+        <!-- CONTENT AREA -->
+        <div class="content-scroll">
             <section class="lesson-section" id="section-container">
-                <!-- Content will be added here step-by-step -->
-                <div class="concept-card explanation" style="text-align: center; border: 2px dashed var(--clr-purple-border); padding: 4rem;">
-                    <p style="font-size: 1.2rem; color: var(--clr-text-muted);">
-                        Course 5 has been reset. Envoie-moi tes premières notes quand tu es prêt(e) à recommencer sur des bases plus claires !
+
+                <div class="concept-card explanation" style="text-align: center; border: 2px dashed #CBD5E0; padding: 4rem; opacity: 0.7;">
+                    <p style="font-size: 1.2rem; color: #4A5568;">
+                        Le cours 5 a été réinitialisé. <br>
+                        <strong>Prêt pour un nouveau départ ?</strong> Envoie-moi tes premières notes !
                     </p>
                 </div>
+
             </section>
         </div>
     </main>
@@ -74,15 +78,27 @@
         // Check for saved sidebar state
         document.addEventListener('DOMContentLoaded', () => {
             const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
             if (localStorage.getItem('sidebarCollapsed') === 'true') {
                 sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
             }
         });
 
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
             sidebar.classList.toggle('collapsed');
-            localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
+
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
         }
 
         function toggleAccordion(button) {
