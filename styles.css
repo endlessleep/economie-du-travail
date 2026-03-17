@@ -1,19 +1,15 @@
 :root {
-    --clr-bg-main: #FAFAFA;
+    --clr-bg-main: #F7FAFC; /* Fond global clair/grisâtre moderne */
     --clr-bg-card: #FFFFFF;
-    --clr-bg-sidebar: #2A1B38;
-    /* Violet très sombre */
-    --clr-sidebar-hover: #4A3060;
-    --clr-sidebar-border: #3E2750;
+    --clr-bg-sidebar: #1A202C; /* Bleu nuit profond (Navy) */
+    --clr-sidebar-hover: #2D3748;
+    --clr-sidebar-border: #2D3748;
     --clr-text-main: #2D3748;
     --clr-text-muted: #718096;
-    --clr-purple-primary: #805AD5;
-    /* Violet principal vif */
-    --clr-purple-light: #FAF5FF;
-    /* Fond violet très clair */
-    --clr-purple-border: #D6BCFA;
-    --clr-accent: #D53F8C;
-    /* Rose/Magenta pour trancher */
+    --clr-blue-primary: #3182CE; /* Bleu azur (Azure/Ocean) */
+    --clr-blue-light: #EBF8FF; /* Fond azur très clair */
+    --clr-blue-border: #BEE3F8;
+    --clr-accent: #2B6CB0; /* Bleu plus soutenu pour accents */
 }
 
 * {
@@ -85,7 +81,7 @@ body {
 .page-toggle-btn {
     background: none;
     border: none;
-    color: var(--clr-purple-primary);
+    color: var(--clr-blue-primary);
     font-size: 1.5rem;
     cursor: pointer;
     padding: 0;
@@ -166,14 +162,14 @@ body {
 .page-header {
     padding: 2.5rem 4rem;
     background-color: var(--clr-bg-card);
-    border-bottom: 1px solid var(--clr-purple-border);
+    border-bottom: 1px solid var(--clr-blue-border);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
     z-index: 5;
 }
 
 .page-header h1 {
     margin: 0;
-    color: var(--clr-purple-primary);
+    color: var(--clr-blue-primary);
     font-size: 2.5rem;
     font-weight: 800;
     letter-spacing: -1px;
@@ -204,11 +200,11 @@ body {
 
 /* TYPOGRAPHY */
 h2 {
-    color: var(--clr-purple-primary);
+    color: var(--clr-blue-primary);
     font-size: 1.75rem;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--clr-purple-light);
+    border-bottom: 2px solid var(--clr-blue-light);
     padding-bottom: 0.5rem;
     letter-spacing: -0.5px;
 }
@@ -228,7 +224,7 @@ p {
 }
 
 strong {
-    color: var(--clr-purple-primary);
+    color: var(--clr-blue-primary);
     font-weight: 700;
 }
 
@@ -237,7 +233,7 @@ strong {
 /* 1. Maths Blocks */
 .math-block {
     background-color: var(--clr-bg-card);
-    border: 2px dashed var(--clr-purple-primary);
+    border: 2px dashed var(--clr-blue-primary);
     border-radius: 8px;
     padding: 1.5rem 2rem;
     margin: 2rem 0;
@@ -301,8 +297,8 @@ strong {
 }
 
 .concept-card.explanation {
-    border-left: 4px solid var(--clr-purple-primary);
-    background-color: var(--clr-purple-light);
+    border-left: 4px solid var(--clr-blue-primary);
+    background-color: var(--clr-blue-light);
 }
 
 .concept-card.warning {
@@ -405,7 +401,7 @@ strong {
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid var(--clr-purple-primary);
+    border-top: 4px solid var(--clr-blue-primary);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
@@ -425,7 +421,7 @@ strong {
 }
 
 .actor-card.gov {
-    border-top-color: var(--clr-purple-primary);
+    border-top-color: var(--clr-blue-primary);
 }
 
 .actor-card .actor-icon {
@@ -446,7 +442,7 @@ strong {
     letter-spacing: 0.5px;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--clr-purple-border);
+    border-bottom: 1px solid var(--clr-blue-border);
 }
 
 .actor-card.worker .actor-goal {
@@ -482,5 +478,5 @@ strong {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--clr-purple-border);
+    background: var(--clr-blue-border);
 }

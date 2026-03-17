@@ -62,11 +62,97 @@
         <div class="content-scroll">
             <section class="lesson-section" id="section-container">
 
-                <div class="concept-card explanation" style="text-align: center; border: 2px dashed #CBD5E0; padding: 4rem; opacity: 0.7;">
-                    <p style="font-size: 1.2rem; color: #4A5568;">
-                        Le cours 5 a été réinitialisé. <br>
-                        <strong>Prêt pour un nouveau départ ?</strong> Envoie-moi tes premières notes !
+                <h2>💡 The Foundations: Understanding the Demand for Leisure</h2>
+                <div class="concept-card explanation">
+                    <p>In the Neoclassical model, we don't just "decide to work." Instead, we decide how much <strong>leisure</strong> we want to consume. Time is a finite resource (limited to 24 hours a day or $T$ hours), and every hour not spent working is considered leisure. Understanding what drives this demand is the key to predicting how much labor someone will eventually supply.</p>
+                </div>
+
+                <h3>What drives our demand for free time?</h3>
+                <p>The decision to consume leisure depends on three fundamental pillars that interact with each other in every individual's mind:</p>
+
+                <div class="actors-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                    <!-- Preferences -->
+                    <div class="actor-card worker">
+                        <div class="actor-icon">👤</div>
+                        <h4>Preferences</h4>
+                        <p>Every person is unique. Some individuals derive immense satisfaction from work, while others place a very high value on family time or rest. In economics, we translate these internal desires into <strong>Utility Functions</strong> and <strong>Indifference Curves</strong>. Your personal "taste" for leisure determines how much income you are willing to give up for one more hour of rest.</p>
+                    </div>
+
+                    <!-- Wealth/Income -->
+                    <div class="actor-card firm">
+                        <div class="actor-icon">💰</div>
+                        <h4>Wealth and Non-Labour Income</h4>
+                        <p>This follows the logic of <strong>Normal Goods</strong>. If you win the lottery (increasing your wealth), you are likely to "buy" more of everything you like—including leisure. 
+                        <br><strong>The intuition:</strong> As your wealth rises, you feel less pressurized to earn, and thus your demand for leisure hours increases ($\uparrow \text{Wealth} \rightarrow \uparrow \text{Leisure}$).</p>
+                    </div>
+
+                    <!-- Opportunity Cost -->
+                    <div class="actor-card gov">
+                        <div class="actor-icon">⚖️</div>
+                        <h4>Opportunity Cost</h4>
+                        <p>Leisure has a price: <strong>the market wage ($W$)</strong>. Every hour you spend resting is an hour where you chose <em>not</em> to earn that wage. 
+                        <br><strong>The Decision:</strong> If the personal value you place on that hour is lower than the wage, you work. If it's higher, you stay home.</p>
+                    </div>
+                </div>
+
+                <!-- SE & IE DEEP DIVE -->
+                <h2>🔬 The Two Faces of a Wage Change</h2>
+                <div class="concept-card explanation">
+                    <p>When the wage rate increases, it does two things: it makes you richer, but it also makes leisure more expensive. These two forces are the <strong>Income Effect</strong> and the <strong>Substitution Effect</strong>. They fight each other, and the "winner" determines if you'll work more or less.</p>
+                </div>
+
+                <div class="actors-grid">
+                    <!-- Substitution Effect -->
+                    <div class="actor-card worker">
+                        <h4 style="color: var(--clr-blue-primary);">Substitution Effect (SE)</h4>
+                        <p>This is the "Relative Price" effect. When your wage goes up, every hour of leisure becomes <strong>more expensive</strong> in terms of lost earnings.</p>
+                        <p><strong>Logic:</strong> Since leisure is now costlier, you naturally want to consume less of it. You "substitute" your leisure time with more work hours to take advantage of the better pay.</p>
+                        <div class="alert-box" style="background-color: var(--clr-blue-light); border-left: 4px solid var(--clr-blue-primary); padding: 1rem; margin-top: 1rem; border-radius: 4px;">
+                            <strong>Formula:</strong> $\text{SE} > 0$ for Hours of Work ($H$). <br>Wage $\uparrow \rightarrow$ Leisure $\downarrow \rightarrow$ Working Hours $\uparrow$.
+                        </div>
+                    </div>
+
+                    <!-- Income Effect -->
+                    <div class="actor-card firm">
+                        <h4 style="color: #C53030;">Income Effect (IE)</h4>
+                        <p>As the wage rises, your <strong>real income</strong> increases. You are effectively "richer" for every hour you work.</p>
+                        <p><strong>Logic:</strong> If leisure is a <strong>normal good</strong>, being richer makes you want to "buy" more free time. You don't need to work as many hours to maintain your standard of living.</p>
+                        <div class="alert-box" style="background-color: #FED7E2; border-left: 4px solid #F56565; padding: 1rem; margin-top: 1rem; border-radius: 4px;">
+                            <strong>Formula:</strong> $\text{IE} < 0$ for Hours of Work ($H$). <br>Wage $\uparrow \rightarrow$ Real Income $\uparrow \rightarrow$ Leisure $\uparrow \rightarrow$ Working Hours $\downarrow$.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BACKWARD BENDING -->
+                <h2>📉 The Backward-Bending Labour Supply Curve</h2>
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 300px;">
+                            <img src="images/backward_bending_labor_supply_curve.png" alt="Backward Bending Curve" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p>This iconic curve shows that individuals don't always work more when paid more. The shape is divided into two phases:</p>
+                            <ul>
+                                <li><strong>Phase 1 (Low Wages):</strong> The curve slopes upward. Here, the <strong>Substitution Effect dominates</strong>. People are motivated to work more as the wage rises.</li>
+                                <li><strong>The Turning Point ($w_0$):</strong> This is the tipping point where the two effects exactly cancel each other out ($SE = IE$).</li>
+                                <li><strong>Phase 2 (High Wages):</strong> The curve bends backward. Here, the <strong>Income Effect dominates</strong>. People feel wealthy enough to prioritize leisure over the extra marginal dollar.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PREFERENCES & UTILITY -->
+                <h2>🎯 Individual Preferences & Utility</h2>
+                <div class="concept-card explanation">
+                    <p>To model this mathematically, we assume individuals maximize their <strong>Utility ($U$)</strong>, which depends on <strong>Real Income ($Y$)</strong> and <strong>Leisure ($L$)</strong>.</p>
+                    <p style="text-align: center; font-size: 1.5rem; margin: 1rem 0;">
+                        $U = U(Y, L)$
                     </p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>The Indifference Curve (IC)</h4>
+                    <p>An Indifference Curve represents all the combinations of Income ($Y$) and Leisure ($L$) that give the individual the <strong>exact same level of satisfaction</strong>. Higher curves (top-right) represent higher levels of utility ($U$). Individuals always strive to reach the highest curve possible given their budget.</p>
                 </div>
 
             </section>
