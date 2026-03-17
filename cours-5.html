@@ -4,625 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labour Economics - Labour Supply Model</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Consolas&display=swap"
-        rel="stylesheet">
-    <!-- MathJax for LaTeX support -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            }
-        };
-    </script>
+    <title>Cours 5: Labour Supply Model - Economie du Travail</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- MathJax for Formulas -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/dist/mathjax.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific overrides if needed */
+        .lesson-section {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
-
     <!-- SIDEBAR -->
-    <aside class="sidebar">
+    <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            🎓 Labour Economics
-            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
-                &times;
+            <h2 class="logo">ECO<span>TRAVAIL</span></h2>
+            <button class="toggle-btn" onclick="toggleSidebar()" id="toggle-btn">
+                <span class="icon">➔</span>
             </button>
         </div>
 
-        <div class="accordion-item">
-            <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>📂 Leçons</span>
-                <span class="icon" style="transform: rotate(-180deg);">▼</span>
-            </button>
-            <div class="accordion-content active" style="max-height: 500px;">
-                <a href="index.html">1. Intro & Labour Market Status</a>
-                <a href="cours-2.html">2. Dynamics & Equilibrium</a>
-                <a href="cours-3.html">3. The Microeconomics of Labour Demand</a>
-                <a href="cours-4.html">4. Labour Market Frictions</a>
-                <a href="cours-5.html" class="active">5. Labour Supply Model</a>
-            </div>
-        </div>
-    </aside>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="has-submenu">
+                <button class="submenu-btn" onclick="toggleAccordion(button)">
+                    <span>Cours</span>
+                    <span class="icon">▼</span>
+                </button>
+                <ul class="submenu-content" style="max-height: 500px;">
+                    <li><a href="cours-2.html">2. Labour Demand</a></li>
+                    <li><a href="cours-3.html">3. Equilibrium</a></li>
+                    <li><a href="cours-4.html">4. Human Capital</a></li>
+                    <li><a href="cours-5.html" class="active">5. Labour Supply</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-        <!-- HEADER -->
-        <header class="page-header" style="display: flex; align-items: center;">
-            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
-                style="display: none;">
-                &#9776;
-            </button>
+        <header class="top-bar">
             <h1>5. Labour Supply Model</h1>
+            <div class="user-profile">
+                <span>Marie Nguyen</span>
+            </div>
         </header>
 
-        <!-- CONTENT AREA -->
-        <div class="content-scroll">
+        <div class="content-wrapper">
             <section class="lesson-section" id="section-container">
-
-                <!-- BASIC MODEL & ASSUMPTIONS -->
-                <h2>⏳ Basic Neoclassical Model of Labour Supply</h2>
-                <div class="concept-card explanation">
-                    <p>The neoclassical model examines how individuals allocate their limited time between <strong>work (labour)</strong> and <strong>non-work (leisure)</strong>. It assumes that individuals are rational agents who aim to maximize their utility.</p>
-                    
-                    <h4>Fundamental Assumptions</h4>
-                    <ul>
-                        <li><strong>The Labour-Leisure Trade-off:</strong> There are only two uses of time: **Labour** and **Leisure**.</li>
-                        <li><strong>Utility Maximization:</strong> Individuals select the combination of work and leisure that maximizes their level of satisfaction (Utility).</li>
-                    </ul>
-                </div>
-
-                <!-- DEMAND FOR LEISURE -->
-                <h2>🛋️ The Demand for Leisure</h2>
-                <p>Leisure is modeled as a <strong>normal good</strong>. Its demand depends on:</p>
-                
-                <div class="actors-grid">
-                    <div class="actor-card worker" style="border-top-color: var(--clr-purple-primary);">
-                        <h4 style="color: var(--clr-purple-primary);">1. Preferences</h4>
-                        <p>Subjective valuation of free time vs. material goods.</p>
-                    </div>
-                    <div class="actor-card firm" style="border-top-color: var(--clr-accent);">
-                        <h4 style="color: var(--clr-accent);">2. Wealth/Income</h4>
-                        <p>Higher income generally leads to more leisure (↑ Income → ↑ Hours of leisure).</p>
-                    </div>
-                    <div class="actor-card gov" style="border-top-color: #3182CE;">
-                        <h4 style="color: #3182CE;">3. Opportunity Costs</h4>
-                        <p>For those working, the opportunity cost of an hour of leisure is the <strong>wage rate</strong> ($W$).</p>
-                        <p style="margin-top: 10px; font-style: italic; font-size: 0.9rem;">➡️ Individuals choose not to work if the value of their leisure time exceeds the market wage.</p>
-                    </div>
-                </div>
-
-                <!-- WAGE DYNAMICS: SE & IE -->
-                <h2>⚖️ Substitution and Income Effects</h2>
-                <p>A change in the wage rate creates two conflicting effects on the quantity of labour supplied:</p>
-
-                <div class="actors-grid" style="grid-template-columns: 1fr 1fr;">
-                    <!-- Substitution Effect -->
-                    <div class="actor-card worker">
-                        <div class="actor-icon" style="font-size: 1.5rem;">🔄</div>
-                        <h4 style="color: #2B6CB0;">Substitution Effect (SE)</h4>
-                        <p>As wages rise, leisure becomes more expensive. Individuals consume less leisure and work more.</p>
-                        <div class="math-block" style="margin-top: 15px; background: white; border: 1px dashed var(--clr-purple-primary);">
-                             \[ \text{SE: } \frac{\Delta H}{\Delta W} \Big|_{\bar{U}} > 0 \]
-                        </div>
-                        <p style="font-size: 0.9rem; margin-top: 5px;">(Positive impact on work hours)</p>
-                    </div>
-
-                    <!-- Income Effect -->
-                    <div class="actor-card firm">
-                        <div class="actor-icon" style="font-size: 1.5rem;">💰</div>
-                        <h4 style="color: #C53030;">Income Effect (IE)</h4>
-                        <p>Higher wages increase real income. If leisure is a normal good, individuals "buy" more leisure and work less.</p>
-                        <div class="math-block" style="margin-top: 15px; background: white; border: 1px dashed var(--clr-accent);">
-                            \[ \text{IE: } \frac{\Delta H}{\Delta W} \Big|_{\bar{Income}} < 0 \]
-                        </div>
-                        <p style="font-size: 0.9rem; margin-top: 5px;">(Negative impact on work hours)</p>
-                    </div>
-                </div>
-
-                <div class="concept-card warning">
-                    <h4>The Net Effect</h4>
-                    <p>Usually, both effects occur simultaneously. The total change in labour supply depends on which effect is stronger:</p>
-                    <ul>
-                        <li><strong>Increases</strong> if Substitution Effect > Income Effect ($SE > IE$).</li>
-                        <li><strong>Decreases</strong> if Income Effect > Substitution Effect ($IE > SE$).</li>
-                    </ul>
-                </div>
-
-                <!-- BACKWARD BENDING CURVE -->
-                <h2>📈 The Backward-Bending Labour Supply Curve</h2>
-                <div class="concept-card" style="text-align: center;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">The Individual Supply Curve (S)</h4>
-                    <img src="images/backward_bending_labor_supply_curve.png" alt="Backward Bending Labor Supply Curve" style="max-width: 55%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    
-                    <div style="text-align: left; margin-top: 2rem; padding: 0 1.5rem;">
-                        <p>This curve demonstrates how the dominance of the two effects shifts as wages rise:</p>
-                        <ol>
-                            <li><strong>At Low Wages (Rising Phase):</strong> $SE > IE$. Individuals work more as the wage increases. The opportunity cost of leisure is high.</li>
-                            <li><strong>At $W_0$:</strong> The effects are balanced.</li>
-                            <li><strong>At High Wages (Backward-Bending):</strong> $IE > SE$. Individuals are "rich enough" to value an extra hour of leisure more than the extra income from work.</li>
-                        </ol>
-                        <p style="background: var(--clr-purple-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--clr-purple-primary); font-weight: 600;">
-                            💡 Summary: The labor supply initially increases with wages but eventually decreases when the Income Effect becomes dominant.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- PREFERENCES & UTILITY -->
-                <h2>🧠 Preferences</h2>
-                <div class="concept-card">
-                    <p>An <strong>indifference curve</strong> is a graphical representation of alternative combinations of goods that provide a given level of satisfaction (utility) to an individual.</p>
-                    
-                    <h4>The Utility Function</h4>
-                    <p>We assume that an individual's utility depends on two "goods": <strong>Real Income ($Y$)</strong> and <strong>Leisure ($L$)</strong>. These two goods can substitute for each other to some extent, and both generate satisfaction.</p>
-                    <div class="math-block">
-                        \[ U = U(Y, L) \]
-                    </div>
-                </div>
-
-                <h3>Indifference Curves</h3>
-                <div class="concept-card explanation">
-                    <p>An indifference curve is <strong>downward sloping</strong> because an individual is willing to give up some income to receive additional leisure (or vice versa) while maintaining the same level of utility.</p>
-                </div>
-
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <h4 style="color: var(--clr-purple-primary);">Income-Leisure Trade-off</h4>
-                    <img src="images/income_leisure_tradeoff_labor_supply_points.png" alt="Income Leisure Tradeoff" style="max-width: 60%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    <p style="font-size: 0.9rem; margin-top: 10px; font-style: italic;">As leisure increases (moving right), the individual must give up income (moving down) to stay on the same curve.</p>
-                </div>
-
-                <div class="concept-card" style="text-align: center;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">Comparison of Leisure Preferences</h4>
-                    <img src="images/leisure_preference_indifference_curves_comparison.png" alt="Leisure Preference Comparison" style="max-width: 80%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    
-                    <div class="actors-grid" style="text-align: left; margin-top: 1.5rem;">
-                        <div class="actor-card worker">
-                            <h4>(a) High Value on Leisure</h4>
-                            <p>Individual has <strong>steep curves</strong>. They value leisure deeply and require a very large increase in income to give up even a small amount of free time. They tend to work fewer hours.</p>
-                        </div>
-                        <div class="actor-card firm">
-                            <h4>(b) Low Value on Leisure</h4>
-                            <p>Individual has <strong>flatter curves</strong>. They are willing to sacrifice free time for relatively small gains in income. They tend to work more hours.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CONSTRAINED MAXIMIZATION -->
-                <h2>🎯 Constrained Maximization</h2>
-                <div class="concept-card explanation">
-                    <p>Individuals attempt to attain the highest possible level of utility. However, their choice is restricted by two fundamental constraints:</p>
-                    <ol>
-                        <li><strong>A Time Constraint:</strong> Limited hours in a day.</li>
-                        <li><strong>A Goods (Budget) Constraint:</strong> Limited income potential.</li>
-                    </ol>
-                </div>
-
-                <h3>The Time Constraint</h3>
-                <div class="concept-card">
-                    <p>Total time available ($T$) is split between hours of work ($H$) and leisure ($L$):</p>
-                    <div class="math-block">
-                        \[ H + L = T \]
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 1.5rem;">
-                        <img src="images/time_allocation_leisure_work_constraint.png" alt="Time Allocation Constraint" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                        <p style="font-size: 0.9rem; color: var(--clr-text-muted); margin-top: 5px;">Time is a finite resource ($T$) divided between $L$ and $H$.</p>
-                    </div>
-                </div>
-
-                <h3>The Goods Constraint</h3>
-                <div class="concept-card">
-                    <p>Your spending on real income ($pY$) must be equal to your earnings ($wH$):</p>
-                    <div class="math-block">
-                        \[ wH = pY \]
-                    </div>
-                    <p>Where $w$ is the wage rate, $H$ is hours worked, $p$ is the price index, and $Y$ is real income.</p>
-                </div>
-
-                <h3>The Budget Constraint (Algebraic Derivation)</h3>
-                <div class="concept-card explanation">
-                    <p>If we combine the two constraints by substituting $H = T - L$ into $pY = wH$:</p>
-                    <div class="math-block">
-                        \[ pY = w(T - L) \implies pY = wT - wL \]
-                    </div>
-                    
-                    <h4>The Full-Income Constraint</h4>
-                    <p>Rearranging the equation gives the <strong>Full-Income Constraint</strong>:</p>
-                    <div class="math-block" style="border-style: solid; border-width: 2px;">
-                        \[ wT = pY + wL \]
-                    </div>
-                    <ul>
-                        <li><strong>Full Income ($wT$):</strong> The individual's maximum possible earnings potential if they worked all available time.</li>
-                        <li>This total "wealth" covers both the <strong>explicit cost</strong> of goods ($pY$) and the <strong>implicit cost</strong> (opportunity cost) of leisure ($wL$).</li>
-                    </ul>
-                </div>
-
-                <div class="concept-card warning">
-                    <h4>The Final Budget Line Equation</h4>
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="images/budget_constraint_leisure_income_slope_wp.png" alt="Budget Constraint Slope" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    </div>
-                    
-                    <p>The relationship between real income ($Y$) and leisure ($L$) defines the budget constraint:</p>
-                    <div class="math-block">
-                        \[ Y = -\left(\frac{w}{p}\right)L + \left(\frac{w}{p}\right)T \]
-                    </div>
-                    <p><strong>Visual Interpretation:</strong></p>
-                    <ul>
-                        <li><strong>Vertical Intercept:</strong> $\frac{wT}{p}$ (Full income if $L=0$).</li>
-                        <li><strong>Horizontal Intercept:</strong> $T$ (Max leisure if $H=0$).</li>
-                        <li><strong>Slope:</strong> $-\frac{w}{p}$ (The cost of an extra hour of leisure is the real wage lost).</li>
-                    </ul>
-                </div>
-
-                <!-- OPTIMAL WORK/LEISURE MIX -->
-                <h2>⚖️ Optimal Work/Leisure Mix</h2>
-                <div class="concept-card explanation">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">Interior Solution: The Optimal Choice</h4>
-                    <div style="text-align: center;">
-                        <img src="images/leisure_labor_utility_maximization.png" alt="Optimal Work Leisure Mix" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    </div>
-
-                    <div style="margin-top: 2rem;">
-                        <p><strong>Visual Interpretation:</strong></p>
-                        <ul>
-                            <li>The budget constraint (green line) shows all combinations of income ($Y$) and leisure ($L$) the individual can afford.</li>
-                            <li>The indifference curves ($U_0, U_1, U_2, U_3$) represent different levels of satisfaction.</li>
-                            <li><strong>Utility is maximized</strong> at the point of <strong>tangency</strong> between the highest possible indifference curve and the budget constraint.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>Analytical Interpretation</h4>
-                    <p>The consumer maximizes utility $U(Y, L)$ subject to the budget constraint $Y = \frac{w}{p}(T - L)$.</p>
-                    <p>The <strong>tangency condition</strong> at the optimal point ($L^*$, $Y^*$) is:</p>
-                    <div class="math-block">
-                        \[ MRS_{L,Y} = \frac{w}{p} \]
-                    </div>
-                    <p>Where:</p>
-                    <div class="math-block" style="background: white; border-style: dashed;">
-                        \[ \frac{MU_L}{MU_Y} = \frac{w}{p} \]
-                    </div>
-                    <p>This means the individual chooses their optimal leisure hours such that the <strong>subjective value</strong> they place on the last hour of leisure (Marginal Rate of Substitution) is exactly equal to its <strong>market value</strong> (the real wage).</p>
-                    <ul>
-                        <li>$L^*$: Optimal leisure hours.</li>
-                        <li>$H^*$: Optimal work hours ($T - L^*$).</li>
-                        <li>$Y^*$: Optimal real income.</li>
-                    </ul>
-                </div>
-
-                <!-- CORNER SOLUTION -->
-                <h2>🚩 Corner Solution</h2>
-                <div class="concept-card warning">
-                    <h4 style="color: #C53030; margin-bottom: 1.5rem;">When Choosing Not to Work is Optimal</h4>
-                    <div style="text-align: center;">
-                        <img src="images/corner_solution_leisure_all_time.png" alt="Corner Solution" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    </div>
-
-                    <div style="margin-top: 2rem;">
-                        <p><strong>Visual Interpretation:</strong></p>
-                        <p>A <strong>corner solution</strong> occurs when the highest attainable level of utility is found at one of the extremes of the budget line—in this case, at zero hours of work ($H = 0$) and maximum leisure ($L = T$).</p>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>Analytical Interpretation</h4>
-                    <p>A corner solution at zero hours of work happens when the individual's indifference curves are very steep, such that even for the first hour of work:</p>
-                    <div class="math-block">
-                        \[ MRS_{L,Y} > \frac{w}{p} \]
-                    </div>
-                    <p>This implies that:</p>
-                    <ul>
-                        <li>The individual values leisure time more than any wage the market is currently offering.</li>
-                        <li>The <strong>opportunity cost of time</strong> is relatively high compared to the <strong>market wage rate</strong>.</li>
-                    </ul>
-                    <p style="background: var(--clr-purple-light); padding: 10px; border-radius: 6px; font-weight: 600; text-align: center;">
-                        ➡️ Result: The individual chooses to remain out of the labour force.
+                <!-- Content will be added here step-by-step -->
+                <div class="concept-card explanation" style="text-align: center; border: 2px dashed var(--clr-purple-border); padding: 4rem;">
+                    <p style="font-size: 1.2rem; color: var(--clr-text-muted);">
+                        Course 5 has been reset. Envoie-moi tes premières notes quand tu es prêt(e) à recommencer sur des bases plus claires !
                     </p>
                 </div>
-
-                <!-- RESERVATION WAGE -->
-                <h2>📉 Reservation Wage</h2>
-                <div class="concept-card explanation">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">The Minimum Price for Labour</h4>
-                    <div style="text-align: center;">
-                        <img src="images/reservation_wage_corner_solution.png" alt="Reservation Wage" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    </div>
-
-                    <p><strong>Visual Interpretation:</strong></p>
-                    <ul>
-                        <li>The <strong>reservation wage</strong> ($w^r$) is represented by the <strong>slope</strong> of the indifference curve at the point where the individual is not working ($L = T, H = 0$).</li>
-                        <li>This slope (the orange line in the graph) represents the value placed on the very first hour of lost leisure time.</li>
-                    </ul>
-                </div>
-
-                <div class="concept-card">
-                    <h4>Analytical Interpretation</h4>
-                    <p>Formal definition of the reservation wage:</p>
-                    <div class="math-block">
-                        \[ w^r = MRS_{L,Y} \quad \text{at the point where } L = T \]
-                    </div>
-                    <p>Or expressed via marginal utilities:</p>
-                    <div class="math-block">
-                        \[ w^r = \frac{MU_L}{MU_Y} \Big|_{L=T} \]
-                    </div>
-                    <p><strong>Economic Meaning:</strong> It is the <strong>absolute minimum wage</strong> that would make an individual willing to sacrifice even one hour of leisure to enter the market. If the offered market wage is below this level, the individual will not work.</p>
-                </div>
-
-                <!-- NONLABOUR INCOME -->
-                <h2>💰 Nonlabour Income</h2>
-                <div class="concept-card explanation">
-                    <p>In our initial model, we assumed all income came from working. However, individuals often receive <strong>nonlabour income</strong> ($A$), also known as "unearned income." This includes interest, dividends, rent, alimony, or government transfers.</p>
-                    <ul>
-                        <li><strong>Key Characteristic:</strong> Nonlabour income does not vary with the number of hours worked.</li>
-                    </ul>
-                </div>
-
-                <h3>Updated Constraints</h3>
-                <div class="concept-card">
-                    <p>With nonlabour income ($A$), our constraints evolve:</p>
-                    <ol>
-                        <li><strong>Time:</strong> $H + L = T$</li>
-                        <li><strong>Goods:</strong> $wH + A = pY$</li>
-                    </ol>
-                    <p>Substituting $H = T - L$ into the goods constraint:</p>
-                    <div class="math-block">
-                        \[ w(T - L) + A = pY \implies pY = wT - wL + A \]
-                    </div>
-                    <p>The final budget constraint equation becomes:</p>
-                    <div class="math-block" style="border: 2px solid var(--clr-purple-primary);">
-                        \[ Y = -\left(\frac{w}{p}\right)L + \left(\frac{wT + A}{p}\right) \]
-                    </div>
-                    <ul>
-                        <li><strong>Slope:</strong> Still $-\frac{w}{p}$ (the relative price of leisure is unchanged).</li>
-                        <li><strong>Intercept:</strong> $\frac{wT + A}{p}$ (shifted upward by $A/p$).</li>
-                    </ul>
-                </div>
-
-                <!-- CHANGES IN NONLABOUR INCOME -->
-                <h3>Effect of an Increase in Nonlabour Income</h3>
-                <div class="concept-card" style="text-align: center;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">Shift in the Budget Constraint</h4>
-                    <img src="images/non_labor_income_shift_budget_constraint.png" alt="Non-labor Income Shift" style="max-width: 55%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    
-                    <div class="actors-grid" style="text-align: left; margin-top: 1.5rem;">
-                        <div class="actor-card worker">
-                            <h4>Pure Income Effect</h4>
-                            <p>If leisure is a <strong>normal good</strong>, an increase in nonlabour income ($A_0 \to A_1$) leads to:</p>
-                            <ul>
-                                <li><strong>More Leisure</strong> ($L \uparrow$)</li>
-                                <li><strong>Less Work</strong> ($H \downarrow$)</li>
-                            </ul>
-                        </div>
-                        <div class="actor-card firm">
-                            <h4>Visual Summary</h4>
-                            <p>The budget line shifts vertically upward. The slope remains constant. The individual reaches a higher indifference curve ($U_0 \to U_1$) and chooses more leisure because they are "richer" without work being more rewarding.</p>
-                        </div>
-                    </div>
-                    <p style="background: var(--clr-purple-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--clr-purple-primary); font-weight: 600; margin-top: 1rem;">
-                        ➡️ Result: Any increase in "unearned" wealth reduces the hours supplied to the market.
-                    </p>
-                </div>
-
-                <!-- SE & IE DECOMPOSITION -->
-                <h2>🔬 Understanding the Mechanics: SE & IE Decomposition</h2>
-                <div class="concept-card explanation">
-                    <p>When a wage change occurs, it's not just one simple movement. Two powerful economic gears turn simultaneously within an individual's mind. To understand which one "wins" (and thus why someone works more or less), we use the <strong>Hicksian decomposition</strong> to split the total change into two distinct parts.</p>
-                </div>
-
-                <!-- GRAPHICAL DECOMPOSITION -->
-                <div class="concept-card" style="text-align: center;">
-                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">The Observed Change ($N_1 \to N_2$)</h4>
-                    <img src="images/income_and_substitution_effects_observed_change.png" alt="SE and IE Decomposition" style="max-width: 70%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    <p style="font-size: 0.9rem; margin-top: 10px; font-style: italic;">This graph shows how an individual moves from an initial equilibrium ($N_1$) to a final one ($N_2$) after a wage increase.</p>
-                </div>
-
-                <div class="actors-grid">
-                    <!-- Substitution Effect -->
-                    <div class="actor-card worker">
-                        <div class="actor-icon">🔄</div>
-                        <h4 style="color: #2B6CB0;">The Substitution Effect ($N_1 \to N_3$)</h4>
-                        <img src="images/substitution_effect_leisure_labor.png" alt="Substitution Effect" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px; margin-bottom: 1rem;">
-                        <p>Imagine the wage increases, but we "tax away" just enough of the person's new wealth so they stay on their <strong>original utility level ($U_1$)</strong>. They aren't "richer," but the <strong>relative price</strong> of their time has changed.</p>
-                        <ul>
-                            <li><strong>Economic Intuition:</strong> Leisure is now more expensive relative to consumption. Rational actors will "substitute" away from the expensive good (leisure) toward the cheaper one (working for income).</li>
-                            <li><strong>Direction:</strong> Always pushes toward <strong>more work</strong> ($H \uparrow$) when wages rise.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Income Effect -->
-                    <div class="actor-card firm">
-                        <div class="actor-icon">💰</div>
-                        <h4 style="color: #C53030;">The Income Effect ($N_3 \to N_2$)</h4>
-                        <img src="images/income_effect_leisure_labor.png" alt="Income Effect" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px; margin-bottom: 1rem;">
-                        <p>Now, we "give back" the wealth we hypothetically took. The individual moves from the compensated line to the <strong>final budget line</strong> (reaching $U_2$). Their purchasing power has increased.</p>
-                        <ul>
-                            <li><strong>Economic Intuition:</strong> Since leisure is a <strong>normal good</strong>, as you become wealthier, you want to "buy" more of it. You feel rich enough to afford more free time.</li>
-                            <li><strong>Direction:</strong> Always pushes toward <strong>less work</strong> ($H \downarrow$) for a normal good.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="concept-card warning">
-                    <h4>The Battle of the Effects</h4>
-                    <p>The total observed movement from $N_1$ to $N_2$ is the result of this internal tug-of-war:</p>
-                    <div class="actors-grid" style="grid-template-columns: 1fr 1fr; margin-top: 15px;">
-                        <div style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #BEE3F8;">
-                            <p><strong>Substitution > Income:</strong></p>
-                            <p>The individual works <strong>more</strong>. The reward for working is more tempting than the desire for extra rest.</p>
-                        </div>
-                        <div style="background: white; padding: 10px; border-radius: 6px; border: 1px solid #FED7E2;">
-                            <p><strong>Income > Substitution:</strong></p>
-                            <p>The individual works <strong>less</strong>. They prioritize their quality of life over extra earnings.</p>
-                        </div>
-                    </div>
-                    <p style="margin-top: 15px; font-weight: 700;">💡 Pro-Tip for Exams:</p>
-                    <p>When studying the <strong>participation decision</strong> (the choice to enter the market or stay out), remember that the Substitution Effect is nearly always the dominant force.</p>
-                </div>
-
-                <!-- NET EFFECT OF WAGE CHANGES -->
-                <h2>⚖️ The Net Effect: Predicting Actual Behavior</h2>
-                <div class="concept-card explanation">
-                    <p>In the real world, we never see the "Substitution Effect" or the "Income Effect" separately. We only see the <strong>Net Effect</strong>—the final decision made by the individual. Whether someone works more or less after a raise depends entirely on which effect is "louder" in their decision-making process.</p>
-                </div>
-
-                <div class="actors-grid">
-                    <!-- Case 1: SE > IE -->
-                    <div class="actor-card worker">
-                        <h4 style="color: #2B6CB0; margin-bottom: 1.5rem;">Substitution Effect Dominates</h4>
-                        <div style="text-align: center;">
-                            <img src="images/net_effect_wage_increase_more_work.png" alt="SE > IE - More Work" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                        </div>
-                        <p style="margin-top: 15px;"><strong>Scenario:</strong> The income effect is smaller than the substitution effect ($|SE| > |IE|$).</p>
-                        <ul>
-                            <li><strong>Observation:</strong> As the wage rises ($w_0 \to w_1$), hours of work increase ($H \uparrow$) and leisure falls ($L \downarrow$).</li>
-                            <li><strong>Logic:</strong> The individual is so motivated by the higher "price" of their time that they choose to sacrifice rest for more earnings.</li>
-                        </ul>
-                        <p style="background: #EBF8FF; padding: 10px; border-radius: 6px; font-weight: 600; text-align: center; border: 1px solid #BEE3F8;">
-                            ↗️ Result: Upward-Sloping Supply
-                        </p>
-                    </div>
-
-                    <!-- Case 2: IE > SE -->
-                    <div class="actor-card firm">
-                        <h4 style="color: #C53030; margin-bottom: 1.5rem;">Income Effect Dominates</h4>
-                        <div style="text-align: center;">
-                            <img src="images/net_effect_wage_increase_more_leisure.png" alt="IE > SE - More Leisure" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                        </div>
-                        <p style="margin-top: 15px;"><strong>Scenario:</strong> The income effect is stronger than the substitution effect ($|IE| > |SE|$).</p>
-                        <ul>
-                            <li><strong>Observation:</strong> As the wage rises, hours of work actually fall ($H \downarrow$) and leisure increases ($L \uparrow$).</li>
-                            <li><strong>Logic:</strong> The person feels "rich enough." They use their higher wage to "buy back" their time, prioritizing quality of life over extra money.</li>
-                        </ul>
-                        <p style="background: #FFF5F5; padding: 10px; border-radius: 6px; font-weight: 600; text-align: center; border: 1px solid #FED7E2;">
-                            ↖️ Result: Backward-Bending Supply
-                        </p>
-                    </div>
-                </div>
-
-                <!-- POLICY SHOCKS -->
-                <h2>🏛️ Policy Analysis: Income Replacement Programs</h2>
-                <div class="concept-card explanation">
-                    <p>How do social policies change the way people decide to work? By looking at <strong>Unemployment Compensation</strong> and <strong>Welfare</strong>, we can see how budget constraints are "warped" by government intervention.</p>
-                </div>
-
-                <h3>Initial Equilibrium</h3>
-                <div class="concept-card" style="text-align: center;">
-                    <img src="images/initial_labor_leisure_choice.png" alt="Initial Equilibrium" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    <p style="text-align: left; margin-top: 15px;">Before any policy is applied, the individual is at point <strong>A</strong>, balancing their leisure ($L_0$) and income ($Y_0$) based on the market wage ($w$). At this point, their subjective value of time ($MRS$) exactly matches the market wage.</p>
-                </div>
-
-                <h3>Unemployment Compensation (Full Replacement)</h3>
-                <div class="concept-card">
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="images/unemployment_compensation_full_replacement.png" alt="Unemployment Spike" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    </div>
-                    <p>What happens if a program compensates 100% of your lost income if you stop working? This creates a "spike" in the budget constraint at the point of zero work ($L=T$).</p>
-                    <ul>
-                        <li><strong>Movement:</strong> The individual moves from <strong>A</strong> (working $H_0$) to <strong>B</strong> (not working).</li>
-                        <li><strong>The Incentive Problem:</strong> At point <strong>B</strong>, the individual has the <strong>same income</strong> as before but <strong>more leisure</strong>. They reach a significantly higher utility curve ($U' > U_0$).</li>
-                    </ul>
-                    <p style="background: var(--clr-purple-light); padding: 10px; border-radius: 6px; font-weight: 600; text-align: center;">
-                        🚨 Warning: Full income replacement creates a massive disincentive to return to work.
-                    </p>
-                </div>
-
-                <h3>The Basic Welfare System</h3>
-                <div class="concept-card">
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="images/welfare_budget_constraint.png" alt="Welfare Budget Constraint" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    </div>
-                    <p>Many welfare systems guarantee a minimum income level ($Y_t$). However, for every dollar you earn through work, the government often reduces your benefits by a dollar. </p>
-                    <div class="actors-grid" style="text-align: left; margin-top: 1.5rem;">
-                        <div class="actor-card worker">
-                            <h4 style="color: #2B6CB0;">The Welfare Trap</h4>
-                            <p>In the horizontal segment ($Y = Y_t$), your <strong>marginal wage is effectively zero</strong>. Working one more hour gives you $6, but your welfare check drops by $6.</p>
-                        </div>
-                        <div class="actor-card firm">
-                            <h4 style="color: #C53030;">Disability Insurance</h4>
-                            <p>Similar to unemployment, if disability benefits replace 100% of income without accounting for the "value of time," utility increases and individuals are discouraged from rehabilitation.</p>
-                        </div>
-                    </div>
-                    <p style="margin-top: 15px; font-weight: 600; color: var(--clr-purple-primary); text-align: center; border-top: 1px solid var(--clr-purple-border); padding-top: 15px;">
-                        ➡️ Result: These spikes and flat segments in the budget constraint explain why some people stay out of the labour force entirely (Corner Solutions).
-                    </p>
-                </div>
-
-                <!-- WELFARE AND LABOUR SUPPLY DEEP DIVE -->
-                <h3>The Disincentive Effect of Welfare</h3>
-                <div class="concept-card explanation">
-                    <p>Why exactly does a guaranteed income ($Y_t$) reduce work? It's a double-blow to labour supply:</p>
-                    <ul>
-                        <li><strong>Substitution Effect:</strong> Since every dollar earned reduces benefits by a dollar, the reward for working an extra hour is <strong>zero</strong>. Leisure has zero opportunity cost.</li>
-                        <li><strong>Income Effect:</strong> The individual is richer than they would be without welfare. Since leisure is a <strong>normal good</strong>, they want to consume more of it.</li>
-                    </ul>
-                    <div style="text-align: center; margin: 20px 0;">
-                        <img src="images/welfare_budget_constraint.png" alt="Welfare Disincentive" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    </div>
-                    <p style="background: var(--clr-purple-light); padding: 10px; border-radius: 6px; font-weight: 500;">
-                        ➡️ Result: Both effects point in the same direction: <strong>Leisure increases ($L \uparrow$)</strong> and <strong>Work decreases ($H \downarrow$)</strong>.
-                    </p>
-                </div>
-
-                <h3>Labour Force Exit: Quitting Entirely</h3>
-                <div class="concept-card">
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="images/welfare_labor_supply_exit.png" alt="Quitting the Labor Force" style="max-width: 50%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                    </div>
-                    <p>Some individuals who worked before the welfare system might now find it optimal to <strong>quit completely</strong>. This happens if the utility they get from $Y_t$ with $T$ hours of leisure ($U'$) is higher than the utility they got from working ($U_0$).</p>
-                    <p><strong>Who is affected?</strong></p>
-                    <ul>
-                        <li>People whose market wage is low.</li>
-                        <li>People who have a high subjective valuation of leisure.</li>
-                    </ul>
-                </div>
-
-                <!-- WORKFARE & EITC -->
-                <h2>🛡️ Policy Solutions: Workfare & EITC</h2>
-                <div class="concept-card explanation">
-                    <p>To combat the "Welfare Trap," governments design systems that reward participation or mandate work. The two most common are <strong>Workfare</strong> and the <strong>Earned-Income Tax Credit (EITC)</strong>.</p>
-                </div>
-
-                <div class="actors-grid">
-                    <!-- WORKFARE -->
-                    <div class="actor-card worker">
-                        <h4 style="color: #2B6CB0; margin-bottom: 1.5rem;">The Workfare System</h4>
-                        <div style="text-align: center;">
-                            <img src="images/workfare_budget_constraint.png" alt="Workfare Constraint" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
-                        </div>
-                        <p style="margin-top: 15px;"><strong>The Rule:</strong> Recipients must work a minimum number of hours ($H_m$) to qualify for benefits.</p>
-                        <ul>
-                            <li><strong>H < Hm:</strong> Zero welfare benefits. The individual only earns their market wage.</li>
-                            <li><strong>H ≥ Hm:</strong> Full welfare benefits granted.</li>
-                        </ul>
-                        <p style="background: #EBF8FF; padding: 10px; border-radius: 6px; font-weight: 600; text-align: center; border: 1px solid #BEE3F8;">
-                            ↗️ Increases Participation
-                        </p>
-                    </div>
-
-                    <!-- EITC -->
-                    <div class="actor-card firm">
-                        <h4 style="color: #C53030; margin-bottom: 1.5rem;">Earned-Income Tax Credit (EITC)</h4>
-                        <p>Unlike welfare, EITC provides a tax credit that <strong>rises with income</strong> initially. It is designed to make work more rewarding for low-income families.</p>
-                        <ul>
-                            <li><strong>Phase-in:</strong> Every dollar earned increases the credit (Acting like a wage subsidy).</li>
-                            <li><strong>Plateau:</strong> The credit stays constant.</li>
-                            <li><strong>Phase-out:</strong> As income rises further, the credit gradually declines.</li>
-                        </ul>
-                        <p style="background: #FFF5F5; padding: 10px; border-radius: 6px; font-weight: 600; text-align: center; border: 1px solid #FED7E2;">
-                            ✅ Lower Disincentive Effects
-                        </p>
-                    </div>
-                </div>
-
-                <div class="concept-card warning">
-                    <h4>Intuition Summary</h4>
-                    <p><strong>Workfare</strong> forces the individual to choose between "working and getting benefits" or "not getting anything." It creates a jump in the budget constraint that usually pushes recipients to work exactly $H_m$ hours. Empirically, it successfully increases labour market participation rates.</p>
-                </div>
-
             </section>
         </div>
     </main>
@@ -632,27 +74,15 @@
         // Check for saved sidebar state
         document.addEventListener('DOMContentLoaded', () => {
             const sidebar = document.querySelector('.sidebar');
-            const pageToggleBtn = document.getElementById('page-toggle-btn');
-
             if (localStorage.getItem('sidebarCollapsed') === 'true') {
                 sidebar.classList.add('collapsed');
-                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
             }
         });
 
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
-            const pageToggleBtn = document.getElementById('page-toggle-btn');
-
             sidebar.classList.toggle('collapsed');
-
-            if (sidebar.classList.contains('collapsed')) {
-                localStorage.setItem('sidebarCollapsed', 'true');
-                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
-            } else {
-                localStorage.setItem('sidebarCollapsed', 'false');
-                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
-            }
+            localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
         }
 
         function toggleAccordion(button) {
