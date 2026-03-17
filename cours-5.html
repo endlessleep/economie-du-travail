@@ -414,6 +414,80 @@
                     <strong>Rule of Thumb:</strong> You only enter the market if $\frac{w}{p} \ge w^r$. Anything less, and you are better off (at a higher utility level) by choosing 100% leisure.
                 </div>
 
+                <!-- NONLABOUR INCOME -->
+                <h2>💰 Beyond the Paycheck: Nonlabour Income ($A$)</h2>
+                <div class="concept-card explanation">
+                    <p>Up until now, we assumed that all your money came from working. In reality, individuals often have other sources of "unearned" income that don't depend on how many hours they spend at the office. We call this <strong>Nonlabour Income</strong> (notated as <strong>$A$</strong> or <strong>$V$</strong>).</p>
+                </div>
+
+                <div class="concept-card">
+                    <h4>What counts as Nonlabour Income?</h4>
+                    <p>Think of any money that flows into your pocket regardless of your job status:</p>
+                    <div class="actors-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 10px;">
+                        <div class="actor-card worker" style="padding: 10px; border-top: none; border-bottom: 2px solid var(--clr-blue-primary);">
+                            <p>📈 <strong>Financial:</strong> Interest, Dividends, Profits.</p>
+                        </div>
+                        <div class="actor-card firm" style="padding: 10px; border-top: none; border-bottom: 2px solid var(--clr-accent);">
+                            <p>🏠 <strong>Property:</strong> Rent from real estate.</p>
+                        </div>
+                        <div class="actor-card gov" style="padding: 10px; border-top: none; border-bottom: 2px solid var(--clr-blue-primary);">
+                            <p>🎁 <strong>Windfalls:</strong> Lottery, Inheritance, Alimony.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UPDATING THE MATH -->
+                <h3>How does $A$ change the Budget Constraint?</h3>
+                <p>The goods constraint is now "boosted." Your total spending power is your labor earnings <strong>plus</strong> your nonlabour income. Let's see how the math evolves:</p>
+                
+                <div class="math-block">
+                    <p><strong>New Goods Constraint:</strong> $pY = wH + A$</p>
+                    <p>Substitute $H = (T - L)$: $pY = w(T - L) + A$</p>
+                    <p>Distribute and rearrange: $pY = wT - wL + A$</p>
+                    <p style="font-weight: 700; font-size: 1.2rem; margin-top: 10px; color: var(--clr-blue-primary);">Shifted Budget Equation: $Y = -\left(\frac{w}{p}\right)L + \frac{wT + A}{p}$</p>
+                </div>
+
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="images/non_labor_income_shift_budget_constraint.png" alt="Budget Shift" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h4 style="color: var(--clr-blue-primary);">Visualizing the Shift</h4>
+                            <p>When nonlabour income increases ($A_1 > A_0$):</p>
+                            <ul>
+                                <li><strong>Vertical Intercept:</strong> It jumps upward. You can afford more goods at every level of leisure.</li>
+                                <li><strong>The Slope ($w/p$):</strong> It stays <strong>identical</strong>. Because the wage didn't change, the "price" of an hour of leisure remains the same. The lines are strictly parallel.</li>
+                                <li><strong>The End Point ($T$):</strong> The constraint still terminates at $T$ hours, but now at a higher income level ($A/p$).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PURE INCOME EFFECT -->
+                <h2>🛋️ The Pure Income Effect</h2>
+                <div class="concept-card explanation">
+                    <p>What happens to your choice when you get richer without the wage changing? This is the cleanest experiment to observe the <strong>Income Effect</strong> in its pure state, separated from any substitution logic.</p>
+                </div>
+
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="images/non_labor_income_effect_leisure_choice.png" alt="Pure Income Effect" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <p>If we assume that <strong>Leisure is a Normal Good</strong> (meaning you want more of it when you are richer), then an increase in nonlabour income $A$ leads to:</p>
+                            <ol>
+                                <li><strong>Leisure Increases ($L \uparrow$):</strong> You move to the right on the horizontal axis.</li>
+                                <li><strong>Work Hours Decrease ($H \downarrow$):</strong> Since $H = T - L$, every extra hour of rest is an hour taken away from work.</li>
+                            </ol>
+                            <div class="post-it" style="background-color: #EBF8FF; border-color: #90CDF4;">
+                                <strong>Conclusion:</strong> A rise in nonlabour income always makes people work <strong>less</strong> (assuming leisure is normal). This is the "Pure Income Effect" as relative prices (the wage) haven't moved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </section>
         </div>
     </main>
