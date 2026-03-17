@@ -360,6 +360,60 @@
                     <strong>Exam Insight:</strong> A Corner Solution explains "Non-participation" in the labour market. It occurs when your internal "Reservation Wage" (the minimum you'd accept to work) is higher than the wage the market actually offers.
                 </div>
 
+                <!-- RESERVATION WAGE DEFINITION -->
+                <h2>🎟️ The Entry Ticket: The Reservation Wage ($w^r$)</h2>
+                <div class="concept-card explanation">
+                    <p>The **Reservation Wage** is the absolute minimum wage that would convince an individual to work their first hour. It represents the value you place on your time when you are currently doing zero work. If the market offers you even a cent less than this amount, you stay home.</p>
+                </div>
+
+                <div class="concept-card">
+                    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+                        <div style="flex: 1; min-width: 350px;">
+                            <img src="images/reservation_wage_corner_solution.png" alt="Reservation Wage Definition" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <div style="flex: 1; min-width: 300px;">
+                            <h4 style="color: var(--clr-blue-primary);">Visualizing $w^r$</h4>
+                            <p>Mathematically, the reservation wage is the <strong>absolute value of the slope</strong> of the indifference curve at the point of zero work ($L = T$).</p>
+                            <p style="background: var(--clr-blue-light); padding: 15px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 1.1rem;">
+                                $w^r = MRS_{L,Y} \Big|_{L=T}$
+                            </p>
+                            <p><strong>Intuition:</strong> It is the rate at which you are willing to swap your very last hour of leisure for income. The steeper your indifference curve at that point, the higher your reservation wage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MARKET ENTRY CONDITIONS -->
+                <h2>📈 To Work or Not to Work? (Market Entry)</h2>
+                <div class="concept-card explanation">
+                    <p>The decision to join the labour force is a simple comparison between what the market offers (the **Real Wage**) and what you think your time is worth (**Reservation Wage**).</p>
+                </div>
+
+                <div class="actors-grid">
+                    <!-- Case 1: Entry -->
+                    <div class="actor-card worker">
+                        <h4 style="color: #2B6CB0;">Case 1: Market Entry ($w/p > w^r$)</h4>
+                        <div style="text-align: center; margin: 1rem 0;">
+                            <img src="images/reservation_wage_vs_real_wage_labor_entry.png" alt="Market Entry" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <p><strong>Scenario:</strong> The budget line (green) is <strong>steeper</strong> than the reservation wage tangent (orange).</p>
+                        <p><strong>Result:</strong> Individual works ($H > 0$). The market pay is high enough to compensate for the lost leisure. They move to an interior solution.</p>
+                    </div>
+
+                    <!-- Case 2: Non-Participation -->
+                    <div class="actor-card firm">
+                        <h4 style="color: #C53030;">Case 2: Non-Participation ($w/p < w^r$)</h4>
+                        <div style="text-align: center; margin: 1rem 0;">
+                            <img src="images/reservation_wage_higher_than_market_wage.png" alt="Non-Participation" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                        </div>
+                        <p><strong>Scenario:</strong> The market wage is <strong>flatter</strong> than the reservation wage tangent.</p>
+                        <p><strong>Result:</strong> Individual stays out of the labour force ($H = 0$). Leisure is more valuable to the person than the money they could earn.</p>
+                    </div>
+                </div>
+
+                <div class="alert-box warning">
+                    <strong>Rule of Thumb:</strong> You only enter the market if $\frac{w}{p} \ge w^r$. Anything less, and you are better off (at a higher utility level) by choosing 100% leisure.
+                </div>
+
             </section>
         </div>
     </main>
