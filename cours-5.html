@@ -352,33 +352,105 @@
                     <p><strong>Economic Meaning:</strong> It is the <strong>absolute minimum wage</strong> that would make an individual willing to sacrifice even one hour of leisure to enter the market. If the offered market wage is below this level, the individual will not work.</p>
                 </div>
 
-                <!-- WAGE COMPARISONS -->
+                <!-- NONLABOUR INCOME -->
+                <h2>💰 Nonlabour Income</h2>
+                <div class="concept-card explanation">
+                    <p>In our initial model, we assumed all income came from working. However, individuals often receive <strong>nonlabour income</strong> ($A$), also known as "unearned income." This includes interest, dividends, rent, alimony, or government transfers.</p>
+                    <ul>
+                        <li><strong>Key Characteristic:</strong> Nonlabour income does not vary with the number of hours worked.</li>
+                    </ul>
+                </div>
+
+                <h3>Updated Constraints</h3>
+                <div class="concept-card">
+                    <p>With nonlabour income ($A$), our constraints evolve:</p>
+                    <ol>
+                        <li><strong>Time:</strong> $H + L = T$</li>
+                        <li><strong>Goods:</strong> $wH + A = pY$</li>
+                    </ol>
+                    <p>Substituting $H = T - L$ into the goods constraint:</p>
+                    <div class="math-block">
+                        \[ w(T - L) + A = pY \implies pY = wT - wL + A \]
+                    </div>
+                    <p>The final budget constraint equation becomes:</p>
+                    <div class="math-block" style="border: 2px solid var(--clr-purple-primary);">
+                        \[ Y = -\left(\frac{w}{p}\right)L + \left(\frac{wT + A}{p}\right) \]
+                    </div>
+                    <ul>
+                        <li><strong>Slope:</strong> Still $-\frac{w}{p}$ (the relative price of leisure is unchanged).</li>
+                        <li><strong>Intercept:</strong> $\frac{wT + A}{p}$ (shifted upward by $A/p$).</li>
+                    </ul>
+                </div>
+
+                <!-- CHANGES IN NONLABOUR INCOME -->
+                <h3>Effect of an Increase in Nonlabour Income</h3>
+                <div class="concept-card" style="text-align: center;">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">Shift in the Budget Constraint</h4>
+                    <img src="images/non_labor_income_shift_budget_constraint.png" alt="Non-labor Income Shift" style="max-width: 55%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
+                    
+                    <div class="actors-grid" style="text-align: left; margin-top: 1.5rem;">
+                        <div class="actor-card worker">
+                            <h4>Pure Income Effect</h4>
+                            <p>If leisure is a <strong>normal good</strong>, an increase in nonlabour income ($A_0 \to A_1$) leads to:</p>
+                            <ul>
+                                <li><strong>More Leisure</strong> ($L \uparrow$)</li>
+                                <li><strong>Less Work</strong> ($H \downarrow$)</li>
+                            </ul>
+                        </div>
+                        <div class="actor-card firm">
+                            <h4>Visual Summary</h4>
+                            <p>The budget line shifts vertically upward. The slope remains constant. The individual reaches a higher indifference curve ($U_0 \to U_1$) and chooses more leisure because they are "richer" without work being more rewarding.</p>
+                        </div>
+                    </div>
+                    <p style="background: var(--clr-purple-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--clr-purple-primary); font-weight: 600; margin-top: 1rem;">
+                        ➡️ Result: Any increase in "unearned" wealth reduces the hours supplied to the market.
+                    </p>
+                </div>
+
+                <!-- SE & IE DECOMPOSITION -->
+                <h2>🔬 Decomposition of Substitution and Income Effects</h2>
+                <div class="concept-card explanation">
+                    <p>When the wage rate changes, we observe a total change in labour supply. To understand the underlying mechanics, we decompose this "Observed Change" into two distinct economic forces: the <strong>Substitution Effect</strong> and the <strong>Income Effect</strong>.</p>
+                </div>
+
+                <!-- GRAPHICAL DECOMPOSITION -->
+                <div class="concept-card" style="text-align: center;">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">The Observed Change ($N_1 \to N_2$)</h4>
+                    <img src="images/income_and_substitution_effects_observed_change.png" alt="SE and IE Decomposition" style="max-width: 70%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
+                </div>
+
                 <div class="actors-grid">
-                    <!-- CASE: W > Wr -->
+                    <!-- Substitution Effect -->
                     <div class="actor-card worker">
-                        <h4 style="color: #2B6CB0; margin-bottom: 1.5rem;">Real Wage > Reservation Wage</h4>
-                        <img src="images/reservation_wage_vs_real_wage_labor_entry.png" alt="Labor Entry Decision" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px; margin-bottom: 1rem;">
-                        
-                        <p><strong>Condition:</strong> $\frac{w}{p} > w^r$</p>
-                        <p>The budget constraint (green) is <strong>steeper</strong> than the reservation wage slope (orange).</p>
-                        <p><strong>Result:</strong> The individual can reach a higher utility curve by working. They participate in the labour force ($H > 0$).</p>
-                        <p style="background: #EBF8FF; padding: 10px; border-radius: 6px; font-weight: 600; text-align: center; margin-top: 10px; border: 1px solid #BEE3F8;">
-                            ✅ Labour Market Entry
-                        </p>
+                        <div class="actor-icon">🔄</div>
+                        <h4 style="color: #2B6CB0;">1. Substitution Effect ($N_1 \to N_3$)</h4>
+                        <p>This measures the change in the mix of $L$ and $Y$ due solely to a change in relative prices, <strong>holding utility constant</strong>.</p>
+                        <ul>
+                            <li><strong>Logic:</strong> We draw a hypothetical "compensated" budget line (tangent to $U_1$ but with the new slope).</li>
+                            <li><strong>Result:</strong> Leisure becomes more expensive, so the individual substitutes away from leisure ($H \uparrow$).</li>
+                        </ul>
                     </div>
 
-                    <!-- CASE: W < Wr -->
+                    <!-- Income Effect -->
                     <div class="actor-card firm">
-                        <h4 style="color: #C53030; margin-bottom: 1.5rem;">Real Wage < Reservation Wage</h4>
-                        <img src="images/reservation_wage_higher_than_market_wage.png" alt="Non-Participation Decision" style="max-width: 100%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px; margin-bottom: 1rem;">
-                        
-                        <p><strong>Condition:</strong> $\frac{w}{p} < w^r$</p>
-                        <p>The budget constraint (green) is <strong>flatter</strong> than the reservation wage slope (orange).</p>
-                        <p><strong>Result:</strong> The market wage is too low to compensate for the loss of leisure. The individual stays at the corner solution ($H = 0$).</p>
-                        <p style="background: #FFF5F5; padding: 10px; border-radius: 6px; font-weight: 600; text-align: center; margin-top: 10px; border: 1px solid #FED7E2;">
-                            ❌ Remains Out of Labour Force
-                        </p>
+                        <div class="actor-icon">💰</div>
+                        <h4 style="color: #C53030;">2. Income Effect ($N_3 \to N_2$)</h4>
+                        <p>This measures the change in consumption due solely to the increase in <strong>real income</strong>, holding relative prices constant.</p>
+                        <ul>
+                            <li><strong>Logic:</strong> We shift the budget line from the hypothetical position to the final real position.</li>
+                            <li><strong>Result:</strong> Since leisure is a normal good, the higher wealth induces more leisure consumption ($H \downarrow$).</li>
+                        </ul>
                     </div>
+                </div>
+
+                <div class="concept-card warning">
+                    <h4>Summary of the Combined Effect</h4>
+                    <p>The total observed movement from $N_1$ to $N_2$ depends on which effect is stronger:</p>
+                    <ol>
+                        <li><strong>If SE > IE:</strong> Leisure falls, and work hours ($H$) increase. This is the typical response to a wage hike at lower wage levels.</li>
+                        <li><strong>If IE > SE:</strong> Leisure rises, and work hours ($H$) decrease (the backward-bending Part).</li>
+                    </ol>
+                    <p style="margin-top: 10px; font-style: italic;">🚨 Note: Participation decisions (choosing whether or not to work) are almost always driven by a dominant Substitution Effect.</p>
                 </div>
 
             </section>
