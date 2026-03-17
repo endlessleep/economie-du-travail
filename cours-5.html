@@ -61,10 +61,95 @@
         <!-- CONTENT AREA -->
         <div class="content-scroll">
             <section class="lesson-section" id="section-container">
-                <!-- We will add content here step by step -->
-                <p style="text-align: center; color: var(--clr-text-muted); margin-top: 5rem;">
-                    Ready for Section 1...
-                </p>
+
+                <!-- I. BASIC MODEL & ASSUMPTIONS -->
+                <h2>⏳ I. Basic Neoclassical Model of Labour Supply</h2>
+                <div class="concept-card explanation">
+                    <p>The neoclassical model examines how individuals allocate their limited time between <strong>work (labour)</strong> and <strong>non-work (leisure)</strong>. It assumes that individuals are rational agents who aim to maximize their utility.</p>
+                    
+                    <h4>Fundamental Assumptions</h4>
+                    <ul>
+                        <li><strong>The Labour-Leisure Trade-off:</strong> There are only two uses of time: **Labour** and **Leisure**.</li>
+                        <li><strong>Utility Maximization:</strong> Individuals select the combination of work and leisure that maximizes their level of satisfaction (Utility).</li>
+                    </ul>
+                </div>
+
+                <!-- II. DEMAND FOR LEISURE -->
+                <h2>🛋️ II. The Demand for Leisure</h2>
+                <p>Leisure is modeled as a <strong>normal good</strong>. Its demand depends on:</p>
+                
+                <div class="actors-grid">
+                    <div class="actor-card worker" style="border-top-color: var(--clr-purple-primary);">
+                        <h4 style="color: var(--clr-purple-primary);">1. Preferences</h4>
+                        <p>Subjective valuation of free time vs. material goods.</p>
+                    </div>
+                    <div class="actor-card firm" style="border-top-color: var(--clr-accent);">
+                        <h4 style="color: var(--clr-accent);">2. Wealth/Income</h4>
+                        <p>Higher income generally leads to more leisure (↑ Income → ↑ Hours of leisure).</p>
+                    </div>
+                    <div class="actor-card gov" style="border-top-color: #3182CE;">
+                        <h4 style="color: #3182CE;">3. Opportunity Costs</h4>
+                        <p>For those working, the opportunity cost of an hour of leisure is the <strong>wage rate</strong> ($W$).</p>
+                        <p style="margin-top: 10px; font-style: italic; font-size: 0.9rem;">➡️ Individuals choose not to work if the value of their leisure time exceeds the market wage.</p>
+                    </div>
+                </div>
+
+                <!-- III. WAGE DYNAMICS: SE & IE -->
+                <h2>⚖️ III. Substitution and Income Effects</h2>
+                <p>A change in the wage rate creates two conflicting effects on the quantity of labour supplied:</p>
+
+                <div class="actors-grid" style="grid-template-columns: 1fr 1fr;">
+                    <!-- Substitution Effect -->
+                    <div class="actor-card worker">
+                        <div class="actor-icon" style="font-size: 1.5rem;">🔄</div>
+                        <h4 style="color: #2B6CB0;">Substitution Effect (SE)</h4>
+                        <p>As wages rise, leisure becomes more expensive. Individuals consume less leisure and work more.</p>
+                        <div class="math-block" style="margin-top: 15px; background: white; border: 1px dashed var(--clr-purple-primary);">
+                             \[ \text{SE: } \frac{\Delta H}{\Delta W} \Big|_{\bar{U}} > 0 \]
+                        </div>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">(Positive impact on work hours)</p>
+                    </div>
+
+                    <!-- Income Effect -->
+                    <div class="actor-card firm">
+                        <div class="actor-icon" style="font-size: 1.5rem;">💰</div>
+                        <h4 style="color: #C53030;">Income Effect (IE)</h4>
+                        <p>Higher wages increase real income. If leisure is a normal good, individuals "buy" more leisure and work less.</p>
+                        <div class="math-block" style="margin-top: 15px; background: white; border: 1px dashed var(--clr-accent);">
+                            \[ \text{IE: } \frac{\Delta H}{\Delta W} \Big|_{\bar{Income}} < 0 \]
+                        </div>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">(Negative impact on work hours)</p>
+                    </div>
+                </div>
+
+                <div class="concept-card warning">
+                    <h4>The Net Effect</h4>
+                    <p>Usually, both effects occur simultaneously. The total change in labour supply depends on which effect is stronger:</p>
+                    <ul>
+                        <li><strong>Increases</strong> if Substitution Effect > Income Effect ($SE > IE$).</li>
+                        <li><strong>Decreases</strong> if Income Effect > Substitution Effect ($IE > SE$).</li>
+                    </ul>
+                </div>
+
+                <!-- IV. BACKWARD BENDING CURVE -->
+                <h2>📈 IV. The Backward-Bending Labour Supply Curve</h2>
+                <div class="concept-card" style="text-align: center;">
+                    <h4 style="color: var(--clr-purple-primary); margin-bottom: 1.5rem;">The Individual Supply Curve (S)</h4>
+                    <img src="images/backward_bending_labor_supply_curve.png" alt="Backward Bending Labor Supply Curve" style="max-width: 55%; height: auto; border: 1px solid var(--clr-purple-border); border-radius: 8px;">
+                    
+                    <div style="text-align: left; margin-top: 2rem; padding: 0 1.5rem;">
+                        <p>This curve demonstrates how the dominance of the two effects shifts as wages rise:</p>
+                        <ol>
+                            <li><strong>At Low Wages (Rising Phase):</strong> $SE > IE$. Individuals work more as the wage increases. The opportunity cost of leisure is high.</li>
+                            <li><strong>At $W_0$:</strong> The effects are balanced.</li>
+                            <li><strong>At High Wages (Backward-Bending):</strong> $IE > SE$. Individuals are "rich enough" to value an extra hour of leisure more than the extra income from work.</li>
+                        </ol>
+                        <p style="background: var(--clr-purple-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--clr-purple-primary); font-weight: 600;">
+                            💡 Summary: The labor supply initially increases with wages but eventually decreases when the Income Effect becomes dominant.
+                        </p>
+                    </div>
+                </div>
+
             </section>
         </div>
     </main>
