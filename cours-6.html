@@ -123,55 +123,113 @@
 
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
 
-                <!-- UTILITY MAXIMIZATION -->
-                <h2 id="utility-max">🧠 Workers’ Utility Maximization</h2>
+                <!-- EQUILIBRIUM MECHANISM -->
+                <h2 id="utility-max">🧠 How the Compensating Differential Emerges</h2>
                 <div class="concept-card explanation">
-                    <p>Workers maximize <strong>utility</strong>, not just their nominal wage. This means they are willing to trade off money for better working conditions.</p>
+                    <p>Workers maximize <strong>utility</strong> (not just wage!) — they are interested in both the pecuniary and the nonpecuniary aspects of their jobs. Let's see step-by-step how the market creates the wage differential.</p>
                 </div>
 
-                <div class="concept-card">
-                    <h4>The Pure Mechanism</h4>
-                    <p>To isolate this effect, let's assume <strong>homogeneous workers</strong> (same skills) but <strong>heterogeneous jobs</strong>.</p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
-                        <div class="actor-card worker" style="background: rgba(43, 108, 176, 0.05); border: 1px solid var(--clr-blue-border);">
-                            <strong>Firm 1: Safe & Clean</strong>
-                            <p>Initial Wage: 150 CZK/h</p>
-                            <p>Result: High Utility ($U_1$)</p>
-                        </div>
-                        <div class="actor-card worker" style="background: rgba(229, 62, 62, 0.05); border: 1px solid #E53E3E;">
-                            <strong>Firm 2: Dangerous & Dirty</strong>
-                            <p>Initial Wage: 150 CZK/h</p>
-                            <p>Result: Low Utility ($U_2$)</p>
-                        </div>
-                    </div>
-                    <p style="margin-top: 1rem;">At the same wage, everyone picks Firm 1. This creates an immediate <strong>labour shortage</strong> for Firm 2. To survive and attract the necessary workers, Firm 2 is <em>forced</em> by market pressure to offer a higher wage until workers are once again indifferent between the two jobs.</p>
+                <!-- STEP-BY-STEP EQUILIBRIUM -->
+                <div class="concept-card" style="border-left: 4px solid var(--clr-blue-primary);">
+                    <h4 style="color: var(--clr-blue-primary); margin-bottom: 1.5rem;">Step-by-Step: Finding the Equilibrium Wage Differential</h4>
                     
-                    <div style="margin-top: 3rem;">
-                        <h4 style="color: var(--clr-blue-primary); border-bottom: 2px solid var(--clr-blue-bg); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">📜 Adam Smith’s 5 Pillars of Inequality (1776)</h4>
-                        <p style="margin-bottom: 1.5rem; color: #4a5568;">In <em>The Wealth of Nations</em>, Smith identified five specific circumstances where wages must vary to "equalize" the total net advantage of jobs. Modern economics still uses these as the foundation of compensating differentials:</p>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
-                            <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                                <strong>1. Agreeableness of the Job:</strong> Wages vary with the "ease or hardship, the cleanliness or dirtiness, the honour or dishonour of the employment." A butcher (dirty, bloody work) or a coal miner works under harder conditions than a clerk; thus, they require a premium to accept the "disagreeableness" of their daily environment.
-                            </div>
-                            <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                                <strong>2. Cost and Difficulty of Learning:</strong> While this overlaps with Human Capital theory today, Smith noted that the time, effort, and expense required to master a trade (like medicine or law) must be repaid by a higher future wage to make the "investment" of youth worthwhile.
-                            </div>
-                            <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                                <strong>3. Constancy of Employment:</strong> Some jobs are seasonal or unstable (e.g., construction workers in winter, agricultural harvesters). A worker in an unstable job must earn a higher <em>hourly</em> rate to survive the periods of forced idleness compared to someone with a steady, "constant" year-round salary.
-                            </div>
-                            <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                                <strong>4. Trust of the Employer:</strong> This is a precursor to <em>Efficiency Wage</em> theory. Goldsmiths, bankers, or doctors are entrusted with great wealth or life itself. Their high wages ensure they are "above temptation" and have too much to lose (their high-paying job) if they betray that trust.
-                            </div>
-                            <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                                <strong>5. Probability of Success:</strong> In risky professions where many fail and few succeed (like trial lawyers or opera singers), the winners must earn exceptionally high returns to compensate for the "lottery-like" risk that all entrants take when they choose that career path.
-                            </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="actor-card worker" style="background: rgba(43, 108, 176, 0.05); border: 1px solid var(--clr-blue-border); padding: 1.2rem;">
+                            <strong>☺ Firm 1: Clean & Safe</strong>
+                            <p style="font-size: 1.3rem; font-weight: 800; margin: 0.5rem 0;">150 CZK/hour</p>
+                            <p style="font-size: 0.85rem; color: #718096;">Doesn't need to increase wage</p>
+                        </div>
+                        <div class="actor-card worker" style="background: rgba(229, 62, 62, 0.05); border: 1px solid #E53E3E; padding: 1.2rem;">
+                            <strong>☹ Firm 2: Dirty, Noisy, Dangerous</strong>
+                            <p style="font-size: 1.3rem; font-weight: 800; margin: 0.5rem 0;">150 CZK/hour</p>
+                            <p style="font-size: 0.85rem; color: #C53030;">150 is NOT an equilibrium wage</p>
                         </div>
                     </div>
 
-                    <div class="post-it" style="margin-top: 2rem;">
-                        <strong>Synthetical Definition:</strong> A <strong>compensating wage differential</strong> is the extra wage paid to workers to compensate for undesirable job characteristics. It "equalizes" the total utility (Money + Conditions) across different employments.
+                    <div style="display: grid; grid-template-columns: auto 1fr; gap: 1rem 1.5rem; align-items: start;">
+                        <div style="background: #E53E3E; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;">1</div>
+                        <div>
+                            <p><strong>At 150 vs 150:</strong> Workers with the same skills seek for a job → all prefer Firm 1 (same pay, better conditions). <strong>150 CZK is NOT an equilibrium wage</strong> for Firm 2 — it cannot attract anyone.</p>
+                        </div>
+
+                        <div style="background: #DD6B20; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;">2</div>
+                        <div>
+                            <p><strong>Firm 2's Options:</strong> Either (a) clean up the place and make it safe (costly), or (b) pay a higher wage $w$ (or both). Suppose Firm 2 keeps bad conditions and raises wage to <strong>200 CZK/hour</strong>. Compensating wage differential = 50 CZK/hour.</p>
+                        </div>
+
+                        <div style="background: #38A169; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;">3</div>
+                        <div>
+                            <p><strong>At 150 vs 200:</strong> If ALL workers switch to Firm 2 for the higher wage, then the 50 CZK differential is <strong>too high</strong> — Firm 1 loses everyone, Firm 2 can afford to ↓w. So 50 CZK is not necessarily an equilibrium differential.</p>
+                        </div>
+
+                        <div style="background: var(--clr-blue-primary); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem;">4</div>
+                        <div>
+                            <p><strong>More likely:</strong> <em>Some</em> workers are sensitive to conditions → stay at Firm 1. Others accept conditions for the wage differential → go to Firm 2. If <strong>both firms obtain the quantity of workers they wanted</strong>, then we have found the <strong>equilibrium compensating differential</strong>.</p>
+                        </div>
                     </div>
+
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; margin-top: 2rem; padding: 1.5rem; background: rgba(43, 108, 176, 0.05); border-radius: 12px; border: 2px solid rgba(43, 108, 176, 0.15);">
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--clr-blue-primary); font-weight: 700;">Firm 1 (Clean)</div>
+                            <div style="font-size: 1.5rem; font-weight: 800;">150 CZK</div>
+                        </div>
+                        <div style="font-size: 1.5rem; color: var(--clr-blue-primary);">→</div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 0.75rem; text-transform: uppercase; color: #E53E3E; font-weight: 700;">Firm 2 (Dangerous)</div>
+                            <div style="font-size: 1.5rem; font-weight: 800;">200 CZK</div>
+                        </div>
+                        <div style="font-size: 1.5rem; color: #38A169;">=</div>
+                        <div style="background: #38a169; color: white; padding: 8px 20px; border-radius: 25px; font-weight: 800;">Equilibrium CWD = 50 CZK/hr</div>
+                    </div>
+                </div>
+
+                <!-- TWO RECRUITMENT METHODS -->
+                <div class="concept-card" style="margin-top: 2rem;">
+                    <h4 style="color: var(--clr-blue-primary); margin-bottom: 1rem;">How to Recruit Labour for Nasty Jobs?</h4>
+                    <p>A number of jobs are unavoidably nasty or would be very costly to make safe and pleasant. Society has only <strong>two ways</strong> to recruit workers for such positions:</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+                        <div style="background: rgba(229, 62, 62, 0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #E53E3E;">
+                            <strong style="color: #E53E3E;">1. Force</strong>
+                            <p style="margin-top: 0.5rem;">Compulsory military service, prison labour, or wartime conscription. The state forces people into unpleasant roles regardless of their preferences.</p>
+                        </div>
+                        <div style="background: rgba(56, 161, 105, 0.05); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #38A169;">
+                            <strong style="color: #38A169;">2. Voluntary Incentives (CWD)</strong>
+                            <p style="margin-top: 0.5rem;">In a free market, the mechanism is the <strong>compensating wage differential</strong>: make incentives for people to do the jobs <em>voluntarily</em> by offering higher pay.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JOB SATISFACTION PROXY -->
+                <div class="post-it" style="margin-top: 2rem;">
+                    <strong>📊 Empirical Note:</strong> Job satisfaction is used as a proxy for workers' utility from various job aspects. See: Mysíková, M. & Večerník, J. (2013), <em>"Job Satisfaction across Europe: Differences between and within Regions"</em>, Post-Communist Economies, Vol. 25, No. 4, pp. 539–556.
+                </div>
+
+                <!-- SMITH'S 5 PILLARS -->
+                <div class="concept-card" style="margin-top: 3rem;">
+                    <h4 style="color: var(--clr-blue-primary); border-bottom: 2px solid var(--clr-blue-bg); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">📜 Adam Smith's 5 Pillars of Inequality (1776)</h4>
+                    <p style="margin-bottom: 1.5rem; color: #4a5568;">In <em>The Wealth of Nations</em>, Smith identified five specific circumstances where wages must vary to "equalize" the total net advantage of jobs:</p>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                        <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                            <strong>1. Agreeableness of the Job:</strong> Wages vary with the "ease or hardship, the cleanliness or dirtiness, the honour or dishonour of the employment." A butcher or a coal miner works under harder conditions than a clerk; they require a premium.
+                        </div>
+                        <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                            <strong>2. Cost and Difficulty of Learning:</strong> The time, effort, and expense required to master a trade (like medicine or law) must be repaid by a higher future wage to make the "investment" of youth worthwhile.
+                        </div>
+                        <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                            <strong>3. Constancy of Employment:</strong> Seasonal or unstable jobs (construction in winter, agriculture) must pay higher hourly rates to compensate for periods of forced idleness.
+                        </div>
+                        <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                            <strong>4. Trust of the Employer:</strong> Goldsmiths, bankers, or doctors are entrusted with great wealth or life. Their high wages ensure they are "above temptation" — a precursor to <em>Efficiency Wage</em> theory.
+                        </div>
+                        <div style="background: white; border-left: 4px solid var(--clr-blue-primary); padding: 1.2rem; border-radius: 0 10px 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                            <strong>5. Probability of Success:</strong> In risky professions where many fail and few succeed (trial lawyers, opera singers), the winners must earn exceptionally high returns — a "lottery-like" compensation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-it" style="margin-top: 2rem;">
+                    <strong>Definition:</strong> A <strong>compensating wage differential</strong> is the higher wage paid to compensate workers for the undesirable working conditions. <strong>Positive differentials (higher wages)</strong> will accompany "bad" job characteristics, while <strong>negative differentials (lower wages)</strong> will be associated with "good" ones.
                 </div>
 
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
@@ -203,26 +261,39 @@
                     </div>
                 </div>
 
+                <!-- EMPIRICAL TESTS -->
+                <h3 style="margin-top: 2rem;">Empirical Tests for Compensating Wage Differentials</h3>
+                <div class="concept-card" style="border-left: 4px solid #DD6B20;">
+                    <h4 style="color: #DD6B20; margin-bottom: 1rem;">Difficulties in Estimating CWD</h4>
+                    <ol style="font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Data requirements:</strong> We need all relevant job characteristics AND personal characteristics that also influence wages (education, experience, age, race, gender, region, etc.). Without controlling for all of these, we cannot isolate the CWD.</li>
+                        <li><strong>Specification of "bad" characteristics:</strong> We must be able to specify <em>in advance</em> which job characteristics are generally regarded as disagreeable. What is "bad" can be subjective.</li>
+                    </ol>
+                    <div class="post-it" style="margin-top: 1rem;">
+                        <strong>Textbook Example:</strong> Most studies focus on the <strong>risk of injury or death on the job</strong>, primarily because higher levels of such risks are clearly "bad" — there is no ambiguity. This is why the risk-of-injury model is the workhorse of the CWD literature.
+                    </div>
+                </div>
+
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
 
                 <!-- ECONOMICS OF RISK -->
-                <h2 id="risk-economics">🛡️ The Economics of Risk</h2>
+                <h2 id="risk-economics">🛡️ Compensating Wage Differentials Theory and the Risk of Injury</h2>
                 <div class="concept-card explanation">
-                    <p>Risk of injury or death is the most common example of a "bad" job characteristic. We analyze this using <strong>Indifference Curves</strong> for workers and <strong>Isoprofit Curves</strong> for firms.</p>
+                    <p>Assume that compensating differentials for every other job characteristic have already been established. We focus on the <strong>risk of injury</strong> as the single remaining "bad" characteristic, and analyze both the worker's and the firm's perspective.</p>
                 </div>
 
                 <!-- WORKER PERSPECTIVE -->
-                <h3>1. The Worker's Perspective</h3>
+                <h3>1. The Employee's Perspective: Indifference Curves</h3>
                 <div class="concept-card">
                     <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
                         <div style="flex: 1; min-width: 350px;">
                             <img src="IMG2.png" alt="Risk aversion and sorting" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <p><strong>Visual Analysis:</strong></p>
+                            <p><strong>Properties of worker indifference curves:</strong></p>
                             <ul>
-                                <li><strong>Upward Sloping:</strong> Because Risk is a "bad," if it increases, the wage <em>must</em> increase to keep utility constant.</li>
-                                <li><strong>Convex:</strong> As risk becomes very high, workers demand progressively larger wage increases to accept one more unit of risk.</li>
+                                <li><strong>Upward Sloping:</strong> Risk of injury is a "bad" characteristic — if risk increases, the wage <em>must</em> increase to keep utility constant.</li>
+                                <li><strong>Convex:</strong> Diminishing marginal rates of substitution — as risk becomes very high, workers demand progressively larger wage increases to accept one more unit of risk.</li>
                                 <li><strong>Direction of Utility:</strong> Utility increases as we move <strong>Up</strong> (Higher Wage) and <strong>Left</strong> (Lower Risk).</li>
                             </ul>
                             <div class="alert-box note">
@@ -255,31 +326,41 @@
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
 
                 <!-- FIRM HETEROGENEITY -->
-                <h2 id="firm-heterogeneity">💼 Firm Heterogeneity: The Cost of Safety</h2>
+                <h2 id="firm-heterogeneity">💼 Employer's Side: The Cost of Safety</h2>
                 <div class="concept-card explanation">
-                    <p>Just as workers have different preferences, firms have different cost structures. Not all firms can reduce risk at the same price.</p>
+                    <p>Just as workers have different preferences for risk, firms have different cost structures. The employer's perspective relies on <strong>three key assumptions</strong>:</p>
+                </div>
+
+                <div class="concept-card" style="border-left: 4px solid var(--clr-blue-primary); margin-bottom: 2rem;">
+                    <h4 style="color: var(--clr-blue-primary); margin-bottom: 1rem;">The 3 Assumptions About Employers</h4>
+                    <ol style="font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Reducing the risk of injury is costly:</strong> Safety programs, protective equipment, and facility upgrades all cost money.</li>
+                        <li><strong>Perfect competition:</strong> Firms operate at <strong>zero profit</strong> in the long run. They cannot absorb extra safety costs without reducing wages.</li>
+                        <li><strong>Ceteris paribus:</strong> All other job characteristics are presumably given or already determined. We only analyze the wage-risk trade-off.</li>
+                    </ol>
+                    <p style="margin-top: 1rem;"><strong>Implication:</strong> If a firm undertakes a program to reduce the risk of injury, it must reduce wages to remain competitive → This creates the <strong>isoprofit curves</strong>.</p>
                 </div>
 
                 <div class="concept-card">
+                    <h4 style="margin-bottom: 1rem;">Employer's Isoprofit (Same Level of Profit) Curves</h4>
+                    <ul style="margin-bottom: 1.5rem;">
+                        <li><strong>Upward sloping:</strong> Wage/risk trade-off — if a firm spends more on safety (lower risk), it must spend less on wages to maintain profit.</li>
+                        <li><strong>Concave:</strong> Diminishing marginal returns to safety expenditures — the first safety measures are cheap, but making a very risky job "almost safe" is extremely expensive.</li>
+                    </ul>
                     <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
                         <div style="flex: 1; min-width: 350px;">
                             <img src="firm_heterogeneity_isoprofit_wage_risk.png" alt="Firm Heterogeneity: Safety Costs" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
+                            <p style="font-size: 0.85rem; color: #718096; margin-top: 0.5rem; font-style: italic;">Employers differ in how costly it is for them to reduce the risk.</p>
                         </div>
                         <div style="flex: 1; min-width: 300px;">
                             <div class="actors-grid" style="grid-template-columns: 1fr; gap: 1rem;">
                                 <div class="actor-card firm" style="background: rgba(49, 130, 206, 0.05); padding: 1rem;">
                                     <h4>Firm X: Low Safety Costs</h4>
-                                    <p>Uses modern technology. The <strong>Isoprofit curve is flatter</strong>.</p>
-                                    <div class="alert-box note" style="font-size: 0.85rem;">
-                                        <strong>Result:</strong> Small wage sacrifice for safety.
-                                    </div>
+                                    <p>Uses modern technology. The <strong>isoprofit curve is flatter</strong> — a small reduction in wages buys a large reduction in risk.</p>
                                 </div>
                                 <div class="actor-card firm" style="background: rgba(229, 62, 62, 0.05); border-color: #E53E3E; padding: 1rem;">
                                     <h4>Firm Y: High Safety Costs</h4>
-                                    <p>Older facilities. The <strong>Isoprofit curve is steeper</strong>.</p>
-                                    <div class="alert-box warning" style="font-size: 0.85rem;">
-                                        <strong>Result:</strong> Large wage sacrifice for safety.
-                                    </div>
+                                    <p>Older facilities, inherently dangerous processes. The <strong>isoprofit curve is steeper</strong> — it is extremely costly to reduce risk, so wages must drop steeply to maintain profit.</p>
                                 </div>
                             </div>
                         </div>
@@ -329,50 +410,173 @@
                     </div>
                 </div>
 
+                <!-- CZECH WORKPLACE INJURY DATA -->
+                <h2 id="czech-data" style="margin-top: 5rem;">🇨🇿 Statistics of Workplace Injuries in Czechia</h2>
+                <div class="concept-card explanation">
+                    <p>Before studying the normative question of regulation, let's look at the <strong>empirical reality</strong> of workplace injuries in the Czech Republic (Source: <em>Pracovní úrazovost v České republice v roce 2024, bozpinfo.cz</em>).</p>
+                </div>
+
+                <div class="concept-card">
+                    <div class="post-it" style="margin-bottom: 1.5rem; background: #fffafa; border-color: #feb2b2;">
+                        <strong>📌 Note on 2018 spike:</strong> The spike in fatal occupational injuries in 2018 was largely driven by three exceptional events, most notably a <strong>methane explosion in a coal mine near Karviná</strong>.
+                    </div>
+
+                    <h4 style="color: var(--clr-blue-primary); margin: 2rem 0 1rem;">Occupational Injuries by Activity (CZ, 2024) — Three Most Frequent</h4>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: var(--clr-blue-primary); color: white;">
+                                    <th style="padding: 10px 12px; text-align: left;">Activity</th>
+                                    <th style="padding: 10px 12px; text-align: right;">Number</th>
+                                    <th style="padding: 10px 12px; text-align: right;">%</th>
+                                    <th style="padding: 10px 12px; text-align: right;">Cumulative %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(43, 108, 176, 0.05);">
+                                    <td style="padding: 10px 12px;">Handling, manipulating, and processing objects, live plants, and animals</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">14 733</td>
+                                    <td style="padding: 10px 12px; text-align: right;">41.1</td>
+                                    <td style="padding: 10px 12px; text-align: right;">41.1</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px;">Walking</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">7 223</td>
+                                    <td style="padding: 10px 12px; text-align: right;">20.1</td>
+                                    <td style="padding: 10px 12px; text-align: right;">61.2</td>
+                                </tr>
+                                <tr style="background: rgba(43, 108, 176, 0.05);">
+                                    <td style="padding: 10px 12px;">Cutting</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">1 318</td>
+                                    <td style="padding: 10px 12px; text-align: right;">3.7</td>
+                                    <td style="padding: 10px 12px; text-align: right;">64.9</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 style="color: var(--clr-blue-primary); margin: 2rem 0 1rem;">Occupational Injuries by Place (CZ, 2024) — Three Most Frequent</h4>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: var(--clr-blue-primary); color: white;">
+                                    <th style="padding: 10px 12px; text-align: left;">Place</th>
+                                    <th style="padding: 10px 12px; text-align: right;">Number</th>
+                                    <th style="padding: 10px 12px; text-align: right;">%</th>
+                                    <th style="padding: 10px 12px; text-align: right;">Cumulative %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(43, 108, 176, 0.05);">
+                                    <td style="padding: 10px 12px;">Production and operational area</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">11 988</td>
+                                    <td style="padding: 10px 12px; text-align: right;">33.4</td>
+                                    <td style="padding: 10px 12px; text-align: right;">33.4</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px;">Storage, loading, unloading area</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">2 857</td>
+                                    <td style="padding: 10px 12px; text-align: right;">8.0</td>
+                                    <td style="padding: 10px 12px; text-align: right;">41.4</td>
+                                </tr>
+                                <tr style="background: rgba(43, 108, 176, 0.05);">
+                                    <td style="padding: 10px 12px;">Factory, manufacturing plant, workshop</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">2 455</td>
+                                    <td style="padding: 10px 12px; text-align: right;">6.8</td>
+                                    <td style="padding: 10px 12px; text-align: right;">48.2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 style="color: var(--clr-blue-primary); margin: 2rem 0 1rem;">Occupational Injuries by Source of Injury (CZ, 2024) — Three Most Frequent</h4>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr style="background: var(--clr-blue-primary); color: white;">
+                                    <th style="padding: 10px 12px; text-align: left;">Source of Injury</th>
+                                    <th style="padding: 10px 12px; text-align: right;">Number</th>
+                                    <th style="padding: 10px 12px; text-align: right;">%</th>
+                                    <th style="padding: 10px 12px; text-align: right;">Cumulative %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: rgba(43, 108, 176, 0.05);">
+                                    <td style="padding: 10px 12px;">Materials, loads, products, and machine parts</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">11 461</td>
+                                    <td style="padding: 10px 12px; text-align: right;">31.9</td>
+                                    <td style="padding: 10px 12px; text-align: right;">31.9</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px 12px;">Buildings, structures, and surfaces (indoors & outdoors)</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">10 118</td>
+                                    <td style="padding: 10px 12px; text-align: right;">28.2</td>
+                                    <td style="padding: 10px 12px; text-align: right;">60.1</td>
+                                </tr>
+                                <tr style="background: rgba(43, 108, 176, 0.05);">
+                                    <td style="padding: 10px 12px;">Hand tools</td>
+                                    <td style="padding: 10px 12px; text-align: right; font-weight: 700;">3 000</td>
+                                    <td style="padding: 10px 12px; text-align: right;">8.4</td>
+                                    <td style="padding: 10px 12px; text-align: right;">68.5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
 
                 <!-- NORMATIVE ANALYSIS -->
-                <h2 id="normative-regulation">⚖️ Normative Analysis: Safety Regulation</h2>
+                <h2 id="normative-regulation">⚖️ Normative Analysis: Safety and Health Risk Regulation</h2>
                 <div class="concept-card explanation">
-                    <p>Should the government mandate safety levels? This depends on whether the market's assumptions (perfect info, mobility) actually hold.</p>
+                    <p><strong>Questions:</strong> Is there a need for regulation of workplace safety and, if needed, what should the goals of the regulation be? This depends on the <strong>validity of the assumptions</strong>: Are the workers aware of all potential risks? Did they choose the job voluntarily (are they mobile)?</p>
                 </div>
 
                 <!-- PERFECT INFO REG -->
-                <h3>1. Regulation with Perfect Information</h3>
+                <h3>1. Regulation When Workers Are Informed and Mobile</h3>
                 <div class="concept-card">
                     <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
                         <div style="flex: 1; min-width: 350px;">
                             <img src="regulation_safety_wage_risk_effects.png" alt="Safety Regulation Effects" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <p>If the government sets a <strong>Maximum Legal Risk ($R_{AX}$)</strong> to protect workers, the results are paradoxically mixed:</p>
+                            <p>Reducing risk to a certain maximum level is <strong>socially desirable</strong> (normative statement), but can <strong>reduce utility of some workers</strong>.</p>
+                            <p style="margin-top: 1rem;">If the government sets a <strong>maximum legal risk level at $R_{AX}$</strong>:</p>
                             <ul>
-                                <li><strong>The "Safe" Workers (Type A):</strong> They are already working at risk levels below the new legal limit. For them, the law changes nothing; they continue their safe careers as before.</li>
-                                <li><strong>The "Risky" Workers (Type B):</strong> These workers are the primary "losers" of the regulation. They were knowingly trading safety for a high wage ($B_0$). By banning their job, the government forces them to take a safer but lower-paying job ($B_1$), which reduces their total utility. They are "safer" but subjectively worse off.</li>
-                                <li><strong>Macro Impact:</strong> Firms that cannot afford the high costs of safety upgrades (like Firm Y) may be forced to shut down entirely, leading to structural unemployment in those specific sectors.</li>
+                                <li><strong>Worker B's utility drops:</strong> Worker B was knowingly at a high-risk, high-wage job ($B_0$). Regulation forces him to move to $B_1$ on a lower indifference curve → <strong>reduced utility</strong>.</li>
+                                <li><strong>Firm Y shuts down:</strong> Firm Y cannot afford to make its operations safe enough → it <strong>has to close down</strong>.</li>
+                                <li><strong>But Worker A benefits IF he had no choice:</strong> If worker A didn't have any other choice than to accept the same job as B (where he would be at a lower indifference curve), the regulation would actually make him <strong>better off</strong>.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <!-- IMPERFECT INFO REG -->
-                <h3>2. Regulation with Imperfect Information</h3>
+                <h3>2. Regulation When Workers Are Uninformed or Immobile</h3>
                 <div class="concept-card">
+                    <p style="margin-bottom: 1.5rem;">If workers are uninformed and unable to comprehend different risk levels, or if they are immobile, they might not have chosen the level of risk voluntarily — government regulation could make workers <strong>better off</strong>.</p>
                     <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
                         <div style="flex: 1; min-width: 350px;">
                             <img src="imperfect_information_regulation_wage_risk.png" alt="Imperfect Information Regulation" style="width: 100%; border-radius: 8px; border: 1px solid var(--clr-blue-border);">
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <p>The strongest argument for regulation comes from <strong>Information Failure</strong>. In the real world, workers (especially young or inexperienced ones) often <em>underestimate</em> the true risk of a job, perhaps due to over-confidence or lack of data.</p>
-                            <div class="alert-box note">
-                                <strong>The "Cognitive Gap":</strong> When workers misperceive a high risk as a low one (Point J vs Point K), they accept a wage that doesn't truly compensate them. They think they have high utility, but their "actual" utility is much lower. In this specific case, a government mandate that forces safety (Point C) actually <em>improves</em> their well-being by correcting for their own misperception.
-                            </div>
+                            <p><strong>If the employee is not aware of the real risk:</strong></p>
+                            <ul>
+                                <li><strong>Point J:</strong> Where the worker <em>believes</em> he is — at wage $W_1$, he thinks he accepted risk $R_1$.</li>
+                                <li><strong>Point K:</strong> Where he <em>actually</em> is — the true risk is $R_2 > R_1$ → he is at <strong>lower utility</strong> than he thinks.</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>Government sets a maximum legal risk:</strong></p>
+                            <ul>
+                                <li>If set at risk $R'$ → moves to <strong>point D</strong> → utility <em>decreases</em> to $U'$ (too aggressive).</li>
+                                <li><strong>Point C</strong> gives the <em>same</em> utility as Point K — so the worker is no worse off.</li>
+                                <li><strong>Any risk between $R_0$ and $R_2$</strong> would make the worker <em>better off</em> than at K.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="post-it" style="margin-top: 2rem; text-align: center;">
-                    <strong>Conclusion:</strong> Safety regulation is a double-edged sword. It protects the vulnerable and misinformed, but it can reduce the utility of those who knowingly prefer high-risk, high-reward employment.
+                    <strong>Conclusion:</strong> Safety regulation is a double-edged sword. It protects the uninformed and immobile, but it can <strong>reduce the utility</strong> of workers who knowingly prefer high-risk, high-reward employment. The key question is always the <strong>validity of the assumptions</strong>: information and mobility.
                 </div>
 
             </section>
