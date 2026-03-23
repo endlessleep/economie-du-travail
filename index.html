@@ -187,8 +187,17 @@
                 <ul>
                     <li><strong>Imperfect Information:</strong> Firms don't know the true productivity of a candidate.
                     </li>
+                    <li><strong>Transaction Barriers:</strong> Search costs, geographic distance, legal obstacles, and
+                        administrative burdens prevent workers and firms from finding each other efficiently. These
+                        frictions delay the matching process and create frictional unemployment even when suitable
+                        vacancies exist.</li>
                     <li><strong>Externalities:</strong> Investing in a worker's training might benefit a competitor if
-                        the worker quits.</li>
+                        the worker quits (positive externality not captured by the firm). Conversely, pollution
+                        from a factory affects workers' health without compensation (negative externality).</li>
+                    <li><strong>Public Goods:</strong> Job market information, vocational training infrastructure, and
+                        employment services are "public goods" — non-rivalrous and non-excludable. Because private
+                        firms cannot fully capture their benefits, the market under-provides them, justifying
+                        government intervention (e.g., public employment agencies, subsidized training programs).</li>
                 </ul>
 
                 <div class="concept-card warning">
@@ -207,10 +216,22 @@
                     </p>
                     <p><strong>Size of Labor Force ($LF$) :</strong> The active population. It is the sum of people who
                         are working and those looking for work. <strong>$LF = E + U$</strong>.</p>
-                    <p><strong>Employed workers ($E$) :</strong> Workers in employment (those who have a paid job).</p>
-                    <p><strong>Unemployed workers ($U$) :</strong> Unemployed workers. To be counted here (according to
-                        the ILO), three strict conditions must be met: being <em>without work</em>, <em>actively
-                            seeking</em> employment, and being <em>currently available</em>.</p>
+                    <p><strong>Employed workers ($E$) :</strong> Those of working age who, during a given reference
+                        period, were engaged in any activity to produce goods or provide services for pay or profit.
+                        This comprises both self-employed and wage-employed workers, and is subdivided into:</p>
+                    <ul style="margin: 5px 0 10px 20px; font-size: 0.95em;">
+                        <li><strong>(a) Employed persons "at work":</strong> Those who worked in a job for <em>at least
+                                one hour</em> during the reference period.</li>
+                        <li><strong>(b) Employed persons "not at work":</strong> Those temporarily absent from a job
+                            (e.g., illness, maternity leave, vacation) or due to working-time arrangements (e.g.,
+                            short-time work schemes, furlough). Crucially, these are still <em>counted as
+                                employed</em>.</li>
+                    </ul>
+                    <p><strong>Unemployed workers ($U$) :</strong> According to the ILO definition, three strict
+                        conditions must be met simultaneously: (1) being <em>without work</em> during the reference
+                        period (not in paid employment or self-employment), (2) being <em>currently available</em>
+                        for paid employment or self-employment, and (3) <em>actively seeking</em> work (having taken
+                        specific steps to find employment).</p>
                 </div>
 
                 <h3>LFPR vs ER (Participation vs Employment)</h3>
@@ -238,6 +259,43 @@
                         <li><strong>The gap widens:</strong> The drop in employment is always more violent and immediate
                             than the exit from the labor force, which mechanically widens the gap between LFPR and ER.
                         </li>
+                    </ul>
+                </div>
+
+                <!-- Czech LFS Data 3Q 2025 -->
+                <h3>🇨🇿 Czech Labour Market Snapshot (LFS, 3Q 2025)</h3>
+                <div class="concept-card" style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95em;">
+                        <thead>
+                            <tr style="background: var(--clr-purple-light); font-weight: 700;">
+                                <th style="padding: 10px 15px; text-align: left; border-bottom: 2px solid var(--clr-purple-border);">Category</th>
+                                <th style="padding: 10px 15px; text-align: right; border-bottom: 2px solid var(--clr-purple-border);">Thousands</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="padding: 8px 15px;">Population aged 15+</td><td style="padding: 8px 15px; text-align: right; font-weight: 600;">8,861</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 8px 15px;">Labour Force ($LF = E + U$)</td><td style="padding: 8px 15px; text-align: right; font-weight: 600; color: var(--clr-purple-primary);">5,430</td></tr>
+                            <tr><td style="padding: 8px 15px; padding-left: 30px;">↳ Employed ($E$)</td><td style="padding: 8px 15px; text-align: right; font-weight: 600; color: #2F855A;">5,272</td></tr>
+                            <tr style="background: rgba(0,0,0,0.02);"><td style="padding: 8px 15px; padding-left: 30px;">↳ Unemployed ($U$)</td><td style="padding: 8px 15px; text-align: right; font-weight: 600; color: #C53030;">158</td></tr>
+                            <tr><td style="padding: 8px 15px;">Out of Labour Force</td><td style="padding: 8px 15px; text-align: right; font-weight: 600;">3,430</td></tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size: 0.85em; color: #718096; margin-top: 10px; font-style: italic;">Source: Czech Statistical Office, Labour Force Survey, 3rd Quarter 2025.</p>
+                    <p style="margin-top: 10px;"><strong>Implied rates:</strong></p>
+                    <ul style="font-size: 0.95em;">
+                        <li><strong>Unemployment Rate:</strong> $UR = \frac{158}{5{,}430} \times 100 \approx 2.9\%$ — one of the lowest in the EU.</li>
+                        <li><strong>Stock-Flow dynamics:</strong> Workers constantly flow between statuses — new entrants and re-entrants join the Labour Force, while dropouts and retirements exit it. Employed workers face layoffs and quits (→ Unemployed), while unemployed are matched to new hires (→ Employed).</li>
+                    </ul>
+                </div>
+
+                <!-- Long-term Trends -->
+                <h3>📈 Long-Term Trends in Activity Rates</h3>
+                <div class="concept-card explanation">
+                    <p>When looking at cross-country comparisons (e.g., Czechia vs. EU-28 average), key long-term trends emerge:</p>
+                    <ul>
+                        <li><strong>Female LFPR has steadily increased</strong> over the past decades, particularly for <em>married women</em>. This is one of the most significant structural changes in modern labour markets, driven by declining fertility rates, higher female education levels, changing social norms, and the expansion of the service sector.</li>
+                        <li><strong>Czechia consistently outperforms the EU average</strong> on both Employment Rate and Activity Rate, while maintaining one of the lowest Unemployment Rates in the Union.</li>
+                        <li><strong>The gap between male and female participation</strong> has narrowed considerably but has not fully closed, reflecting persistent structural barriers (e.g., childcare availability, gender pay gap).</li>
                     </ul>
                 </div>
 
