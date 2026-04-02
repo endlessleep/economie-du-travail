@@ -19,6 +19,61 @@
     </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- SPECIFIC STYLES FOR VISUAL HIERARCHY IN THIS COURSE -->
+    <style>
+        .highlight-concept {
+            color: #3182CE;
+            font-weight: 700;
+        }
+
+        .highlight-mechanism {
+            color: #B7791F;
+            font-weight: 700;
+            background-color: #FEFCBF;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .highlight-exam {
+            color: #C53030;
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-color: #FEB2B2;
+            text-decoration-thickness: 3px;
+        }
+
+        .graph-explanation-box {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-left: 6px solid #2B6CB0;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .graph-explanation-box h4 {
+            margin-top: 0;
+            color: #2B6CB0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 0.5rem;
+        }
+
+        .graph-explanation-box ul {
+            margin-top: 10px;
+        }
+
+        .graph-explanation-box li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +111,7 @@
             <div class="accordion-content">
                 <a href="cours-6.html">6. Compensating Differentials</a>
                 <a href="cours-7.html">7. Education & Training</a>
-                <a href="cours-8.html">8. Discrimination & Gender</a>
+                <a href="cours-8.html" class="active">8. Discrimination & Gender</a>
             </div>
         </div>
 
@@ -89,253 +144,213 @@
             <section class="lesson-section">
 
                 <h2>⚖️ I. Definition of Discrimination in Labour Markets</h2>
-                <p>Discrimination is a central issue in labour economics because it leads to market inefficiencies and profound social inequalities. Economically speaking, <strong>discrimination exists when workers with the exact same productive capacities are treated differently on the basis of the demographic group to which they belong</strong>.</p>
-                <p>This demographic group affiliation can be based on gender, race, age, nationality, religion, sexual preference, disability, and more. When the labour market fails to reward identical human capital equally, we observe two main outcomes:</p>
+                
+                <p>Discrimination leads to severe market inefficiencies and profound social inequalities. In economics, the strict definition is:</p>
+                
+                <div class="concept-card definition">
+                    <h4>The Economic Definition</h4>
+                    <p><span class="highlight-concept">Discrimination</span> exists when workers with the <strong>exact same productive capacities</strong> are treated differently strictly on the basis of the demographic group to which they belong (gender, race, age, nationality, religion, sexual preference, disability).</p>
+                </div>
+
+                <p>When the labour market fails to reward identical human capital equally, we observe two main outcomes:</p>
                 <ul>
-                    <li><strong>Wage discrimination:</strong> Two individuals with the same productivity receive different wages.</li>
-                    <li><strong>Employment segregation:</strong> Certain groups are systematically excluded from or concentrated in specific occupations or sectors.</li>
+                    <li><span class="highlight-concept">Wage discrimination:</span> Two individuals with identical productivity receive different wages.</li>
+                    <li><span class="highlight-concept">Employment segregation:</span> Certain groups are systematically excluded from or concentrated in specific occupations or sectors.</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 1px dashed var(--clr-blue-border);">
+
+                <h3>Timeline of Discrimination</h3>
+                <p>Inequalities are built over a lifetime. It is essential to distinguish <em>when</em> the inequality occurs:</p>
+                
+                <ul>
+                    <li><span class="highlight-mechanism">Pre-market discrimination:</span> Occurs <strong>before</strong> entering the labour market. This includes unequal access to human capital (e.g., girls being discouraged from STEM education) or societal pressures steering specific groups toward less lucrative occupations.</li>
+                    <li><span class="highlight-mechanism">Post-market (in-market) discrimination:</span> Occurs when employers, customers, or co-workers negatively evaluate a minority group member who is <strong>already active</strong> in the labour market.</li>
                 </ul>
 
                 <div class="concept-card warning">
                     <h4>🚨 Discrimination vs. Under-representation</h4>
-                    <p>It is crucial to distinguish between true discrimination and statistical under-representation. For instance, women have, on average, lower wages than men. However, if a country strictly applies the principle of "equal pay for equal work", the lower average female wage might simply reflect their higher concentration in lower-paid professions (e.g., care work, education). <strong>This is occupational segregation, not wage discrimination per se (although systemic factors might have forced them into those roles).</strong></p>
+                    <p>It is crucial to distinguish between true discrimination and statistical under-representation. Women have, on average, lower wages than men. However, if a country strictly applies the principle of <em>"equal pay for equal work"</em>, the lower average female wage might simply reflect their higher concentration in lower-paid professions (like care work or early education).</p>
+                    <p><span class="highlight-exam">This is occupational segregation, not wage discrimination per se.</span></p>
                 </div>
 
-                <h3>Pre-market vs. Post-market Discrimination</h3>
-                <p>Inequalities do not magically appear only when a contract is signed. They are built up over a lifetime:</p>
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <h2>📊 II. Empirical Reality: Self-Reported Discrimination & Perceptions</h2>
+                
+                <p>To understand theory, we must first look at the data. Let's analyze data from the EU (2021) and the Czech Republic (ISSP 2015).</p>
+
+                <h3>1. Heterogeneity of Discrimination (EU Data)</h3>
+                
+                <div class="actors-grid">
+                    <div class="actor-card gov">
+                        <div class="actor-icon">🌍</div>
+                        <h4>Origin-Based (Non-EU)</h4>
+                        <p>Non-EU workers report the highest overall levels of discrimination (8–9%). Employers use national origin as a proxy, penalizing immigrants heavily.</p>
+                    </div>
+                    <div class="actor-card worker">
+                        <div class="actor-icon">👨</div>
+                        <h4>Men's Experience</h4>
+                        <p>Among men, discrimination is overwhelmingly linked to <em>foreign origin</em>. <span class="highlight-concept">Gender discrimination against men is practically non-existent.</span></p>
+                    </div>
+                    <div class="actor-card firm" style="border-top-color: #E53E3E;">
+                        <div class="actor-icon">👩</div>
+                        <h4>Women's Experience</h4>
+                        <p>Women experience a compound effect. They face a powerful mix of both <em>origin-based</em> AND <em>gender-based</em> discrimination simultaneously.</p>
+                    </div>
+                </div>
+
+                <h3>2. The Glass Ceiling (ISSP 2015 Data - Czechia)</h3>
+
+                <p>Surveys ask who has easier access to leadership roles and who earns more. The consensus is massive:</p>
                 <ul>
-                    <li><strong>Pre-market discrimination:</strong> Occurs before entering the labour market. It includes unequal access to human capital (e.g., girls encouraged away from STEM education) or societal pressures steering groups toward specific, less-lucrative occupations.</li>
-                    <li><strong>Post-market (in-market) discrimination:</strong> Occurs when employers, customers, or co-workers negatively evaluate a minority group member who is already active in the labour market.</li>
+                    <li><strong>Leadership:</strong> 84% of women and 72% of men admit that men have an advantage for top jobs.</li>
+                    <li><strong>Wages:</strong> 89% of women and 79% of men agree that men earn more.</li>
                 </ul>
 
-                <!-- Empirical Data: Self-reported discrimination -->
-                <h3>📊 Empirical Insight: Self-Reported Discrimination at Work (EU, 2021)</h3>
-                
                 <div class="concept-card explanation">
-                    <h4>Heterogeneity of Discrimination</h4>
-                    <p>Empirical data comparing self-reported discrimination across the EU (men vs. women, native vs. non-EU origins) reveals striking structural inequalities:</p>
+                    <h4>The Sociological Impact</h4>
+                    <p>This massive cross-gender consensus reflects the <span class="highlight-concept">Glass Ceiling</span> phenomenon — invisible, structural barriers preventing women and minorities from accessing upper-management positions, despite identical qualifications.</p>
+                    <p><span class="highlight-mechanism">Why this matters:</span> While these surveys capture "opinions," these deep-seated societal beliefs alter the behaviour of rational agents. If women know the deck is stacked against them, it influences their educational investments and salary negotiations.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <h2>📚 III. Economic Theories of Discrimination</h2>
+                
+                <p>Economists possess three major frameworks to explain why profit-maximizing firms engage in discriminatory practices.</p>
+
+                <h3>1. Personal-Prejudice / Distaste Models (Becker, 1971)</h3>
+                <p>Gary Becker posited that discrimination is not a rational evaluation of skills, but a psychological "distaste" or prejudice. Actors are willing to pay a financial cost to avoid a specific minority group.</p>
+
+                <div class="math-block">
+                    \[ W_F = W_M - d \]
+                    <p style="font-size: 0.9em; margin-top:5px; color:#4a5568;">
+                        <span class="highlight-concept">d = The Discrimination Coefficient</span><br>
+                        For a prejudiced employer to be indifferent, the female wage ($W_F$) must be penalized by the exact value of the employer's distaste ($d$) compared to the male wage ($W_M$).
+                    </p>
+                </div>
+
+                <p>Becker separated this prejudice into three sources:</p>
+
+                <ul>
+                    <li style="margin-bottom: 15px;"><strong>A. By Employers:</strong> If a firm refuses to hire highly productive women simply because they are women, the employer is <span class="highlight-mechanism">actively sacrificing financial profits to maximize their personal utility</span>. In a perfect, competitive market, non-discriminatory firms should hire all the underpaid women and drive the prejudiced firms out of business.</li>
+                    
+                    <li style="margin-bottom: 15px;"><strong>B. By Employees:</strong> If male workers have a "distaste" for female managers, they will demand a <em>compensating wage premium</em> to work with them. To avoid paying this premium, a rational firm won't lower wages; instead, the firm will <span class="highlight-mechanism">totally segregate the workforce</span> (e.g., hiring only men or only women).</li>
+                    
+                    <li><strong>C. By Customers:</strong> Customers may prefer to be served by a specific demographic (e.g., male mechanics, female nurses) and demand lower prices if served by someone else. This hurts firm profit, leading the firm to lower the wages of the discriminated group. <span class="highlight-exam">Crucial condition: the worker must be visible to the customer.</span></li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 1px dashed var(--clr-blue-border);">
+
+                <h3>2. Statistical Discrimination</h3>
+                
+                <p>Unlike Becker’s model, statistical discrimination is not driven by hatred or distaste, but by <strong>imperfect information</strong> and the desire to minimize risk and hiring screening costs.</p>
+
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="statistical_discrimination_productivity_distribution.png" alt="Graph showing two overlapping distributions of productivity for Group 1 and Group 2, explaining statistical discrimination." style="max-width: 90%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+                
+                <!-- NEW GRAPH EXPLANATION BOX -->
+                <div class="graph-explanation-box">
+                    <h4>📈 Graph Explanation: Statistical Discrimination</h4>
+                    <p><strong>What the graph shows:</strong></p>
                     <ul>
-                        <li><strong>Non-EU workers:</strong> They report the highest levels of discrimination (around 8–9%).</li>
-                        <li><strong>Women vs. Men:</strong> Women consistently report higher levels of discrimination across all groups.</li>
-                        <li><strong>Intersectionality in action:</strong> 
-                            <ul style="margin-top:5px; margin-bottom:5px;">
-                                <li>Among <strong>men</strong>, discrimination is overwhelmingly linked to <em>foreign origin</em>. Gender discrimination is practically non-existent.</li>
-                                <li>Among <strong>women</strong>, it is a compound effect. They face a mix of <em>origin-based</em> and <em>gender-based</em> discrimination.</li>
-                            </ul>
-                        </li>
+                        <li><strong>Horizontal Axis:</strong> Individual Productivity level.</li>
+                        <li><strong>Vertical Axis:</strong> Number of individuals (frequency).</li>
+                        <li><strong>The Curves:</strong> We see two overlapping normal distributions representing two separate groups. <strong>Group 2</strong> (e.g., native men) has a higher <em>average expected productivity</em> than <strong>Group 1</strong> (e.g., minority workers or young women).</li>
+                        <li><strong>The Intersection Point:</strong> Look closely at the exact point where the two curves cross. An individual selected from exactly this point possesses the <em>exact same actual productivity</em> regardless of their group.</li>
+                    </ul>
+                    
+                    <p><strong>Economic Intuition & Mechanism:</strong></p>
+                    <ul>
+                        <li>Because employers <strong>cannot perfectly observe</strong> individual productivity (it's hidden or too expensive to test), they rely on the <span class="highlight-mechanism">average group performance as a cheap proxy</span>.</li>
+                        <li>Even if the candidate from Group 1 is just as skilled as the candidate from Group 2 (at the intersection), the employer assumes the Group 2 worker is safer based purely on statistical averages.</li>
+                        <li><span class="highlight-exam">Conclusion: Equally productive individuals are treated completely differently based solely on group affiliation, purely due to imperfect information.</span></li>
                     </ul>
                 </div>
 
-                <p><strong>Economic Analysis of these findings:</strong> Why do we observe this pattern?</p>
-                <ol>
-                    <li><strong>Gender Discrimination (Becker's model):</strong> Since it is visible almost exclusively among women, this aligns with the theory that employers or clients harbor a specific distaste (preference against) women in certain roles.</li>
-                    <li><strong>Statistical Discrimination:</strong> The high discrimination rate for non-EU immigrants suggests employers use national origin as a proxy for unobservable productivity variables (language skills, cultural fit), penalizing equally competent individuals simply due to their group tag.</li>
-                    <li><strong>Labour Market Segmentation (Crowding):</strong> Women and immigrants are heavily concentrated in precarious sectors or service jobs with high customer interaction, exposing them disproportionately to discriminatory behaviors.</li>
-                </ol>
-
-                <div class="post-it">
-                    <h4>💡 Exam Core Message</h4>
-                    <p>Discrimination is heterogeneous and multidimensional. While men primarily face origin-based barriers, women experience intersectional discrimination (gender + origin). Furthermore, standard cross-country surveys measure <em>subjective perceptions</em> of discrimination, heavily influenced by national culture and institutions, which is why economists rely on econometric tools (like Oaxaca-Blinder) to isolate pure discrimination.</p>
+                <div class="post-it rose">
+                    <h4>⚠️ The Vicious Cycle</h4>
+                    <p>If a group knows employers will statistically discriminate against them, they have <span class="highlight-mechanism">no incentive to invest in their own education</span>. Over time, their actual group productivity decreases, which perfectly validates the employer's initial bias! It becomes a self-fulfilling prophecy.</p>
                 </div>
 
-                <!-- Perceptions of Inequality ISSP -->
-                <h3>🏢 Glass Ceiling and Public Perception (ISSP 2015 Data)</h3>
-                <p>To understand how social norms anchor labour market outcomes, we analyze survey data regarding the perception of equality.</p>
-
-                <div class="actors-grid">
-                    <div class="actor-card firm">
-                        <div class="actor-icon">📈</div>
-                        <h4>Access to Leadership</h4>
-                        <p><strong>Question: Who has easier access to leadership positions?</strong></p>
-                        <ul style="font-size:0.9em; text-align:left;">
-                            <li>72% of men say men have an advantage.</li>
-                            <li>84% of women say men have an advantage.</li>
-                            <li>Only 1-2% believe women have an advantage.</li>
-                        </ul>
-                    </div>
-                    <div class="actor-card worker">
-                        <div class="actor-icon">💵</div>
-                        <h4>Wage Perceptions (CZ)</h4>
-                        <p><strong>Question: Who has higher income in Czechia?</strong></p>
-                        <ul style="font-size:0.9em; text-align:left;">
-                            <li>79% of men admit that men earn more.</li>
-                            <li>89% of women agree that men earn more.</li>
-                            <li>20% of men (vs 11% women) incorrectly think there is no difference.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <p><strong>Economic Interpretation:</strong> There is a massive, cross-gender consensus reflecting the <strong>Glass Ceiling</strong> phenomenon—sociological and invisible barriers preventing women and minorities from accessing upper-management positions, despite identical qualifications. The stark reality that women are hyper-aware of the wage gap highlights acute information asymmetry and different lived experiences. While these surveys capture <em>opinions</em>, these deep-seated societal beliefs directly shape the behaviour of rational agents, altering educational choices and wage negotiations.</p>
-
-                <hr style="margin: 40px 0; border: 1px solid var(--clr-purple-border);">
-
-                <h2>📚 II. Economic Theories of Discrimination</h2>
-                <p>Economists have modeled several mechanisms to explain why profit-maximizing firms might engage in discriminatory practices. We focus on three foundational theories.</p>
-
-                <h3>1. Personal-Prejudice / Distaste Models (Becker, 1971)</h3>
-                <p>Originally formulated to explain racial discrimination, Gary Becker’s model introduces the concept of a <strong>Discrimination Coefficient ($d$)</strong>. Becker posits that discrimination is not a rational evaluation of skills, but a psychological "distaste" or prejudice. Certain market actors are willing to pay a financial cost to avoid interacting with a specific minority group.</p>
-
-                <h4>A. Discrimination by Employers</h4>
-                <p>Assume that a discriminated group (e.g., Women, $F$) and a non-discriminated group (Men, $M$) are <strong>equally productive</strong>. A prejudiced employer subjectively devalues the productivity of the female workers by the coefficient $d$.</p>
-                
-                <div class="math-block">
-                    \[ W_F = W_M - d \]
-                    <p style="font-size: 0.9em; margin-top:5px; color:#4a5568;">For the employer to be indifferent between hiring a man or a woman, the woman must accept a wage penalty equal to the employer's distaste $d$.</p>
-                </div>
-
-                <p><strong>The Profit Sacrifice:</strong> A discriminatory employer will only hire women if their wage is lower enough to compensate for $d$. If women are <em>not</em> employed even though their market wage is lower than men's, the discriminatory employer is actively <strong>sacrificing profits</strong> to avoid them! Thus, the employer is maximizing their <em>personal utility</em> (profit minus distaste), not just financial profit. In a perfectly competitive market, non-discriminatory firms would hire all the underpaid women, outcompete the prejudiced firms, and eventually drive them out of business. The persistence of discrimination challenges the perfect competition assumption.</p>
-
-                <h4>B. Discrimination by Employees</h4>
-                <p>Here, the prejudice comes from the workers themselves. Male workers might have a distaste for taking orders from female managers or working alongside them. Consequently, these prejudiced men will demand a <strong>compensating wage premium</strong> to cover their "distaste" for the mixed environment.</p>
-                <p>Why would a rational employer pay higher wages to prejudiced men if they can hire equally productive women for less? Instead of paying the premium, the profit-maximizing employer will naturally segregate the firm: hiring <em>only men</em> or <em>only women</em>. Employee discrimination thus leads to <strong>total workplace segregation</strong> rather than persistent wage differentials within the same firm.</p>
-
-                <h4>C. Discrimination by Customers</h4>
-                <p>Customers might harbor prejudices and prefer to be served by a specific demographic (e.g., men in high-end finance, women in caregiving). Customers act as if the price of the good is higher when purchased from the discriminated group. To compensate, a firm would have to lower the price to maintain sales, hurting profits. Therefore, the employer will systematically offer a lower wage to the discriminated group or refuse to hire them for customer-facing roles.</p>
-                <p><em>Caveat:</em> This requires the worker to be visible to the customer. This perfectly explains occupational segregation in high-contact service sectors.</p>
-
-                <hr style="margin: 30px 0; border: 1px dashed var(--clr-purple-border);">
-
-                <h3>2. Statistical Discrimination</h3>
-                <p>Unlike Becker’s model, statistical discrimination is not driven by hatred or distaste, but by <strong>imperfect information</strong> and the desire to minimize risk and hiring costs.</p>
-
-                <p>When screening applicants, employers cannot perfectly observe the true, idiosyncratic productivity of an individual. Gathering absolute proof of an applicant's future performance is too expensive. Therefore, employers use observable characteristics (gender, race, age) as <strong>cheap proxies</strong> (signals) to estimate expected productivity, basing their decisions on past experiences, historical group statistics, or entrenched biases.</p>
-
-                <div style="text-align: center; margin: 20px 0;">
-                    <img src="statistical_discrimination_productivity_distribution.png" alt="Graph showing two overlapping distributions of productivity for Group 1 and Group 2, explaining statistical discrimination." style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <p style="font-size: 0.85em; color: gray; margin-top: 10px;"><em>Empirical Observation: Overlapping productivity distributions of two groups under imperfect information.</em></p>
-                </div>
-
-                <div class="concept-card explanation">
-                    <h4>Economic Interpretation: The Intersection Penalty</h4>
-                    <p>The graph illustrates two overlapping normal distributions. Let's assume <strong>Group 2</strong> (e.g., native men) has a historically higher <em>average</em> productivity than <strong>Group 1</strong> (e.g., young mothers) due to systematic uninterrupted career paths. However, the distributions heavily overlap.</p>
-                    <p>At the <strong>intersection point</strong>, a specific candidate from Group 1 has the exact same actual productivity as a candidate from Group 2. But because the employer cannot see this specific point, they anchor their offer to the group average. As a result, the individual from Group 1 is heavily penalized, offered a lower wage, or not hired at all.</p>
-                </div>
-
-                <div class="concept-card warning">
-                    <h4>🚨 Self-Fulfilling Prophecy (Crucial Mechanism)</h4>
-                    <p>Statistical discrimination is insidious because it creates a vicious cycle. If women know that employers expect them to drop out of the workforce, and therefore offer them lower-paying, dead-end jobs, women have reduced incentives to invest heavily in specialized human capital. Their average group productivity then <em>does</em> fall over time, perfectly "validating" the employer's initial bias.</p>
-                </div>
-
-                <hr style="margin: 30px 0; border: 1px dashed var(--clr-purple-border);">
+                <hr style="margin: 30px 0; border: 1px dashed var(--clr-blue-border);">
 
                 <h3>3. Crowding Hypothesis and Dual Labour Markets</h3>
-                <p>This theory argues that discrimination manifests as <strong>barriers to mobility</strong>, artificially splitting the economy into a Dual Labour Market:</p>
+                
+                <p>This theory argues that discrimination manifests as <strong>barriers to mobility</strong>, completely splitting the economy into a <span class="highlight-concept">Dual Labour Market</span>:</p>
                 <ul>
-                    <li><strong>Primary Sector:</strong> High wages, stable employment, excellent working conditions, and clear career advancement tracks (Internal Labour Markets).</li>
-                    <li><strong>Secondary Sector:</strong> Low-wage, unstable, precarious contracts, and poor working conditions.</li>
+                    <li><strong>Primary Sector:</strong> High wages, stable employment, safe conditions, and internal promotion opportunities.</li>
+                    <li><strong>Secondary Sector:</strong> Low-wage, unstable contracts, precarious jobs with no advancement.</li>
                 </ul>
 
-                <p>Minorities and women are often "tagged" as undesirable for the primary sector (due to either distaste or statistical discrimination) and find it nearly impossible to cross the barrier, creating the "Glass ceiling" effect.</p>
-
-                <div style="text-align: center; margin: 20px 0;">
-                    <img src="crowding_hypothesis_labour_market.png" alt="Two supply-demand graphs showing an uncrowded primary sector with high wages ($W_H$) and a crowded secondary sector with low wages ($W_L$)." style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <p style="font-size: 0.85em; color: gray; margin-top: 10px;"><em>The Crowding Effect: How occupational segregation suppresses wages independently of individual productivity.</em></p>
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <!-- NOTE TO USER: If the image fails to load, make sure the file name is EXACTLY 'crowding_hypothesis_labour_market.png' inside the folder -->
+                    <img src="crowding_hypothesis_labour_market.png" alt="Two supply-demand graphs showing an uncrowded primary sector with high wages and a crowded secondary sector with low wages." style="max-width: 90%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
                 </div>
 
-                <div class="concept-card definition">
-                    <h4>The Mechanism of Crowding</h4>
-                    <p>Because women are systematically excluded from the primary sector (e.g., executive, heavy industry, elite tech), they are <strong>forced to crowd</strong> into a limited number of occupations in the secondary sector (e.g., retail, care, admin).</p>
-                    <p><strong>The Microeconomic Result:</strong> This massive influx drastically shifts the Labour Supply curve in the secondary sector to the right, generating a structural excess supply. This mechanically crashes the equilibrium wage to a low level ($W_L$). Meanwhile, the primary sector remains artificially protected from competition, keeping its labour supply scarce and its wages high ($W_H$). <strong>The wage gap here isn't caused by individual productivity flaws, but entirely by the market structure and forced sector allocation.</strong></p>
+                <!-- NEW GRAPH EXPLANATION BOX -->
+                <div class="graph-explanation-box" style="border-left-color: #D69E2E;">
+                    <h4 style="color: #D69E2E;">📉 Graph Explanation: The Crowding Effect</h4>
+                    
+                    <p><strong>What the graph shows:</strong></p>
+                    <ul>
+                        <li>We have two separate supply-and-demand graphs. On the left is the <strong>Uncrowded (Primary) Sector</strong>. On the right is the <strong>Crowded (Secondary) Sector</strong>.</li>
+                        <li><strong>Axes:</strong> The vertical axis is <em>Wages</em>, the horizontal axis is <em>Number of Workers (Employment)</em>.</li>
+                        <li>Both feature standard downward-sloping demand and upward-sloping supply curves.</li>
+                    </ul>
+                    
+                    <p><strong>Economic Intuition & Mechanism:</strong></p>
+                    <ul>
+                        <li><span class="highlight-mechanism">The Barrier:</span> Due to the Glass Ceiling or societal segregation, certain groups (women, minorities) are banned or heavily discouraged from entering the Primary Sector.</li>
+                        <li><span class="highlight-mechanism">The Shock:</span> Because they must work, these millions of people are <strong>forced to crowd</strong> into the Secondary Sector.</li>
+                        <li><strong>Market Result:</strong> This massive influx drastically throws the Labour Supply curve in the Secondary Sector far to the right, generating an enormous excess supply of workers.</li>
+                        <li><span class="highlight-exam">Final Impact: This mechanically crashes the equilibrium wage to a rock-bottom level ($W_L$) in the secondary sector, while keeping wages artificially high ($W_H$) in the primary sector. The wage gap is created by MARKET STRUCTURE, not by individual incompetence!</span></li>
+                    </ul>
                 </div>
 
-                <hr style="margin: 40px 0; border: 1px solid var(--clr-purple-border);">
 
-                <h2>💶 III. The Gender Wage Gap (GWG / GPG)</h2>
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <h2>💶 IV. The Gender Wage Gap (GWG) & Selection Bias</h2>
                 
-                <p>The Gender Wage Gap (also known as the Gender Pay Gap) is the universal metric used to quantify these theoretical inequalities. It is defined as the percentage difference between the average gross hourly earnings of male and female employees.</p>
+                <p>The <span class="highlight-concept">Gender Wage Gap (GWG)</span>, also called the Gender Pay Gap (GPG), is the standard metric used to quantify these inequalities.</p>
 
                 <div class="math-block" style="margin: 20px 0;">
                     \[ GWG = \frac{\bar{W}_M - \bar{W}_F}{\bar{W}_M} \times 100 = \left( 1 - \frac{\bar{W}_F}{\bar{W}_M} \right) \times 100 \]
-                    <p style="font-size: 0.9em; margin-top:5px; color:#4a5568;">Where $\bar{W}_M$ is the average male wage and $\bar{W}_F$ is the average female wage.</p>
                 </div>
 
-                <h3>Trends in the Unadjusted GPG (Czech Republic & EU)</h3>
-                <p>Data from Eurostat reveals significant structural dynamics. The <strong>unadjusted</strong> GPG in Czechia hovered around a massive 22–23% between 2011 and 2015, steadily declined to ~15% by 2021, and then crept back up, stabilizing around 18–19% by 2024. In a cross-European context (2024), the EU-27 average sits at 11%, but heterogeneity is extreme:</p>
-                <ul>
-                    <li><strong>Low GPG:</strong> Luxembourg, Belgium (near 0% or negative).</li>
-                    <li><strong>Medium GPG:</strong> Spain, France, Netherlands (10–12%).</li>
-                    <li><strong>High GPG:</strong> Germany, Austria, Czechia, Estonia (15–19%).</li>
-                </ul>
-
-                <div class="concept-card warning">
-                    <h4>🚨 The Trap of the "Unadjusted" GPG</h4>
-                    <p>The unadjusted GPG is just a raw mathematical average. It includes differences in education choices, accumulated experience, hours worked, and occupation sectors. <strong>It DOES NOT measure pure discrimination!</strong> Taking a low GPG as a sign of absolute equality is a dangerous analytical error, as it often masks a deeper phenomenon known as Selection Bias.</p>
-                </div>
-
-                <hr style="margin: 40px 0; border: 1px solid var(--clr-purple-border);">
-
-                <h2>🔍 IV. The Illusion of Equality: Selection Bias & Employment Gaps</h2>
-                
-                <p>Why do countries like Italy, Greece, and Romania boast an impressively low Gender Pay Gap, while economic powerhouses like Germany and Czechia display huge disparities? The answer lies in the <strong>Gender Employment Gap (GEG)</strong>.</p>
-
-                <div class="math-block" style="background-color: var(--clr-sidebar-bg); padding: 15px; border-left: 4px solid var(--clr-accent);">
-                    <p><strong>Gender Employment Gap 2024 (Czechia vs EU-27)</strong></p>
-                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px; background: white;">
-                        <thead>
-                            <tr style="background: var(--clr-purple-light);">
-                                <th style="padding: 8px; border: 1px solid #ddd;">Region</th>
-                                <th style="padding: 8px; border: 1px solid #ddd;">Male Employment Rate</th>
-                                <th style="padding: 8px; border: 1px solid #ddd;">Female Employment Rate</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>Czechia</strong></td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">88.4%</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">75.8%</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>EU-27 Avg</strong></td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">80.8%</td>
-                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">70.8%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p>The GEG measures <em>who is actually working</em>. The data shows a powerful, somewhat counter-intuitive <strong>negative correlation (-0.29)</strong> between the Gender Wage Gap and the Gender Employment Gap.</p>
+                <h3>The Danger of the "Unadjusted" GPG</h3>
+                <p>The unadjusted GPG in Czechia is very high (around 18.5%). In the EU, it averages 11%. However, countries like Italy, Greece, and Romania boast an impressively low GPG (near 4 to 5%). Are they perfectly equal?</p>
+                <p><strong>No.</strong> Taking a low, unadjusted GPG as a sign of equality is a catastrophic analytical error due to <span class="highlight-concept">Selection Bias</span>.</p>
 
                 <div class="concept-card explanation">
-                    <h4>Understanding Heckman's Selection Bias Mechanism</h4>
-                    <p>In countries with severe structural barriers, poor childcare infrastructure, or conservative social norms (like parts of Southern Europe), a large proportion of women are entirely excluded from the labour market. The women who <em>do</em> manage to overcome these barriers and secure employment are overwhelmingly the hyper-educated, elite professionals (doctors, lawyers, executives).</p>
-                    <p>Because the low-skilled women are out of the equation (their wage is zero, so they aren't counted in the GPG), the statistical average wage of the remaining working women is artificially inflated. This crushes the GPG toward zero, creating an <strong>illusion of equality</strong>.</p>
-                    <p>Conversely, in Czechia, female participation is robustly high. Millions of women with average or lower-tier skills are currently employed (many in secondary sectors due to crowding), which drags the average female wage down, exposing a high GPG of 18.5%.</p>
+                    <h4>The Heckman Selection Bias Mechanism</h4>
+                    <p>Why do Italy and Greece have a low wage gap? Because they have a massive <span class="highlight-concept">Gender Employment Gap (GEG)</span>. In these countries, millions of women are entirely excluded from the workforce due to poor childcare access or culture.</p>
+                    <p><span class="highlight-mechanism">The Mathematical Illusion:</span> The few women who <em>do</em> overcome these brutal barriers to work are overwhelmingly hyper-educated elite professionals. Because low-skilled women are safely hidden at home (their wage isn't counted as zero, it's just deleted from the dataset), the mathematical average wage of the remaining working women is artificially inflated!</p>
+                    <p><span class="highlight-exam">Key Insight: There is a negative correlation (-0.29 in the EU) between the Wage Gap and the Employment Gap. A low wage gap often masks severe social exclusion.</span> (This phenomenon earned James Heckman the Nobel Prize in 2000).</p>
                 </div>
 
                 <div class="post-it">
-                    <h4>📉 Case Study: Hunt (2002) & East Germany</h4>
-                    <p>Jennifer Hunt's analysis of post-reunification East Germany (1990-1994) offers perfect proof. In just four years, the Gender Pay Gap fell dramatically by 10 percentage points! A cause for celebration? No. Hunt demonstrated that almost half of this statistical "improvement" occurred simply because low-skilled women were fired en masse during the transition, vanishing from the data pool.</p>
+                    <h4>📉 Exam Example: Jennifer Hunt (2002) & East Germany</h4>
+                    <p>After reunification (1990-1994), East Germany's Gender Pay Gap crashed by 10 percentage points. A feminist victory? No! Hunt demonstrated that half of this "improvement" was driven by the fact that low-skilled women were fired en masse during the transition, vanishing from the data pool entirely.</p>
                 </div>
 
-                <hr style="margin: 40px 0; border: 1px solid var(--clr-purple-border);">
 
-                <h2>🎓 V. Deconstructing the Causes: Why does the Gap persist?</h2>
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <h2>🎓 V. Human Capital & The Oaxaca-Blinder Decomposition</h2>
+
+                <p>If we control for these statistical illusions, what genuinely causes the gap in countries like Czechia?</p>
+
+                <h3>1. Education and the Field of Study Paradox</h3>
+                <p>Following the 2000 Bologna Process, tertiary education exploded. In Czechia (2024), <strong>women are now significantly more educated than men</strong> (31.1% vs 24.0% holding tertiary degrees). The education gap has reversed!</p>
+                <p>Yet, the massive wage gap remains. Why? Because of <span class="highlight-concept">Educational Segregation</span>. Human capital is not homogeneous. Women heavily dominate low-yielding sectors (Education 82%, Health 78%), while men dominate high-yielding sectors (ICT 83%, Engineering 68%). Furthermore, women's age-earnings profiles are much flatter due to career interruptions.</p>
+
+                <h3>2. The Ultimate Tool: Oaxaca-Blinder (1973)</h3>
                 
-                <p>If we strip away statistical illusions, what genuinely causes the gap in countries like Czechia?</p>
-
-                <h3>1. Education and the Human Capital Paradox</h3>
-                <p>According to classic Human Capital theory, wages reward education. Following the 2000 Bologna Process, tertiary education exploded across Eastern Europe. Let's look at the Czech metrics for tertiary education (aged 25-64):</p>
-                <ul>
-                    <li><strong>2004:</strong> Men 13.9% vs Women 10.8% (Men more educated)</li>
-                    <li><strong>2024:</strong> Men 24.0% vs Women 31.1% (Women significantly more educated!)</li>
-                </ul>
-
-                <p><strong>The Paradox:</strong> The education gap hasn't just closed; it has totally reversed in favor of women! Yet, the massive wage gap remains. Why? Because Human Capital is not homogeneous. We must look at <strong>Field of Study Segregation</strong>.</p>
-                <p>In Czechia (2022 stats):</p>
-                <ul>
-                    <li>Women dominate low-yielding sectors: Education (82%), Health/Welfare (78%), Humanities (70%).</li>
-                    <li>Men unconditionally dominate high-yield sectors: ICT (83% men), Engineering/Manufacturing (68% men).</li>
-                </ul>
-                <p>Because patriarchal norms and anticipated discrimination funnel women away from lucrative STEM fields before they even enter the job market, educational segregation forms the bedrock of eventual occupational crowding.</p>
-
-                <h3>2. Age, Work Experience, and Career Interruptions</h3>
-                <p>Women's age/earnings profiles are typically much flatter than men's. The primary culprit is the massive human capital depreciation caused by career interruptions (maternity leave). While men accumulate continuous, unbroken work experience, women lose exponential compounded wage growth during their absences, creating an unbridgeable gap.</p>
-
-                <hr style="margin: 40px 0; border: 1px solid var(--clr-purple-border);">
-
-                <h2>🛠️ VI. The Oaxaca-Blinder Decomposition: The Ultimate Tool</h2>
-
-                <p>To mathematically untangle what portion of the Gender Wage Gap is justified by objective market logic (education, experience, sector) and what portion is unjustifiable (discrimination), economists Ronald Oaxaca and Alan Blinder (1973) standardized a powerful econometric technique. By running separate Ordinary Least Squares (OLS) Mincer wage regressions for men and women, we can decompose the gap.</p>
+                <p>To mathematically untangle what portion of the wage gap is justified by objective market logic, economists Ronald Oaxaca and Alan Blinder standardized a powerful econometric technique using Mincer wage regressions.</p>
 
                 <div class="math-block">
                     <h4>Oaxaca-Blinder Formula</h4>
@@ -349,31 +364,23 @@
                 </div>
 
                 <div class="concept-card definition">
-                    <h4>The Two Pillars of Decomposition</h4>
-                    <ul>
-                        <li><strong>The Endowment Effect (Explained part):</strong> This represents the wage gap that would exist even if women were perfectly treated like men. It is the hypothetical wage difference driven purely by the fact that men and women have different vectors of characteristics ($X$)—such as men having more years of uninterrupted experience or working in higher-paying sectors.</li>
-                        <li><strong>The Remuneration Effect (Unexplained part):</strong> This measures the core inequality. It represents the gap generated purely because the market <em>pays differently</em> ($\beta$) for the exact same characteristics. A woman with a master's degree in a specific field receives a lower return on her degree ($\hat{\beta}^F$) than a man with the identical degree ($\hat{\beta}^M$).</li>
-                    </ul>
+                    <h4>Breaking Down the Two Pillars</h4>
+                    
+                    <p><strong>1. The Endowment Effect (<span class="highlight-concept">Explained Part</span>):</strong><br>
+                    This is the wage gap driven purely by the fact that men and women have different vectors of characteristics ($X$) — e.g., men having more uninterrupted experience or choosing engineering over teaching.</p>
+                    
+                    <p style="margin-top: 15px;"><strong>2. The Remuneration Effect (<span class="highlight-exam">Unexplained Part</span>):</strong><br>
+                    <span class="highlight-mechanism">This is the core inequality!</span> It is the gap generated when the market <em>pays differently</em> ($\beta$) for the exact same characteristics. A woman with a master's degree receives a lower return on her degree ($\hat{\beta}^F$) than a man with the identical degree ($\hat{\beta}^M$).</p>
                 </div>
 
-                <h3>Czech Republic Decomposition Analysis (2005–2016)</h3>
-                <p>When running a basic Mincer equation (controlling only for education and experience), the model successfully explains almost <strong>0% to 2%</strong> of the gap. The overwhelming majority of the 20%+ wage gap falls into the "Unexplained" category.</p>
-                <p>When economists dramatically expanded the control variables to include <em>occupation type, supervisory position, firm size, contract type, industry, region, and children</em>, the explanatory power shot up: addressing 17% of the total GPG in 2005 and rising to 31% by 2016.</p>
-
-                <div class="concept-card explanation">
-                    <h4>The Adjusted Pay Gap: A Persistent Reality</h4>
-                    <p>In Eurostat terminology:</p>
+                <div class="graph-explanation-box">
+                    <h4>Eurostat Terminology & Final Conclusion</h4>
+                    <p>Eurostat classifies the gap in two ways:</p>
                     <ul>
                         <li><strong>Unadjusted form:</strong> The total raw GPG.</li>
                         <li><strong>Adjusted form:</strong> The total GPG minus the explained part.</li>
                     </ul>
-                    <p>When we look at the Adjusted GPG across Europe (e.g., controlling for all variables, comparing a woman vs a man with identical resumes in the exact same firm sector), the gap strictly shrinks, confirming that human capital segregation is real.</p>
-                    <p><strong>However, the Adjusted GPG never reaches zero.</strong> In Czechia, it dropped from 14.5% to 10.8% in 2018, but a massive 10.8% gap remains. This highly persistent, unadjusted remnant captures unobservable variables (negotiation aggressiveness, nuanced motivation differences) but stands as the strongest, most undeniable quantitative proxy for <strong>systemic market discrimination.</strong></p>
-                </div>
-
-                <div class="post-it">
-                    <h4>💡 Exam Synthesis</h4>
-                    <p><strong>"The adjusted gender pay gap isolates differences in returns to characteristics, but cannot be interpreted as pure discrimination due to unobserved heterogeneity. Nevertheless, its persistent failure to close despite women overtaking men in raw educational attainment proves that systemic issues—such as occupational crowding, statistical discrimination biases, and institutional penalties for caregiving—are the true drivers of the modern labour crisis."</strong></p>
+                    <p><span class="highlight-exam">The Empirical Reality:</span> In Czechia, controlling for everything (education, age, contract type, children) only explained about 31% of the gap in 2016. The majority of the wage gap resides in the Unexplained Part. While this unadjusted remnant captures some unobservable motivations, it stands as the undeniable quantitative footprint of systemic market discrimination and occupational crowding.</p>
                 </div>
 
             </section>
