@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labour Economics - Analysis of Employment & Unemployment</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX support -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- SPECIFIC STYLES FOR THIS CHAPTER -->
+    <style>
+        .highlight-concept {
+            color: #3182CE;
+            font-weight: 700;
+        }
+
+        .highlight-mechanism {
+            color: #B7791F;
+            font-weight: 700;
+            background-color: #FEFCBF;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .highlight-exam {
+            color: #C53030;
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-color: #FEB2B2;
+            text-decoration-thickness: 3px;
+        }
+
+        .graph-explanation-box {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-left: 6px solid #2B6CB0;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .graph-explanation-box h4 {
+            margin-top: 0;
+            color: #2B6CB0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 0.5rem;
+        }
+
+        .graph-explanation-box ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .graph-explanation-box li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .empirical-structure {
+            background-color: #F7FAFC;
+            border-left: 4px solid #CBD5E0;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .empirical-structure .obs {
+            color: #2B6CB0;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .empirical-structure .interp {
+            color: #B7791F;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .empirical-structure .concl {
+            color: #C53030;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        /* Flow diagram styling */
+        .flow-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .flow-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+
+        .flow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(43, 108, 176, 0.15);
+        }
+
+        .flow-card .flow-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .flow-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.15rem;
+        }
+
+        .flow-card .flow-count {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+
+        .flow-card p {
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Transition arrows table */
+        .transition-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            margin: 1.5rem 0;
+        }
+
+        .transition-table th {
+            background: var(--clr-blue-primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .transition-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #EDF2F7;
+        }
+
+        .transition-table tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .transition-table .effect-pos {
+            color: #C53030;
+            font-weight: 800;
+        }
+
+        .transition-table .effect-neg {
+            color: #2F855A;
+            font-weight: 800;
+        }
+
+        /* Type cards for unemployment types */
+        .type-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .type-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--clr-blue-primary);
+            transition: transform 0.2s ease;
+        }
+
+        .type-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .type-card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .type-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
+            </button>
+        </div>
+
+        <!-- Part 1: Labour Supply and Demand -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 1. Labour Supply & Demand</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="index.html">1. Intro & Market Status</a>
+                <a href="cours-2.html">2. Dynamics & Equilibrium</a>
+                <a href="cours-3.html">3. Microeconomics of Demand</a>
+                <a href="cours-4.html">4. Labour Market Frictions</a>
+                <a href="cours-5.html">5. Labour Supply Model</a>
+            </div>
+        </div>
+
+        <!-- Part 2: Wage Differentials -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 2. Wage Differentials</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="cours-6.html">6. Compensating Differentials</a>
+                <a href="cours-7.html">7. Education & Training</a>
+                <a href="cours-8.html">8. Discrimination & Gender</a>
+            </div>
+        </div>
+
+        <!-- Part 3: Institutions & Policy -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 3. Institutions & Policy</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="cours-9.html">9. Employment & Unemployment</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
+            <h1>9. Analysis of Employment & Unemployment</h1>
+        </header>
+
+        <!-- CONTENT AREA -->
+        <div class="content-scroll">
+
+            <section class="lesson-section">
+
+                <!-- ============================================================ -->
+                <!-- SECTION I: MOTIVATION -->
+                <!-- ============================================================ -->
+                <h2>🧠 I. Motivation: Why Study Unemployment?</h2>
+
+                <p>Understanding unemployment is one of the most fundamental challenges in labour economics. What determines the level of employment and unemployment in the economy? The <strong>textbook answer</strong> is deceptively simple: labour supply, labour demand, and unemployment conceived as voluntary leisure. But this simplistic view fails catastrophically when confronted with the real world.</p>
+
+                <div class="concept-card explanation">
+                    <h4>Beyond the Textbook: The Real Drivers</h4>
+                    <p>The reality is far more complex. Modern labour economics identifies several powerful forces that the basic supply-demand model completely ignores:</p>
+                    <ul>
+                        <li><span class="highlight-concept">Labour market frictions:</span> Finding a job is not instantaneous. It takes time, effort, and money. Workers and firms must search for each other in a world of imperfect information, and this process itself generates unemployment.</li>
+                        <li><span class="highlight-concept">Incentive problems & efficiency wages:</span> Firms deliberately set wages above the market-clearing level to motivate workers, reduce shirking, and lower turnover. This rational strategy paradoxically creates involuntary unemployment at the aggregate level.</li>
+                        <li><span class="highlight-concept">Wage rigidities & bargaining:</span> Wages do not adjust freely. Unions, contracts, fairness norms, and insider-outsider dynamics prevent wages from falling even when unemployment is high. As a result, prices do not clear the market.</li>
+                        <li><span class="highlight-concept">Search and matching:</span> The costly, time-consuming process by which workers find the "right" jobs and firms find the "right" workers is at the very heart of modern unemployment theory.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card warning">
+                    <h4>🚨 Work & Well-Being</h4>
+                    <p>Work is one of the <strong>key drivers of human well-being</strong>. Research consistently shows that unemployment is one of the most powerful factors reducing individual happiness — even more than divorce or significant income loss. The psychological costs of joblessness (loss of identity, social isolation, erosion of skills, stigma) go far beyond the loss of income. This is why understanding the measurement, causes, cross-country patterns, and differences across socio-demographic groups is not just an academic exercise — it is a matter of social urgency.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION II: MEASUREMENT -->
+                <!-- ============================================================ -->
+                <h2>📊 II. Measurement: Defining & Counting Unemployment</h2>
+
+                <p>Before we can analyze unemployment, we must first define it rigorously. This is far more difficult than it seems, because <span class="highlight-mechanism">the definition itself shapes what we measure</span>. Different institutions use different definitions, and each definition captures a slightly different reality.</p>
+
+                <h3>The Core Formula</h3>
+
+                <div class="math-block" style="margin: 20px 0;">
+                    \[ UR\;(\%) = \frac{\text{Persons Unemployed}}{\text{Labour Force}} \times 100 \]
+                    <p style="font-size: 0.9em; margin-top:10px; color:#4a5568;">Both the <strong>numerator</strong> (who counts as "unemployed"?) and the <strong>denominator</strong> (who counts as part of the "labour force"?) are subject to definitional choices that have enormous consequences for the number we get.</p>
+                </div>
+
+                <h3>The ILO Definition (International Standard)</h3>
+
+                <div class="concept-card definition">
+                    <h4>ILO Definition of Unemployment</h4>
+                    <p>According to the <strong>International Labour Organization (ILO)</strong>, a person is classified as unemployed if and only if <strong>all three conditions are simultaneously met</strong> during the reference period:</p>
+                    <ol style="margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Without work:</strong> The person was <em>not</em> in paid employment or self-employment during the reference period. This is a binary condition — even one hour of paid work disqualifies the person from being counted as "unemployed."</li>
+                        <li><strong>Currently available for work:</strong> The person was available for paid employment or self-employment during the reference period. This means they could realistically start working if offered a job. Someone on extended medical leave or caring for a dependent who cannot possibly start work is excluded.</li>
+                        <li><strong>Actively seeking work:</strong> The person has taken <em>specific, concrete steps</em> to find employment — such as contacting employers, answering job advertisements, registering at employment offices, or attending interviews. Simply "wanting" a job is not enough.</li>
+                    </ol>
+                    <p style="margin-top: 15px;">This definition is used by <strong>Eurostat</strong> and the <strong>Czech Statistical Office (ČSÚ)</strong> in the Labour Force Survey (LFS), making cross-country comparisons possible across the EU.</p>
+                </div>
+
+                <div class="concept-card warning">
+                    <h4>⚠️ The Czech Ministry's Alternative Definition</h4>
+                    <p>The <strong>Czech Ministry of Labour and Social Affairs (MPSV)</strong> uses a different indicator: the <span class="highlight-concept">Share of Unemployed Persons</span>. This measures the share of <em>available job seekers aged 15–64</em> out of <em>all inhabitants of this age</em>. Note the critical difference: the denominator is the entire working-age population, not just the labour force. This gives a structurally lower figure than the ILO-based unemployment rate, because the denominator is much larger. <span class="highlight-exam">Never confuse the two in an exam.</span></p>
+                </div>
+
+                <h3>The Employment Rate</h3>
+
+                <div class="math-block" style="margin: 20px 0;">
+                    \[ ER\;(\%) = \frac{\text{Persons Employed}}{\text{Population}_{15+}} \times 100 \]
+                    <p style="font-size: 0.9em; margin-top:10px; color:#4a5568;">This reveals the exact proportion of the working-age population that is actually engaged in productive employment. Unlike the UR, it is not affected by movements between unemployment and inactivity.</p>
+                </div>
+
+                <h3>Labour Market Status & Population Structure</h3>
+
+                <div class="concept-card definition">
+                    <h4>Who is "Employed"? — The ILO Standard</h4>
+                    <p><strong>Employed persons</strong> are those of working age who, during a short reference period, were engaged in <em>any activity</em> to produce goods or provide services for pay or profit. This includes both self-employed and wage-employed workers. The definition is surprisingly broad and includes two sub-categories:</p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>(a) Employed persons "at work":</strong> Those who worked in a job for <em>at least one hour</em> during the reference period. Yes — even one single hour of paid work counts as "employment." This extremely low threshold means that many people we would intuitively consider "unemployed" or "underemployed" are statistically classified as employed.</li>
+                        <li><strong>(b) Employed persons "not at work":</strong> Those temporarily absent from a job due to illness, maternity leave, vacation, or working-time arrangements (e.g., short-time work schemes, furlough). Crucially, these individuals are still <em>counted as employed</em> because they retain their employment contract.</li>
+                    </ul>
+                </div>
+
+                <!-- LM Status Flow Diagram -->
+                <h3>🔄 The Labour Market as a Circulation System</h3>
+
+                <div class="flow-grid">
+                    <div class="flow-card" style="border-top: 5px solid #2F855A;">
+                        <div class="flow-icon">💼</div>
+                        <h4 style="color: #2F855A;">Employed</h4>
+                        <div class="flow-count" style="color: #2F855A;">5,303 thous.</div>
+                        <p>Working or temporarily absent from job</p>
+                    </div>
+                    <div class="flow-card" style="border-top: 5px solid #C53030;">
+                        <div class="flow-icon">🔍</div>
+                        <h4 style="color: #C53030;">Unemployed</h4>
+                        <div class="flow-count" style="color: #C53030;">109 thous.</div>
+                        <p>Without work, available, actively seeking</p>
+                    </div>
+                    <div class="flow-card" style="border-top: 5px solid #718096;">
+                        <div class="flow-icon">🏠</div>
+                        <h4 style="color: #718096;">Out of Labour Force</h4>
+                        <div class="flow-count" style="color: #718096;">3,551 thous.</div>
+                        <p>Students, retirees, discouraged, caregivers</p>
+                    </div>
+                </div>
+
+                <div class="concept-card" style="text-align: center; padding: 1.5rem;">
+                    <p style="margin: 0; font-size: 1.1rem;"><strong>Labour Force</strong> = Employed + Unemployed = <span style="color: var(--clr-blue-primary); font-weight: 800; font-size: 1.3rem;">5,412 thous.</span></p>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem;"><strong>Population aged 15+</strong> = Labour Force + Out of LF = <span style="color: var(--clr-blue-primary); font-weight: 800; font-size: 1.3rem;">8,963 thous.</span></p>
+                </div>
+
+                <div class="concept-card explanation">
+                    <h4>Understanding the Flows (Arrows)</h4>
+                    <p>People are <strong>constantly moving</strong> between these three states. Every arrow in the system represents a flow of individuals:</p>
+                    <ul>
+                        <li><strong>Employed → Unemployed:</strong> Layoffs, dismissals, end of contract, voluntary quits. This is the classic "job destruction" flow.</li>
+                        <li><strong>Unemployed → Employed:</strong> New hires, job finding. This is the "job creation" flow and is measured by the probability $P_{ue}$.</li>
+                        <li><strong>Employed → Out of LF:</strong> Retirement, family withdrawal, health-related exits, discouraged workers leaving.</li>
+                        <li><strong>Out of LF → Employed:</strong> Direct re-entry (e.g., a student gets a job immediately after graduation).</li>
+                        <li><strong>Unemployed → Out of LF:</strong> Discouraged workers who stop searching. They disappear from the unemployment count without finding a job.</li>
+                        <li><strong>Out of LF → Unemployed:</strong> New entrants or re-entrants who begin searching for work.</li>
+                    </ul>
+                    <p><span class="highlight-exam">Critical insight:</span> Unemployment is <strong>not static</strong>. It is constantly being reshaped by job destruction, job creation, entries and exits. A low unemployment rate does NOT mean a calm labour market — it can hide enormous movement underneath.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION III: CROSS-COUNTRY & EMPIRICAL PATTERNS -->
+                <!-- ============================================================ -->
+                <h2>🗺️ III. Understanding Unemployment Patterns</h2>
+
+                <p>When we look at unemployment data across Europe, across time, and across demographic groups, several fundamental patterns emerge. Each pattern reveals a different layer of the unemployment puzzle.</p>
+
+                <h3>1. Spatial Inequality: The Map View</h3>
+
+                <div class="empirical-structure">
+                    <div class="obs">🔭 Observation</div>
+                    <p>Unemployment rates vary enormously across European regions. Some areas consistently maintain very low unemployment (under 3%), while others are trapped in persistent double-digit unemployment. If unemployment were driven purely by the business cycle, countries and regions would look much more similar. But they don't.</p>
+
+                    <div class="interp">🧠 Interpretation: Why Such Inequality?</div>
+                    <p>This immediately tells you that something deeper is at work: <span class="highlight-mechanism">structural unemployment</span>. Behind these regional disparities lie several interconnected mechanisms:</p>
+                    <ul>
+                        <li><strong>Economic structure:</strong> Some regions have more productive firms, more diversified industries, and greater job creation capacity. Others rely on fragile, seasonal, or declining sectors, so the demand for labour is not the same everywhere.</li>
+                        <li><strong>Skills and spatial mismatch:</strong> Workers and jobs do not perfectly align. Skills don't match what firms need, jobs are in different locations than workers, some sectors decline while others expand. Even if jobs exist, they are not accessible to everyone. This is why unemployment can remain high even without a massive lack of job openings.</li>
+                        <li><strong>Institutional efficiency:</strong> Some labour markets allow fast transitions — people lose jobs but find new ones quickly, firms hire easily, mobility is high, and matching is efficient. In others, the system is rigid — hiring and firing are costly, mobility is limited, markets are segmented, and transitions are slow. This reduces the probability of leaving unemployment.</li>
+                    </ul>
+
+                    <div class="concl">🎯 Exam Takeaway</div>
+                    <p><span class="highlight-exam">What you see on the maps is not random</span> — it reflects how efficiently each labour market transforms job seekers into employees. Always think in layers: short-term cycle, long-term structure, regional differences, and group heterogeneity.</p>
+                </div>
+
+                <h3>2. The Time Series View: Cyclical Movements</h3>
+
+                <div class="empirical-structure">
+                    <div class="obs">🔭 Observation</div>
+                    <p>When you look at unemployment over time (e.g., EU or Euro Area series), you see a characteristic pattern: long increases, then declines, then sudden spikes (2008, 2020), then recovery. The EU and Euro Area lines move almost identically but one is slightly higher — indicating common shocks but different structural compositions.</p>
+
+                    <div class="interp">🧠 Interpretation: The Cycle at Work</div>
+                    <p>This is the textbook case of <span class="highlight-concept">cyclical unemployment</span>. During recessions, firms face lower demand → they reduce hiring → they may lay off workers. So inflows into unemployment increase, outflows decrease, and unemployment rises. During recovery, the reverse happens. The Covid-19 shock is a perfect example of an external shock that caused activity to collapse, labour demand to drop sharply, and unemployment to jump — then recover as the economy reopened.</p>
+                    <p>A crucial observation: <span class="highlight-mechanism">unemployment can move a lot even if workers themselves do not change</span>. It is not just about individual characteristics — it is heavily driven by macroeconomic demand conditions.</p>
+
+                    <div class="concl">🎯 Exam Takeaway</div>
+                    <p>Even when the economy improves dramatically, <span class="highlight-exam">unemployment never goes to zero</span>. There are always frictions, search processes, imperfect information, people changing jobs, new entrants, and temporary mismatches. This residual level is exactly the <strong>natural rate of unemployment</strong>.</p>
+                </div>
+
+                <h3>3. Youth Unemployment: The Amplifier Effect</h3>
+
+                <div class="empirical-structure" style="border-left-color: #E53E3E; background-color: #FFF5F5;">
+                    <div class="obs" style="color: #E53E3E;">🔭 Observation</div>
+                    <p>Youth unemployment is not just higher than total unemployment — it behaves like an <strong>amplified version</strong>. Whenever the economy deteriorates, youth unemployment reacts much more violently than adult unemployment. It shoots up faster in recessions and recovers more slowly.</p>
+
+                    <div class="interp" style="color: #E53E3E;">🧠 Why Young People Are Structurally More Vulnerable</div>
+                    <ul>
+                        <li><strong>New entrants with weak signals:</strong> Young workers are typically new to the labour market. They have less experience, less information, and fewer credible signals of productivity. The matching process is inherently harder for them — this is frictional unemployment, but more intense.</li>
+                        <li><strong>Outsiders in the insider-outsider framework:</strong> Firms tend to protect experienced workers who are already inside — those with permanent contracts and firm-specific human capital. Young people are not yet protected. When firms need to adjust, they reduce hiring, cut temporary positions, and delay entry. Young workers absorb a disproportionate share of the adjustment.</li>
+                        <li><strong>Unstable employment contracts:</strong> Young workers are more likely to be on short-term contracts, probation periods, or part-time positions. So they are structurally more exposed to any economic shock.</li>
+                        <li><strong>Complex job search trade-offs:</strong> They face a critical choice: accept a low-quality job quickly, or wait for a better opportunity? This links directly to the job search model — their unemployment is not only about "not finding a job" but also about finding the <em>right</em> job while navigating imperfect information and early career uncertainty.</li>
+                    </ul>
+
+                    <div class="concl" style="color: #E53E3E;">🎯 Exam Takeaway</div>
+                    <p><span class="highlight-exam">Youth unemployment reveals the insider-outsider mechanism in action.</span> Young workers are not unemployed because they are "lazy" — they are structurally disadvantaged by their position in the labour market hierarchy.</p>
+                </div>
+
+                <h3>4. The Hidden Dimension: Duration</h3>
+
+                <div class="concept-card explanation">
+                    <h4>Why Duration Changes Everything</h4>
+                    <p>Two labour markets can have <strong>identical unemployment rates</strong> but represent completely different realities:</p>
+                    <div class="type-cards" style="margin-top: 1rem;">
+                        <div class="type-card" style="border-top-color: #2F855A;">
+                            <h4 style="color: #2F855A;">🔄 Dynamic Market</h4>
+                            <p>Many people become unemployed, but they quickly find jobs again. High inflows AND high outflows. Short average duration. The market is churning — painful for individuals but structurally healthy.</p>
+                        </div>
+                        <div class="type-card" style="border-top-color: #C53030;">
+                            <h4 style="color: #C53030;">🔒 Rigid Market</h4>
+                            <p>Fewer people enter unemployment, but those who do stay trapped for a very long time. Low inflows but extremely low outflows. Duration is long. Long-term unemployment becomes common — a strong signal of deep structural problems.</p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 1rem;">The longer someone is unemployed, the harder it becomes to find a job: skills depreciate, employers discriminate against gaps in CVs, motivation declines. <span class="highlight-mechanism">Duration affects future probabilities</span>, creating a self-reinforcing trap. Even if the economy recovers, some people remain stuck. This is why structural unemployment can <em>increase</em> permanently after a crisis.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION IV: THE STOCK-FLOW MODEL -->
+                <!-- ============================================================ -->
+                <h2>🔄 IV. The Stock-Flow Model of Unemployment</h2>
+
+                <p>The previous sections made one thing clear: unemployment is not a static number. It is the result of continuous movements — <strong>flows</strong> — between three labour market states: Employment (E), Unemployment (U), and Inactivity/Non-employment (N). The Stock-Flow model formalizes this intuition.</p>
+
+                <div class="concept-card definition">
+                    <h4>The Three Basic Labour Market States</h4>
+                    <ul>
+                        <li><strong>Employment (E):</strong> Working or temporarily absent from work.</li>
+                        <li><strong>Unemployment (U):</strong> Without work, available, and actively seeking a job (ILO definition).</li>
+                        <li><strong>Inactivity / Non-employment (N):</strong> Outside the labour force entirely — students, retirees, caregivers, discouraged workers who have stopped searching.</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><span class="highlight-exam">Key principle:</span> It is the <strong>flows</strong> between these states — not the levels — that are crucial for explaining the determinants of labour market outcomes.</p>
+                </div>
+
+                <h3>Why Flows Matter More Than Levels</h3>
+
+                <div class="concept-card explanation">
+                    <h4>The Diagnostic Question</h4>
+                    <p>The unemployment rate can be high for completely different reasons, and the correct policy response depends entirely on which flow is causing the problem:</p>
+                    <ul>
+                        <li><strong>Is it difficulty finding jobs once unemployed?</strong> → Low $P_{ue}$ → Need active labour market policies, training, matching services.</li>
+                        <li><strong>Is it difficulty remaining employed once a job is found?</strong> → High $P_{eu}$ → Need employment protection, economic stability, structural support.</li>
+                        <li><strong>Is it frequent entry and exit from the labour force?</strong> → High $P_{en}$, $P_{nu}$ → Need to address discouragement, improve labour market attachment.</li>
+                    </ul>
+                    <p><span class="highlight-mechanism">Policy actions to reduce the unemployment rate depend on the particular flow that causes the high unemployment.</span> A government that targets the wrong flow will waste resources without reducing joblessness.</p>
+                </div>
+
+                <h3>The Master Formula: Unemployment as a Function of Flows</h3>
+
+                <div class="math-block" style="margin: 25px 0;">
+                    \[ u = F\!\left(P_{en},\; P_{ne},\; P_{un},\; P_{nu},\; P_{eu},\; P_{ue}\right) \]
+                    <p style="font-size: 0.9em; margin-top:10px; color:#4a5568;">The unemployment rate $u$ is a function of all six transition probabilities between the three labour market states. Each probability captures a different mechanism.</p>
+                </div>
+
+                <p>Let us dissect each transition probability, its meaning, and its effect on unemployment:</p>
+
+                <!-- TRANSITION TABLE -->
+                <div style="overflow-x: auto; margin: 2rem 0;">
+                    <table class="transition-table">
+                        <thead>
+                            <tr>
+                                <th>Transition</th>
+                                <th>From → To</th>
+                                <th>Effect on $u$</th>
+                                <th>Meaning & Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>$P_{eu}$</strong></td>
+                                <td>Employment → Unemployment</td>
+                                <td class="effect-pos">↑ $u$ (positive)</td>
+                                <td>Probability of losing one's job: layoffs, dismissals, end of contract. More job destruction → more people entering unemployment → $u$ rises.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>$P_{ue}$</strong></td>
+                                <td>Unemployment → Employment</td>
+                                <td class="effect-neg">↓ $u$ (negative)</td>
+                                <td>Probability of finding a job: matching, hiring. Reflects job opportunities, matching efficiency, and labour demand. Higher $P_{ue}$ → people leave unemployment faster → $u$ falls. <strong>This is the most critical transition for duration.</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>$P_{nu}$</strong></td>
+                                <td>Non-employment → Unemployment</td>
+                                <td class="effect-pos">↑ $u$ (positive)</td>
+                                <td>Inactive people entering the labour force and starting to search: graduates entering the job market, inactive individuals returning. They are now counted as unemployed.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>$P_{un}$</strong></td>
+                                <td>Unemployment → Non-employment</td>
+                                <td class="effect-neg">↓ $u$ (negative)</td>
+                                <td>Unemployed individuals who stop searching and leave the labour force: discouraged workers, personal withdrawal. ⚠️ This reduces $u$ <em>without any actual improvement</em> in employment — the <strong>discouraged worker effect</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>$P_{ne}$</strong></td>
+                                <td>Non-employment → Employment</td>
+                                <td class="effect-neg">↓ $u$ (negative)</td>
+                                <td>Direct entry from inactivity into employment, bypassing unemployment entirely: a student hired immediately after graduation, a re-entrant with a job already secured.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>$P_{en}$</strong></td>
+                                <td>Employment → Non-employment</td>
+                                <td class="effect-pos">↑ $u$ (positive)</td>
+                                <td>Workers leaving the labour force: retirement, family withdrawal, health exit. Effect is indirect — more exits from employment weaken overall labour market attachment and stability, and some may later re-enter through unemployment.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="post-it">
+                    <h4>💡 The Deep Insight: Incidence vs. Duration</h4>
+                    <p>The formula separates two fundamentally different forces:<br>
+                        <strong>Incidence</strong> (how often people become unemployed) → driven mainly by $P_{eu}$ and $P_{nu}$.<br>
+                        <strong>Duration</strong> (how long they stay unemployed) → driven mainly by $P_{ue}$.<br>
+                        <span class="highlight-exam">When analyzing any unemployment situation, always ask: "Is the problem incidence or duration?"</span>
+                    </p>
+                </div>
+
+                <h3>Inflows vs. Outflows: The Core Mechanism</h3>
+
+                <div class="concept-card explanation">
+                    <h4>The Gap That Drives Everything</h4>
+                    <p>At every moment, there are two simultaneous flows:</p>
+                    <ul>
+                        <li><strong>Inflow into unemployment</strong> (people losing or leaving jobs, new entrants starting to search)</li>
+                        <li><strong>Outflow from unemployment</strong> (people finding jobs or leaving the labour force)</li>
+                    </ul>
+                    <p>The mechanism is stunningly simple:</p>
+                    <ul>
+                        <li>When <strong>inflow &gt; outflow</strong> → unemployment <em>increases</em>.</li>
+                        <li>When <strong>outflow &gt; inflow</strong> → unemployment <em>decreases</em>.</li>
+                    </ul>
+                    <p>Even in a stable economy with a constant unemployment rate, these flows can be <strong>enormous</strong>. Many people lose jobs, many people find jobs, but the overall rate stays stable. <span class="highlight-mechanism">A low unemployment rate does NOT mean a calm labour market — it can hide an enormous amount of churning underneath.</span></p>
+                </div>
+
+                <div class="post-it rose">
+                    <h4>⚠️ The Discouraged Worker Trap</h4>
+                    <p>Someone can "disappear" from unemployment simply by stopping their job search — moving from U to N. So the unemployment rate can go <em>down</em> without any actual improvement in employment. <span class="highlight-exam">Always check the Employment Rate alongside the Unemployment Rate</span> to avoid being fooled by discouraged worker effects.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION V: TYPES OF UNEMPLOYMENT -->
+                <!-- ============================================================ -->
+                <h2>📚 V. Types of Unemployment</h2>
+
+                <p>Now that we understand the flow structure of the labour market, we can classify the different <strong>types of unemployment</strong> according to their underlying causes. Each type maps directly to specific transition probabilities in the stock-flow model.</p>
+
+                <!-- ===================== FRICTIONAL ===================== -->
+                <h3>🔍 A. Frictional Unemployment</h3>
+
+                <div class="concept-card definition">
+                    <h4>Definition & Core Idea</h4>
+                    <p>Frictional unemployment exists <strong>even in market equilibrium and full employment</strong>. It arises because information flows are imperfect, labour markets are dynamic, and it takes <em>time and effort</em> for unemployed workers and employers to find each other and make a match. No matter how healthy the economy is, there will always be people between jobs, searching for a better fit, or entering the labour market for the first time.</p>
+                    <p>The lower the probability that an unemployed person becomes employed ($P_{ue}$), the higher the duration of unemployment and the higher the unemployment rate. Frictional unemployment is linked to moderate $P_{ue}$ and temporary delays in matching.</p>
+                </div>
+
+                <h3>The Job Search Model</h3>
+
+                <p>The <strong>Job Search Model</strong> is the theoretical backbone for understanding frictional unemployment. It formalizes a powerful idea: unemployment is not always involuntary — it can be part of a rational, optimal search process.</p>
+
+                <div class="concept-card explanation">
+                    <h4>Key Assumption</h4>
+                    <p>The model's crucial assumption is that <span class="highlight-mechanism">wages are associated with the characteristics of jobs, not with the characteristics of individuals who fill them</span>. Each job requires a minimum skill level $K$ (encompassing various attributes), and the wage is an increasing function of that skill level: $w(K)$. Different employers have different hiring standards, creating a <strong>market distribution of wage offers</strong> $f(W)$ that the job seeker faces.</p>
+                </div>
+
+                <!-- IMAGE: Job Search Wage Distribution -->
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="job-search-wage-distribution.png"
+                        alt="Graph showing the distribution of wage offers f(W) with the reservation wage W_R, expected wage E(W), and the threshold W*(K*) marked."
+                        style="max-width: 90%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box">
+                    <h4>📈 Graph Explanation: The Job Search Model</h4>
+                    <p><strong>What the graph shows:</strong></p>
+                    <ul>
+                        <li><strong>Horizontal Axis:</strong> The wage level $W$. Each point represents a possible wage offer that exists in the market.</li>
+                        <li><strong>Vertical Axis:</strong> The distribution of wage offers $f(W)$, i.e., the probability of receiving each wage level. Not all jobs pay the same — workers face a <em>range</em> (distribution) of possible wages.</li>
+                        <li><strong>$W_R$ (Reservation Wage):</strong> <span class="highlight-exam">This is the single most important concept.</span> It is the <strong>minimum wage a worker is willing to accept</strong>. If a job offer pays below $W_R$ → rejected. If it pays above $W_R$ → accepted. $W_R$ acts as a decision threshold that divides the entire wage distribution into two zones.</li>
+                        <li><strong>$E(W)$ (Expected Wage):</strong> The average wage the worker expects to earn, calculated <em>only</em> over the accepted part of the distribution (right side of $W_R$). The worker does not consider all wages — only those above their reservation wage.</li>
+                        <li><strong>$W^*(K^*)$:</strong> The wage associated with a specific job requiring skill level $K^*$. Since wages depend on job characteristics, this represents the job that "perfectly matches" the worker's skill set.</li>
+                    </ul>
+
+                    <p><strong>The Shaded Areas (CRITICAL):</strong></p>
+                    <ul>
+                        <li><strong>Left of $W_R$ (rejected offers):</strong> These jobs exist in the market, but the worker refuses them. <span class="highlight-mechanism">This is crucial: unemployment can exist even when jobs are available.</span> The worker rationally chooses to remain unemployed and keep searching for a better offer.</li>
+                        <li><strong>Right of $W_R$ (accepted offers):</strong> This area determines both the probability of finding an acceptable job and the expected wage upon acceptance.</li>
+                    </ul>
+
+                    <p><strong>🔥 The Core Mechanism — What happens when $W_R$ increases?</strong></p>
+                    <ul>
+                        <li>Fewer offers fall above $W_R$ → the probability of finding an acceptable job <strong>decreases</strong> → $P_{ue} \downarrow$</li>
+                        <li>Only high-wage offers are accepted → the expected wage <strong>increases</strong> → $E(W) \uparrow$</li>
+                        <li>The job search takes longer → <strong>unemployment duration increases</strong></li>
+                    </ul>
+
+                    <div class="math-block" style="margin-top: 15px;">
+                        \[ \uparrow W_R \;\Rightarrow\; \downarrow P_{ue}, \quad \uparrow E(W), \quad \uparrow \text{duration of unemployment} \]
+                    </div>
+
+                    <p style="margin-top: 15px;"><strong>⚖️ The Optimal Decision (EXAM ESSENTIAL):</strong> The reservation wage is not chosen randomly. It is set at the point where:</p>
+                    <div class="math-block">
+                        \[ \text{Expected marginal benefit of continued search} = \text{Expected marginal cost of search} \]
+                    </div>
+                    <p>If a worker continues searching, they expect a better job and a higher wage. But searching has costs: time, effort, lost income, and psychological strain. $W_R$ is chosen to balance: <em>"Is it worth waiting for a better offer, or should I accept now?"</em></p>
+                </div>
+
+                <div class="post-it">
+                    <h4>💡 Exam Insight: Frictional ≠ Involuntary</h4>
+                    <p>The Job Search Model explains that <strong>unemployment is partly voluntary and part of an optimal decision process</strong>. Workers do not accept the first job they see — they search for better matches. Information is imperfect. So unemployment is not only due to a lack of jobs — <span class="highlight-exam">it is also due to workers choosing to wait for better opportunities</span>. This is why two identical workers can earn different wages, and why unemployment can coexist with job vacancies.</p>
+                </div>
+
+                <h3>Implications of the Job Search Model</h3>
+
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-blue-primary);">Key Predictions & Consequences</h4>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Frictional unemployment is inevitable:</strong> As long as $W_R$ exceeds the lowest wage in the market, some job offers will be rejected, generating unemployment. This is a <em>feature</em> of rational search, not a bug.</li>
+                        <li><strong>Underemployment exists:</strong> If $W_R < W(K^*)$, the worker may accept a job that pays less than their true skill-matched wage. This happens because of imperfect information — workers cannot perfectly assess every opportunity. They may settle for "good enough" rather than optimal.</li>
+                        <li><strong>Identical individuals can have different wages:</strong> Two workers with the same skills may end up with different wages simply because one received a lucky draw from the wage distribution. The randomness of the search process generates wage dispersion even among identical workers.</li>
+                        <li><strong>Improvements to job search lower duration:</strong> Better information (job boards, public employment services, professional networks) reduces frictions, improves matching efficiency, and lowers unemployment duration.</li>
+                        <li><strong>Alternative time uses matter:</strong> The value of time outside employment (household production, leisure, informal work) is critical. If household production is highly valuable, $W_R$ rises, and the worker is more selective. This also explains the <strong>discouraged worker problem</strong>: if the expected wage from searching is low relative to the costs, workers may exit the labour force entirely.</li>
+                        <li><strong>Falling costs of staying unemployed → $W_R$ rises:</strong> If unemployment becomes less costly (e.g., through generous benefits, family support, savings), the worker can afford to be pickier, raising their reservation wage and extending their search.</li>
+                    </ul>
+                </div>
+
+                <h3>💰 The Effect of Unemployment Benefits</h3>
+
+                <div class="concept-card" style="border-left: 4px solid #D69E2E; background: #FFFFF0;">
+                    <h4 style="color: #B7791F;">Unemployment Benefits & Job Search Behaviour</h4>
+                    <p>Unemployment benefit (UB) schemes vary across countries in their <strong>eligibility criteria</strong>, <strong>duration</strong>, and <strong>replacement rates</strong> (the fraction of previous earnings replaced by the benefit). All of these parameters directly affect job search behaviour through their impact on the reservation wage.</p>
+
+                    <div class="type-cards" style="margin-top: 1rem;">
+                        <div class="type-card" style="border-top-color: #D69E2E;">
+                            <h4 style="color: #B7791F;">📊 Empirical Evidence</h4>
+                            <p>Most empirical estimates show that <span class="highlight-mechanism">a 10 percentage-point increase in the replacement rate would increase the length of unemployment by about one week</span>. The effect exists but is moderate — not as dramatic as some theoretical models predict.</p>
+                        </div>
+                        <div class="type-card" style="border-top-color: #C53030;">
+                            <h4 style="color: #C53030;">❌ The Matching Quality Promise</h4>
+                            <p>In theory, unemployment benefits <em>should</em> improve the quality of job matches. By raising $W_R$, workers can afford to search longer and find jobs closer to their optimal $W(K^*)$, leading to better allocation. However, there is a <span class="highlight-exam">lack of empirical evidence</span> supporting this optimistic prediction. The matching quality improvement remains largely theoretical.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 30px 0; border: 1px dashed var(--clr-blue-border);">
+
+                <!-- ===================== STRUCTURAL ===================== -->
+                <h3>🏗️ B. Structural Unemployment</h3>
+
+                <div class="concept-card definition">
+                    <h4>Definition</h4>
+                    <p><span class="highlight-concept">Structural unemployment</span> arises from a <strong>mismatch</strong> between the skills demanded and supplied in a given area, or an <strong>imbalance</strong> between the supplies of and demands for workers across areas. Unlike frictional unemployment, which is about search time, structural unemployment is about fundamental incompatibility between what workers offer and what firms need.</p>
+                    <p>It arises from <strong>inflexible wages</strong> and <strong>adjustment costs</strong>, combined with imperfect information. In theory, it could be eliminated by market adjustment — but only if wages were perfectly flexible and the costs of occupational and geographical mobility were low. In practice, neither condition holds.</p>
+                </div>
+
+                <!-- IMAGE: Structural Unemployment -->
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="structural-unemployment-mismatch-markets.png"
+                        alt="Two labour market panels (A and B) showing mismatch: excess supply in Market A and excess demand in Market B due to wage rigidity."
+                        style="max-width: 90%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box" style="border-left-color: #D69E2E;">
+                    <h4 style="color: #D69E2E;">📉 Graph Explanation: Structural Mismatch Between Two Markets</h4>
+
+                    <p><strong>What the graph represents:</strong></p>
+                    <ul>
+                        <li>Each panel is a separate labour market (A and B) with an upward-sloping supply curve (workers willing to work at a given wage) and a downward-sloping demand curve (firms willing to hire at a given wage). Wages are on the vertical axis, employment on the horizontal.</li>
+                    </ul>
+
+                    <p><strong>🧠 Market A (Left Panel):</strong></p>
+                    <ul>
+                        <li>The equilibrium wage is $W_{0A}$, where supply and demand initially intersected. But labour demand has <em>shifted left</em> (the blue demand curve), perhaps because the sector is declining (e.g., coal mining, traditional manufacturing).</li>
+                        <li>At the original wage $W_{0A}$, firms now want to hire only $E_{1A}$ workers, but workers still want to supply labour at the old level. There is <strong>excess supply of labour → unemployment</strong>.</li>
+                        <li>This unemployment exists because <span class="highlight-mechanism">wages do not adjust downward</span>. If wages could fall to the new intersection, unemployment would be eliminated. But contracts, unions, norms, and minimum wages prevent this.</li>
+                    </ul>
+
+                    <p><strong>🧠 Market B (Right Panel):</strong></p>
+                    <ul>
+                        <li>Here, the equilibrium wage should be higher (growing sector — e.g., technology, healthcare). But wages are constrained below the equilibrium level. At the prevailing wage, firms want to hire more workers than are available. There is <strong>excess demand for labour → job vacancies</strong>.</li>
+                    </ul>
+
+                    <p><strong>🔥 The Key Insight (EXAM CRITICAL):</strong></p>
+                    <ul>
+                        <li>You simultaneously have <strong>unemployment in Market A</strong> and <strong>labour shortages in Market B</strong>. Unemployment exists <em>even though jobs are available elsewhere</em>. This is the essence of structural unemployment: <span class="highlight-exam">mismatch between skills, locations, or job characteristics</span>.</li>
+                        <li>Workers in A may lack the skills required in B (<strong>skills mismatch</strong>). Jobs may be geographically distant (<strong>spatial mismatch</strong>). Or the declining sector A may require completely different competencies than the growing sector B (<strong>sectoral mismatch</strong>).</li>
+                    </ul>
+
+                    <p><strong>❗ Why doesn't the market self-correct?</strong></p>
+                    <ul>
+                        <li><strong>Wage rigidity:</strong> Wages don't adjust freely due to contracts, unions, norms, and minimum wages.</li>
+                        <li><strong>Adjustment costs:</strong> Workers cannot move easily — moving costs, housing, family ties, retraining expenses, and time needed to acquire new skills.</li>
+                        <li><strong>Imperfect information:</strong> Workers do not know where jobs are, what skills are required, or how to access them.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-blue-primary);">Consequences of Low $P_{ue}$ in Structural Unemployment</h4>
+                    <ul style="line-height: 1.8;">
+                        <li>If $P_{ue}$ is persistently low, unemployment duration becomes long, leading to <strong>high long-term unemployment</strong>.</li>
+                        <li><strong>Re-training programs</strong> are essential to realign worker skills with market demand.</li>
+                        <li><strong>Geographical mobility</strong> must be facilitated — housing policies, relocation subsidies, and commuting infrastructure.</li>
+                        <li><strong>Ease of new job creation</strong> depends on the rigidity of Employment Protection Legislation (EPL), job-protection policies, and the ease of dismissals. The trade-off is real: flexible EPL helps reallocate labour but reduces job security. This creates a deep <span class="highlight-mechanism">Europe vs. USA divide</span> — European labour markets tend toward higher protection and lower mobility, while the US prioritizes flexibility.</li>
+                    </ul>
+                </div>
+
+                <h3>⚙️ Efficiency Wages</h3>
+
+                <div class="concept-card explanation">
+                    <h4>Why Firms Pay Above Market-Clearing Wages</h4>
+                    <p>The <strong>efficiency wage theory</strong> offers a powerful explanation for why wages may be <em>deliberately set above</em> the market-clearing level. The core idea is that firms face <span class="highlight-mechanism">imperfect monitoring</span> — they cannot perfectly observe how hard each worker is actually working. To solve this problem, they pay a premium wage that makes the job more valuable to the worker.</p>
+                    <p>The logic is elegant: if the worker is paid above what they could get elsewhere, the <em>cost of being fired for shirking</em> becomes extremely high. Losing this premium job would mean a significant income loss. So the high wage acts as a <strong>discipline device</strong> — it increases productivity, discourages shirking, reduces turnover, and attracts higher-quality applicants.</p>
+                </div>
+
+                <div class="type-cards">
+                    <div class="type-card" style="border-top-color: #E53E3E;">
+                        <h4 style="color: #C53030;">Economy-Wide Efficiency Wages → Unemployment</h4>
+                        <p>If <strong>all firms</strong> adopt efficiency wages simultaneously, every firm is paying above the market-clearing level. The aggregate wage is too high → aggregate labour demand falls below supply → <span class="highlight-mechanism">equilibrium unemployment emerges</span>. Workers are involuntarily unemployed because wages are being propped up everywhere.</p>
+                    </div>
+                    <div class="type-card" style="border-top-color: #D69E2E;">
+                        <h4 style="color: #B7791F;">Sector-Specific Efficiency Wages → Wait Unemployment</h4>
+                        <p>If only the <strong>high-wage sector</strong> applies efficiency wages, workers in the low-wage sector may rationally choose to <em>wait</em> for an opening in the high-wage sector rather than accept the lower-paying job available now. This creates <span class="highlight-mechanism">"wait unemployment"</span> — workers are voluntarily idle, queuing for better jobs.</p>
+                    </div>
+                </div>
+
+                <div class="concept-card warning">
+                    <h4>🚨 The Counter-Intuitive Relationship</h4>
+                    <p>Efficiency wages create a negative relationship between the unemployment rate and the efficiency wage level: <strong>Higher UR → lower efficiency wage needed</strong>. Why? Because when unemployment is high, workers are already terrified of losing their jobs — the threat of being fired is powerful enough without needing a large wage premium. So firms can reduce the efficiency wage premium. The <em>disciplining effect</em> of unemployment itself acts as a substitute for the wage premium.</p>
+                </div>
+
+                <h3>📉 The Wage Curve</h3>
+
+                <!-- IMAGE: Wage Curve -->
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="wage-curve-regional-unemployment.png"
+                        alt="A downward-sloping curve showing the negative relationship between regional unemployment rate (x-axis) and regional wage level (y-axis)."
+                        style="max-width: 90%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box" style="border-left-color: #6B46C1;">
+                    <h4 style="color: #6B46C1;">📊 Graph Explanation: The Wage Curve (Blanchflower & Oswald, 1994)</h4>
+
+                    <p><strong>What the graph shows:</strong></p>
+                    <ul>
+                        <li><strong>Horizontal Axis:</strong> Regional unemployment rate.</li>
+                        <li><strong>Vertical Axis:</strong> Regional wage level.</li>
+                        <li>The <strong>downward-sloping curve</strong> represents one of the most robust empirical findings in labour economics: <span class="highlight-concept">a worker employed in an area of high unemployment earns less than an identical individual who works in a region with low joblessness</span>.</li>
+                    </ul>
+
+                    <p><strong>🧠 Why this might seem surprising:</strong></p>
+                    <ul>
+                        <li>In basic theory, you might expect the opposite — high unemployment should put downward pressure on wages, but workers might also resist cuts. The relationship is not obvious theoretically, which is precisely why the empirical finding was so important.</li>
+                    </ul>
+
+                    <p><strong>🔥 Four Mechanisms Behind the Negative Relationship:</strong></p>
+                    <ul>
+                        <li><strong>Bargaining power:</strong> High unemployment → workers are easier to replace → firms have more power → wages are pushed down. Low unemployment → strong worker bargaining power → wages rise.</li>
+                        <li><strong>Efficiency wage logic:</strong> Firms do not need to pay high premiums when unemployment is high, because workers already fear losing their jobs. The natural discipline effect of unemployment substitutes for wage premiums.</li>
+                        <li><strong>Job competition:</strong> When many workers compete for few jobs, workers accept lower wages. Reservation wages may decrease as the expected duration of search increases.</li>
+                        <li><strong>Labour market slack:</strong> High unemployment = excess supply of labour = persistent downward pressure on wages.</li>
+                    </ul>
+
+                    <p><strong>📊 Quantitative Result:</strong></p>
+                    <ul>
+                        <li><span class="highlight-mechanism">A 10% increase in a region's unemployment rate is associated with wage levels that are lower by 0.4–1.9%.</span> The effect is significant, robust across countries, and negative.</li>
+                    </ul>
+
+                    <p><strong>🧠 Deep Intuition (KEY EXAM POINT):</strong></p>
+                    <ul>
+                        <li>Wages are not fixed — <span class="highlight-exam">they depend on labour market conditions</span>. And more precisely, wages reflect the <strong>balance of power between workers and firms</strong>. Tight labour market → high wages. Slack labour market → low wages.</li>
+                    </ul>
+                </div>
+
+                <hr style="margin: 30px 0; border: 1px dashed var(--clr-blue-border);">
+
+                <!-- ===================== CYCLICAL ===================== -->
+                <h3>📉 C. Cyclical Unemployment</h3>
+
+                <div class="concept-card definition">
+                    <h4>Definition: Demand-Deficient Unemployment</h4>
+                    <p><span class="highlight-concept">Cyclical unemployment</span> is associated with fluctuations in economic activity during the <strong>business cycle</strong>. It occurs when a decline in aggregate demand in the output market causes the aggregate demand for labour to decline, <em>in the face of downward inflexibility in real wages</em>. In terms of the stock-flow model:</p>
+                    <div class="math-block" style="margin: 15px 0;">
+                        \[ \uparrow P_{eu}, \quad \downarrow P_{ue}, \quad \downarrow P_{ne} \]
+                    </div>
+                    <p>More workers lose jobs (higher $P_{eu}$), fewer unemployed find work (lower $P_{ue}$), and fewer people enter employment directly from inactivity (lower $P_{ne}$). Cyclical unemployment may be <strong>partly eliminated by reductions in wages</strong> — but only if wages are flexible, which they rarely are.</p>
+                </div>
+
+                <!-- IMAGE: Cyclical Unemployment -->
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="cyclical-unemployment-wage-rigidity-demand-shock.png"
+                        alt="Labour market graph showing the leftward shift of labour demand from D_0 to D_1, wage rigidity at W_0, and the resulting unemployment gap between E_1 and E_0."
+                        style="max-width: 90%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box" style="border-left-color: #C53030;">
+                    <h4 style="color: #C53030;">📉 Graph Explanation: Cyclical Unemployment = Demand Shock + Wage Rigidity</h4>
+
+                    <p><strong>What happens step by step:</strong></p>
+                    <ul>
+                        <li><strong>Initial Equilibrium:</strong> Labour demand = $D_0$, Labour supply = $S_0$, Wage = $W_0$, Employment = $E_0$. No involuntary unemployment at this point.</li>
+                        <li><strong>The Shock:</strong> A negative demand shock hits (recession, financial crisis, pandemic). Firms face lower demand for their products → they need less labour → <strong>labour demand shifts left from $D_0$ to $D_1$</strong>.</li>
+                        <li><strong>The Problem — Wage Rigidity:</strong> In theory, wages should fall from $W_0$ to the new equilibrium wage $W_2$ to restore full employment. But in reality, <span class="highlight-mechanism">wages do not adjust downward</span> (downward wage rigidity). So the wage stays stuck at $W_0$.</li>
+                        <li><strong>The Consequence:</strong> At wage $W_0$ with the new lower demand $D_1$: firms want to hire only $E_1$ workers, but workers still want to supply labour at the old level. The gap between what firms want and what workers offer creates <strong>excess supply of labour = unemployment</strong>.</li>
+                    </ul>
+
+                    <p><strong>🧠 Why IF wages were flexible:</strong></p>
+                    <ul>
+                        <li>If wages could fall from $W_0$ to $W_2$, employment would move to $E_2$ and unemployment would be significantly reduced. So <span class="highlight-exam">cyclical unemployment is fundamentally caused by the combination of a demand shock AND wage rigidity</span>. Neither alone would produce the result.</li>
+                    </ul>
+
+                    <p><strong>🎯 Deep Insight:</strong></p>
+                    <ul>
+                        <li>Unemployment can arise <strong>even without structural problems</strong>, simply because the economy slows down and the labour market does not adjust fast enough. The labour market's inability to clear wages is the root cause.</li>
+                    </ul>
+                </div>
+
+                <h3>🔒 Downward Wage Rigidity: Why Wages Don't Fall</h3>
+
+                <p>If wage cuts could cure unemployment, why don't they happen? The answer reveals deep institutional and psychological forces:</p>
+
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-blue-primary);">Why firms find it more profitable to reduce employment than wages</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+                        <div>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>Unions & the Insider-Outsider Hypothesis:</strong> Union-represented "insiders" (currently employed workers) negotiate to protect <em>their</em> wages, even at the cost of "outsiders" (unemployed workers) being denied jobs. Unions maximize the welfare of their members, not the welfare of the labour market as a whole.</li>
+                                <li><strong>Specific Human Capital:</strong> Firms invest in training their workers. If they cut wages, the most productive workers — those with the most human capital — will quit first (they have the best outside options). The least productive workers stay. So a wage cut triggers an <em>adverse selection</em> problem that destroys the firm's human capital stock.</li>
+                                <li><strong>Asymmetric Information & Internal Labour Markets:</strong> Firms often offer low starting salaries to new employees with the <em>implicit promise</em> that wages will rise later if they perform well. This is a long-term incentive contract. Cutting wages for senior workers breaks this implicit promise, destroying trust and motivation for all workers — including the junior ones who are watching.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>Work Status & Future Job Considerations:</strong> This is counterintuitive but empirically supported: <span class="highlight-mechanism">unemployed workers are often more willing to face unemployment than accept a reduced wage</span>. Why? Because accepting a visibly lower wage signals desperation to future employers, damages their negotiating position in future jobs, and reduces their "reference wage" permanently. The <em>stigma</em> of a pay cut may be worse than the stigma of a temporary unemployment spell.</li>
+                                <li><strong>Layoffs target the least productive:</strong> When firms reduce employment rather than wages, they selectively fire the least productive workers. The remaining high-productivity workers maintain their effort and do not quit. This is actually more efficient for the firm than a blanket wage cut that demoralizes everyone and drives the best workers away.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-it">
+                    <h4>💡 Important Nuance</h4>
+                    <p>There is <strong>little doubt that nominal wage rigidity exists</strong> — wages almost never fall in nominal terms. However, there is <span class="highlight-exam">no consensus on its quantitative importance</span>. Some economists argue that real wages (adjusted for inflation) are more flexible, as inflation can erode real wages even when nominal wages remain constant. This "inflation tax" on wages is one reason why central banks may tolerate moderate inflation.</p>
+                </div>
+
+                <hr style="margin: 30px 0; border: 1px dashed var(--clr-blue-border);">
+
+                <!-- ===================== SEASONAL ===================== -->
+                <h3>🌿 D. Seasonal Unemployment</h3>
+
+                <div class="concept-card" style="border-left: 4px solid #38A169; background: #F0FFF4;">
+                    <h4 style="color: #2F855A;">Definition & Characteristics</h4>
+                    <p>Seasonal unemployment is induced by <strong>regular, systematic fluctuations</strong> in the demand for labour that follow a predictable pattern. Unlike cyclical unemployment (which is driven by unpredictable macroeconomic shocks), seasonal unemployment can be <em>anticipated</em> by both workers and firms.</p>
+                    <ul style="margin-top: 10px; line-height: 1.8;">
+                        <li><strong>Typical sectors:</strong> Agriculture (harvest seasons), construction (weather-dependent), tourism (high/low season), and retail (holiday shopping).</li>
+                        <li><strong>Wage differentials compensate:</strong> Workers in seasonal industries typically receive <strong>compensating wage differentials</strong> — higher wages during the working season to offset the known periods of unemployment. This connects directly back to the compensating differentials theory from Chapter 6.</li>
+                        <li><strong>Role of unemployment benefits:</strong> UB systems interact with seasonal unemployment in complex ways. If benefits are generous, workers in seasonal sectors may prefer the seasonal regime (high wages during work + benefits during unemployment) over a more stable but lower-paying year-round job. This can make seasonal patterns more persistent.</li>
+                    </ul>
+                    <p style="margin-top: 10px;">In the stock-flow framework: $P_{eu}$ increases sharply at the end of a season (workers are laid off), and $P_{ue}$ increases when activity resumes (workers are re-hired). These transitions are regular, predictable, and often involve the <em>same</em> workers cycling between employment and unemployment with the seasons.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION VI: THE NATURAL RATE -->
+                <!-- ============================================================ -->
+                <h2>⚖️ VI. The Natural Rate of Unemployment</h2>
+
+                <div class="concept-card definition">
+                    <h4>Multiple Definitions of the Natural Rate</h4>
+                    <p>The <strong>natural rate of unemployment</strong> is one of the most important concepts in macroeconomics, but it has multiple complementary definitions. It refers to the rate that prevails in "normal" times — corresponding to full employment — and includes only frictional and seasonal unemployment (the unavoidable minimum).</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 15px;">
+                        <div style="background: rgba(43, 108, 176, 0.05); padding: 1.2rem; border-radius: 8px;">
+                            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>📌 Price-stability definition:</strong> The rate at which wage and price inflation are either <em>stable</em> or at <em>acceptable levels</em>. Below this rate, inflation accelerates.</p>
+                        </div>
+                        <div style="background: rgba(43, 108, 176, 0.05); padding: 1.2rem; border-radius: 8px;">
+                            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>📌 Vacancy-matching definition:</strong> The rate at which job vacancies equal the number of unemployed workers. The labour market is "balanced" — neither too tight nor too loose.</p>
+                        </div>
+                        <div style="background: rgba(43, 108, 176, 0.05); padding: 1.2rem; border-radius: 8px;">
+                            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>📌 Demand-saturation definition:</strong> The rate beyond which any increases in aggregate demand will cause <em>no further reductions</em> in unemployment — only inflation.</p>
+                        </div>
+                        <div style="background: rgba(43, 108, 176, 0.05); padding: 1.2rem; border-radius: 8px;">
+                            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>📌 Voluntary definition:</strong> The rate at which all unemployment is <em>voluntary</em> — everyone who wants to work at the prevailing wage is working.</p>
+                        </div>
+                        <div style="background: rgba(43, 108, 176, 0.05); padding: 1.2rem; border-radius: 8px; grid-column: 1 / -1;">
+                            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>📌 Flow-equilibrium definition:</strong> The rate at which the level of unemployment is <em>unchanging</em> — both the flows into unemployment and the duration of unemployment are at their "normal" levels. Inflows = Outflows.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-blue-primary);">What Affects the Natural Rate?</h4>
+                    <p>The natural rate is <strong>not constant</strong>. It is affected by:</p>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Tightness of the labour market:</strong> The ease with which workers find jobs and firms find suitable candidates.</li>
+                        <li><strong>Composition of the labour force:</strong> A labour force with more young workers (who have higher turnover) will have a higher natural rate than one with more experienced workers.</li>
+                        <li><strong>Institutional factors:</strong> Unemployment benefit generosity, employment protection legislation, union density, minimum wage levels, and active labour market policies all influence the natural rate.</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Various estimates:</strong> The natural rate is typically estimated at around <span style="color: var(--clr-blue-primary); font-weight: 800;">5–7%</span> for most developed economies, though it varies significantly by country and time period.</p>
+                </div>
+
+                <div class="post-it rose">
+                    <h4>📊 Okun's Law: The Cost of Being Above Natural Rate</h4>
+                    <p>When unemployment exceeds the natural rate, the economy is wasting productive potential. <strong>Okun's Law</strong> quantifies this cost: <span class="highlight-exam">every one-percentage-point decline in the aggregate unemployment rate is associated with a 2–3 percentage-point increase in output (GDP)</span>. This means that excess unemployment is extraordinarily expensive for society — not just in terms of lost wages for the unemployed, but in terms of total economic output that is never produced.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION VII: INVOLUNTARY PART-TIME -->
+                <!-- ============================================================ -->
+                <h2>⏰ VII. Involuntary Part-Time Employment (PTE)</h2>
+
+                <p>The unemployment rate captures only one dimension of labour market distress. Another critical dimension is <strong>involuntary part-time employment</strong> — when workers are employed part-time not by choice, but because they cannot find a full-time position. This hidden underemployment is a powerful indicator of labour market slack that the unemployment rate misses entirely.</p>
+
+                <div class="concept-card definition">
+                    <h4>The Involuntary Part-Time Problem</h4>
+                    <p>Part-time employment (PTE) is <strong>not always a choice</strong>. For a large share of employees — especially <strong>prime-aged men</strong> — it is an <em>involuntary alternative</em> to the full-time position they would prefer. This involuntary PTE is largely driven by <strong>business cycle trends</strong> and reflects demand-side constraints rather than worker preferences.</p>
+                </div>
+
+                <div class="concept-card explanation">
+                    <h4>The Business Cycle & Labour Supply Effects</h4>
+                    <p>During a labour market downturn, several supply-side adjustments occur simultaneously:</p>
+                    <ul>
+                        <li><strong>The "Involuntary Part-Time Effect":</strong> Unemployed persons may be more willing to accept a part-time job as a compromise — better than no job at all. Simultaneously, currently employed workers may be forced to involuntarily cut back on working hours (short-time work, reduced schedules).</li>
+                        <li><strong>Countercyclical pattern:</strong> Involuntary PTE moves <em>in the same direction as the unemployment rate</em>. When unemployment rises (recession), involuntary PTE also rises. When the economy recovers, both decline.</li>
+                        <li>This is the opposite of <strong>voluntary PTE</strong>, which tends to be <em>pro-cyclical</em> — when the economy is strong, more workers voluntarily choose part-time arrangements because of personal preferences (education, childcare, lifestyle).</li>
+                    </ul>
+                </div>
+
+                <div class="type-cards">
+                    <div class="type-card" style="border-top-color: #C53030;">
+                        <h4 style="color: #C53030;">📉 Involuntary PTE = Shares Common Features with Unemployment</h4>
+                        <p>Research by <strong>Partridge (2003)</strong> confirms that involuntary PTE moves in the <em>same direction</em> as the unemployment rate — these two labour market states share common features. Both are driven by insufficient labour demand and both reflect the inability of workers to find the work arrangements they want.</p>
+                    </div>
+                    <div class="type-card" style="border-top-color: #D69E2E;">
+                        <h4 style="color: #B7791F;">⚠️ But Harder to Escape</h4>
+                        <p>Critically, the rate of involuntary PTE is <span class="highlight-exam">less sensitive to job growth than the unemployment rate</span>. This means that involuntary part-time workers face <strong>greater difficulties in finding full-time positions</strong> than the unemployed face in finding <em>any</em> position. They are stuck in a grey zone — technically "employed" but economically underserved — and economic recovery helps them less than it helps the officially unemployed.</p>
+                    </div>
+                </div>
+
+                <div class="post-it">
+                    <h4>💡 Exam Tip: The Hidden Labour Market Slack</h4>
+                    <p>When evaluating the "health" of a labour market, <span class="highlight-exam">never rely solely on the unemployment rate</span>. You must also examine:</p>
+                    <ul style="margin-top: 5px;">
+                        <li>The <strong>involuntary PTE rate</strong> — captures underemployment.</li>
+                        <li><strong>Total hours worked</strong> — if UR is low but hours are also low, it signals massive underemployment.</li>
+                        <li>The <strong>Job Vacancy Rate</strong> — are firms actually posting positions?</li>
+                        <li>The <strong>discouraged worker count</strong> — how many have simply given up?</li>
+                    </ul>
+                    <p style="margin-top: 8px;">A low unemployment rate can mask profound distress if it comes with high involuntary PTE, declining total hours, and hidden inactivity.</p>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+
+            // 1. Manage Sidebar Collapse State
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+
+            // 2. Set Active Link and Open Appropriate Accordion
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            const activeLink = document.querySelector(`.sidebar a[href="${currentPath}"]`);
+
+            if (activeLink) {
+                activeLink.classList.add('active');
+                const content = activeLink.closest('.accordion-content');
+                if (content) {
+                    content.classList.add('active');
+                    content.style.maxHeight = '500px';
+                    const icon = content.previousElementSibling.querySelector('.icon');
+                    if (icon) icon.style.transform = "rotate(-180deg)";
+                }
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+            sidebar.classList.toggle('collapsed');
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.icon');
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = "rotate(-180deg)";
+            }
+        }
+    </script>
+</body>
+
+</html>
