@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labour Economics - Minimum Wage Policy</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX support -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- SPECIFIC STYLES FOR THIS CHAPTER -->
+    <style>
+        .highlight-concept {
+            color: #3182CE;
+            font-weight: 700;
+        }
+
+        .highlight-mechanism {
+            color: #B7791F;
+            font-weight: 700;
+            background-color: #FEFCBF;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .highlight-exam {
+            color: #C53030;
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-color: #FEB2B2;
+            text-decoration-thickness: 3px;
+        }
+
+        .graph-explanation-box {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-left: 6px solid #2B6CB0;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .graph-explanation-box h4 {
+            margin-top: 0;
+            color: #2B6CB0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 0.5rem;
+        }
+
+        .graph-explanation-box ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .graph-explanation-box li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .empirical-structure {
+            background-color: #F7FAFC;
+            border-left: 4px solid #CBD5E0;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .empirical-structure .obs {
+            color: #2B6CB0;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .empirical-structure .interp {
+            color: #B7791F;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .empirical-structure .concl {
+            color: #C53030;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .type-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .type-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid var(--clr-blue-primary);
+            transition: transform 0.2s ease;
+        }
+
+        .type-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .type-card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .type-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
+                &times;
+            </button>
+        </div>
+
+        <!-- Part 1: Labour Supply and Demand -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 1. Labour Supply & Demand</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="index.html">1. Intro & Market Status</a>
+                <a href="cours-2.html">2. Dynamics & Equilibrium</a>
+                <a href="cours-3.html">3. Microeconomics of Demand</a>
+                <a href="cours-4.html">4. Labour Market Frictions</a>
+                <a href="cours-5.html">5. Labour Supply Model</a>
+            </div>
+        </div>
+
+        <!-- Part 2: Wage Differentials -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 2. Wage Differentials</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="cours-6.html">6. Compensating Differentials</a>
+                <a href="cours-7.html">7. Education & Training</a>
+                <a href="cours-8.html">8. Discrimination & Gender</a>
+            </div>
+        </div>
+
+        <!-- Part 3: Institutions & Policy -->
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 3. Institutions & Policy</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="cours-9.html">9. Employment & Unemployment</a>
+                <a href="cours-10.html">10. Minimum Wage Policy</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HEADER -->
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
+                style="display: none;">
+                &#9776;
+            </button>
+            <h1>10. Minimum Wage Policy</h1>
+        </header>
+
+        <!-- CONTENT AREA -->
+        <div class="content-scroll">
+
+            <section class="lesson-section">
+
+                <!-- ============================================================ -->
+                <!-- SECTION I: MOTIVATION & ESSENCE -->
+                <!-- ============================================================ -->
+                <h2>🧠 I. Motivation: Why Regulate the Minimum Wage?</h2>
+
+                <p>The Minimum Wage (MW) is a widely debated and highly controversial policy tool. Its goals reach far beyond the active working population — surprisingly, it can affect many mechanisms even though it only directly targets those who work.</p>
+
+                <div class="concept-card explanation">
+                    <h4>Core Objectives & Functions</h4>
+                    <ul>
+                        <li><span class="highlight-concept">Objectives:</span> Improve living standards of low-paid workers, motivate work ("make work pay"), protect workers in the least organized sectors from exploitation, reduce wage inequality, and combat poverty.</li>
+                        <li><span class="highlight-concept">Reference Wage:</span> It sets a baseline for individual and collective negotiations. It limits social dumping and pushes businesses to restructure and increase productivity.</li>
+                        <li><span class="highlight-concept">Income Policy Instrument:</span> Historically (e.g., in Czechia until 1998, and partly now), it determines the base for social benefits or contributions (health/social insurance, unemployment benefits ceilings).</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card warning">
+                    <h4>🚨 The "Bite" of the Minimum Wage (Exam Essential)</h4>
+                    <p>At first glance, comparing the minimum wage across countries by looking at its nominal value (e.g., in euros) is misleading. We must evaluate it through three lenses:</p>
+                    <ol>
+                        <li><strong>Nominal Level:</strong> Simple cross-country monetary value (largely reflects overall economic development).</li>
+                        <li><strong>Purchasing Power:</strong> What the wage can actually buy. Adjusting for the cost of living narrows the gaps between seemingly distant countries.</li>
+                        <li><strong>The Relative Position ("The Bite"):</strong> <span class="highlight-exam">This is the most crucial dimension in labour economics.</span> It measures the minimum wage relative to typical earnings (usually the median wage).</li>
+                    </ol>
+                    <p>A minimum wage close to the median wage has a <strong>"high bite"</strong> — it is strongly binding, affects a large part of the labour market, and forces firms to adjust (through prices, profits, or job cuts). A minimum wage far below the median has a <strong>"low bite"</strong> — it is mostly non-binding, affecting very few workers.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION II: MINIMUM WAGE IN THE EU -->
+                <!-- ============================================================ -->
+                <h2>🇪🇺 II. Minimum Wage Framework in the EU</h2>
+
+                <p>The right to an adequate minimum wage is embedded in the European Pillar of Social Rights. In 2024, the EU passed a <strong>Directive on adequate minimum wages</strong>. Notably, it <span class="highlight-mechanism">does NOT oblige Member States to introduce a statutory minimum wage</span>, nor does it set a uniform EU-wide level.</p>
+
+                <div class="concept-card">
+                    <h4 style="color: var(--clr-blue-primary);">Three Major Goals of the EU Directive</h4>
+                    <ol>
+                        <li><strong>Setting and Updating:</strong> Establish a framework guided by criteria for a decent standard of living (using international benchmarks like <strong>50% of the mean wage</strong> or <strong>60% of the median wage</strong>).</li>
+                        <li><strong>Enforcement:</strong> Improve the monitoring and effective access of workers to minimum wage protection.</li>
+                        <li><strong>Collective Bargaining:</strong> Encourage greater bargaining coverage. (Countries with &lt;80% coverage need a specific action plan).</li>
+                    </ol>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION III: THEORETICAL BACKGROUND -->
+                <!-- ============================================================ -->
+                <h2>📊 III. Theoretical Background: Does it kill jobs?</h2>
+
+                <p>The effect of a minimum wage on employment, wages, prices, and profits strongly depends on the assumptions of the chosen economic model. There is no single universal effect.</p>
+
+                <!-- 1. PERFECT COMPETITION -->
+                <h3>1. The Perfect Competition Model</h3>
+
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="minimum-wage-perfect-competition-demand-shift.png"
+                        alt="Graph showing minimum wage in perfect competition and the effect of a labour demand shift"
+                        style="max-width: 90%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box">
+                    <h4>📉 Graph Analysis: Perfect Competition & Demand Shifts</h4>
+
+                    <p><strong>Initial situation:</strong></p>
+                    <ul>
+                        <li>Labour demand ($L_D$) and supply ($L_S$) intersect at equilibrium employment $L^*$ and wage $W^*/P$.</li>
+                        <li>This is a textbook competitive market: all workers willing to work at that wage find jobs.</li>
+                    </ul>
+
+                    <p><strong>⚠️ Introducing the Minimum Wage ($W_m/P$):</strong></p>
+                    <ul>
+                        <li>The minimum wage is set <strong>above equilibrium</strong>.</li>
+                        <li>At this higher cost, firms reduce demand to $L_1$. Workers supply more labour ($L_2$).</li>
+                        <li>Result: <span class="highlight-mechanism">Excess labour supply $\rightarrow$ Unemployment.</span> Because the wage exceeds the marginal productivity of some workers, firms stop hiring them.</li>
+                    </ul>
+
+                    <p><strong>🔄 The Macro Effect - Demand Shift ($L_D \rightarrow L_D'$):</strong></p>
+                    <ul>
+                        <li>The blue curve shows a shift in labour demand to the right (economic growth, productivity gains, or Keynesian demand boosts from higher wages).</li>
+                        <li>With higher demand, employment increases from $L_1$ to $L_3$, <span class="highlight-exam">partially offsetting the negative effect of the minimum wage.</span></li>
+                        <li><strong>Key Intuition:</strong> The impact of a minimum wage is not fixed; it depends intensely on the business cycle. In a boom, negative effects are masked. In a recession, they are amplified.</li>
+                    </ul>
+                </div>
+
+                <!-- 2. TWO-SECTOR MODEL -->
+                <h3>2. The Two-Sector Model (Covered vs. Uncovered)</h3>
+
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="minimum-wage-two-sector-covered-uncovered.png"
+                        alt="Graph showing flows between a covered sector with minimum wage and an uncovered sector"
+                        style="max-width: 100%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box" style="border-left-color: #D69E2E;">
+                    <h4 style="color: #D69E2E;">📉 Graph Analysis: The Spillover Effect</h4>
+
+                    <p><strong>The Core Mechanism:</strong></p>
+                    <ul>
+                        <li>This model is closer to reality: we have a <strong>Covered Sector</strong> (where the minimum wage applies) and an <strong>Uncovered Sector</strong> (grey economy, informal jobs, or exempt sectors).</li>
+                    </ul>
+
+                    <p><strong>Covered Sector (Left):</strong></p>
+                    <ul>
+                        <li>Minimum wage is imposed $\rightarrow$ wages rise from $W_0^P$ to $W_m^P$.</li>
+                        <li>Employment falls from $L_0^P$ to $L_m^P$. Workers lose jobs.</li>
+                    </ul>
+
+                    <p><strong>Uncovered Sector (Right):</strong></p>
+                    <ul>
+                        <li>The displaced workers don't just disappear; <span class="highlight-mechanism">they migrate to the uncovered sector</span>.</li>
+                        <li>Labour supply shifts right $\rightarrow$ wages fall from $W_0^N$ to $W_1^N$. Employment increases.</li>
+                    </ul>
+
+                    <p><strong>🔥 Deep Intuition (EXAM ESSENTIAL):</strong></p>
+                    <ul>
+                        <li>A minimum wage here <strong>does not necessarily create open unemployment</strong>. Instead, it redistributes workers and creates <span class="highlight-exam">wage compression and inefficiency</span>. Workers are pushed into lower-productivity informal jobs, distorting the labour market without necessarily raising the aggregate unemployment rate.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card explanation">
+                    <h4>Heterogeneous Labour & Substitution</h4>
+                    <p>Firms react to higher costs. If the minimum wage hits low-skilled workers hard, firms may substitute them for high-skilled workers or capital (machines). The demand for skilled labour rises, increasing their wages further, fundamentally changing the inequality dynamics <em>inside</em> the workforce.</p>
+                </div>
+
+                <!-- 3. MONOPSONY MODEL -->
+                <h3>3. The Monopsonistic Market</h3>
+
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="minimum-wage-monopsony-effect.png"
+                        alt="Graph showing the positive effect of minimum wage in a monopsony model"
+                        style="max-width: 90%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box" style="border-left-color: #2F855A;">
+                    <h4 style="color: #2F855A;">📉 Graph Analysis: When Minimum Wage Creates Jobs</h4>
+
+                    <p><strong>Initial Monopsony Setting:</strong></p>
+                    <ul>
+                        <li>Firms are wage-setters, not wage-takers (e.g., a dominant hospital hiring nurses).</li>
+                        <li>Because hiring an extra worker requires raising wages for <em>all</em> existing workers, the <strong>Marginal Cost (MC) of labour is above the supply curve</strong>.</li>
+                        <li>The firm hires where MC = Marginal Product, leading to employment $L_0$ at wage $W_0/P$. <span class="highlight-mechanism">Result: Underemployment and underpayment.</span></li>
+                    </ul>
+
+                    <p><strong>⚠️ Introducing Minimum Wage:</strong></p>
+                    <ul>
+                        <li>If the MW is set at $W_m/P$ (above monopsony wage but below competitive equilibrium), it caps the marginal cost of labour. The MC curve becomes <strong>flat (horizontal)</strong>.</li>
+                        <li>The firm can now hire more workers without having to raise wages retroactively for the others.</li>
+                    </ul>
+
+                    <p><strong>🔥 The Stunning Result:</strong></p>
+                    <ul>
+                        <li>Employment <strong>increases</strong> from $L_0$ to $L_m$, and wages increase simultaneously.</li>
+                        <li>The minimum wage acts as a constraint that forces the distorted monopsony market closer to a perfect competition outcome.</li>
+                    </ul>
+                </div>
+
+                <div class="post-it rose">
+                    <h4>💡 Exam Tip: Limits of Monopsony</h4>
+                    <p>While conceptually elegant, monopsony is a <span class="highlight-exam">special case</span>. It requires significant employer market power, low worker mobility, or specific skills. Most low-skilled labour markets resemble perfect competition (many small firms, e.g., retail), meaning this positive job-creation effect is not universally applicable.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION IV: EMPIRICAL EVIDENCE -->
+                <!-- ============================================================ -->
+                <h2>🔬 IV. Empirical Results & Real-World Impact</h2>
+
+                <p>The employment effect of a minimum wage is ultimately an empirical question. The consensus has shifted dramatically over the past thirty years.</p>
+
+                <h3>1. The Card & Krueger Revolution (1994)</h3>
+
+                <div class="empirical-structure">
+                    <div class="obs">🔭 The Natural Experiment</div>
+                    <p>In 1992, New Jersey raised its minimum wage, while neighboring Pennsylvania did not. <strong>Card & Krueger</strong> tracked fast-food restaurants on both sides of the border using a Difference-in-Differences (DiD) approach.</p>
+
+                    <div class="interp">🧠 The Findings</div>
+                    <p>Contrary to the textbook perfect competition model, they found <span class="highlight-mechanism">no evidence that the wage increase reduced employment</span>. In fact, relative employment in NJ slightly rose.</p>
+
+                    <div class="concl">🎯 Why It Mattered</div>
+                    <p>It proved that negative employment effects are <strong>not mechanically large or universal</strong>. Modern consensus holds that for <em>typical, moderate</em> increases, average employment effects are close to zero. Firms adjust through other margins: raising prices (passed to consumers), lowering turnover, or improving productivity.</p>
+                </div>
+
+                <h3>2. Evidence from CEE & Visegrád Countries</h3>
+
+                <div class="concept-card explanation">
+                    <h4>The Role of the "Bite" & Market Structure in CEE</h4>
+                    <ul>
+                        <li><strong>High Bite (e.g., Hungary 2001-02, Slovenia 2010):</strong> Massive, highly binding hikes. Resulted in small but undeniable employment losses, especially in tradable sectors and for youth. Up to 75% of the cost was passed to consumers via inflation.</li>
+                        <li><strong>Low to Moderate Bite (e.g., Czechia, Slovakia):</strong> When the MW remains below roughly 40% of the average wage, studies generally find <strong>no robust negative employment effects</strong>. The primary outcome is simply higher wages for the bottom percentiles.</li>
+                    </ul>
+                    <p><span class="highlight-exam">Teaching Shortcut:</span> Don't ask "Did the MW increase?" Ask "How binding was it, and which firms/workers were exposed?"</p>
+                </div>
+
+                <h3>3. The Czech Context: Why are effects muted?</h3>
+
+                <div class="type-cards" style="margin-top: 1rem;">
+                    <div class="type-card" style="border-top-color: #3182CE;">
+                        <h4 style="color: #3182CE;">Informality & Taxation</h4>
+                        <p>In CEE, informality often means <em>underreporting</em> wages rather than total off-the-books work ("envelope wages"). A higher MW simply shifts pay from the informal cash envelope to the formal payslip, mutating official wages without actually increasing the total cost of the worker to the firm. This mutes employment destruction.</p>
+                    </div>
+                    <div class="type-card" style="border-top-color: #805AD5;">
+                        <h4 style="color: #805AD5;">Non-standard Work</h4>
+                        <p>Self-employment (švarcsystém) falls entirely outside minimum wage regulation. If MW gets too high, firms shift standard contracts to pseudo-self-employment, acting as a pressure release valve that dampens total employment losses.</p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+            
+            // 1. Manage Sidebar Collapse State
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+
+            // 2. Set Active Link and Open Appropriate Accordion
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            const activeLink = document.querySelector(`.sidebar a[href="${currentPath}"]`);
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+                const content = activeLink.closest('.accordion-content');
+                if (content) {
+                    content.classList.add('active');
+                    content.style.maxHeight = '500px';
+                    const icon = content.previousElementSibling.querySelector('.icon');
+                    if (icon) icon.style.transform = "rotate(-180deg)";
+                }
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+            sidebar.classList.toggle('collapsed');
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.icon');
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = "rotate(-180deg)";
+            }
+        }
+    </script>
+</body>
+
+</html>
