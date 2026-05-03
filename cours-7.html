@@ -411,36 +411,38 @@
                     </div>
                 </div>
 
-                <!-- NUMERICAL MODEL SETUP -->
+                <!-- GRAPH COMMENTARY: SPENCE MODEL -->
                 <div class="concept-card" style="margin-top: 2rem; border-left: 4px solid var(--clr-blue-primary);">
-                    <h4 style="color: var(--clr-blue-primary); margin-bottom: 1rem;">📐 The Spence Model: Numerical Setup</h4>
+                    <h4 style="color: var(--clr-blue-primary); margin-bottom: 1rem;">📐 Reading the Signaling Graph</h4>
+                    <p style="line-height: 1.7; margin-bottom: 1.5rem;">This graph illustrates the Spence signaling model. The key idea is not that education increases productivity, but that it <strong>signals pre-existing ability</strong> to employers.</p>
+
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <div style="background: rgba(229, 62, 62, 0.05); padding: 1.2rem; border-radius: 10px;">
-                            <strong style="color: #E53E3E;">Group 1 (Low-Ability):</strong>
-                            <ul style="margin-top: 0.5rem; font-size: 0.95rem;">
-                                <li>Productivity = <strong>1</strong></li>
-                                <li>Cost of each year of education = <strong>C</strong></li>
-                                <li>Net gain of signaling: $2 - 1 = 1$ (wage gain) minus $C \cdot e^*$ (cost)</li>
-                                <li>Will signal <em>only if</em> $1 > C \cdot e^*$, i.e., $e^* < 1/C$</li>
+                        <div style="background: rgba(43, 108, 176, 0.04); padding: 1.2rem; border-radius: 10px; border-top: 3px solid var(--clr-blue-primary);">
+                            <strong style="color: var(--clr-blue-primary);">📊 What the graph shows</strong>
+                            <ul style="margin-top: 0.8rem; font-size: 0.95rem; line-height: 1.7;">
+                                <li>The <strong>horizontal axis</strong> represents years of education beyond high school.</li>
+                                <li>The <strong>vertical axis</strong> represents wages.</li>
+                                <li>The wage stays constant at <strong>1</strong> up to a threshold $e^*$.</li>
+                                <li>Once education reaches $e^*$, the wage <strong>jumps to 2</strong> and stays there.</li>
                             </ul>
                         </div>
-                        <div style="background: rgba(56, 161, 105, 0.05); padding: 1.2rem; border-radius: 10px;">
-                            <strong style="color: #38A169;">Group 2 (High-Ability):</strong>
-                            <ul style="margin-top: 0.5rem; font-size: 0.95rem;">
-                                <li>Productivity = <strong>2</strong></li>
-                                <li>Cost of each year of education = <strong>C/2</strong> (smarter, learn faster)</li>
-                                <li>Net gain of signaling: $2 - 1 = 1$ (wage gain) minus $(C/2) \cdot e^*$ (cost)</li>
-                                <li>Will signal <em>only if</em> $1 > (C/2) \cdot e^*$, i.e., $e^* < 2/C$</li>
+                        <div style="background: rgba(229, 62, 62, 0.04); padding: 1.2rem; border-radius: 10px; border-top: 3px solid #E53E3E;">
+                            <strong style="color: #C53030;">⚡ The step-function logic</strong>
+                            <ul style="margin-top: 0.8rem; font-size: 0.95rem; line-height: 1.7;">
+                                <li>If $e < e^*$ → wage = <strong>1</strong></li>
+                                <li>If $e \geq e^*$ → wage = <strong>2</strong></li>
+                                <li>Wages do <em>not</em> increase gradually with education — they jump only once the signal becomes <strong>credible</strong>.</li>
                             </ul>
                         </div>
                     </div>
+
                     <div class="alert-box note">
-                        <strong>Separating Equilibrium:</strong> If employers set $e^*$ such that $1/C < e^* < 2/C$, then:
-                        <ul style="margin-top: 0.5rem;">
-                            <li>Low-ability workers find it <strong>too expensive</strong> to get $e^*$ → they choose <strong>0 years</strong> of education → receive wage = 1</li>
-                            <li>High-ability workers find it <strong>worth it</strong> → they get exactly $e^*$ years → receive wage = 2</li>
+                        <strong>The Separating Equilibrium:</strong> Employers set $e^*$ as a threshold because they cannot directly observe worker ability. The threshold works as a natural filter:
+                        <ul style="margin-top: 0.5rem; line-height: 1.8;">
+                            <li><strong>Low-ability workers</strong> face a high education cost — reaching $e^*$ costs more than the wage gain of 1. They rationally choose <strong>0 education</strong> and receive wage = 1.</li>
+                            <li><strong>High-ability workers</strong> face a lower education cost — reaching $e^*$ costs less than the wage gain of 1. They invest exactly $e^*$ years and receive wage = 2.</li>
                         </ul>
-                        <p style="margin-top: 0.5rem;"><strong>Result:</strong> Schooling attainment <em>signals</em> productivity! Employers use education as a <strong>screening device</strong>. Under the extreme S&S hypothesis, the social rate of return to education is misleading because there is <em>no causal link</em> between education and productivity.</p>
+                        <p style="margin-top: 0.8rem;"><strong>Conclusion:</strong> Education acts as a <strong>signal of ability</strong>, not necessarily as a source of productivity. Schooling attainment allows employers to <em>separate</em> high-ability from low-ability workers — even if the actual learning is irrelevant. Under this hypothesis, the social rate of return to education is misleading because there is <em>no causal link</em> between education and productivity.</p>
                     </div>
                 </div>
 
