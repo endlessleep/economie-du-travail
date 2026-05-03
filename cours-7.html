@@ -454,17 +454,28 @@
                              <img src="signaling_equilibrium_costs_pve.png" alt="Signaling Equilibrium" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.08);">
                         </div>
                         <div style="flex: 1; padding: 2.5rem; display: flex; flex-direction: column; justify-content: center;">
-                            <h4 style="margin-bottom: 1.5rem;">📍 Equilibrium Selection</h4>
-                            <div style="margin-bottom: 2rem;">
-                                <p style="font-weight: 700; color: #e53e3e; margin-bottom: 0.5rem;">🔴 Low-Ability (C)</p>
-                                <p style="font-size: 0.95rem;">Wage Gain $<$ Cost of $e^*$. <br>Optimal choice: <strong>0 study</strong>.</p>
+                            <h4 style="margin-bottom: 1.5rem;">📍 Separating Equilibrium Analysis ($C$ vs. $C/2$)</h4>
+                            
+                            <div style="background: rgba(229, 62, 62, 0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1.2rem; border-left: 3px solid #E53E3E;">
+                                <strong style="color: #E53E3E;">Group 1 (Low-Ability):</strong>
+                                <ul style="margin-top: 0.4rem; font-size: 0.95rem; padding-left: 1.2rem;">
+                                    <li>Productivity = <strong>1</strong></li>
+                                    <li>Cost of each year of education = <strong>C</strong></li>
+                                    <li>Will signal <em>only if</em> the wage gain exceeds the signaling cost: $1 > C \cdot e^*$ (i.e., $e^* < \frac{1}{C}$).</li>
+                                </ul>
                             </div>
-                            <div style="margin-bottom: 2rem;">
-                                <p style="font-weight: 700; color: #38a169; margin-bottom: 0.5rem;">🔵 High-Ability (C/2)</p>
-                                <p style="font-size: 0.95rem;">Wage Gain $>$ Cost of $e^*$. <br>Optimal choice: <strong>Graduate ($e^*$)</strong>.</p>
+
+                            <div style="background: rgba(56, 161, 105, 0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1.2rem; border-left: 3px solid #38A169;">
+                                <strong style="color: #38A169;">Group 2 (High-Ability):</strong>
+                                <ul style="margin-top: 0.4rem; font-size: 0.95rem; padding-left: 1.2rem;">
+                                    <li>Productivity = <strong>2</strong></li>
+                                    <li>Cost of each year of education = <strong>C/2</strong> (learn faster)</li>
+                                    <li>Will signal <em>only if</em> the wage gain exceeds the signaling cost: $1 > \frac{C}{2} \cdot e^*$ (i.e., $e^* < \frac{2}{C}$).</li>
+                                </ul>
                             </div>
+
                             <div class="post-it" style="background: rgba(43, 108, 176, 0.05); border-color: var(--clr-blue-primary); margin: 0; font-size: 0.85rem;">
-                                <strong>Social Verdict:</strong> If education doesn't boost productivity, the social rate of return is zero—it's just an expensive filter.
+                                <strong>Conclusion:</strong> If employers set $e^*$ such that $\frac{1}{C} < e^* < \frac{2}{C}$, then low-ability workers find it too expensive and choose <strong>0 years</strong> of education (wage = 1), while high-ability workers choose <strong>exactly $e^*$ years</strong> (wage = 2). The schooling attainment perfectly signals productivity.
                             </div>
                         </div>
                     </div>
