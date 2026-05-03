@@ -502,102 +502,57 @@
 
                 <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
 
-                <!-- MINCER EARNINGS FUNCTION LAB -->
+                <!-- MINCER EARNINGS FUNCTION -->
                 <h2 id="mincer-section" style="margin-top: 5rem;">📉 The Mincer Earnings Function</h2>
-                <div class="concept-card" style="padding: 0; background: #fff; border: 1px solid var(--clr-blue-border); display: flex; overflow: hidden; box-shadow: 0 15px 35px -10px rgba(0,0,0,0.05);">
-                    <div style="flex: 1.5; padding: 3rem; border-right: 1px solid #edf2f7; background: linear-gradient(to bottom, #ffffff, #f9faff);">
-                        <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 800; color: var(--clr-blue-primary); margin-bottom: 2rem; letter-spacing: 0.05em;">Theoretical Specification</div>
-                        <div class="math-block" style="font-size: 1.8rem; background: none; border: none; box-shadow: none; padding: 0; margin-bottom: 2.5rem;">
-                            \[ \ln W_i = \alpha + \beta_1 S_i + \beta_2 E_i + \beta_3 E_i^2 + \varepsilon_i \]
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                            <div style="background: white; padding: 1.2rem; border-radius: 10px; border: 1px solid #edf2f7; border-top: 3px solid var(--clr-blue-primary);">
-                                <h5 style="margin-bottom: 0.5rem; color: var(--clr-blue-primary);">The Education Effect</h5>
-                                <p style="font-size: 0.9rem; color: #4a5568; line-height: 1.5;">$\beta_1$ identifies the % increase in geometric mean wage per year of schooling (typically 8-10%).</p>
-                            </div>
-                            <div style="background: white; padding: 1.2rem; border-radius: 10px; border: 1px solid #edf2f7; border-top: 3px solid var(--clr-blue-primary);">
-                                <h5 style="margin-bottom: 0.5rem; color: var(--clr-blue-primary);">The Concavity ($E^2$)</h5>
-                                <p style="font-size: 0.9rem; color: #4a5568; line-height: 1.5;">The negative $\beta_3$ coefficient ensures diminishing returns, creating the lifecycle "bell" shape.</p>
-                            </div>
-                        </div>
+                <div class="concept-card explanation">
+                    <p>The Mincer Earnings Function is an econometric model that tries to explain why some workers earn more than others. Rather than listing every factor imaginable, it focuses on the two most important: <strong>education</strong> and <strong>work experience</strong>. The equation is written as:</p>
+                    <div class="math-block" style="font-size: 1.5rem; margin: 1.5rem 0;">
+                        \[ \ln W_i = \alpha + \beta_1 S_i + \beta_2 E_i + \beta_3 E_i^2 + \varepsilon_i \]
                     </div>
-                    <div style="flex: 1; padding: 3rem; background: #fdfdfd; display: flex; flex-direction: column; justify-content: center;">
-                        <h4 style="margin-bottom: 1.5rem; color: #2d3748;">📊 Analysis Tools</h4>
-                        <div style="margin-bottom: 1.5rem;">
-                            <div style="font-size: 0.75rem; color: #718096; text-transform: uppercase; font-weight: 700; margin-bottom: 0.5rem;">Optimization Formula</div>
-                            <code style="display: block; background: #2d3748; color: #fff; padding: 1.2rem; border-radius: 8px; font-size: 0.85rem; line-height: 1.6; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                                Peak Experience = <br>
-                                - &beta;<sub>2</sub> / (2 &times; &beta;<sub>3</sub>)
-                            </code>
-                        </div>
-                        <div style="background: #fff; border: 1px solid #edf2f7; border-radius: 10px; padding: 1.2rem;">
-                            <p style="font-size: 0.85rem; color: #4a5568; margin-bottom: 0.8rem;"><strong>Pro-Tip:</strong> Use $e^\beta$ for exact level-to-level jumps.</p>
-                            <div style="display: flex; align-items: center; gap: 0.5rem; color: #2b6cb0; font-weight: 700; font-size: 1.1rem;">
-                                <span>&beta; = 0.38</span> <span>&rarr;</span> <span>+46.6%</span>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Each term captures a distinct economic idea. The goal is not to memorise the formula — it's to understand <em>why</em> each variable is there.</p>
                 </div>
 
-                <div style="margin-top: 2rem; background: linear-gradient(90deg, #f7fafc 0%, #edf2f7 100%); border-radius: 15px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; gap: 2rem; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                         <div style="background: var(--clr-blue-primary); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 800;">?</div>
-                         <div style="font-size: 1.1rem; font-weight: 700; color: #4a5568;">The Potential Experience Proxy</div>
-                    </div>
-                    <div style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--clr-blue-primary); background: white; padding: 0.5rem 2rem; border-radius: 10px; border: 1px solid #cbd5e0;">E = Age - S - 6</div>
-                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
 
-                <!-- WHY LN(W)? -->
-                <div class="concept-card" style="margin-top: 2rem;">
-                    <h4 style="color: var(--clr-blue-primary); margin-bottom: 1rem;">Why the Logarithm of Wages?</h4>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <div>
-                            <p><strong>Statistical reason:</strong> Wage distribution is typically <strong>right-skewed</strong> (many people earn below-average and only few earn very high wages). Taking $\ln(W)$ brings the distribution closer to normal, making OLS regression more reliable.</p>
-                            <p style="margin-top: 1rem;"><strong>Interpretation advantage:</strong> When the dependent variable is in $\ln$, we can roughly interpret the coefficients as a <strong>% increase</strong> in wage per one-unit increase in education (ceteris paribus).</p>
-                        </div>
-                        <div>
-                            <p><strong>Proper Interpretation:</strong> $e^{\beta}$ shows the % increase of the <em>geometric</em> (not arithmetic) mean of wages. With a one-unit increase of education, we expect to see $e^{\beta}$ times higher geometric mean wage.</p>
-                            <div class="alert-box note" style="margin-top: 1rem;">
-                                <strong>Worked Example:</strong> Coefficient of <code>sec_educ</code> = 0.3827<br>
-                                $e^{0.3827} = 1.466$ <br>
-                                → Secondary educated had on average <strong>1.466 times higher wages</strong> (geometric mean) than those with primary education → <strong>+46.6%</strong>
-                            </div>
+                    <!-- Dependent variable -->
+                    <div class="concept-card" style="border-top: 4px solid var(--clr-blue-primary);">
+                        <h4 style="color: var(--clr-blue-primary); margin-bottom: 0.8rem;">① Why log wages? ($\ln W$)</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.7;">Wages are not normally distributed — a few very high earners pull the average up, making the distribution skewed. Taking the logarithm of wages makes the distribution more symmetric and easier to work with statistically.</p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; margin-top: 0.8rem;">The key interpretation benefit: with $\ln W$ as the dependent variable, each coefficient can be read as an <strong>approximate % change in wages</strong> for a one-unit increase in the independent variable. This makes economic sense — we care more about proportional differences (earning 20% more) than absolute ones.</p>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="concept-card" style="border-top: 4px solid #38A169;">
+                        <h4 style="color: #2F855A; margin-bottom: 0.8rem;">② Education: $S$ (years of schooling)</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.7;">$S$ measures how many years of formal education a person has completed. The coefficient $\beta_1$ tells us: <em>by what % does a worker's wage increase for each additional year of schooling?</em></p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; margin-top: 0.8rem;">Under Human Capital theory, this reflects a genuine productivity gain. Under Signaling theory, it reflects sorting — more educated workers were already more able, and the diploma simply reveals this. The Mincer regression cannot distinguish between the two: it tells us the premium exists, but not <em>why</em>.</p>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="concept-card" style="border-top: 4px solid #DD6B20;">
+                        <h4 style="color: #DD6B20; margin-bottom: 0.8rem;">③ Experience: $E$ and $E^2$ (years in the labour market)</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.7;">$E$ captures learning by doing: wages generally rise as a worker gains experience. But this growth is not linear — it slows down over time. A worker in their first five years learns enormously; by age 50, incremental experience adds much less.</p>
+                        <p style="font-size: 0.95rem; line-height: 1.7; margin-top: 0.8rem;">This is why $E^2$ is included with a <strong>negative coefficient</strong>: it creates the inverted-U (hump-shaped) profile we observe in lifecycle earnings data. Wages rise early in a career, peak somewhere mid-career, and then flatten or slightly decline.</p>
+                        <div class="post-it" style="margin-top: 1rem;">
+                            <strong>💡 Practical note:</strong> Experience is rarely observed directly in datasets. It is proxied by <strong>potential experience</strong>: $E = \text{Age} - S - 6$, i.e., age minus years of schooling minus 6 (the typical school starting age).
                         </div>
                     </div>
-                    <div class="concept-card" style="margin-top: 1.5rem; border-left: 4px solid var(--clr-blue-primary); background: rgba(43, 108, 176, 0.03);">
-                        <h4 style="color: var(--clr-blue-primary); margin-bottom: 0.8rem;">📐 What does β₁ ≈ 8–10% tell us about the labour market?</h4>
-                        <p style="font-size: 0.95rem; line-height: 1.7;">The Mincer coefficient on schooling, consistently estimated at 8–10% per year of education across many countries and time periods, has been called one of the most robust regularities in empirical economics. But what does it <em>mean</em>?</p>
+
+                    <!-- What the model tells us -->
+                    <div class="concept-card" style="border-top: 4px solid var(--clr-blue-primary);">
+                        <h4 style="color: var(--clr-blue-primary); margin-bottom: 0.8rem;">④ What does the model tell us?</h4>
+                        <p style="font-size: 0.95rem; line-height: 1.7;">The Mincer model captures two of the most important forces shaping wages across a lifetime:</p>
                         <ul style="font-size: 0.95rem; line-height: 1.8; margin-top: 0.8rem;">
-                            <li><strong>Under Human Capital theory:</strong> Each additional year of schooling raises a worker's marginal productivity by ~8–10%, and competitive labour markets translate this into a proportional wage increase. The market is therefore rewarding real, accumulated skill.</li>
-                            <li><strong>Under Signaling theory:</strong> The coefficient captures the <em>sorting</em> effect — more years of school select for higher-ability individuals. The premium is real, but it's the ability that's valued, not the schooling per se.</li>
-                            <li><strong>Under Ability Bias:</strong> The OLS estimate of β₁ is likely <em>upward biased</em>. Because more talented individuals both earn more and choose more schooling, the regression conflates two effects. Instrumental variable methods (e.g., using distance to university as an instrument) typically yield smaller, but still positive, estimates.</li>
+                            <li><strong>At any given age</strong>, more educated workers earn more than less educated ones — the education premium is persistent and large.</li>
+                            <li><strong>Over time</strong>, wages rise with experience early in a career but the growth decelerates — the lifecycle earnings profile is hump-shaped.</li>
+                            <li><strong>For a given education level</strong>, more experienced workers out-earn younger ones — until experience stops adding much value.</li>
                         </ul>
+                        <p style="font-size: 0.95rem; line-height: 1.7; margin-top: 0.8rem;">Together, these two effects explain a large share of observed wage inequality — not discrimination, not luck, but <strong>accumulated human capital</strong> (whether real or signalled).</p>
                     </div>
                 </div>
 
-                <!-- WHY E²? CONCAVITY PROOF -->
-                <div class="concept-card" style="margin-top: 2rem; border-left: 4px solid var(--clr-blue-primary);">
-                    <h4 style="color: var(--clr-blue-primary); margin-bottom: 1rem;">Why Experience Squared? (Concavity Proof)</h4>
-                    <p>Using Czech OLS estimates as an example:</p>
-                    <div class="math-block" style="font-size: 1.05rem;">
-                        $$\widehat{\ln W} = \alpha + 0.0264E - 0.0005E^2 + \cdots$$
-                    </div>
-                    <p>Taking the first derivative with respect to $E$:</p>
-                    <div class="math-block" style="font-size: 1.05rem;">
-                        $$\frac{\partial \ln W}{\partial E} = 0.0264 - 2 \times 0.0005 \cdot E = 0.0264 - 0.001E$$
-                    </div>
-                    <ul>
-                        <li>For $E < 26.4$, the function is <strong>increasing</strong> (wages rise with experience)</li>
-                        <li>For $E > 26.4$, the function is <strong>decreasing</strong> (wages start declining — diminishing returns)</li>
-                    </ul>
-                    <p style="margin-top: 0.5rem;">Second derivative: $\frac{\partial^2 \ln W}{\partial E^2} = -0.001 < 0$ → <strong>Concave</strong> (bell-shaped earnings profile).</p>
-                    <div class="post-it" style="margin-top: 1rem;">
-                        <strong>💡 Economic intuition behind the concavity:</strong> Early in a career, each additional year of experience generates large productivity gains — a junior employee learning fast, mastering new skills, taking on more complex projects. But by mid-career, the marginal return to another year of experience falls. The worker has already mastered the core competencies; incremental years add less. Eventually, productivity may actually decline slightly due to technological obsolescence (skills become outdated) or physical factors. The quadratic specification $E^2$ is a simple and elegant way to capture this natural S-shaped lifecycle without additional parameters.
-                    </div>
-                </div>
 
-                <hr style="margin: 4rem 0; border: 0; border-top: 2px dashed var(--clr-blue-border);">
+
 
                 <!-- JOB TRAINING THEORY DASHBOARD -->
                 <h2 id="training-section" style="margin-top: 5rem;">💼 Job Training & Human Capital</h2>
