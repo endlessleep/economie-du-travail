@@ -454,28 +454,22 @@
                              <img src="signaling_equilibrium_costs_pve.png" alt="Signaling Equilibrium" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.08);">
                         </div>
                         <div style="flex: 1; padding: 2.5rem; display: flex; flex-direction: column; justify-content: center;">
-                            <h4 style="margin-bottom: 1.5rem;">📍 Separating Equilibrium Analysis ($C$ vs. $C/2$)</h4>
-                            
-                            <div style="background: rgba(229, 62, 62, 0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1.2rem; border-left: 3px solid #E53E3E;">
-                                <strong style="color: #E53E3E;">Group 1 (Low-Ability):</strong>
-                                <ul style="margin-top: 0.4rem; font-size: 0.95rem; padding-left: 1.2rem;">
-                                    <li>Productivity = <strong>1</strong></li>
-                                    <li>Cost of each year of education = <strong>C</strong></li>
-                                    <li>Will signal <em>only if</em> the wage gain exceeds the signaling cost: $1 > C \cdot e^*$ (i.e., $e^* < \frac{1}{C}$).</li>
-                                </ul>
+                            <h4 style="margin-bottom: 1.5rem;">📍 Reading the Graph: Cost Lines & Separating Equilibrium</h4>
+
+                            <p style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.2rem;">This graph represents the <strong>cost side</strong> of the Spence signaling model. The horizontal axis shows years of education beyond high school; the vertical axis shows the present value of lifetime earnings ($PVE$).</p>
+
+                            <div style="background: rgba(229, 62, 62, 0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 3px solid #E53E3E;">
+                                <strong style="color: #E53E3E;">Line C — Low-Ability Workers</strong>
+                                <p style="margin-top: 0.4rem; font-size: 0.95rem; line-height: 1.6;">Steeper slope: each additional year of education is <strong>more costly</strong>. Reaching $e^*$ costs them more than the wage gain of $PVE_2 - PVE_1$ — so it is <strong>not worth it</strong>. They rationally stop at 0 years of education.</p>
                             </div>
 
-                            <div style="background: rgba(56, 161, 105, 0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1.2rem; border-left: 3px solid #38A169;">
-                                <strong style="color: #38A169;">Group 2 (High-Ability):</strong>
-                                <ul style="margin-top: 0.4rem; font-size: 0.95rem; padding-left: 1.2rem;">
-                                    <li>Productivity = <strong>2</strong></li>
-                                    <li>Cost of each year of education = <strong>C/2</strong> (learn faster)</li>
-                                    <li>Will signal <em>only if</em> the wage gain exceeds the signaling cost: $1 > \frac{C}{2} \cdot e^*$ (i.e., $e^* < \frac{2}{C}$).</li>
-                                </ul>
+                            <div style="background: rgba(56, 161, 105, 0.05); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border-left: 3px solid #38A169;">
+                                <strong style="color: #38A169;">Line C/2 — High-Ability Workers</strong>
+                                <p style="margin-top: 0.4rem; font-size: 0.95rem; line-height: 1.6;">Flatter slope: education is <strong>less costly</strong> (they learn faster, face lower effort costs). Reaching $e^*$ costs them less than the wage gain — so it <strong>is worth it</strong>. They invest exactly $e^*$ years and receive the higher wage $PVE_2$.</p>
                             </div>
 
                             <div class="post-it" style="background: rgba(43, 108, 176, 0.05); border-color: var(--clr-blue-primary); margin: 0; font-size: 0.85rem;">
-                                <strong>Conclusion:</strong> If employers set $e^*$ such that $\frac{1}{C} < e^* < \frac{2}{C}$, then low-ability workers find it too expensive and choose <strong>0 years</strong> of education (wage = 1), while high-ability workers choose <strong>exactly $e^*$ years</strong> (wage = 2). The schooling attainment perfectly signals productivity.
+                                <strong>Conclusion:</strong> Only high-ability workers choose education. This creates a <strong>separating equilibrium</strong>: education works as a credible signal of ability, even if it does not directly increase productivity.
                             </div>
                         </div>
                     </div>
