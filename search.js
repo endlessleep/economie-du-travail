@@ -153,11 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let html = '';
         results.forEach(res => {
-            const snippet = highlightKeyword(res.content, query);
+            const snippetText = highlightKeyword(res.content, query);
+            const urlSnip = res.content.substring(0, 35).trim();
             html += `
-                <a href="${res.filename}" class="search-result-item">
+                <a href="${res.filename}?sq=${encodeURIComponent(query)}&snip=${encodeURIComponent(urlSnip)}" class="search-result-item">
                     <div class="search-result-title">${escapeHtml(res.title)}</div>
-                    <div class="search-result-snippet">${snippet}</div>
+                    <div class="search-result-snippet">${snippetText}</div>
                 </a>
             `;
         });
@@ -183,4 +184,45 @@ document.addEventListener("DOMContentLoaded", () => {
             searchResultsContainer.style.display = "block";
         }
     });
+
+    // Auto-scroll and highlight if coming from a search result
+    const urlParams = new URLSearchParams(window.location.search);
+    const sq = urlParams.get('sq');
+    const snip = urlParams.get('snip');
+    
+    if (sq && snip) {
+        // Wait a tiny bit for the page to render fully
+        setTimeout(() => {
+            const elements = document.querySelectorAll(".main-content p, .main-content li, .main-content h2, .main-content h3, .main-content h4, .concept-card");
+            for (const el of elements) {
+                const text = el.textContent.replace(/\s+/g, " ").trim();
+                // If this element's text starts with or contains our 35-char snippet
+                if (text.includes(snip)) {
+                    // Scroll to the exact paragraph/element
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Temporarily highlight the background to show the user exactly where to look
+                    const originalBg = el.style.backgroundColor;
+                    const originalTransition = el.style.transition;
+                    
+                    el.style.transition = "background-color 0.5s ease";
+                    el.style.backgroundColor = "rgba(254, 252, 191, 0.8)"; // bright yellow
+                    el.style.borderRadius = "6px";
+                    
+                    // Fade out the highlight after 2.5 seconds
+                    setTimeout(() => {
+                        el.style.backgroundColor = originalBg || "transparent";
+                        setTimeout(() => {
+                            el.style.transition = originalTransition;
+                            // Clean up URL so refresh doesn't trigger scroll again
+                            const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+                            window.history.replaceState({path: cleanUrl}, '', cleanUrl);
+                        }, 500);
+                    }, 2500);
+                    
+                    break;
+                }
+            }
+        }, 150);
+    }
 });
