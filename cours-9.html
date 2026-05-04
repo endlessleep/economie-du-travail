@@ -226,6 +226,15 @@
             </button>
         </div>
 
+        <div class="sidebar-search">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="course-search-input" placeholder="Search courses..." autocomplete="off">
+            </div>
+            <div id="search-results" class="search-results-container"></div>
+        </div>
+
+
         <!-- Part 1: Labour Supply and Demand -->
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
@@ -1068,6 +1077,7 @@
             }
         }
     </script>
+    <script src="search.js"></script>
 </body>
 
 </html>
