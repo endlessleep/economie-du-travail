@@ -191,15 +191,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const snip = urlParams.get('snip');
     
     if (sq && snip) {
-        // Wait a tiny bit for the page to render fully
+        // Wait a bit longer for MathJax to finish rendering before scrolling
         setTimeout(() => {
             const elements = document.querySelectorAll(".main-content p, .main-content li, .main-content h2, .main-content h3, .main-content h4, .concept-card");
             for (const el of elements) {
                 const text = el.textContent.replace(/\s+/g, " ").trim();
                 // If this element's text starts with or contains our 35-char snippet
                 if (text.includes(snip)) {
-                    // Scroll to the exact paragraph/element
-                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Robust scrolling for custom overflow container
+                    const container = document.querySelector('.content-scroll');
+                    if (container) {
+                        const containerRect = container.getBoundingClientRect();
+                        const elRect = el.getBoundingClientRect();
+                        // Scroll container by the distance between element top and container top, minus 100px padding
+                        container.scrollBy({
+                            top: (elRect.top - containerRect.top) - 100,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        el.scrollIntoView();
+                    }
                     
                     // Temporarily highlight the background to show the user exactly where to look
                     const originalBg = el.style.backgroundColor;
@@ -223,6 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
                 }
             }
-        }, 150);
+        }, 500);
     }
 });
