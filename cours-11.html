@@ -16,7 +16,6 @@
             }
         };
     </script>
-    
     <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
 
     <!-- SPECIFIC STYLES FOR THIS CHAPTER -->
@@ -25,7 +24,6 @@
             color: #3182CE;
             font-weight: 700;
         }
-
         .highlight-mechanism {
             color: #B7791F;
             font-weight: 700;
@@ -33,7 +31,6 @@
             padding: 2px 6px;
             border-radius: 4px;
         }
-
         .highlight-exam {
             color: #C53030;
             font-weight: 800;
@@ -41,7 +38,13 @@
             text-decoration-color: #FEB2B2;
             text-decoration-thickness: 3px;
         }
-
+        .highlight-green {
+            color: #2F855A;
+            font-weight: 700;
+            background-color: #C6F6D5;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
         .graph-explanation-box {
             background: #FFFFFF;
             border: 2px solid #E2E8F0;
@@ -52,7 +55,6 @@
             margin-bottom: 2.5rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
-
         .graph-explanation-box h4 {
             margin-top: 0;
             color: #2B6CB0;
@@ -63,17 +65,14 @@
             border-bottom: 1px solid #E2E8F0;
             padding-bottom: 0.5rem;
         }
-
         .graph-explanation-box ul {
             margin-top: 10px;
             padding-left: 20px;
         }
-
         .graph-explanation-box li {
             margin-bottom: 8px;
             line-height: 1.6;
         }
-
         .empirical-structure {
             background-color: #F7FAFC;
             border-left: 4px solid #CBD5E0;
@@ -81,34 +80,17 @@
             margin: 20px 0;
             border-radius: 0 8px 8px 0;
         }
-
         .empirical-structure .obs {
             color: #2B6CB0;
             font-weight: bold;
             margin-bottom: 5px;
         }
-
-        .empirical-structure .interp {
-            color: #B7791F;
-            font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-
-        .empirical-structure .concl {
-            color: #C53030;
-            font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-
         .type-cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin: 2rem 0;
         }
-
         .type-card {
             background: #FFFFFF;
             border-radius: 12px;
@@ -117,39 +99,41 @@
             border-top: 5px solid var(--clr-blue-primary);
             transition: transform 0.2s ease;
         }
-
-        .type-card:hover {
-            transform: translateY(-3px);
-        }
-
         .type-card h4 {
             margin-top: 0;
             font-size: 1.2rem;
             margin-bottom: 1rem;
         }
-
-        .type-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .logic-flow {
+            background: #EDF2F7;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Outfit', monospace;
+            font-size: 1.1rem;
+            color: #2D3748;
+            margin: 20px 0;
+            border: 1px solid #CBD5E0;
+        }
+        .logic-arrow {
+            color: #E53E3E;
+            font-weight: bold;
+            margin: 0 10px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-header">
             🎓 Labour Economics
-            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">
-                &times;
-            </button>
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">&times;</button>
         </div>
 
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>📂 1. Labour Supply & Demand</span>
-                <span class="icon">▼</span>
+                <span>📂 1. Labour Supply & Demand</span><span class="icon">▼</span>
             </button>
             <div class="accordion-content">
                 <a href="index.html">1. Intro & Market Status</a>
@@ -162,8 +146,7 @@
 
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>📂 2. Wage Differentials</span>
-                <span class="icon">▼</span>
+                <span>📂 2. Wage Differentials</span><span class="icon">▼</span>
             </button>
             <div class="accordion-content">
                 <a href="cours-6.html">6. Compensating Differentials</a>
@@ -174,8 +157,7 @@
 
         <div class="accordion-item">
             <button class="accordion-header" onclick="toggleAccordion(this)">
-                <span>📂 3. Institutions & Policy</span>
-                <span class="icon">▼</span>
+                <span>📂 3. Institutions & Policy</span><span class="icon">▼</span>
             </button>
             <div class="accordion-content">
                 <a href="cours-9.html">9. Employment & Unemployment</a>
@@ -185,343 +167,143 @@
         </div>
     </aside>
 
-    <!-- MAIN CONTENT -->
     <main class="main-content">
         <header class="page-header" style="display: flex; align-items: center;">
-            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar"
-                style="display: none;">
-                &#9776;
-            </button>
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar" style="display: none;">&#9776;</button>
             <h1>11. Active Labour Market Policies (ALMP)</h1>
         </header>
 
         <div class="content-scroll">
-
             <section class="lesson-section">
 
                 <!-- ============================================================ -->
-                <!-- SECTION I: OVERVIEW & LTU -->
+                <!-- SECTION I: LTU -->
                 <!-- ============================================================ -->
-                <h2>🧠 I. Understanding Long-Term Unemployment (LTU): Beyond Simple Unemployment Rates</h2>
+                <h2>🧠 I. The Structural Trap: Long-Term Unemployment (LTU)</h2>
 
-                <p><strong>Goal of ALMPs</strong> – to increase the employment opportunities for job seekers, to return unemployed to employment as fast as possible, and to improve matching between vacancies and unemployed.
-                <br><strong>Targeted groups:</strong> long-term unemployed (more than 12 months), young, old, low-skilled, disabled.</p>
+                <p><strong>Goal of ALMPs:</strong> Increase employment opportunities, return job seekers to work faster, and improve matching. Targeted groups include the <span class="highlight-exam">long-term unemployed (>12 months)</span>, youth, elderly, low-skilled, and disabled.</p>
 
-                <p>The set of graphs collectively highlights a crucial distinction that is often overlooked in labour economics: <span class="highlight-exam">not all unemployment is equal</span>. What matters is not only how many people are unemployed, but how long they remain unemployed. <strong>Long-term unemployment (LTU)</strong>, defined as unemployment lasting 12 or more months, represents a fundamentally different and more problematic phenomenon than short-term unemployment.</p>
-                <p>The key insight is that LTU reflects structural weaknesses in the labour market rather than temporary fluctuations. While short-term unemployment can be interpreted as part of normal labour market dynamics (job search, matching frictions), long-term unemployment signals a breakdown in the matching process between workers and jobs. It suggests that a portion of the unemployed population is no longer effectively integrated into the labour market.</p>
-
-                <div class="concept-card explanation">
-                    <h4>⚖️ Two Dimensions of LTU: Level vs. Structure</h4>
-                    <p>The graphs comparing countries reveal an essential conceptual distinction between:</p>
-                    <ul>
-                        <li>the <strong>LTU rate</strong> (as a percentage of the labour force), and</li>
-                        <li>the <strong>share of LTU</strong> in total unemployment.</li>
-                    </ul>
-                    <p>These two measures capture different realities. A country may have a relatively low overall unemployment rate but still exhibit a high share of long-term unemployed among the unemployed population. This indicates that while few people are unemployed, those who are tend to remain unemployed for extended periods.</p>
-                    <p>This distinction is critical because it shifts the interpretation of labour market performance. A low unemployment rate does not necessarily imply a well-functioning labour market if unemployment is highly persistent. Conversely, a higher unemployment rate may be less problematic if most unemployment spells are short.</p>
+                <div class="logic-flow">
+                    Economic Shock <span class="logic-arrow">➔</span> Job Loss <span class="logic-arrow">➔</span> Time Passes <span class="logic-arrow">➔</span> Skills Deteriorate & Motivation Drops <span class="logic-arrow">➔</span> <strong>LTU Trap</strong>
                 </div>
 
                 <div class="concept-card warning">
-                    <h4>🔁 The Dynamics of Long-Term Unemployment: A Structural Trap</h4>
-                    <p>The time-series evidence (e.g., for Czechia) illustrates the dynamic nature of LTU and reveals a key mechanism: unemployment can transform into long-term unemployment over time.</p>
-                    <p>During economic downturns, unemployment rises. However, as time passes, a subset of unemployed individuals fails to re-enter employment. These individuals gradually transition into long-term unemployment. This process creates persistence in the labour market.</p>
-                    <p>The underlying mechanism is <strong>cumulative disadvantage</strong>:</p>
+                    <h4>🚨 Why Raw Unemployment Rates are Misleading</h4>
+                    <p>Not all unemployment is equal. A country can have a <strong>low unemployment rate</strong> but a <strong>high share of LTU</strong>. This means that while few people are out of work, those who are remain trapped for extended periods.</p>
                     <ul>
-                        <li>skills deteriorate over time,</li>
-                        <li>work habits weaken,</li>
-                        <li>motivation declines (discouraged worker effect),</li>
-                        <li>employers perceive long-term unemployed workers as less desirable.</li>
+                        <li><span class="highlight-concept">Short-term unemployment</span> = Frictional, normal job searching.</li>
+                        <li><span class="highlight-exam">Long-term unemployment (LTU)</span> = Structural breakdown. The matching process between workers and jobs is broken.</li>
                     </ul>
-                    <p>As a result, the probability of re-employment decreases the longer an individual remains unemployed. This creates a self-reinforcing cycle in which long-term unemployment generates further long-term unemployment. This phenomenon explains why economic recoveries do not automatically eliminate unemployment: a portion of the unemployed population becomes structurally detached from the labour market.</p>
                 </div>
 
                 <div class="type-cards">
-                    <div class="type-card" style="border-top-color: #3182CE;">
-                        <h4 style="color: #3182CE;">📉 LTU and Labour Market Efficiency</h4>
-                        <p>From a theoretical perspective, high levels of LTU indicate inefficiencies in the matching process between vacancies and job seekers. In an efficient labour market, unemployed workers quickly find suitable jobs. However, when LTU is high, it implies that:</p>
+                    <div class="type-card" style="border-top-color: #E53E3E;">
+                        <h4 style="color: #E53E3E;">Cumulative Disadvantage</h4>
+                        <p>The longer you are unemployed, the harder it is to find a job because:</p>
                         <ul>
-                            <li>job search is ineffective,</li>
-                            <li>worker skills do not match labour demand,</li>
-                            <li>or institutional barriers prevent re-employment.</li>
+                            <li><strong>Skills deteriorate</strong>.</li>
+                            <li><strong>Motivation declines</strong> (Discouraged worker effect).</li>
+                            <li><strong>Stigma</strong>: Employers view LTU as a negative signal.</li>
                         </ul>
-                        <p>Therefore, LTU is not simply an outcome but a symptom of deeper structural issues, including mismatches in skills, insufficient mobility, and weak job-search support systems.</p>
                     </div>
                     <div class="type-card" style="border-top-color: #38A169;">
-                        <h4 style="color: #38A169;">🔄 The Role of ALMP</h4>
-                        <p>The comparison between LTU rates and participation in ALMPs suggests a strong relationship between policy intervention and labour market outcomes. Countries with low LTU rates tend to be among those where the level of participation in ALMPs is highest.</p>
-                        <p>This relationship reflects the fundamental role of ALMPs in addressing the structural nature of LTU. Unlike passive policies (such as unemployment benefits), ALMPs aim to actively reintegrate individuals into the labour market.</p>
-                        <p>Their mechanisms include:</p>
+                        <h4 style="color: #38A169;">The Antidote: ALMP</h4>
+                        <p>Economic growth alone cannot fix LTU. We need <strong>Active Labour Market Policies (ALMPs)</strong> to intervene directly by:</p>
                         <ul>
-                            <li>improving matching efficiency (job search assistance),</li>
-                            <li>enhancing employability (training and requalification),</li>
-                            <li>maintaining labour market attachment (public works, subsidized jobs),</li>
-                            <li>reducing discouragement and inactivity.</li>
+                            <li>Re-skilling workers.</li>
+                            <li>Subsidizing hiring to offset employer stigma.</li>
+                            <li>Improving search efficiency.</li>
                         </ul>
-                        <p>By intervening directly in the matching process and worker characteristics, ALMPs aim to break the persistence of long-term unemployment.</p>
                     </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>⚠️ The Risk of Misinterpretation: Why Raw Data Can Be Misleading</h4>
-                    <p>The graphs also highlight the importance of careful interpretation. A decline in the share of long-term unemployment, for example, may not necessarily reflect an improvement in labour market conditions. It may instead result from an increase in total unemployment, which mechanically reduces the proportion of long-term unemployed.</p>
-                    <p>This demonstrates that labour market indicators must always be interpreted in context. Without understanding the underlying dynamics, one may draw incorrect conclusions about labour market performance.</p>
-                </div>
-
-                <div class="post-it">
-                    <h4>🎯 Core Economic Takeaway</h4>
-                    <p>The central message is that long-term unemployment represents a structural and persistent problem that cannot be solved by economic growth alone. It requires targeted and active policy interventions aimed at restoring the connection between workers and the labour market.</p>
-                    <p><span class="highlight-exam">Ultimately, the effectiveness of labour market policy should not be judged solely by its impact on the overall unemployment rate, but by its ability to reduce long-term unemployment and improve the functioning of the matching process.</span> Long-term unemployment is not just a consequence of labour market conditions — it is a force that reshapes them.</p>
                 </div>
 
                 <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
 
                 <!-- ============================================================ -->
-                <!-- SECTION II: FORMS OF ALMP -->
+                <!-- SECTION II: TOOLS & BUDGET -->
                 <!-- ============================================================ -->
-                <h2>🛠️ II. The Tools of Active Labour Market Policy</h2>
+                <h2>🛠️ II. ALMP Tools & The Budget Dilemma</h2>
 
-                <p><strong>ACTIVE LABOUR MARKET PROGRAMS</strong>: All forms of intervention brought forth from institutions aimed at enhancing employment and the labour market participation.</p>
+                <p>ALMPs encompass all institutional interventions aimed at enhancing employment and labour market participation.</p>
 
                 <div class="concept-card definition">
-                    <h4>Main forms of ALMP</h4>
+                    <h4>The 5 Core Tools of ALMP</h4>
                     <ul style="line-height: 1.8;">
-                        <li><strong>Public employment services (PES - úřad práce):</strong> Public institutions, usually through Employment Center, offers direct help in the job search on where and how look for an employment. This should reduce search costs and enhance its efficacy. Moreover employment centres can act as an intermediary passing job offers to suitable workers. It is possible that employment services are carried by other private institutions.</li>
-                        <li><strong>Training:</strong> Public institutions and employment centers provide training to unemployment or gaining training courses of promoting on-the-job training programs. This should provide unemployed workers with skills particularly useful in the labour market enhancing thus their employability.</li>
-                        <li><strong>Subsidized new working places and supported employment (SUPM – společensky účelná pracovní místa):</strong> Public institutions provide (monetary) incentives to firms that hire workers. It is possible that the incentives are aimed toward specific category of workers that appear to have some disadvantage.</li>
-                        <li><strong>Direct public employment programs (VPP – veřejně prospěšné práce):</strong> Public institutions directly hire workers creating ad hoc positions. These position should be temporary and the aims is to provide direct working experience to worker that can then exploit such experience obtaining a job somewhere else.</li>
-                        <li><strong>Start-up incentives - Support for new entrepreneurship:</strong> Public institutions offers to new entrepreneur some facilitations in building up the new firms activities. These may consists in granting better credit conditions, fiscal discounts or some support and counselling in the business activity (for example, providing legal or accounting services).</li>
+                        <li><strong>1. Public Employment Services (PES):</strong> <em>(Úřad práce)</em> Reduces search frictions by directly matching vacancies with suitable workers.</li>
+                        <li><strong>2. Training:</strong> Upgrades human capital to fix skill mismatches and improve employability.</li>
+                        <li><strong>3. Subsidized Employment (SUPM):</strong> Provides financial incentives to firms hiring disadvantaged workers, reducing perceived employer risks.</li>
+                        <li><strong>4. Public Works (VPP):</strong> Direct job creation by the government to maintain a worker's attachment to the labour market.</li>
+                        <li><strong>5. Start-up Incentives:</strong> Support for entrepreneurship (credit, tax discounts, legal help).</li>
                     </ul>
                 </div>
 
-                <h3>💰 Understanding Labour Market Policy Expenditures: What Do They Really Reveal?</h3>
-
-                <p>The expenditure data on Labour Market Policies (LMP) in the Czech Republic provides much more than a simple budget breakdown. It reveals the fundamental structure of labour market intervention and highlights the persistent tension between passive support and active reintegration policies.</p>
-                <p>A key distinction emerges immediately: the difference between <strong>Passive Labour Market Policies (PLMP)</strong> and <strong>Active Labour Market Policies (ALMP)</strong>. Passive policies, such as unemployment benefits, aim to provide income support to individuals who are out of work. In contrast, active policies are designed to actively improve employment outcomes by enhancing employability, facilitating job matching, or directly creating jobs.</p>
-
-                <div class="concept-card explanation">
-                    <h4>⚖️ Passive vs Active Policies: A Structural Imbalance</h4>
-                    <p>The data clearly suggests that a substantial share of total labour market expenditures is allocated to passive measures, particularly income maintenance for the unemployed. This reflects a fundamental policy trade-off: governments must balance short-term welfare protection with long-term labour market efficiency.</p>
-                    <p>Passive policies play a crucial role in stabilizing income and preventing poverty. However, they do not directly address the underlying causes of unemployment. In contrast, ALMPs aim to modify the structure of the labour market by improving the matching process, enhancing skills, and maintaining labour market attachment.</p>
-                    <p>The persistence of high spending on passive measures indicates that unemployment is not only a temporary phenomenon but also a structural issue requiring continuous financial support.</p>
-                </div>
-
-                <div class="concept-card">
-                    <h4>🧠 Composition of ALMP: Different Tools, Different Mechanisms</h4>
-                    <p>The breakdown of active expenditures reveals that ALMPs are not a single policy but a combination of distinct instruments, each targeting a specific labour market failure.</p>
+                <div class="empirical-structure" style="border-left-color: #B7791F; background-color: #FEFCBF;">
+                    <div class="obs" style="color: #B7791F;">💰 The Expenditure Trade-off: Passive vs. Active</div>
+                    <p>Labour market budgets are split into two categories. Governments face a persistent tension between short-term welfare protection and long-term efficiency:</p>
                     <ul>
-                        <li><strong>Training programs</strong> aim to address skill mismatches by improving human capital. These are particularly relevant in environments where technological change or structural transformation has made certain skills obsolete.</li>
-                        <li><strong>Employment incentives</strong>, such as subsidies for hiring disadvantaged workers, attempt to correct hiring frictions and reduce the perceived risk for employers. These policies are especially important for groups facing discrimination or stigma, such as the long-term unemployed.</li>
-                        <li><strong>Supported employment and rehabilitation programs</strong> highlight the role of inclusivity in labour market policy. By targeting individuals with disabilities or multiple disadvantages, these measures address barriers that go beyond standard economic considerations.</li>
-                        <li><strong>Direct job creation programs</strong>, such as public works, focus on maintaining labour market attachment. While these jobs may not always be highly productive, they prevent individuals from becoming detached from the labour market, which is critical in avoiding long-term unemployment.</li>
-                        <li>Finally, <strong>start-up incentives</strong> aim to stimulate job creation from the supply side by encouraging entrepreneurship. However, their relatively small scale suggests that they play a complementary rather than central role.</li>
+                        <li><span class="highlight-mechanism">Passive Policies (PLMP):</span> Unemployment benefits. They stabilize income and prevent poverty, but do not solve structural unemployment.</li>
+                        <li><span class="highlight-green">Active Policies (ALMP):</span> The 5 tools above. They modify the structure of the labour market to reintegrate workers.</li>
                     </ul>
+                </div>
+
+                <div class="logic-flow" style="background: #FFF5F5; border-color: #FEB2B2;">
+                    <strong>The Benefit Design Mechanism:</strong><br><br>
+                    High Initial Replacement Rate (Income Security) <br><span class="logic-arrow">➔</span><br> Declining Benefits Over Time (Forces Job Search Incentive)
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION III: THEORY - LAYARD NICKELL -->
+                <!-- ============================================================ -->
+                <h2>📐 III. Theory: Equilibrium Unemployment (Layard-Nickell)</h2>
+
+                <p>Why does unemployment exist even when the economy is stable? The <strong>Layard-Nickell (1986)</strong> model shows that unemployment is not just a lack of demand, but is built into the structure of how wages are negotiated.</p>
+
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="layard_nickell_model.png" alt="The Layard-Nickell Labour Market Model" style="max-width: 60%; border-radius: 8px;">
                 </div>
 
                 <div class="type-cards">
-                    <div class="type-card" style="border-top-color: #805AD5;">
-                        <h4 style="color: #805AD5;">📈 Dynamic Interpretation: What Changes in Spending Suggest</h4>
-                        <p>Variations in expenditure over time should not be interpreted mechanically. Instead, they reflect changes in economic conditions and policy priorities.</p>
-                        <p>For example, increases in passive spending are typically associated with economic downturns, when unemployment rises and more individuals rely on benefits. Conversely, increases in active spending may reflect policy efforts to counteract rising unemployment or to prevent its persistence.</p>
-                        <p>Importantly, the interaction between passive and active policies matters. High passive support without sufficient activation may reduce incentives to return to work, while strong activation measures without adequate income support may lead to social hardship and inefficiency in job search.</p>
+                    <div class="type-card" style="border-top-color: #2B6CB0;">
+                        <h4 style="color: #2B6CB0;">1. The Two Forces</h4>
+                        <p><strong>Labour Demand (Downward):</strong> Higher wages mean higher costs, so firms hire less.</p>
+                        <p><strong>Wage-Setting (Upward):</strong> When employment is high, labour is scarce. Workers have bargaining power and demand higher wages.</p>
                     </div>
-                    <div class="type-card" style="border-top-color: #E53E3E;">
-                        <h4 style="color: #E53E3E;">🎯 Unemployment Benefits: Incentives and Trade-offs</h4>
-                        <p>The structure of unemployment benefits introduces a key behavioural mechanism in labour economics: the trade-off between income security and job search incentives.</p>
-                        <p>The replacement rate, defined as the proportion of previous wages replaced by unemployment benefits, is relatively high at the beginning of the unemployment spell and decreases over time. This declining profile is designed to balance two objectives:</p>
-                        <ul>
-                            <li>providing sufficient income support in the short term,</li>
-                            <li>encouraging job search and re-employment over time.</li>
-                        </ul>
-                        <p>A high initial replacement rate reduces immediate financial stress and allows workers to search for jobs that match their skills. However, if benefits remain too high for too long, they may increase the reservation wage and prolong unemployment duration. The gradual decline in benefits reflects an attempt to mitigate this risk by increasing the incentive to accept job offers as unemployment persists.</p>
+                    <div class="type-card" style="border-top-color: #C53030;">
+                        <h4 style="color: #C53030;">2. Equilibrium $A$ & Involuntary $u_0$</h4>
+                        <p><strong>Point A:</strong> The market clears. Firms are happy to hire, workers are happy with the wage.</p>
+                        <p><strong>BUT...</strong> Point A is to the left of the "Full Employment" line! The distance is <strong>involuntary unemployment ($u_0$)</strong>. Workers want to work at that wage, but firms won't hire them.</p>
                     </div>
-                </div>
-
-                <div class="concept-card warning">
-                    <h4>🔄 ALMP and Unemployment Benefits: Complementarity or Conflict?</h4>
-                    <p>The interaction between ALMPs and unemployment benefits is crucial. These policies can either reinforce or offset each other.</p>
-                    <p>On one hand, participation in ALMP programs can reduce the negative effects of unemployment benefits by maintaining job search activity and improving employability. For example, training programs or job placement services can counteract the potential disincentive effects of generous benefits.</p>
-                    <p>On the other hand, some ALMP programs may mimic the effects of passive support if they provide financial compensation without significantly improving employment prospects. In such cases, they may inadvertently increase reservation wages and reduce the urgency of job search.</p>
-                    <p>Therefore, the effectiveness of labour market policy depends not only on the level of spending but also on the design and coordination of different instruments.</p>
                 </div>
 
                 <div class="post-it">
-                    <h4>⚠️ Key Economic Insight: Policy Design Matters More Than Spending</h4>
-                    <p>The central lesson from the data is that the effectiveness of labour market policy cannot be assessed solely by the amount of money spent. What matters is how resources are allocated across different instruments and how these instruments interact with labour market dynamics.</p>
-                    <p>In particular, reducing long-term unemployment requires policies that:</p>
-                    <ul>
-                        <li>maintain labour market attachment,</li>
-                        <li>improve matching efficiency,</li>
-                        <li>enhance skills and productivity,</li>
-                        <li>and provide incentives for both workers and firms.</li>
-                    </ul>
-                    <p><span class="highlight-exam">Simply increasing spending on passive support is unlikely to achieve these goals. Instead, a well-designed combination of active and passive measures is necessary to address both the symptoms and the structural causes of unemployment.</span></p>
+                    <h4>💡 Key Takeaway</h4>
+                    <p><span class="highlight-exam">Unemployment is a structural equilibrium.</span> Wages don't drop enough to clear the market due to bargaining and institutions. Economic growth isn't enough; we need ALMPs to shift these curves!</p>
                 </div>
 
                 <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
 
                 <!-- ============================================================ -->
-                <!-- SECTION III: THE LAYARD-NICKELL MODEL -->
+                <!-- SECTION IV: MODIFIED MODEL -->
                 <!-- ============================================================ -->
-                <h2>📐 III. Theory: Equilibrium Unemployment & The Layard-Nickell Model</h2>
+                <h2>🔄 IV. The Modified Model: Gross vs. Net Effects</h2>
 
-                <p>Labour Market Model: <strong>Layard & Nickell (1986)</strong>.</p>
-                <ul>
-                    <li>Employment schedule – assumed to be equal to labour demand</li>
-                    <li>Wage-setting schedule – higher aggregate employment causes pressure for higher real wages (e.g., employers have to pay more to compete for labour)</li>
-                    <li>Equilibrium values of employment and the real wage – point A</li>
-                    <li>Full employment of the labour force – vertical line</li>
-                    <li>The amount of involuntary unemployment – the horizontal distance between the equilibrium point and the full-employment line (u0)</li>
-                </ul>
+                <p>To evaluate ALMP, we must split the labour force into three groups:</p>
+                <div class="logic-flow" style="display: flex; justify-content: space-around; font-weight: bold;">
+                    <span style="color: #3182CE;">$e$ = Regular Employment</span>
+                    <span style="color: #E53E3E;">$u$ = Open Unemployment</span>
+                    <span style="color: #38A169;">$r$ = Programme Participation</span>
+                </div>
 
                 <div style="text-align: center; margin: 30px 0 0 0;">
-                    <img src="layard_nickell_model.png"
-                        alt="The Layard-Nickell Labour Market Model showing equilibrium unemployment"
-                        style="max-width: 70%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                    <img src="almp_modified_layard_nickell_model.png" alt="Modified Model" style="max-width: 70%; border-radius: 8px;">
                 </div>
 
-                <div class="graph-explanation-box">
-                    <h4>🧠 The Layard–Nickell Labour Market Model: Understanding Equilibrium Unemployment</h4>
-                    <p>This figure illustrates a fundamental mechanism of the labour market: unemployment can persist even when the market is in equilibrium. The graph shows that unemployment is not necessarily the result of a temporary imbalance, but can emerge as a structural outcome of how wages and employment are determined.</p>
-                    <p>The horizontal axis represents the employment rate, while the vertical axis represents the real wage. The entire logic of the model comes from the interaction between two curves that capture two different sides of the labour market.</p>
-
-                    <p><strong>⚙️ The Two Core Forces Represented in the Graph</strong></p>
-                    <p>The graph visually separates two mechanisms that determine equilibrium:</p>
-                    <ol>
-                        <li><strong>The Employment Schedule (Labour Demand)</strong>
-                        <br>The downward-sloping curve represents firms’ demand for labour. It shows that when real wages increase, firms reduce employment. This is because higher wages increase production costs, which pushes firms to either reduce hiring, substitute labour with capital, or decrease output. This curve captures the behaviour of firms: they hire workers only if it is profitable to do so at a given wage.</li>
-                        
-                        <li><strong>The Wage-Setting Schedule</strong>
-                        <br>The upward-sloping curve represents how wages are determined in the labour market. It shows that when employment is higher, wages tend to increase. The intuition is that when many people are employed, labour becomes scarce. Firms must offer higher wages to attract and retain workers, and workers have stronger bargaining power. This curve reflects institutional and behavioural factors such as bargaining, labour market tightness, and expectations.</li>
-                    </ol>
-
-                    <p><strong>🎯 Equilibrium Point A: What the Intersection Represents</strong></p>
-                    <p>Point A, where the two curves intersect, represents the equilibrium of the labour market. At this point:</p>
-                    <ul>
-                        <li>firms are willing to hire the given number of workers at that wage,</li>
-                        <li>workers (and institutions) accept that wage level.</li>
-                    </ul>
-                    <p>There is no pressure for wages or employment to change. The labour market is in balance. However, this equilibrium is not optimal in terms of employment.</p>
-
-                    <p><strong>⚠️ The Full Employment Line: A Critical Benchmark</strong></p>
-                    <p>The vertical line on the right represents full employment, meaning that the entire labour force is employed. The key insight of the graph is that point A lies to the left of this line. This means that: <strong>even when the labour market is in equilibrium, not all workers are employed.</strong></p>
-
-                    <p><strong>🔍 Involuntary Unemployment (u₀): Reading It Directly from the Graph</strong></p>
-                    <p>The distance between the equilibrium point A and the full employment line is labeled u_0. This distance represents <strong>involuntary unemployment</strong>. This is crucial:</p>
-                    <ul>
-                        <li>workers are willing to work at the current wage,</li>
-                        <li>but firms do not want to hire more workers at that wage.</li>
-                    </ul>
-                    <p>So unemployment exists even though the market is “in equilibrium”.</p>
-
-                    <p><strong>🧩 Why Does This Unemployment Exist?</strong></p>
-                    <p>The graph shows that unemployment comes from a mismatch between:</p>
-                    <ul>
-                        <li>wage-setting behaviour (which keeps wages relatively high),</li>
-                        <li>and firms’ labour demand (which limits hiring at those wages).</li>
-                    </ul>
-                    <p>Wages do not adjust downward enough to eliminate unemployment because they are influenced by bargaining, institutions, and labour market conditions. So the labour market does not clear like in a perfectly competitive model.</p>
-
-                    <p><strong>🔄 Interpretation: A Structural Equilibrium</strong></p>
-                    <p>This figure changes the way we interpret unemployment. Unemployment here is:</p>
-                    <ul>
-                        <li>not temporary,</li>
-                        <li>not due to a lack of demand,</li>
-                        <li>but built into the structure of the labour market.</li>
-                    </ul>
-                    <p>It is the result of how wages are set relative to firms’ willingness to hire.</p>
-
-                    <p><strong>🧠 Link with ALMP: Why This Model Matters for Policy</strong></p>
-                    <p>This graph is essential for understanding why Active Labour Market Policies (ALMP) exist. If unemployment comes from structural mechanisms, then simply increasing demand is not enough. Policies must act on the curves:</p>
-                    <ul>
-                        <li>improving matching efficiency → shifts labour demand (more hiring),</li>
-                        <li>reducing wage pressure → shifts wage-setting,</li>
-                        <li>increasing employability → makes workers more attractive to firms.</li>
-                    </ul>
-                    <p>The goal is to move the equilibrium closer to the full employment line.</p>
-
-                    <p><strong>🎯 Core Insight from the Graph</strong></p>
-                    <p>This figure shows that: <strong>unemployment is not eliminated automatically by the market.</strong> It depends on: how wages are determined, how firms respond to labour costs. Therefore: <span class="highlight-exam">reducing unemployment requires structural policies, not just economic growth.</span></p>
-                </div>
-
-                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
-
-                <!-- ============================================================ -->
-                <!-- SECTION IV: ALMP IN THE MODIFIED MODEL -->
-                <!-- ============================================================ -->
-                <h2>🔄 IV. Modified Model for ALMP</h2>
-
-                <p>Distinguish between participation in labour market programmes and regular employment. Horizontal axis – rate of regular employment (excluding participation in programmes).</p>
-                <p>Labour force:</p>
-                <ul>
-                    <li><strong>r</strong> – participation in training and job creation programmes</li>
-                    <li><strong>u</strong> – open unemployment</li>
-                    <li><strong>e</strong> – regular employment</li>
-                </ul>
-
-                <p>The figure can be used to illustrate various effects of LM programmes: increased placement in training or job creation programmes – leftward shift of the R-line. If nothing else happens, open unemployment u is reduced (gross effect) – but the goal is not just to move people from open unemployment but to help them to find regular job. Net effect – take indirect effects into account.</p>
-
-                <div style="text-align: center; margin: 30px 0 0 0;">
-                    <img src="almp_modified_layard_nickell_model.png"
-                        alt="Modified Layard-Nickell Model showing the distinction between e, u, and r"
-                        style="max-width: 80%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
-                </div>
-
-                <div class="graph-explanation-box" style="border-left-color: #805AD5;">
-                    <h4 style="color: #805AD5;">🧠 The Modified Layard–Nickell Model: Introducing ALMP into the Labour Market</h4>
-
-                    <p>This figure extends the standard Layard–Nickell model by explicitly incorporating Active Labour Market Policies (ALMP). The key innovation of this graph is that it distinguishes between different states within the labour force, rather than treating employment and unemployment as a simple binary outcome.</p>
-                    <p>The horizontal axis now represents the regular employment rate only, excluding individuals participating in labour market programmes. This distinction is crucial for understanding the true impact of ALMPs.</p>
-
-                    <p><strong>⚙️ Decomposing the Labour Force: e, u, r</strong></p>
-                    <p>The graph introduces three components of the labour force:</p>
-                    <ul>
-                        <li><strong>e (regular employment):</strong> individuals working in standard jobs in the economy</li>
-                        <li><strong>u (open unemployment):</strong> individuals actively searching for a job</li>
-                        <li><strong>r (programme participation):</strong> individuals enrolled in training or job creation programmes</li>
-                    </ul>
-                    <p>This decomposition fundamentally changes the interpretation of unemployment. Rather than simply asking “how many people are unemployed?”, the model asks: <strong>how many people are effectively integrated into regular employment?</strong></p>
-
-                    <p><strong>⚠️ Two Definitions of Full Employment</strong></p>
-                    <p>The graph shows two vertical reference lines:</p>
-                    <ol>
-                        <li><strong>Full Employment (Total Labour Force)</strong>: This line represents a situation where all individuals in the labour force are either employed or effectively accounted for. It includes programme participants.</li>
-                        <li><strong>Full Employment without Programme Participants (R-line)</strong>: This line represents full employment in terms of regular jobs only, excluding programme participants. This is the critical benchmark for evaluating ALMP effectiveness.</li>
-                    </ol>
-
-                    <p><strong>🔍 The Role of Programme Participation (r)</strong></p>
-                    <p>The distance between the two vertical lines corresponds to r, the share of individuals participating in labour market programmes. This introduces a key insight: <strong>ALMPs can reduce measured unemployment without increasing real employment.</strong> If individuals move from unemployment (u) into programmes (r), the unemployment rate decreases. However, this does not necessarily mean that they have found a regular job.</p>
-
-                    <p><strong>🎯 The “Gross Effect” of ALMP</strong></p>
-                    <p>When participation in programmes increases:</p>
-                    <ul>
-                        <li>individuals leave open unemployment (u),</li>
-                        <li>they enter programme participation (r),</li>
-                        <li>the measured unemployment rate falls.</li>
-                    </ul>
-                    <p>Graphically, this is represented by a leftward shift of the R-line. This is called the <strong>gross effect</strong>: unemployment decreases simply because people are reclassified, not because they are employed.</p>
-
-                    <p><strong>⚠️ Why This Is Not Enough</strong></p>
-                    <p>The graph highlights a crucial limitation: <strong>reducing unemployment is not the same as increasing employment.</strong> If ALMPs only move people into programmes without improving their chances of finding a regular job, they do not solve the underlying labour market problem. In that case, the policy only changes the classification of individuals, not their economic situation.</p>
-
-                    <p><strong>🔄 The Importance of the “Net Effect”</strong></p>
-                    <p>The true effectiveness of ALMPs depends on their net effect, which includes indirect mechanisms. The key question becomes: do programmes increase regular employment (e), or do they simply shift individuals between categories? To answer this, we must consider how ALMPs affect:</p>
-                    <ul>
-                        <li>labour demand (firms’ willingness to hire),</li>
-                        <li>wage-setting behaviour,</li>
-                        <li>matching efficiency between workers and jobs,</li>
-                        <li>workers’ productivity and employability.</li>
-                    </ul>
-
-                    <p><strong>🧩 Interpretation: ALMP as a Structural Intervention</strong></p>
-                    <p>This figure shows that ALMPs operate at two levels:</p>
-                    <ul>
-                        <li><strong>Mechanical (short-term)</strong>: reduce open unemployment by moving people into programmes</li>
-                        <li><strong>Structural (long-term)</strong>: potentially improve employability, increase matching efficiency, facilitate transitions into regular employment</li>
-                    </ul>
-                    <p>Only the second effect leads to a real improvement in labour market outcomes.</p>
-
-                    <p><strong>🎯 Core Economic Insight</strong></p>
-                    <p>This graph reveals a critical evaluation problem: <strong>a reduction in unemployment is not sufficient evidence that ALMPs are effective.</strong> The key objective is not to reduce unemployment mechanically, but to increase regular employment. Therefore: <span class="highlight-exam">the success of ALMPs must be assessed based on their impact on transitions into stable employment, not just on their effect on unemployment statistics.</span></p>
+                <div class="concept-card warning">
+                    <h4>⚠️ The Ultimate Evaluation Trap</h4>
+                    <p>When someone joins an ALMP program, they move from $u$ to $r$. The official unemployment rate drops. This is the <span class="highlight-mechanism">Gross Effect</span>.</p>
+                    <p><strong>BUT BE CAREFUL!</strong> Just because unemployment dropped doesn't mean employment ($e$) increased! They just changed statistical categories. <span class="highlight-exam">ALMPs are only successful if the "Net Effect" is positive: participants must eventually transition into stable, regular employment ($e$).</span></p>
                 </div>
 
                 <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
@@ -529,435 +311,106 @@
                 <!-- ============================================================ -->
                 <!-- SECTION V: INDIRECT EFFECTS -->
                 <!-- ============================================================ -->
-                <h2>🧩 V. The Indirect Effects of ALMP</h2>
+                <h2>🧩 V. The 5 Indirect Effects of ALMP</h2>
 
-                <p>Indirect effects are additive to each other, some are positive (decrease unemployment), some can be negative.</p>
+                <p>ALMPs shift the structural curves of the labour market. The total <strong>Net Effect</strong> depends on these 5 indirect mechanisms.</p>
 
-                <!-- 1. Matching Efficiency -->
-                <h3>1. Effects on the matching process</h3>
-
-                <p>One of the main goals of ALMP is to increase search efficiency – shorter job seeking period, more effective matching process. ALMP increase matching through: adjusting the qualification of participants to the structure of labour demand, encourage active job seeking, increased work experience or qualification – employers more willing to hire participants.</p>
-
-                <div style="text-align: center; margin: 30px 0 0 0;">
-                    <img src="almp_indirect_effects_matching.png"
-                        alt="Graph showing matching efficiency improvements"
-                        style="max-width: 70%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
-                </div>
-
+                <!-- 1. Matching -->
                 <div class="graph-explanation-box" style="border-left-color: #38A169;">
-                    <h4 style="color: #38A169;">🧠 Indirect Effects of ALMP: Why Matching Efficiency Changes Everything</h4>
-
-                    <p>This figure illustrates one of the most important mechanisms through which Active Labour Market Policies (ALMP) affect the labour market: their indirect effects on the matching process. Unlike the “gross effect” (simply moving individuals out of unemployment), this graph focuses on structural changes in how workers and jobs meet. The key idea is: <strong>ALMPs do not just move people between categories — they can transform how efficiently the labour market functions.</strong></p>
-
-                    <p><strong>⚙️ What Is “Matching” in This Context?</strong></p>
-                    <p>Matching refers to the process by which unemployed workers find suitable jobs and firms find suitable workers.</p>
-                    <ul>
-                        <li>A labour market with poor matching is characterized by: long unemployment duration, many unfilled vacancies, mismatch between skills and job requirements.</li>
-                        <li>A labour market with good matching: fills vacancies quickly, reduces unemployment duration, improves job-worker compatibility.</li>
-                    </ul>
-
-                    <p><strong>🔍 How ALMP Improves Matching</strong></p>
-                    <p>The graph captures the idea that ALMPs act directly on matching efficiency through several channels:</p>
-                    <ul>
-                        <li>Training and requalification → workers’ skills better match labour demand</li>
-                        <li>Job search assistance → workers search more actively and effectively</li>
-                        <li>Work experience programmes → workers become more attractive to employers</li>
-                        <li>Activation policies → reduce passivity and discouraged behaviour</li>
-                    </ul>
-                    <p>So ALMPs reduce search frictions.</p>
-
-                    <p><strong>🔄 Graphical Interpretation: Shifts of the Curves</strong></p>
-                    <p>The figure shows two key movements:</p>
-
-                    <p><strong>📉 1. Wage-Setting Curve Shifts Downward and to the Right</strong></p>
-                    <p>This is a subtle but crucial mechanism. When matching improves: firms fill vacancies faster, they no longer need to offer high wages to attract workers. <strong>👉 Result: Wage-setting ↓</strong>. Interpretation: lower wage pressure, weaker bargaining power for workers, faster hiring process. This shift reduces equilibrium wages (or at least reduces upward pressure on wages).</p>
-
-                    <p><strong>📈 2. Employment Schedule (Labour Demand) Shifts Upward and to the Right</strong></p>
-                    <p>This reflects the firms’ side. When matching improves: vacancies are filled more quickly, hiring becomes less costly (less time, less uncertainty), firms are encouraged to open more vacancies. <strong>👉 Result: Labour demand ↑</strong>. Interpretation: firms want to hire more workers, effective labour demand increases.</p>
-
-                    <p><strong>🎯 Combined Effect: Why Employment Increases</strong></p>
-                    <p>These two shifts reinforce each other: lower wage pressure → cheaper labour; better matching → easier hiring. <strong>👉 equilibrium moves to higher employment (Regular employment ↑).</strong></p>
-
-                    <p><strong>⚠️ What Happens to Wages?</strong></p>
-                    <p>The effect on wages is ambiguous. Two forces are at play: downward pressure from improved matching, upward pressure from increased demand. 👉 result: wage effect is theoretically unclear.</p>
-
-                    <p><strong>🧩 Key Economic Insight</strong></p>
-                    <p>This figure shows that: the most powerful effect of ALMP is not mechanical, but structural. ALMPs improve the functioning of the labour market itself by reducing frictions.</p>
-
-                    <p><strong>🔥 Why This Is Crucial for the Exam</strong></p>
-                    <p>This is the clean logic you need to remember:</p>
-                    <ol>
-                        <li>ALMP → better matching</li>
-                        <li>better matching → wage-setting ↓ and labour demand ↑</li>
-                        <li>→ employment ↑</li>
-                    </ol>
-
-                    <p><strong>🎯 Final Takeaway</strong></p>
-                    <p><span class="highlight-exam">When ALMP improves matching efficiency, it increases employment by making hiring easier and reducing wage pressure, even without directly creating jobs.</span></p>
+                    <h4 style="color: #38A169;">1. Matching Efficiency (Positive Effect)</h4>
+                    <img src="almp_indirect_effects_matching.png" alt="Matching" style="max-width: 50%; float: right; margin-left: 20px;">
+                    <p>Training and PES help workers find the right jobs faster.</p>
+                    <div class="logic-flow">
+                        Matching ↑ <span class="logic-arrow">➔</span> Firms hire faster & easier <span class="logic-arrow">➔</span> Wage pressure ↓ AND Labour demand ↑ <span class="logic-arrow">➔</span> <span class="highlight-green">Regular Employment ↑</span>
+                    </div>
+                    <div style="clear: both;"></div>
                 </div>
 
-                <!-- 2. Competition Effects -->
-                <h3>2. Competition effects</h3>
-
-                <p>ALMP programs can increase competition on the LM by several ways:</p>
-                <ul>
-                    <li>Programs aimed at short-term unemployed – keep unemployed in contact with LM and lower the share which becomes long-term unemployed or inactive (demotivation) (→ keeps the labour force unchanged)</li>
-                    <li>Programs aimed at economically inactive (out of labour force) – help to re-enter the LM (→ labour force increase)</li>
-                </ul>
-                <p>→ the number of actively looking for a job is increasing and competition increases.</p>
-                <p>ALMP tools: Counselling and job seeking assistance. Requalification/retraining – postponed but long-lasting effect. Temporary job creation, community/public works (veřejně propěšné práce), subsidized jobs – keep unemployed in contact with LM, increase their experience.</p>
-                <p>→ wage setting curve moves downwards (firms do not have to attract workers by high wages). ➔ lower wages and higher regular employment.</p>
-
-                <div style="text-align: center; margin: 30px 0 0 0;">
-                    <img src="almp_competition_effects.png"
-                        alt="Graph showing competition effects"
-                        style="max-width: 70%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
-                </div>
-
+                <!-- 2. Competition -->
                 <div class="graph-explanation-box" style="border-left-color: #3182CE;">
-                    <h4 style="color: #3182CE;">🧠 Competition Effects of ALMP: Increasing Labour Supply Pressure</h4>
-
-                    <p>This figure illustrates another key indirect channel through which Active Labour Market Policies (ALMP) affect the labour market: the increase in competition among workers. Unlike matching effects (which improve efficiency), competition effects operate through changes in labour supply behaviour. The central idea is that ALMPs increase the number of individuals actively participating in the labour market.</p>
-
-                    <p><strong>⚙️ The Core Mechanism: More Active Job Seekers</strong></p>
-                    <p>ALMP programs affect participation in two main ways:</p>
-                    <ul>
-                        <li>Programs targeting short-term unemployed prevent individuals from becoming long-term unemployed or discouraged. They maintain individuals’ attachment to the labour market.</li>
-                        <li>Programs targeting inactive individuals (those outside the labour force) encourage re-entry into job search.</li>
-                    </ul>
-                    <p>In both cases, the result is the same: <strong>more individuals are actively searching for jobs.</strong> This increases effective labour supply.</p>
-
-                    <p><strong>🔄 Graphical Interpretation: Downward Shift of Wage-Setting</strong></p>
-                    <p>The key movement shown in the graph is a downward shift of the wage-setting curve. Why? Because when more workers are actively searching: competition for jobs intensifies, workers have weaker bargaining power, firms no longer need to offer high wages to attract workers. <strong>👉 Result: Wage-setting ↓</strong>. This reflects a decrease in equilibrium wage pressure.</p>
-
-                    <p><strong>📉 Economic Intuition: Why Wages Fall</strong></p>
-                    <p>The mechanism is straightforward: more job seekers → more competition → workers accept lower wages → lower wage demands → firms can hire at lower cost. This is not due to productivity changes, but purely due to market pressure.</p>
-
-                    <p><strong>📈 Impact on Employment</strong></p>
-                    <p>Lower wages have a direct effect on firms’ behaviour: labour becomes cheaper, firms increase hiring. <strong>👉 Result: Regular employment ↑</strong>. So, unlike the matching effect (which improves efficiency), the competition effect increases employment by reducing wages.</p>
-
-                    <p><strong>⚠️ Important Distinction: Efficiency vs Pressure</strong></p>
-                    <p>This is a crucial conceptual distinction:</p>
-                    <ul>
-                        <li>Matching effect → better jobs, better allocation</li>
-                        <li>Competition effect → more pressure on workers</li>
-                    </ul>
-                    <p>The competition effect does not necessarily improve job quality or productivity. It simply increases employment by making labour cheaper.</p>
-
-                    <p><strong>🧩 Role of Specific ALMP Tools</strong></p>
-                    <p>The graph reflects the impact of several types of ALMP interventions: Job counselling and search assistance → keeps individuals actively searching; Retraining programs → delayed but increases long-term participation; Public works and subsidized jobs → prevent detachment from the labour market. These tools increase the number of active job seekers, reinforcing competition.</p>
-
-                    <p><strong>🎯 Core Economic Insight</strong></p>
-                    <p>This figure shows that: ALMP can increase employment not only by improving efficiency, but also by increasing competition in the labour market. However, this comes with a trade-off: higher employment but lower wages.</p>
-
-                    <p><strong>🔥 Exam Logic to Remember</strong></p>
-                    <ol>
-                        <li>ALMP → more active job seekers</li>
-                        <li>→ competition ↑</li>
-                        <li>→ wage-setting ↓</li>
-                        <li>→ wages ↓</li>
-                        <li>→ employment ↑</li>
-                    </ol>
-
-                    <p><strong>🎯 Final Takeaway</strong></p>
-                    <p><span class="highlight-exam">Competition effects increase employment by lowering wage pressure through increased labour market participation, rather than by improving productivity or matching efficiency.</span></p>
+                    <h4 style="color: #3182CE;">2. Competition Effects (Positive Effect)</h4>
+                    <img src="almp_competition_effects.png" alt="Competition" style="max-width: 50%; float: right; margin-left: 20px;">
+                    <p>ALMPs keep people actively searching, increasing the number of active job seekers.</p>
+                    <div class="logic-flow">
+                        More active seekers <span class="logic-arrow">➔</span> Competition for jobs ↑ <span class="logic-arrow">➔</span> Workers accept lower wages <span class="logic-arrow">➔</span> Wage-setting ↓ <span class="logic-arrow">➔</span> <span class="highlight-green">Regular Employment ↑</span>
+                    </div>
+                    <div style="clear: both;"></div>
                 </div>
 
-                <!-- 3. Productivity Effects -->
-                <h3>3. Productivity effects</h3>
-
-                <p>(Long-term) unemployment lowers productivity – deterioration of skills and working habits. ALMP (training and requalification, community/public works, subsidised jobs) should increase productivity (or at least keep it on the same level).</p>
-
-                <p>Higher productivity:</p>
-                <p>Labour demand (employment schedule):</p>
-                <ul>
-                    <li>a) increases (moves rightward) if: <strong>Scale effect</strong> – higher productivity means that the unit cost of labour falls, cheaper labour → incentives to expand output by using more efficiency units → increase employment</li>
-                    <li>b) decreases (moves leftward) if: <strong>Substitution effect</strong> – if workers are more productive, a given output can be produced by fewer and more efficient workers → labour demand decreases</li>
-                </ul>
-                <p>The final effect depends on labour demand elasticity – if it is elastic, higher productivity will lead to labour demand increase (the scale effect dominates the substitution effect only if labour demand is elastic). Higher productivity can also push the wages up → wage setting curve moves left and up (which lowers regular employment).</p>
-                <p>➔ the unemployment rate might not decrease; but likely welfare gains from the higher productivity (output) in the economy.</p>
-
-                <div style="text-align: center; margin: 30px 0 0 0;">
-                    <img src="almp_productivity_effects.png"
-                        alt="Graph showing ambiguous productivity effects"
-                        style="max-width: 70%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
-                </div>
-
+                <!-- 3. Productivity -->
                 <div class="graph-explanation-box" style="border-left-color: #D69E2E;">
-                    <h4 style="color: #D69E2E;">🧠 Productivity Effects of ALMP: Why Higher Productivity Does Not Guarantee Lower Unemployment</h4>
-
-                    <p>This figure illustrates one of the most complex and counterintuitive mechanisms of Active Labour Market Policies (ALMP): their effect on productivity. At first glance, the logic seems simple: if ALMP increases workers’ productivity, employment should increase. However, the graph shows that this is not necessarily true. The effect of higher productivity on employment is ambiguous and depends on two opposing economic forces.</p>
-
-                    <p><strong>⚙️ Why Productivity Matters in the Labour Market</strong></p>
-                    <p>Long-term unemployment tends to reduce productivity through: skill deterioration, loss of work habits, reduced motivation. ALMP programs aim to reverse this process by: training and requalification, maintaining work experience (public works, subsidized jobs), keeping workers attached to the labour market. As a result, workers become more productive.</p>
-
-                    <p><strong>🔄 Two Opposing Effects: Scale vs Substitution</strong></p>
-                    <p>The key insight of the graph is that higher productivity generates two conflicting effects on labour demand.</p>
-
-                    <p><strong>📈 1. The Scale Effect (Positive for Employment)</strong></p>
-                    <p>When productivity increases: each worker produces more output, the cost per unit of output decreases, firms become more competitive. 👉 Firms respond by expanding production. This leads to: <strong>Labour demand ↑</strong>. Graphically: the employment schedule shifts to the right. Interpretation: firms want to hire more workers because production is more profitable.</p>
-
-                    <p><strong>📉 2. The Substitution Effect (Negative for Employment)</strong></p>
-                    <p>At the same time, higher productivity means: fewer workers are needed to produce the same level of output. 👉 Firms can replace multiple low-productivity workers with fewer high-productivity workers. This leads to: <strong>Labour demand ↓</strong>. Graphically: the employment schedule shifts to the left.</p>
-
-                    <p><strong>⚖️ Which Effect Dominates?</strong></p>
-                    <p>The final outcome depends on labour demand elasticity.</p>
+                    <h4 style="color: #D69E2E;">3. Productivity Effects (Ambiguous Effect)</h4>
+                    <img src="almp_productivity_effects.png" alt="Productivity" style="max-width: 50%; float: right; margin-left: 20px;">
+                    <p>ALMPs improve skills, but this has a contradictory effect.</p>
                     <ul>
-                        <li>If labour demand is elastic: firms expand production significantly, the scale effect dominates, employment increases.</li>
-                        <li>If labour demand is inelastic: firms do not expand much, the substitution effect dominates, employment decreases.</li>
+                        <li><strong>Scale Effect:</strong> Higher productivity = cheaper unit costs = expand production = <strong>Employment ↑</strong>.</li>
+                        <li><strong>Substitution Effect:</strong> More efficient workers = fewer workers needed = <strong>Employment ↓</strong>.</li>
                     </ul>
-
-                    <p><strong>🔄 Effect on Wages: Another Source of Ambiguity</strong></p>
-                    <p>Higher productivity also affects wages. Workers who become more productive: are more valuable to firms, may demand higher wages. <strong>👉 Result: Wage-setting ↑</strong>. Graphically: wage-setting curve shifts upward and to the left. This creates upward pressure on wages.</p>
-
-                    <p><strong>⚠️ Combined Effect: No Clear Impact on Employment</strong></p>
-                    <p>The figure shows multiple possible movements: labour demand may shift left or right, wage-setting shifts upward. 👉 Therefore: the overall effect on employment is uncertain. Employment may: increase, decrease, or remain unchanged.</p>
-
-                    <p><strong>🎯 Crucial Insight: Productivity ≠ Employment</strong></p>
-                    <p>This is the key takeaway: <strong>increasing productivity does not guarantee lower unemployment.</strong> Even if ALMP improves workers’ skills and efficiency, the labour market outcome depends on how firms adjust production and hiring.</p>
-
-                    <p><strong>🧩 Welfare Perspective: Why Productivity Still Matters</strong></p>
-                    <p>Even if employment does not increase, higher productivity leads to: higher total output in the economy, greater efficiency, potential long-term gains in living standards. So: ALMP can improve welfare even without reducing unemployment.</p>
-
-                    <p><strong>🔥 Exam Logic to Remember</strong></p>
-                    <ol>
-                        <li>ALMP → productivity ↑</li>
-                        <li>→ two effects: scale effect → employment ↑; substitution effect → employment ↓</li>
-                        <li>outcome depends on labour demand elasticity</li>
-                        <li>wage-setting ↑ (wage pressure)</li>
-                        <li>→ final effect on employment = ambiguous</li>
-                    </ol>
-
-                    <p><strong>🎯 Final Takeaway</strong></p>
-                    <p><span class="highlight-exam">Productivity-enhancing ALMP can increase output and efficiency, but its effect on employment depends on the balance between scale expansion and labour-saving substitution.</span></p>
+                    <div class="logic-flow">
+                        Productivity ↑ <span class="logic-arrow">➔</span> Scale vs. Substitution Effect + Wage pressure ↑ <span class="logic-arrow">➔</span> <span style="color: #D69E2E; font-weight: bold;">Employment Ambiguous</span>
+                    </div>
+                    <div style="clear: both;"></div>
                 </div>
 
-                <!-- 4. Reduced Welfare Losses -->
-                <h3>4. Reduced welfare losses for the unemployed</h3>
-
-                <p>An explicit aim of active labour market policy is to reduce the welfare loss from being out of work. The higher the wage level, the higher the welfare loss. Participation in LM programmes reduces the welfare loss of the unemployed:</p>
-                <ul>
-                    <li>a LM programme may offer higher compensation than the unemployment benefits (→ an expansion of LM programmes will have effects similar to a rise of the unemployment benefits)</li>
-                    <li>decreases the risks of future "unemployability"</li>
-                </ul>
-                <p>→ lower welfare loss → pressure on higher wages (participants want higher wage) → wage-setting curve moves upward. ➔ lower employment, higher wages.</p>
-
-                <div style="text-align: center; margin: 30px 0 0 0;">
-                    <img src="almp_welfare_loss_effects.png"
-                        alt="Graph showing negative employment impact of reduced welfare loss"
-                        style="max-width: 70%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
-                </div>
-
+                <!-- 4. Welfare Loss -->
                 <div class="graph-explanation-box" style="border-left-color: #E53E3E;">
-                    <h4 style="color: #E53E3E;">🧠 Reduced Welfare Loss for the Unemployed: When ALMP Can Increase Wages and Reduce Employment</h4>
-
-                    <p>This figure illustrates a less intuitive effect of Active Labour Market Policies (ALMP): by reducing the hardship associated with unemployment, these policies can actually increase wage pressure and potentially reduce employment. This mechanism highlights a fundamental trade-off between worker welfare and labour market performance.</p>
-
-                    <p><strong>⚙️ The Core Idea: Unemployment Is Costly</strong></p>
-                    <p>Being unemployed generates a welfare loss for individuals: loss of income, loss of social status, psychological costs, risk of becoming unemployable over time. The higher the potential wage, the greater the perceived loss from not working.</p>
-
-                    <p><strong>🔄 How ALMP Reduces Welfare Loss</strong></p>
-                    <p>Participation in labour market programs reduces this welfare loss through two main channels:</p>
-                    <ul>
-                        <li>Higher compensation: some programs provide income support that can be comparable to or higher than unemployment benefits.</li>
-                        <li>Future security: participants improve their employability and reduce the risk of long-term exclusion.</li>
-                    </ul>
-                    <p>As a result: <strong>being unemployed becomes less painful.</strong></p>
-
-                    <p><strong>📈 Behavioural Consequence: Higher Reservation Wage</strong></p>
-                    <p>When the cost of unemployment decreases: workers become less desperate, they are less willing to accept low-paying jobs, they demand better wages. 👉 This leads to an increase in the reservation wage.</p>
-
-                    <p><strong>🔄 Graphical Interpretation: Upward Shift of Wage-Setting</strong></p>
-                    <p>The graph captures this mechanism through a shift of the wage-setting curve upward and to the left. Interpretation: at any given employment level, workers now require higher wages; firms must offer higher wages to hire. <strong>Wage-setting ↑</strong></p>
-
-                    <p><strong>📉 Impact on Employment</strong></p>
-                    <p>Higher wages have a direct effect on firms: labour becomes more expensive, firms reduce hiring. <strong>👉 Result: Regular employment ↓</strong>. This is the opposite of the matching and competition effects.</p>
-
-                    <p><strong>⚠️ Key Trade-Off: Welfare vs Employment</strong></p>
-                    <p>This figure reveals a fundamental tension in labour market policy: ALMP improves the well-being of unemployed individuals, but it may reduce employment by increasing wage pressure. So: policies that protect workers can weaken incentives to accept jobs.</p>
-
-                    <p><strong>🧩 Interpretation: Similarity with Unemployment Benefits</strong></p>
-                    <p>This mechanism is very similar to the effect of increasing unemployment benefits: both reduce the cost of unemployment, both increase reservation wages, both can lead to lower employment. The difference is that ALMP may also generate positive effects (skills, matching), which can offset this negative channel.</p>
-
-                    <p><strong>🎯 Core Economic Insight</strong></p>
-                    <p>This figure shows that: ALMP can have unintended negative effects on employment by reducing the urgency of job search.</p>
-
-                    <p><strong>🔥 Exam Logic to Remember</strong></p>
-                    <ol>
-                        <li>ALMP → welfare loss ↓</li>
-                        <li>→ reservation wage ↑</li>
-                        <li>→ wage-setting ↑</li>
-                        <li>→ wages ↑</li>
-                        <li>→ employment ↓</li>
-                    </ol>
-
-                    <p><strong>🎯 Final Takeaway</strong></p>
-                    <p><span class="highlight-exam">By reducing the cost of being unemployed, ALMP can increase wage demands and reduce employment, highlighting a trade-off between social protection and labour market efficiency.</span></p>
+                    <h4 style="color: #E53E3E;">4. Reduced Welfare Loss (Negative Effect)</h4>
+                    <img src="almp_welfare_loss_effects.png" alt="Welfare Loss" style="max-width: 50%; float: right; margin-left: 20px;">
+                    <p>If ALMP programs are "too comfortable" (good pay, low risk), unemployment becomes less painful.</p>
+                    <div class="logic-flow">
+                        Welfare loss ↓ <span class="logic-arrow">➔</span> Reservation wage ↑ <span class="logic-arrow">➔</span> Wage-setting shifts UP <span class="logic-arrow">➔</span> <span style="color: #E53E3E; font-weight: bold;">Regular Employment ↓</span>
+                    </div>
+                    <div style="clear: both;"></div>
                 </div>
 
-                <!-- 5. Deadweight and Substitution -->
-                <h3>5. Deadweight and substitution effects</h3>
-
-                <p>The deadweight loss – the hirings from the target group that would have occurred also in the absence of the programme. Deadweight loss – if hirings from the target group would have occurred even without the programme – lowest for LTU.</p>
-                <p>Substitution effect – the extent to which jobs created for a certain category of workers (youth, mothers) simply replace jobs for other categories. Substitution effect is caused by the change of relative wage costs (subsidies to employers for hiring workers from the disadvantaged group).</p>
-                <p>➔ Labour demand (for open unemployed, i.e. unemployed without programme participants) decreases – regular employment decreases, wage decreases.</p>
-                <p>Camlfors (1994, p. 18): empirical estimates – deadweight and substitution effects represented 70–90% of the gross number of jobs created.</p>
-                <p>A principle of additionality should be imposed on public work programmes – should be designed to be of such a character that they would not otherwise have been undertaken; the programmes should not replace regular jobs.</p>
-
-                <div style="text-align: center; margin: 30px 0 0 0;">
-                    <img src="almp_deadweight_substitution_effects.png"
-                        alt="Graph showing deadweight and substitution effects reducing labour demand"
-                        style="max-width: 70%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
-                </div>
-
+                <!-- 5. Deadweight -->
                 <div class="graph-explanation-box" style="border-left-color: #718096;">
-                    <h4 style="color: #718096;">🧠 Deadweight and Substitution Effects: Why ALMP May Overstate Its True Impact</h4>
-
-                    <p>This figure illustrates one of the most important limitations of Active Labour Market Policies (ALMP): the difference between gross job creation and net employment effects. At first glance, ALMP programs (such as hiring subsidies or public jobs) appear to create employment. However, this graph highlights that a large share of these “created jobs” may not represent real additional employment.</p>
-
-                    <p><strong>⚙️ The Core Problem: Not All Created Jobs Are Truly New</strong></p>
-                    <p>The key idea is that: <strong>observed job creation can be misleading because some jobs would have existed even without the policy, or simply replace other jobs.</strong> This leads to two major effects: deadweight loss and substitution effect.</p>
-
-                    <p><strong>🔍 1. Deadweight Effect: Jobs That Would Have Happened Anyway</strong></p>
-                    <p>The deadweight effect refers to situations where: firms receive subsidies to hire certain workers, but they would have hired them even without the subsidy. 👉 The policy does not change firm behaviour — it only transfers money. So: the job is counted as “created”, but it is not additional.</p>
-
-                    <p><strong>🔄 2. Substitution Effect: Jobs That Replace Others</strong></p>
-                    <p>The substitution effect occurs when: firms are incentivized to hire a specific group (e.g., youth, long-term unemployed), but they replace other workers instead of increasing total employment. For example: a firm hires a subsidized worker but does not hire (or replaces) a non-subsidized worker. 👉 total employment does not increase — it is just reallocated.</p>
-
-                    <p><strong>📉 Graphical Interpretation: Decrease in Labour Demand for Non-Participants</strong></p>
-                    <p>The graph shows a leftward shift of the employment schedule (labour demand). Interpretation: firms substitute toward subsidized workers, demand for other workers (non-participants) decreases. <strong>Labour demand ↓</strong></p>
-
-                    <p><strong>📉 Effect on Wages</strong></p>
-                    <p>As labour demand for the general (non-targeted) workforce decreases: competition among workers increases, wages decline. <strong>Wages ↓</strong></p>
-
-                    <p><strong>⚠️ Key Result: Lower Employment and Lower Wages (Net Effect)</strong></p>
-                    <p>Even though ALMP programs create jobs in a targeted group, the overall effect can be: lower total employment (or much smaller increase than expected), lower wages. This is a negative indirect effect.</p>
-
-                    <p><strong>🔥 Why This Is a Massive Issue in Practice</strong></p>
-                    <p>Empirical evidence (Calmfors, 1994) shows that: deadweight + substitution effects can represent 70–90% of gross job creation. This means: 👉 most “created jobs” may not be real net gains.</p>
-
-                    <p><strong>🧩 Policy Implication: The Principle of Additionality</strong></p>
-                    <p>To avoid these problems, policies must follow the principle of additionality: jobs created by ALMP should be jobs that would NOT exist without the program. For example: public works should not replace private sector jobs; subsidies should target workers who would not otherwise be hired.</p>
-
-                    <p><strong>⚖️ Key Insight: Redistribution vs Creation</strong></p>
-                    <p>This figure reveals a fundamental distinction: some ALMP effects are about creating jobs, others are about redistributing existing jobs. Deadweight and substitution effects belong to the second category.</p>
-
-                    <p><strong>🎯 Exam Logic to Remember</strong></p>
-                    <ol>
-                        <li>ALMP → subsidies / targeted hiring</li>
-                        <li>→ two problems: deadweight → no real change; substitution → job replacement</li>
-                        <li>→ labour demand for others ↓</li>
-                        <li>→ wages ↓</li>
-                        <li>→ net employment effect small or negative</li>
-                    </ol>
-
-                    <p><strong>🎯 Final Takeaway</strong></p>
-                    <p><span class="highlight-exam">A large part of ALMP “job creation” may be illusory, as deadweight and substitution effects reduce the true net impact on employment.</span></p>
+                    <h4 style="color: #718096;">5. Deadweight & Substitution (Negative Effect)</h4>
+                    <img src="almp_deadweight_substitution_effects.png" alt="Deadweight" style="max-width: 50%; float: right; margin-left: 20px;">
+                    <p>The biggest problem in practice (70-90% of ALMP "jobs"):</p>
+                    <ul>
+                        <li><strong>Deadweight:</strong> The firm gets a subsidy to hire someone they <em>were going to hire anyway</em>.</li>
+                        <li><strong>Substitution:</strong> The firm fires an unsubsidized worker to hire the subsidized one.</li>
+                    </ul>
+                    <div class="logic-flow">
+                        Zero "Additionality" <span class="logic-arrow">➔</span> Labour demand for non-participants ↓ <span class="logic-arrow">➔</span> <span style="color: #E53E3E; font-weight: bold;">Net Employment Effect Tiny/Negative</span>
+                    </div>
+                    <div style="clear: both;"></div>
                 </div>
 
                 <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
 
                 <!-- ============================================================ -->
-                <!-- SECTION VI: EMPIRICAL EVALUATION -->
+                <!-- SECTION VI: EMPIRICAL EVIDENCE -->
                 <!-- ============================================================ -->
-                <h2>🔬 VI. How to measure effectiveness of ALMP</h2>
+                <h2>🔬 VI. Empirical Evaluation: Does it Work in Practice?</h2>
 
-                <p>Effects of ALMP unclear – depend on specific policy and labour market characteristics.</p>
-                <ul>
-                    <li><strong>Macroeconomic studies</strong> – the effect of ALMP on aggregated LM (unemployment rate, wage level)</li>
-                    <li><strong>Experimental studies</strong> – program participants (treated group) compared with non-participants (control group) → compare wage level and labour market status of both groups after the program</li>
-                </ul>
-
-                <p><strong>Empirics – ALMP in the Czech Republic (Kalíšková, 2010)</strong><br>
-                Effects of ALMP participation on unemployment rate. Focuses on four program types: Retraining programs, Public works (veřejně prospěšné práce), Subsidised new working places (SUPM – Společensky účelná pracovní místa), Programs co-financed from European Social Fund (ESF).<br>
-                Data – Ministry of labour and CZSO, 1999–2009, 14 Czech regions, monthly data.<br>
-                Dependent variable: total unemployment rate in regions – open unemployment plus program participants.<br>
-                Explanatory variables: Rate of participation in the programs = participants / all unemployed (%) (separately for each program type), National U rate – to catch aggregate cycle, Regional GDP – proxy for regional specifics, Lagged U rate (in some models) – to control the time dependency of U rate.</p>
-
-                <p><strong>Experimental studies and programme evaluations</strong><br>
-                In practical applications – hard to define the control group (non-participants) - most LM programmes require registered unemployment → majority of the registered unemployed sooner or later enter some of the programmes. comparing results for the same groups (defined by education, age, gender, employment history, region) participating in different programs.</p>
-
-                <p><strong>Projekt Nové pracovní příležitosti: SUPM a VPP (2015–2019)</strong><br>
-                Project “New employment opportunities” public works (VPP) - one of the largest program at national level.</p>
-                <p><strong>Who are the participants?</strong><br>
-                SUPM – higher share of women (64%); secondary educated (72%); mean age 40;<br>
-                VPP – similar shares of men and women; secondary (47%) and primary (46%) educated; mean age 45 ↔ target group: more often people with cumulated disadvantages, disabled, immigrants etc.</p>
-                <p><strong>Whom the programmes help?</strong><br>
-                The evaluation report includes logistic regressions (based on individual data): the probability of being employed after 18 months the individuals entered the programme. Explanatory variables: gender, age, education, disadvantages (immigrants/minorities, disabled, other disadvantage, homeless), region, the quarter of the entry, duration of support in months.<br>
-                findings: (+) female, (+) higher education, (+) duration of support; (-) disabled (in VPP also (-) immigrants/minorities); statistically significant regional differences (mainly in VPP).</p>
-
-                <div class="concept-card explanation">
-                    <h4>Empirical Evaluation of ALMP: What the Graphs Show in Practice</h4>
-                    
-                    <p>These graphs shift the analysis from theory to empirical evaluation. The objective is no longer only to understand how Active Labour Market Policies should work in theory, but to assess whether they actually improve labour market outcomes in practice.</p>
-                    <p>The central message is that ALMPs can help, but their effects are not automatic, not uniform, and not always persistent over time. The graphs suggest that programme participation can improve employment prospects for some groups, but the impact depends strongly on the type of programme, the target group, and the structural barriers faced by participants.</p>
-
-                    <p><strong>Programme Entries and the Number of Job Seekers</strong></p>
-                    <p>The first graph compares entries into two programmes, VPP and SUPM, with the total number of registered job seekers. The key point is not the exact monthly movement, but the relationship between programme activity and unemployment.</p>
-                    <p>The graph shows that programme participation fluctuates while the number of job seekers follows its own broader trend. This means that a rise in programme entries should not automatically be interpreted as proof that the labour market is improving. A programme may expand because policymakers are reacting to unemployment, not because the programme itself is reducing unemployment.</p>
-                    <p>This is important because ALMP participation is an input, not an outcome. More people entering programmes does not necessarily mean that more people are moving into stable jobs. It may simply mean that the public employment service is placing more unemployed individuals into temporary measures.</p>
-                    <p>The graph therefore raises a key evaluation problem: we must distinguish between programme intensity and programme effectiveness. A country or region may spend more on ALMP or enrol more people in programmes, but the real question is whether participants later obtain regular employment.</p>
-                    <p>This also connects to the theoretical distinction between gross and net effects. The gross effect is the immediate movement of people into programmes. The net effect is whether these people would have found jobs anyway, whether they replace other workers, and whether their employment outcome improves in the long run.</p>
-
-                    <p><strong>Economic Activity Before and After Programme Entry</strong></p>
-                    <p>The second graph is more directly useful for evaluation because it follows participants before and after programme entry. It asks a more meaningful question: what happens to people after they enter an ALMP programme?</p>
-                    <p>Before entering the programme, many participants are unemployed or inactive. This confirms that ALMP targets people who are already weakly attached to the labour market. At the moment of entry, everyone is classified as unemployed, because registered unemployment is generally required for programme participation.</p>
-                    <p>After participation, the share of employed individuals increases strongly. This suggests that the programmes do have a positive activation effect. They help some participants move from unemployment or inactivity into employment.</p>
-                    <p>However, the graph also shows that this improvement is not fully stable. Employment outcomes appear to weaken after some time, especially after around twelve months. This is a very important result. It suggests that ALMP may improve short-term transitions into employment, but it does not always guarantee durable labour market integration.</p>
-                    <p>The economic interpretation is that some jobs obtained after programmes may be temporary, subsidised, or fragile. Participants may enter employment for a while, but then return to unemployment or inactivity once the support ends or once the temporary job contract expires.</p>
-                    <p>Therefore, the graph does not say “ALMP does not work”. It says something more subtle: ALMP can work as an activation tool, but its long-term effectiveness depends on whether it creates stable employment, not just short-term exits from unemployment.</p>
-
-                    <p><strong>Why the Employment Effect May Decline Over Time</strong></p>
-                    <p>The decline in employment after some months is especially important to understand.</p>
-                    <p>One possible explanation is that some programmes improve employability only temporarily. For example, public works may maintain work habits and provide recent experience, but they may not give participants skills that are strongly valued in the regular labour market.</p>
-                    <p>Another explanation is that employers may use subsidised programmes as a temporary source of cheaper labour. Once the subsidy or programme support ends, the participant may not be retained.</p>
-                    <p>A third explanation is that participants often face deeper barriers than unemployment alone. They may have low education, health problems, childcare constraints, weak networks, age-related disadvantages, or social exclusion. A short programme can help, but it may not be enough to remove all these barriers.</p>
-                    <p>This is why programme evaluation must look beyond immediate post-programme employment. The real test is whether participants remain employed after six, twelve, or eighteen months.</p>
-                </div>
+                <p>We evaluate ALMPs via <strong>Macroeconomic studies</strong> (aggregate rates) and <strong>Experimental studies</strong> (Comparing treated participants vs. a control group). Let's look at the Czech Republic project "Nové pracovní příležitosti" (SUPM vs. VPP).</p>
 
                 <div class="type-cards">
-                    <div class="type-card" style="border-top-color: #805AD5;">
-                        <h4 style="color: #805AD5;">Target Group Differences: Why ALMP Does Not Work the Same for Everyone</h4>
-                        <p>The target-group graphs show a crucial point: ALMP effectiveness is highly heterogeneous. The same type of intervention does not produce the same results for young people, parents, older workers, disabled individuals, or socially excluded groups. This is one of the most important conclusions for the exam.</p>
-                        <ul>
-                            <li>For young people, the programme seems more effective because they are often closer to the labour market. Their main problem may be lack of experience rather than deep structural exclusion. For them, counselling, training, or a first work opportunity can significantly improve employability.</li>
-                            <li>For parents caring for a child, the barrier is not only skills or motivation. The main constraint may be availability, childcare, schedule flexibility, or the difficulty of combining work and family responsibilities. This means that standard ALMP tools may be insufficient unless they are combined with childcare support or flexible job opportunities.</li>
-                            <li>For workers aged 50 and above, re-employment is more difficult because of age discrimination, obsolete skills, lower mobility, and employer reluctance. Even if the programme improves skills, firms may still prefer younger applicants. This reduces the effectiveness of standard training or placement measures.</li>
-                            <li>For disabled participants, the barriers are even more structural. Employment outcomes depend not only on skills but also on workplace adaptation, employer attitudes, health constraints, and accessibility. This explains why these groups may need more targeted and longer-term support.</li>
-                            <li>For socially excluded individuals, the problem is usually multidimensional. They may face low skills, unstable housing, poor health, weak networks, discrimination, and low trust in institutions. For this group, ALMP alone may not be enough. Labour market policy must often be combined with social policy.</li>
-                        </ul>
-                    </div>
-
                     <div class="type-card" style="border-top-color: #3182CE;">
-                        <h4 style="color: #3182CE;">Main Interpretation: ALMP Is Not One Policy, but Many Different Mechanisms</h4>
-                        <p>The graphs show that ALMP should not be treated as one single policy category. Different programmes work through different mechanisms.</p>
-                        <ul>
-                            <li>Public works can help maintain work habits and prevent complete detachment from the labour market. However, they may not always lead to stable regular employment.</li>
-                            <li>Subsidised jobs can reduce employer risk and help disadvantaged workers enter employment. But they may also create deadweight or substitution effects if firms would have hired someone anyway or if subsidised workers replace non-subsidised workers.</li>
-                            <li>Training and retraining may have slower effects because skills take time to acquire. Their impact may appear later, but they can be more durable if they match actual labour demand.</li>
-                            <li>Job counselling and placement services can improve matching relatively quickly, especially for people who are already employable but need information, guidance, or search support.</li>
-                        </ul>
-                        <p>Therefore, the effectiveness of ALMP depends on matching the right tool to the right target group.</p>
+                        <h4 style="color: #3182CE;">📉 The Decaying Effect</h4>
+                        <p>Right after leaving a program, employment spikes! But after 12-18 months, <span class="highlight-mechanism">the effect decays</span>. Many participants return to unemployment once the subsidized contract ends. ALMPs trigger short-term transitions, but struggle to guarantee durable integration.</p>
                     </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>The Central Evaluation Problem</h4>
-                    <p>The graphs also highlight a fundamental problem in evaluating ALMP: it is difficult to know what would have happened without the programme.</p>
-                    <p>If a participant finds a job after completing a programme, we cannot immediately conclude that the programme caused the job. The person might have found employment anyway. This is the deadweight problem.</p>
-                    <p>Similarly, if a subsidised worker is hired, we must ask whether this created a new job or simply replaced another worker. This is the substitution problem.</p>
-                    <p>This is why experimental or quasi-experimental evaluation is important. We need a comparison group of similar individuals who did not participate in the programme. Without that, we risk overestimating the true effect of ALMP.</p>
+                    <div class="type-card" style="border-top-color: #805AD5;">
+                        <h4 style="color: #805AD5;">🧩 Target Group Heterogeneity</h4>
+                        <p>ALMPs are NOT one-size-fits-all:</p>
+                        <ul>
+                            <li><strong>Youth:</strong> Highly effective (they just lack experience).</li>
+                            <li><strong>Parents:</strong> Need childcare, not just training.</li>
+                            <li><strong>Disabled/Older:</strong> Face deep structural/discriminatory barriers. ALMP alone is insufficient.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="post-it">
-                    <h4>💡 Overall Economic Takeaway & Exam-Ready Conclusion</h4>
-                    <p>Taken together, the graphs show that ALMP can reduce unemployment and improve employment outcomes, but only under certain conditions. ALMP is most effective when it improves real employability, strengthens matching, and creates stable transitions into regular employment. It is less effective when it only moves people temporarily out of unemployment, creates short-term subsidised jobs, or fails to address the deeper barriers faced by disadvantaged groups.</p>
-                    <p>The key lesson is that ALMP should not be evaluated only by the number of participants or immediate exits from unemployment. The real question is whether participants become sustainably attached to the labour market.</p>
-                    <hr style="margin: 10px 0; border: 0.5px solid #CBD5E0;">
-                    <p>The empirical evidence suggests that ALMPs can have positive effects, especially in the short run, but their effectiveness is limited and heterogeneous.</p>
-                    <p>They tend to work better for participants who are relatively close to the labour market, such as young unemployed individuals or those needing job-search assistance. They are less effective for groups facing cumulative disadvantages, such as disabled individuals, older workers, parents with childcare constraints, or socially excluded groups.</p>
-                    <p>Therefore, ALMPs should be carefully targeted, evaluated over time, and combined with complementary policies when labour market barriers are not purely employment-related.</p>
-                    <p><span class="highlight-exam">The key conclusion is: ALMPs are useful activation tools, but they are not a universal solution to unemployment. Their success depends on programme design, target group characteristics, and whether they create stable regular employment rather than temporary statistical improvements.</span></p>
+                    <h4>💡 EXAM-READY CONCLUSION</h4>
+                    <p>ALMPs are useful activation tools, but they are <strong>not a universal panacea</strong>.</p>
+                    <ol>
+                        <li>They work best for individuals <strong>close to the labour market</strong> (e.g., youth).</li>
+                        <li>They struggle with groups facing <strong>cumulative disadvantages</strong> (disabled, socially excluded).</li>
+                        <li><span class="highlight-exam">The ultimate test is "Net Effect": ALMPs must create additionality and forge stable transitions into regular employment ($e$), not just temporarily hide people in statistical programs ($r$).</span></li>
+                    </ol>
                 </div>
 
             </section>
@@ -969,15 +422,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             const sidebar = document.querySelector('.sidebar');
             const pageToggleBtn = document.getElementById('page-toggle-btn');
-
             if (localStorage.getItem('sidebarCollapsed') === 'true') {
                 sidebar.classList.add('collapsed');
                 if (pageToggleBtn) pageToggleBtn.style.display = 'block';
             }
-
             const currentPath = window.location.pathname.split('/').pop() || 'index.html';
             const activeLink = document.querySelector(`.sidebar a[href="${currentPath}"]`);
-
             if (activeLink) {
                 activeLink.classList.add('active');
                 const content = activeLink.closest('.accordion-content');
@@ -989,7 +439,6 @@
                 }
             }
         });
-
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             const pageToggleBtn = document.getElementById('page-toggle-btn');
@@ -1002,7 +451,6 @@
                 if (pageToggleBtn) pageToggleBtn.style.display = 'none';
             }
         }
-
         function toggleAccordion(button) {
             const content = button.nextElementSibling;
             const icon = button.querySelector('.icon');
@@ -1016,5 +464,4 @@
         }
     </script>
 </body>
-
 </html>
