@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labour Economics - Trade Unions</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- MathJax for LaTeX support -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+
+    <!-- SPECIFIC STYLES FOR THIS CHAPTER -->
+    <style>
+        .highlight-concept { color: #3182CE; font-weight: 700; }
+        .highlight-mechanism { color: #B7791F; font-weight: 700; background-color: #FEFCBF; padding: 2px 6px; border-radius: 4px; }
+        .highlight-exam { color: #C53030; font-weight: 800; text-decoration: underline; text-decoration-color: #FEB2B2; text-decoration-thickness: 3px; }
+        .highlight-green { color: #2F855A; font-weight: 700; background-color: #C6F6D5; padding: 2px 6px; border-radius: 4px; }
+        
+        .graph-explanation-box { background: #FFFFFF; border: 2px solid #E2E8F0; border-left: 6px solid #2B6CB0; border-radius: 8px; padding: 1.5rem 2rem; margin-top: 1rem; margin-bottom: 2.5rem; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
+        .graph-explanation-box h4 { margin-top: 0; color: #2B6CB0; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.5rem; }
+        .graph-explanation-box ul { margin-top: 10px; padding-left: 20px; }
+        .graph-explanation-box li { margin-bottom: 12px; line-height: 1.6; }
+        
+        .type-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .type-card { background: #FFFFFF; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); border-top: 5px solid var(--clr-blue-primary); transition: transform 0.2s ease; }
+        .type-card:hover { transform: translateY(-3px); }
+        .type-card h4 { margin-top: 0; font-size: 1.2rem; margin-bottom: 1rem; }
+        .type-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+        
+        .key-takeaway-block { background: linear-gradient(135deg, #EBF8FF 0%, #BEE3F8 100%); border: 2px solid #63B3ED; border-radius: 12px; padding: 1.5rem 2rem; margin: 2rem 0; box-shadow: 0 6px 15px rgba(49, 130, 206, 0.15); }
+        .key-takeaway-block h4 { color: #2B6CB0; font-size: 1.3rem; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+        .key-takeaway-block p { font-size: 1.05rem; line-height: 1.6; color: #2A4365; margin-bottom: 0; }
+        
+        ul, p { line-height: 1.8; }
+        .concept-card p { margin-bottom: 1rem; }
+        .concept-card li { margin-bottom: 0.75rem; }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            🎓 Labour Economics
+            <button class="sidebar-toggle-btn" onclick="toggleSidebar()" aria-label="Close Sidebar">&times;</button>
+        </div>
+
+        <div class="sidebar-search">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="course-search-input" placeholder="Search courses..." autocomplete="off">
+            </div>
+            <div id="search-results" class="search-results-container"></div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 1. Labour Supply & Demand</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="index.html">1. Intro & Market Status</a>
+                <a href="cours-2.html">2. Dynamics & Equilibrium</a>
+                <a href="cours-3.html">3. Microeconomics of Demand</a>
+                <a href="cours-4.html">4. Labour Market Frictions</a>
+                <a href="cours-5.html">5. Labour Supply Model</a>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 2. Wage Differentials</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="cours-6.html">6. Compensating Differentials</a>
+                <a href="cours-7.html">7. Education & Training</a>
+                <a href="cours-8.html">8. Discrimination & Gender</a>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <span>📂 3. Institutions & Policy</span>
+                <span class="icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <a href="cours-9.html">9. Employment & Unemployment</a>
+                <a href="cours-10.html">10. Minimum Wage Policy</a>
+                <a href="cours-11.html">11. Active Labour Market Policies</a>
+                <a href="cours-12.html" class="active">12. Trade Unions</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <header class="page-header" style="display: flex; align-items: center;">
+            <button class="page-toggle-btn" id="page-toggle-btn" onclick="toggleSidebar()" aria-label="Open Sidebar" style="display: none;">&#9776;</button>
+            <h1>12. Trade Unions: Power, Wage-Setting & Efficiency</h1>
+        </header>
+
+        <div class="content-scroll">
+
+            <section class="lesson-section">
+
+                <!-- ============================================================ -->
+                <!-- SECTION I: UNDERSTANDING TRADE UNIONS -->
+                <!-- ============================================================ -->
+                <h2>🧠 I. Why Trade Unions Matter</h2>
+
+                <div class="concept-card explanation">
+                    <p><strong>Trade unions</strong> are organizations of workers whose primary objective is to improve the pecuniary (wages, bonuses) and non-pecuniary (safety, hours, employment security) conditions of employment among their members.</p>
+                </div>
+
+                <p>Trade unions are a key institution in labour markets because they fundamentally change how wages and working conditions are determined. In a simple competitive model, wages are determined by individual labor supply and firm labor demand. In reality, <span class="highlight-concept">wages are shaped by institutions, negotiations, and collective agreements</span>.</p>
+
+                <p>The main economic reason unions exist is <span class="highlight-mechanism">asymmetric bargaining power</span>. Individual workers often lack bargaining power (due to replacement risks, search costs, or high unemployment). By organizing collectively, workers can threaten to strike or disrupt production, leveling the playing field against employers. Furthermore, unions reduce information asymmetries and give workers a <em>voice</em> in management.</p>
+
+                <div class="type-cards">
+                    <div class="type-card" style="border-top-color: #3182CE;">
+                        <h4 style="color: #3182CE;">📊 Trade Union Density</h4>
+                        <p><strong>Definition:</strong> The percentage of all employees who are formally members of a trade union.</p>
+                        <p>$$ \text{Union Density} = \frac{\text{Union Members}}{\text{Total Employees}} \times 100 $$</p>
+                        <p><em>What it means:</em> It measures union <strong>membership</strong>. However, a country can have low density but high union influence if agreements cover non-members.</p>
+                    </div>
+
+                    <div class="type-card" style="border-top-color: #805AD5;">
+                        <h4 style="color: #805AD5;">📜 Collective Bargaining Coverage</h4>
+                        <p><strong>Definition:</strong> The percentage of employees whose wages and working conditions are regulated by collective agreements.</p>
+                        <p>$$ \text{Coverage} = \frac{\text{Workers Covered}}{\text{Total Employees}} \times 100 $$</p>
+                        <p><em>What it means:</em> It measures union <strong>influence</strong>. Coverage is often much higher than density due to extension mechanisms that apply union-negotiated rules to non-union workers.</p>
+                    </div>
+                </div>
+
+                <div class="key-takeaway-block">
+                    <h4>🎯 The Golden Rule of Union Influence</h4>
+                    <p><span class="highlight-exam">Union membership and union influence are NOT the same thing.</span> In countries like France, very few workers are union members (low density), but almost all workers are covered by union agreements (high coverage) because the state extends sector-level agreements to all firms in the industry. Therefore, a decline in union members does not necessarily mean an immediate decline in union power, though it creates a <em>free-rider problem</em>.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION II: TRENDS & DE-UNIONIZATION -->
+                <!-- ============================================================ -->
+                <h2>📉 II. De-unionization: Structural Changes in the Labour Market</h2>
+
+                <p>Over the last 30-40 years, trade union density has declined across most advanced economies (especially in the US, UK, Australia, and post-communist CEE countries). This decline is not just workers "losing interest"; it is driven by deep <span class="highlight-concept">macroeconomic and structural shifts</span>.</p>
+
+                <div class="concept-card">
+                    <h4>🔍 Drivers of De-unionization</h4>
+                    <ul>
+                        <li><strong>Deindustrialization:</strong> Unions were historically strong in manufacturing, mining, and heavy industry (large workplaces, homogeneous tasks). The shift towards the service sector (smaller, fragmented workplaces, high turnover) makes organizing workers much harder.</li>
+                        <li><strong>Globalization & FDI:</strong> Increased international competition gives firms an "exit option". Firms can threaten to offshore production, which drastically weakens workers' bargaining power and discourages unionization.</li>
+                        <li><strong>Growth of Atypical Employment:</strong> The rise of part-time work, temporary contracts, agency work, and platform/gig work creates a precarious workforce that is difficult to unionize.</li>
+                        <li><strong>Decentralization of Bargaining:</strong> A shift from sector-level agreements to firm-level agreements makes coverage highly dependent on union presence inside each specific firm.</li>
+                        <li><strong>CEE Post-Communist Transition:</strong> In Central and Eastern Europe, the collapse of state socialism discredited old union structures. Privatization destroyed large state factories, and new private-sector firms resisted unionization.</li>
+                    </ul>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION III: THEORETICAL MODELS OF UNIONS -->
+                <!-- ============================================================ -->
+                <h2>📐 III. Theoretical Models of Trade Unions</h2>
+                
+                <p>How exactly do unions affect wages and employment? Economists use several models to understand the <span class="highlight-mechanism">trade-off between higher wages and job preservation</span>.</p>
+
+                <!-- Model 1: Labour Demand Constraint -->
+                <h3>1. The Core Constraint: Downward-Sloping Labour Demand</h3>
+                
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="theoretical_models_trade_unions_labour_demand_constraint.png" alt="Labour Demand Constraint Graph" style="max-width: 70%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box">
+                    <h4>🧠 Understanding the Wage-Employment Trade-off</h4>
+                    <p>This graph shows the fundamental reality check for any trade union: <span class="highlight-exam">Unions do not choose wages in a vacuum; they are constrained by the firm's downward-sloping labour demand curve.</span></p>
+                    
+                    <p><strong>⚙️ Mechanism:</strong></p>
+                    <ul>
+                        <li>If a union pushes the wage up from $W_0$ to $W_1$, the firm responds by moving up its labour demand curve, resulting in <span class="highlight-mechanism">fewer workers employed</span>.</li>
+                        <li>The severity of this job loss depends on the <strong>Elasticity of Labour Demand</strong>:
+                            <ul>
+                                <li>If demand is <strong>steep (inelastic)</strong>, raising wages causes only a small drop in employment. Unions are very powerful here.</li>
+                                <li>If demand is <strong>flat (elastic)</strong>, raising wages causes a massive drop in employment. Unions face severe constraints.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <p><strong>🏢 Product Market Structure Matters:</strong> In a competitive product market, firms cannot pass wage increases onto consumers, so labour demand is elastic (bad for unions). In a <em>monopoly</em> product market, the firm earns excess profits (rents) and can raise prices, making labour demand inelastic. <span class="highlight-green">Unions are stronger when firms have monopoly power.</span></p>
+                </div>
+
+                <!-- Model 2: Monopoly Union Model -->
+                <h3>2. The Monopoly-Union Model</h3>
+
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="monopoly_union_model_wage_employment_tradeoff.png" alt="Monopoly Union Model Graph" style="max-width: 70%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box" style="border-left-color: #805AD5;">
+                    <h4 style="color: #805AD5;">🧠 The Monopoly-Union Equilibrium</h4>
+                    <p>In this model, the roles are strictly separated: <span class="highlight-exam">The union sets the wage, and the employer responds by unilaterally choosing the employment level along the labour demand curve.</span></p>
+
+                    <p><strong>⚙️ How it works:</strong></p>
+                    <ul>
+                        <li><strong>Union Indifference Curves ($U_0, U_1, U_2$):</strong> The union cares about both wages ($W$) and employment ($E$). It wants to reach the highest possible curve.</li>
+                        <li><strong>The Constraint:</strong> The union must choose a point <em>on</em> the firm's labour demand curve ($D$).</li>
+                        <li><strong>Equilibrium (Point b):</strong> The union chooses point <strong>b</strong>, where its highest attainable indifference curve is exactly <span class="highlight-mechanism">tangent</span> to the labour demand curve.</li>
+                    </ul>
+
+                    <p><strong>📉 The Consequence: The Insider-Outsider Problem</strong></p>
+                    <p>Compared to a competitive outcome (point a), the union pushes wages up to $W_U$, but employment drops to $E_U$. The "insiders" who keep their jobs are happy with high wages, but the "outsiders" lose their jobs. This model proves that <span class="highlight-exam">a monopoly union improves wages but mechanically reduces employment</span>.</p>
+                </div>
+
+                <!-- Model 3: Efficient Contracts -->
+                <h3>3. The Efficient Contracts Model</h3>
+                
+                <p>The main critique of the Monopoly-Union model is that it is <strong>inefficient</strong>. By only bargaining over wages and letting the firm cut jobs, both parties might be missing out on a better compromise. What if they bargained over <span class="highlight-concept">both wage AND employment</span> simultaneously?</p>
+
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="efficient_contracts_model_isoprofit_curves.png" alt="Employer Isoprofit Curves Graph" style="max-width: 60%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none; display: inline-block; margin-right: 2%;">
+                    <img src="efficient_contracts_model_contract_curve_bargaining_power.png" alt="Contract Curve Graph" style="max-width: 35%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none; display: inline-block;">
+                </div>
+
+                <div class="graph-explanation-box" style="border-left-color: #D69E2E;">
+                    <h4 style="color: #D69E2E;">🧠 Moving off the Demand Curve</h4>
+                    <p>The <strong>Efficient Contracts Model</strong> shows that the monopoly-union outcome (point b) is Pareto inefficient. There are other wage-employment combinations where the union is happier and the firm's profits do not fall.</p>
+
+                    <p><strong>⚙️ The Components:</strong></p>
+                    <ul>
+                        <li><strong>Isoprofit Curves ($I_0, I_1, I_2$):</strong> These represent combinations of ($W, E$) that yield the <em>same profit</em> for the firm. The firm prefers lower curves (higher profits). Notice that the peak of every isoprofit curve lies exactly on the labour demand curve!</li>
+                        <li><strong>The Contract Curve (Line e-d):</strong> If the union and firm bargain over BOTH wage and employment, they will reach a point where an isoprofit curve is <span class="highlight-mechanism">tangent</span> to a union indifference curve. The line connecting all these tangency points is the Contract Curve.</li>
+                    </ul>
+
+                    <p><strong>🎯 The Result:</strong></p>
+                    <p>Notice that the Contract Curve lies to the <strong>right</strong> of the labour demand curve. This means that <span class="highlight-exam">an efficient contract yields higher employment than the monopoly-union model</span>. The firm agrees to hire more workers than it strictly needs at that wage, in exchange for the union accepting a wage that is slightly lower than the maximum monopoly wage. The final position on the contract curve (closer to <em>e</em> or <em>d</em>) depends entirely on the relative <strong>bargaining power</strong> of the union vs the firm.</p>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION IV: SPILLOVER EFFECTS -->
+                <!-- ============================================================ -->
+                <h2>🧩 IV. Spillover Effects: Impact on the Non-Union Sector</h2>
+
+                <div style="text-align: center; margin: 30px 0 0 0;">
+                    <img src="union_spillover_effects_wages_employment_union_nonunion_sectors.png" alt="Spillover Effects Graph" style="max-width: 80%; border-radius: 8px 8px 0 0; border: 1px solid #E2E8F0; border-bottom: none;">
+                </div>
+
+                <div class="graph-explanation-box" style="border-left-color: #38A169;">
+                    <h4 style="color: #38A169;">🧠 The Spillover Effect</h4>
+                    <p>Trade unions don't just affect their own members; their actions send shockwaves into the unorganized sectors of the economy. This is called the <span class="highlight-concept">Spillover Effect</span>.</p>
+
+                    <p><strong>⚙️ The Mechanism:</strong></p>
+                    <ol>
+                        <li><strong>In the Union Sector (Left Graph):</strong> The union raises the wage from $W_0$ to $W_1$. The firm reacts by moving up its labour demand curve ($D_u$), causing employment to drop from $E_u^0$ to $E_u^1$.</li>
+                        <li><strong>The Displacement:</strong> The workers who lost their jobs in the unionized sector still need to eat. They migrate to the non-union sector to look for work.</li>
+                        <li><strong>In the Non-Union Sector (Right Graph):</strong> The arrival of these displaced workers shifts the labour supply curve to the right (from $S_n^0$ to $S_n^1$).</li>
+                        <li><strong>The Consequence:</strong> Because the non-union sector now faces a massive influx of labor supply, the wage in the non-union sector is <span class="highlight-mechanism">pushed down</span> from $W_0$ to $W_n$. Employment in the non-union sector expands ($E_n^0$ to $E_n^1$).</li>
+                    </ol>
+
+                    <div class="key-takeaway-block" style="background: linear-gradient(135deg, #F0FFF4 0%, #C6F6D5 100%); border-color: #68D391; margin-top: 1rem;">
+                        <h4 style="color: #276749; margin: 0; padding-bottom: 5px;">🔥 Exam Insight: The Wage Gap Illusion</h4>
+                        <p>When you measure the "union wage premium" (the difference between union and non-union wages), the gap looks huge ($W_1 - W_n$). But this is an <span class="highlight-exam">overestimation of the union's true power</span>. The union didn't just raise its own wages; it actively depressed the wages of non-union workers by flooding their sector with displaced labour!</p>
+                    </div>
+                </div>
+
+                <hr style="margin: 40px 0; border: 1px solid var(--clr-blue-primary);">
+
+                <!-- ============================================================ -->
+                <!-- SECTION V: EXAM SYNTHESES -->
+                <!-- ============================================================ -->
+                <h2>📌 V. Exam Revisions: Ready-to-use Paragraphs</h2>
+
+                <div class="post-it">
+                    <h4>💡 Density vs Coverage</h4>
+                    <p>Trade union density and collective bargaining coverage measure different aspects of union power. Density measures formal membership (the share of employees who are members), while coverage captures the reach of negotiated labour rules (the share of employees regulated by agreements). Coverage can be much higher than density when agreements are negotiated at the sector level and legally extended to non-union workers (e.g. France). Therefore, a country can have low union membership but still wield strong union influence.</p>
+                </div>
+
+                <div class="post-it rose">
+                    <h4>💡 Why Union Density Declined</h4>
+                    <p>Union density has declined globally due to structural employment shifts. Deindustrialization reduced jobs in highly-organized manufacturing sectors, shifting employment toward the service sector, where fragmented workplaces are harder to organize. Globalization increased international competition, giving firms credible threats to relocate production if wages rise. Furthermore, the growth of atypical employment (temporary, part-time, platform work) and the decentralization of bargaining have further eroded collective organization.</p>
+                </div>
+
+                <div class="post-it">
+                    <h4>💡 Post-Socialist CEE Decline</h4>
+                    <p>In Central and Eastern Europe, union density collapsed after the fall of state socialism. Under socialism, unions were state-managed and handled welfare distribution. During the transition to capitalism, privatization and massive firm closures destroyed old union networks, and unions lost their legitimacy. Concurrently, new private firms resisted unionization, and bargaining became highly decentralized at the company level. With weak sector-level bargaining, coverage dropped dramatically in the new private sector.</p>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <script src="search.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+            
+            if (localStorage.getItem('sidebarCollapsed') === 'true') {
+                sidebar.classList.add('collapsed');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            }
+
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            const activeLink = document.querySelector(`.sidebar a[href="${currentPath}"]`);
+            
+            if (activeLink) {
+                activeLink.classList.add('active');
+                const content = activeLink.closest('.accordion-content');
+                if (content) {
+                    content.classList.add('active');
+                    content.style.maxHeight = '500px';
+                    const icon = content.previousElementSibling.querySelector('.icon');
+                    if (icon) icon.style.transform = "rotate(-180deg)";
+                }
+            }
+        });
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const pageToggleBtn = document.getElementById('page-toggle-btn');
+            sidebar.classList.toggle('collapsed');
+            if (sidebar.classList.contains('collapsed')) {
+                localStorage.setItem('sidebarCollapsed', 'true');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'block';
+            } else {
+                localStorage.setItem('sidebarCollapsed', 'false');
+                if (pageToggleBtn) pageToggleBtn.style.display = 'none';
+            }
+        }
+
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.icon');
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = "rotate(-180deg)";
+            }
+        }
+    </script>
+</body>
+
+</html>
